@@ -1,0 +1,341 @@
+/* ── Footer Main Container ── */
+.frame-footer {
+  position: relative;
+  background-color: #0f1115;
+  color: #e5ece2;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  overflow: hidden;
+  padding: 5.5rem 0 2.5rem 0;
+}
+
+/* ── Container ── */
+.footer-container {
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+
+/* ── Top 3-Column Grid ── */
+.footer-top-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 3.5rem;
+  align-items: start;
+  margin-bottom: 1rem;
+}
+
+/* ── Left Column: Headline ── */
+.footer-col-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-headline {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(2.4rem, 3.6vw, 3.6rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: #ffffff;
+  letter-spacing: -0.03em;
+  margin: 0 0 1.5rem 0;
+}
+
+.footer-subtext {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #ffffffb8;
+  /* max-width: 320px; */
+  margin: 0;
+}
+
+/* ── Common Column Label ── */
+.footer-col-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #e5ece2;
+  margin: 0 0 1.25rem 0;
+  letter-spacing: 0.02em;
+}
+
+/* ── Center Column: Newsletter ── */
+
+
+.footer-newsletter-form {
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-color: #0f1115a8;
+  border-radius: 12px;
+  padding: 0.35rem 0.4rem 0.35rem 1.2rem;
+  max-width: 340px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.footer-newsletter-form:focus-within {
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
+}
+
+.footer-newsletter-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem;
+  color: #ffffff;
+  padding-right: 0.5rem;
+}
+
+.footer-newsletter-input::placeholder {
+  color: #ffffffb8;;
+}
+
+.footer-newsletter-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 40px;
+  background-color: #0f1115d5;
+  border: none;
+  border-radius: 8px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.footer-newsletter-btn:hover {
+  background-color: #ffffff;
+  transform: scale(1.04);
+  color: #000;
+}
+
+.footer-plane-icon {
+  font-size: 1.1rem;
+}
+
+/* ── Right Column: Contact ── */
+.footer-col-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.footer-address {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: #ffffffb8;
+  margin: 0;
+}
+
+.footer-highlight-card {
+  background-color: #1B1D21;
+  border-radius: 12px;
+  padding: 1.4rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-contact-link {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.12rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  transition: color 0.25s ease;
+}
+
+.footer-contact-link:hover {
+  color: #cde0c5;
+}
+
+/* ── Navigation Links Row ── */
+.footer-nav-row {
+  /* border-top: 1px solid rgba(255, 255, 255, 0.08); */
+  padding: 2.2rem 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer-nav-list {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav-list a {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.92rem;
+  color: #ffffffb8;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.footer-nav-list a:hover {
+  color: #ffffff;
+}
+
+/* ── Large Watermark Typography ── */
+.footer-watermark-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 1.5rem 0 2.5rem 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+.footer-watermark-line {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(4.2rem, 11vw, 10.5rem);
+  font-weight: 800;
+  line-height: 0.88;
+  letter-spacing: -0.045em;
+  color: rgba(255, 255, 255, 0.05);
+  text-transform: none;
+}
+
+/* ── Bottom Bar: Copyright & Socials ── */
+.footer-bottom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-copyright {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  color: #ffffffb8;
+  margin: 0;
+}
+
+.footer-bottom-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.footer-social-links {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.footer-social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #000000;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.footer-social-icon:hover {
+  background-color: #ffffff;
+  color: #000000;
+  transform: translateY(-2px);
+}
+
+/* ── Scroll to Top Arrow Button ── */
+.footer-scroll-top-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  font-size: 1.15rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.footer-scroll-top-btn:hover {
+  background-color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+}
+
+/* ── Responsive Styling ── */
+@media (max-width: 1024px) {
+  .footer-top-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer-col-right {
+    grid-column: span 2;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .frame-footer {
+    padding: 4rem 0 2rem 0;
+  }
+
+  .footer-container {
+    padding: 0 1.5rem;
+  }
+
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer-col-right {
+    grid-column: span 1;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-highlight-card {
+    width: 100%;
+  }
+
+  .footer-nav-row {
+    justify-content: flex-start;
+  }
+
+  .footer-nav-list {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .footer-bottom-bar {
+    flex-direction: column-reverse;
+    gap: 1.8rem;
+    align-items: flex-start;
+  }
+
+  .footer-bottom-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
