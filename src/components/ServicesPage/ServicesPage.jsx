@@ -405,6 +405,8 @@ function MultiBuildingBlueprintCanvas({ onPhaseUpdate }) {
     renderer.setClearColor(0x000000, 0);
     renderer.domElement.style.backgroundColor = "transparent";
     renderer.domElement.style.display = "block";
+    renderer.domElement.style.pointerEvents = "none";
+    renderer.domElement.style.touchAction = "pan-y";
     container.appendChild(renderer.domElement);
 
     const masterGroup = new THREE.Group();
@@ -1016,7 +1018,7 @@ function MultiBuildingBlueprintCanvas({ onPhaseUpdate }) {
   return (
     <div
       ref={containerRef}
-      className="absolute inset-0 w-full h-full bg-transparent pointer-events-none"
+      className="absolute inset-0 w-full h-full bg-transparent pointer-events-none touch-pan-y"
     />
   );
 }
@@ -1249,7 +1251,7 @@ export default function ServicesPage() {
   }, []);
 
   return (
-    <main className="bg-[#000435] font-primary min-h-screen overflow-x-hidden selection:bg-[#f55d1b] selection:text-white">
+    <main className="bg-[#000435] font-primary min-h-screen overflow-x-hidden selection:bg-[#f55d1b] selection:text-white touch-pan-y">
       <aside className="fixed right-6 top-1/2 -translate-y-1/2 hidden xl:flex flex-col gap-2 z-40 bg-[#000435]/85 backdrop-blur-md p-2 rounded-2xl border border-white/10 shadow-2xl">
         {SERVICES_DATA.map((s, idx) => {
           const isCurrent = activeIdx === idx;
@@ -1317,7 +1319,7 @@ export default function ServicesPage() {
                 </div>
               </div>
 
-              <div className="lg:col-span-6 relative h-[360px] sm:h-[440px] lg:h-[500px] xl:h-[540px] overflow-hidden shadow-2xl">
+              <div className="lg:col-span-6 relative h-[320px] sm:h-[400px] lg:h-[500px] xl:h-[540px] overflow-hidden shadow-2xl pointer-events-none touch-pan-y">
                 <div className="absolute inset-0 pointer-events-none" />
                 <MultiBuildingBlueprintCanvas
                   onPhaseUpdate={setConstructionPhase}

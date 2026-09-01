@@ -14,7 +14,8 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  /* Let Lenis handle smooth scroll on desktop without native scroll-behavior conflict */
+  touch-action: pan-y;
 }
 
 body {

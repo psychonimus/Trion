@@ -266,10 +266,11 @@ export default function KineticGrid({
   }, [animate]);
 
   return (
-    <div className={cn("relative w-full overflow-hidden", className)}>
+    <div className={cn("relative w-full overflow-hidden touch-pan-y", className)}>
       <canvas
         ref={canvasRef}
-        className="absolute inset-0 w-full h-full z-0 pointer-events-none"
+        className="absolute inset-0 w-full h-full z-0 pointer-events-none touch-pan-y"
+        style={{ pointerEvents: "none", touchAction: "pan-y" }}
       />
       <div className="relative z-10 w-full h-full pointer-events-auto">
         {children}

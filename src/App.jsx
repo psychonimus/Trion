@@ -66,7 +66,8 @@ export default function App() {
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
       wheelMultiplier: 1,
-      touchMultiplier: 2,
+      syncTouch: false,
+      touchInertiaMultiplier: 1,
     });
     lenisRef.current = lenis;
     window.__lenis = lenis;
