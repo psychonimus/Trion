@@ -10,6 +10,7 @@ function useReveal() {
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+
     const obs = new IntersectionObserver(
       ([e]) => {
         if (e.isIntersecting) {
@@ -17,10 +18,19 @@ function useReveal() {
           obs.disconnect();
         }
       },
-      { threshold: 0.1, rootMargin: "0px 0px -40px 0px" },
+      { threshold: 0.01, rootMargin: "150px 0px 150px 0px" },
     );
     obs.observe(el);
-    return () => obs.disconnect();
+
+    // Fallback: ensure content is always visible even if observer fails
+    const fallback = setTimeout(() => {
+      setVisible(true);
+    }, 600);
+
+    return () => {
+      obs.disconnect();
+      clearTimeout(fallback);
+    };
   }, []);
 
   return [ref, visible];
@@ -1185,6 +1195,21 @@ export default function ServicesPage() {
   const [constructionPhase, setConstructionPhase] = useState(
     "PHASE 01: MASTERPLAN BLUEPRINT SETUP",
   );
+
+  useEffect(() => {
+    const updateLenis = () => {
+      if (window.__lenis) {
+        window.__lenis.resize();
+      }
+    };
+    updateLenis();
+    const t1 = setTimeout(updateLenis, 150);
+    const t2 = setTimeout(updateLenis, 600);
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+    };
+  }, []);
 
   useEffect(() => {
     const rawTarget =

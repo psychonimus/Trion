@@ -23,8 +23,17 @@ function ScrollToTop({ lenisRef }) {
   const { pathname, hash } = useLocation();
 
   useEffect(() => {
+    const updateLenisHeight = () => {
+      if (lenisRef?.current) {
+        lenisRef.current.resize();
+      }
+    };
+
+    const t1 = setTimeout(updateLenisHeight, 50);
+    const t2 = setTimeout(updateLenisHeight, 250);
+    const t3 = setTimeout(updateLenisHeight, 700);
+
     if (hash) {
-      // Wait for the new page to render, then scroll to the hashed section
       const timer = setTimeout(() => {
         const el = document.querySelector(hash);
         if (el && lenisRef?.current) {
@@ -33,12 +42,22 @@ function ScrollToTop({ lenisRef }) {
           el.scrollIntoView({ behavior: "smooth", block: "start" });
         }
       }, 120);
-      return () => clearTimeout(timer);
+      return () => {
+        clearTimeout(timer);
+        clearTimeout(t1);
+        clearTimeout(t2);
+        clearTimeout(t3);
+      };
     } else {
       window.scrollTo(0, 0);
       if (lenisRef?.current) {
         lenisRef.current.scrollTo(0, { immediate: true });
       }
+      return () => {
+        clearTimeout(t1);
+        clearTimeout(t2);
+        clearTimeout(t3);
+      };
     }
   }, [pathname, hash, lenisRef]);
 
@@ -79,7 +98,16 @@ export default function App() {
     gsap.ticker.add(updateLenis);
     gsap.ticker.lagSmoothing(0);
 
+    const resizeObserver = new ResizeObserver(() => {
+      lenis.resize();
+    });
+
+    if (document.body) {
+      resizeObserver.observe(document.body);
+    }
+
     return () => {
+      resizeObserver.disconnect();
       gsap.ticker.remove(updateLenis);
       lenis.destroy();
     };
