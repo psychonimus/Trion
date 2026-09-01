@@ -1,131 +1,113 @@
+/* ── Stage ── */
+.vb-stage {
+  height: 100vh;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: #0a1128;
+}
 
+.vb-layers {
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
 
-  /* stage */
-  .vb-stage {
-    height: 100vh;
-    position: relative;
-  }
-  .vb-layers {
-    position: sticky;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-  }
+/* ── SVG Blind Layers ── */
+.vb-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
 
-  /* svg layers */
-  .vb-layer {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-  }
+.vb-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(10, 17, 40, 0.92) 0%,
+    rgba(10, 17, 40, 0.6) 45%,
+    rgba(10, 17, 40, 0.25) 100%
+  );
+  z-index: 5;
+  pointer-events: none;
+}
 
-  .vb-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%);
-    z-index: 5;
-    pointer-events: none;
-  }
+/* ── Hero Slide Texts ── */
+.vb-texts {
+  padding: 4vw 6vw 10vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  z-index: 10;
+  max-width: 1320px;
+  margin: 0 auto;
+}
 
-  /* text */
-  .vb-texts {
-    padding: 3vw 4vw 10vw;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    position: relative;
-    z-index: 10;
-  }
-  .vb-txt {
-    position: absolute;
-    width: 100%;
-    /* height: 100%; */
-    color: #fff;
-    text-transform: uppercase;
-    clip-path: inset(100% 0 0 0);
-    transform: translateY(40px);
-    opacity: 0;
+.vb-txt {
+  position: absolute;
+  width: 100%;
+  max-width: 860px;
+  color: #ffffff;
+  clip-path: inset(100% 0 0 0);
+  transform: translateY(40px);
+  opacity: 0;
+}
 
-  }
-  .vb-txt h2 {
-    /* margin-top: 10vh; */
-    font-family: "Plus Jakarta Sans", sans-serif;
-    font-size: 4rem;
-    /* letter-spacing: -0.025em; */
-    line-height: 1;
-    white-space: pre-line;
-    width: 60%;
-  }
-  .vb-txt h3 {
-    margin-top: 1vw;
-    text-transform: none;
-    width: 60%;
-    font-family: "DM Sans", sans-serif;
-    font-weight: 400;
-    font-size: 1.2rem;
-    /* letter-spacing: 0.24em; */
-  }
-  .vb-txt p {
-    display: block;
-    font-size: clamp(1.1rem, 0.8vw, 1.2rem);
-    width: 70%;
-    margin-top: 30px;
-    line-height: 1.8;
-    letter-spacing: normal;
-    text-transform: none;
-  }
+.vb-txt h2 {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: clamp(2.5rem, 5.2vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: #ffffff !important;
+  margin-bottom: 1.2rem;
+}
 
-  .vb-features {
-    margin-top: 30px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    width: 40%;
-    text-transform: none;
-  }
+.vb-txt h3 {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
+  font-size: clamp(1rem, 1.4vw, 1.25rem);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.85) !important;
+  max-width: 680px;
+}
 
-  .vb-feature-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-family: 'secondary regular', sans-serif;
-    font-size: clamp(0.9rem, 1vw, 1.05rem);
-    color: rgba(255, 255, 255, 0.85);
-  }
+/* ── Progress Bar ── */
+.vb-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 3rem 6vw;
+  display: flex;
+  gap: 1rem;
+  z-index: 20;
+  max-width: 1320px;
+  margin: 0 auto;
+}
 
-  .vb-feature-icon {
-    width: 18px;
-    height: 18px;
-    color: #D3A95B; /* var(--primary) fallback */
-    flex-shrink: 0;
-  }
-  @media (max-width: 1024px) { .vb-txt span { width: 35%; } }
-  @media (max-width: 599px)  { .vb-txt span { width: 50%; } }
+.vb-segment {
+  flex: 1;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  position: relative;
+  border-radius: 9999px;
+}
 
-  /* progress bar */
-  .vb-progress-bar {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    padding: 4rem;
-    display: flex;
-    gap: 1rem;
-    z-index: 20;
-  }
-  .vb-segment {
-    flex: 1;
-    height: 2px;
-    background: rgba(255,255,255,0.2);
-    overflow: hidden;
-    position: relative;
-  }
-  .vb-fill {
-    position: absolute;
-    top: 0; left: 0;
-    width: 0%;
-    height: 100%;
-    background: #fff;
-  }
+.vb-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: #ff6b00;
+  box-shadow: 0 0 10px rgba(255, 107, 0, 0.8);
+  border-radius: 9999px;
+}

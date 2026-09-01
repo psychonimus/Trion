@@ -1,4 +1,5 @@
-﻿import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import {
   FiCode,
   FiGlobe,
@@ -17,222 +18,256 @@ import {
   FiHelpCircle,
 } from "react-icons/fi";
 import { LuPlug, LuHandshake, LuLeaf } from "react-icons/lu";
-import "./Navbar.css";
 
-// ── Navigation Data ───────────────────────────────────────────
 const productLinks = [
   {
-    title: "Website Builder",
-    href: "#",
-    description: "Create responsive websites with ease",
+    title: "Civil & Infrastructure",
+    href: "/services",
+    description: "Bridges, highways, transit corridors, and site development",
     icon: FiGlobe,
   },
   {
-    title: "Cloud Platform",
-    href: "#",
-    description: "Deploy and scale apps in the cloud",
+    title: "Structural & High-Rise",
+    href: "/services",
+    description: "Advanced multi-story engineering and architectural framing",
     icon: FiLayers,
   },
   {
-    title: "Team Collaboration",
-    href: "#",
-    description: "Tools to help your teams work better together",
+    title: "Mining & Crushing",
+    href: "/services",
+    description: "High-yield extraction, blasting, and aggregate production",
     icon: FiUserPlus,
   },
-  { title: "Analytics", href: "#", icon: FiBarChart2 },
-  { title: "Integrations", href: "#", icon: LuPlug },
-  { title: "E-Commerce", href: "#", icon: FiDollarSign },
-  { title: "Security", href: "#", icon: FiShield },
-  { title: "API", href: "#", icon: FiCode },
+  { title: "Excavation & Earthwork", href: "/services", icon: FiBarChart2 },
+  { title: "EPC & PMC Management", href: "/services", icon: LuPlug },
+  { title: "Equipment & Material Logistics", href: "/services", icon: FiDollarSign },
+  { title: "Quality & Safety Systems", href: "/services", icon: FiShield },
+  { title: "Technical Consultation", href: "/services", icon: FiCode },
 ];
 
 const companyLinks = [
   {
-    title: "About Us",
-    href: "#",
-    description: "Learn more about our story and team",
+    title: "Company Profile",
+    href: "/about",
+    description: "Our history, executive leadership, and core values",
     icon: FiUsers,
   },
   {
-    title: "Customer Stories",
-    href: "#",
-    description: "See how we have helped our clients succeed",
+    title: "Featured Milestones",
+    href: "/about",
+    description: "A track record of engineering landmarks delivered safely",
     icon: FiStar,
   },
   {
-    title: "Terms of Service",
-    href: "#",
-    description: "Understand how we operate",
+    title: "Quality Certifications",
+    href: "/about",
+    description: "ISO standards, environmental compliance, and safety codes",
     icon: FiFileText,
   },
   {
-    title: "Privacy Policy",
-    href: "#",
-    description: "How we protect your information",
+    title: "Sustainability & ESG",
+    href: "/about",
+    description: "Green engineering and carbon-neutral building techniques",
     icon: FiShield,
   },
   {
-    title: "Refund Policy",
-    href: "#",
-    description: "Details about refunds and cancellations",
+    title: "Health & Safety Policy",
+    href: "/about",
+    description: "Zero-harm safety culture on active industrial sites",
     icon: FiRefreshCcw,
   },
   {
-    title: "Partnerships",
-    href: "#",
-    description: "Collaborate with us for mutual growth",
+    title: "Strategic Alliances",
+    href: "/strategicAlliances",
+    description: "Joint ventures, equipment supply, and public partnerships",
     icon: LuHandshake,
   },
   {
-    title: "Blog",
-    href: "#",
-    description: "Insights, tutorials, and company news",
+    title: "Industry Insights",
+    href: "/about",
+    description: "Civil engineering breakthroughs and market analysis",
     icon: LuLeaf,
   },
   {
-    title: "Help Center",
-    href: "#",
-    description: "Find answers to your questions",
+    title: "Contact & Inquiries",
+    href: "/contact",
+    description: "Direct project consultation and tender inquiries",
     icon: FiHelpCircle,
   },
 ];
 
-// ── Shared Subcomponents for Dropdown Panels ──────────────────
 function GridCard({ link, onClick }) {
   const Icon = link.icon;
   return (
-    <a href={link.href} className="nav-grid-card" onClick={onClick}>
-      <div className="nav-grid-card__icon-wrap">
-        <Icon className="nav-grid-card__icon" />
+    <Link
+      to={link.href}
+      className="flex items-start gap-3 p-3.5 bg-[#070d1e] border border-white/10 hover:border-[#ff6b00]/60 rounded-xl transition-all duration-150 hover:bg-[#ff6b00]/10 no-underline group"
+      onClick={onClick}
+    >
+      <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-[#ff6b00]/15 text-[#ff6b00] border border-[#ff6b00]/30 shrink-0 text-sm group-hover:scale-105 transition-transform mt-0.5">
+        <Icon />
       </div>
-      <div className="nav-grid-card__body">
-        <span className="nav-grid-card__title">{link.title}</span>
+      <div className="flex flex-col">
+        <span className="text-[12.5px] font-bold text-white group-hover:text-[#ff6b00] transition-colors leading-tight mb-1 whitespace-normal">
+          {link.title}
+        </span>
         {link.description && (
-          <p className="nav-grid-card__desc">{link.description}</p>
+          <p className="text-[11px] text-slate-300 leading-snug m-0 whitespace-normal">
+            {link.description}
+          </p>
         )}
       </div>
-    </a>
+    </Link>
   );
 }
 
 function LargeItem({ link, onClick }) {
   const Icon = link.icon;
   return (
-    <a href={link.href} className="nav-large-item" onClick={onClick}>
-      <div className="nav-large-item__icon-wrap">
-        <Icon className="nav-large-item__icon" />
+    <Link
+      to={link.href}
+      className="flex items-start gap-2.5 p-2 rounded-lg transition-all duration-150 hover:bg-[#ff6b00]/10 no-underline group"
+      onClick={onClick}
+    >
+      <div className="flex items-center justify-center w-5 h-5 text-[#ff6b00] shrink-0 text-xs mt-0.5">
+        <Icon />
       </div>
-      <div className="nav-large-item__body">
-        <span className="nav-large-item__title">{link.title}</span>
+      <div className="flex flex-col">
+        <span className="text-[11.5px] font-semibold text-white group-hover:text-[#ff6b00] transition-colors leading-tight whitespace-normal">
+          {link.title}
+        </span>
         {link.description && (
-          <p className="nav-large-item__desc">{link.description}</p>
+          <p className="text-[10.5px] text-slate-400 leading-snug m-0 mt-0.5 whitespace-normal">
+            {link.description}
+          </p>
         )}
       </div>
-    </a>
+    </Link>
   );
 }
 
 function SmallItem({ item, onClick }) {
   const Icon = item.icon;
   return (
-    <a href={item.href} className="nav-small-item" onClick={onClick}>
-      <Icon className="nav-small-item__icon" />
-      <span className="nav-small-item__title">{item.title}</span>
-    </a>
+    <Link
+      to={item.href}
+      className="flex items-center gap-2.5 p-2 rounded-lg text-slate-200 hover:text-white hover:bg-[#ff6b00]/15 transition-all duration-150 no-underline group"
+      onClick={onClick}
+    >
+      <Icon className="text-[#ff6b00] text-xs shrink-0" />
+      <span className="text-[11.5px] font-semibold tracking-wide group-hover:text-white whitespace-normal">
+        {item.title}
+      </span>
+    </Link>
   );
 }
 
-// ── Capsule Dropdown Item ─────────────────────────────────────
 function CapsuleDropdown({
   label,
+  to,
   isOpen,
   isActive,
-  onToggle,
   onOpen,
   onClose,
+  onClick,
   children,
 }) {
   return (
     <div
-      className={`nav-capsule-dropdown ${isOpen ? "dropdown-open" : ""}`}
+      className="relative inline-flex items-center"
       onMouseEnter={onOpen}
       onMouseLeave={onClose}
     >
-      <button
-        type="button"
-        className={`nav-capsule-item nav-capsule-btn ${isActive ? "active" : ""} ${
-          isOpen ? "open" : ""
+      <Link
+        to={to}
+        className={`inline-flex items-center justify-center gap-1 px-3.5 py-1.5 font-primary text-[11px] font-bold tracking-[0.1em] uppercase rounded-full whitespace-nowrap transition-all duration-150 no-underline select-none ${
+          isActive
+            ? "bg-[#ff6b00] text-white shadow-md shadow-orange-500/40 font-extrabold"
+            : "text-slate-200 hover:text-white hover:bg-white/10"
         }`}
-        onClick={onToggle}
-        aria-expanded={isOpen}
-        aria-haspopup="true"
+        onClick={onClick}
       >
         <span>{label}</span>
         <FiChevronDown
-          className={`nav-capsule-chevron ${isOpen ? "rotated" : ""}`}
+          className={`text-[10px] transition-transform duration-200 ${
+            isOpen ? "rotate-180 text-[#ff6b00]" : "text-slate-300"
+          }`}
         />
-      </button>
+      </Link>
 
-      {/* Flyout Panel */}
+      {/* Solid Opaque Dropdown Flyout Panel */}
       <div
-        className={`nav-flyout ${isOpen ? "nav-flyout--visible" : ""}`}
+        className={`absolute top-[calc(100%+12px)] left-1/2 z-[1200] bg-[#070d1e] border border-slate-700/80 rounded-2xl shadow-[0_24px_50px_rgba(0,0,0,0.85)] transition-all duration-150 ${
+          isOpen
+            ? "opacity-100 pointer-events-auto -translate-x-1/3 translate-y-0 scale-100"
+            : "opacity-0 pointer-events-none -translate-x-1/2 translate-y-2 scale-95"
+        }`}
         role="region"
         aria-label={`${label} submenu`}
       >
-        <div className="nav-flyout__inner">{children}</div>
+        <div className="p-5 font-primary bg-[#070d1e] rounded-2xl">{children}</div>
       </div>
     </div>
   );
 }
 
-// ── Mobile Accordion ──────────────────────────────────────────
-function MobileAccordionItem({ label, links, isOpen, onToggle, onCloseMenu }) {
+function MobileAccordionItem({ label, to, links, isOpen, onToggle, onCloseMenu }) {
   const contentRef = useRef(null);
 
   return (
-    <div className={`mobile-accordion-item ${isOpen ? "mobile-accordion-item--open" : ""}`}>
-      <button
-        type="button"
-        className="mobile-accordion-trigger"
-        onClick={onToggle}
-        aria-expanded={isOpen}
-      >
-        <span>{label}</span>
-        <FiChevronDown
-          className={`mobile-accordion-icon ${
-            isOpen ? "mobile-accordion-icon--rotated" : ""
-          }`}
-        />
-      </button>
+    <div className="rounded-xl overflow-hidden mb-1 bg-[#070d1e]/80 border border-slate-800">
+      <div className="flex items-center justify-between w-full">
+        <Link
+          to={to}
+          className="flex-1 px-4 py-2.5 font-primary text-xs font-bold tracking-wider uppercase text-white hover:text-[#ff6b00] no-underline"
+          onClick={onCloseMenu}
+        >
+          {label}
+        </Link>
+        <button
+          type="button"
+          className="p-2.5 text-[#ff6b00] hover:text-white"
+          onClick={onToggle}
+          aria-expanded={isOpen}
+        >
+          <FiChevronDown
+            className={`text-sm transition-transform duration-200 ${
+              isOpen ? "rotate-180" : ""
+            }`}
+          />
+        </button>
+      </div>
 
       <div
-        className="mobile-accordion-collapse"
+        className="transition-[max-height] duration-200 ease-in-out overflow-hidden"
         style={{
           maxHeight: isOpen
             ? `${contentRef.current ? contentRef.current.scrollHeight : 500}px`
             : "0px",
         }}
       >
-        <div className="mobile-accordion-content" ref={contentRef}>
+        <div className="flex flex-col gap-1 px-3 pb-3" ref={contentRef}>
           {links.map((link) => {
             const Icon = link.icon;
             return (
-              <a
+              <Link
                 key={link.title}
-                href={link.href}
-                className="mobile-sublink"
+                to={link.href}
+                className="flex items-center gap-2.5 p-2 rounded-lg bg-[#0a1128] border border-slate-800 hover:bg-[#ff6b00]/15 hover:border-[#ff6b00]/30 transition-all no-underline text-white"
                 onClick={onCloseMenu}
               >
-                <Icon className="mobile-sublink__icon" />
-                <div className="mobile-sublink__text">
-                  <span className="mobile-sublink__title">{link.title}</span>
+                <Icon className="text-[#ff6b00] text-sm shrink-0" />
+                <div className="flex flex-col min-w-0">
+                  <span className="text-[11.5px] font-bold text-white leading-tight truncate">
+                    {link.title}
+                  </span>
                   {link.description && (
-                    <span className="mobile-sublink__desc">
+                    <span className="text-[10px] text-slate-400 leading-tight mt-0.5 truncate">
                       {link.description}
                     </span>
                   )}
                 </div>
-              </a>
+              </Link>
             );
           })}
         </div>
@@ -241,9 +276,8 @@ function MobileAccordionItem({ label, links, isOpen, onToggle, onCloseMenu }) {
   );
 }
 
-// ── Main Navbar ───────────────────────────────────────────────
 export default function Navbar() {
-  const [activeItem, setActiveItem] = useState("HOME");
+  const location = useLocation();
   const [activeMenu, setActiveMenu] = useState(null);
   const [openMobileSection, setOpenMobileSection] = useState(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -258,14 +292,9 @@ export default function Navbar() {
   const handleClose = () => {
     timeoutRef.current = setTimeout(() => {
       setActiveMenu(null);
-    }, 150);
+    }, 120);
   };
 
-  const handleToggle = (name) => {
-    setActiveMenu((prev) => (prev === name ? null : name));
-  };
-
-  // Close on Escape or click outside
   useEffect(() => {
     const handleOutsideClick = (e) => {
       if (navRef.current && !navRef.current.contains(e.target)) {
@@ -285,10 +314,9 @@ export default function Navbar() {
     };
   }, []);
 
-  // Close mobile menu on resize to desktop
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth > 992) {
+      if (window.innerWidth > 1024) {
         setMobileMenuOpen(false);
       }
     };
@@ -296,7 +324,6 @@ export default function Navbar() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Prevent background scroll when mobile menu is open
   useEffect(() => {
     if (mobileMenuOpen) {
       document.body.style.overflow = "hidden";
@@ -308,50 +335,61 @@ export default function Navbar() {
     };
   }, [mobileMenuOpen]);
 
+  useEffect(() => {
+    setActiveMenu(null);
+    setMobileMenuOpen(false);
+  }, [location.pathname]);
+
   const mobileSections = [
-    { id: "about", name: "ABOUT", list: companyLinks },
-    { id: "services", name: "SERVICES", list: productLinks },
+    { id: "about", name: "ABOUT", to: "/about", list: companyLinks },
+    { id: "services", name: "SERVICES", to: "/services", list: productLinks },
   ];
 
-  return (
-    <header className="navbar-wrapper">
-      <div className="navbar-container" ref={navRef}>
-        <nav className="navbar-pill">
-          {/* Brand / Logo */}
-          <a href="#home" className="navbar-brand">
-            <span className="navbar-brand-text">TRION</span>
-          </a>
+  const currentPath = location.pathname;
 
-          {/* Center Navigation Capsule */}
-          <div className="navbar-nav-capsule">
-            {/* 1. HOME */}
-            <a
-              href="#home"
-              className={`nav-capsule-item ${activeItem === "HOME" ? "active" : ""}`}
-              onClick={() => {
-                setActiveItem("HOME");
-                setActiveMenu(null);
-              }}
+  return (
+    <header className="fixed top-3 sm:top-4 left-0 right-0 z-[1000] w-full px-4 sm:px-8 pointer-events-none flex justify-center font-primary">
+      <div className="w-full max-w-[1100px] mx-auto pointer-events-auto relative" ref={navRef}>
+        <nav className="relative flex items-center justify-between h-[48px] sm:h-[50px] px-2.5 sm:px-3 bg-[#0a1128]/85 backdrop-blur-md backdrop-saturate-150 border border-white/15 rounded-full shadow-[0_8px_32px_0_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.12)] transition-all duration-200">
+          {/* Brand Logo with generous left & right breathing room */}
+          <Link
+            to="/"
+            className="flex items-center select-none cursor-pointer pl-4 sm:pl-5 pr-5 sm:pr-6 py-1 no-underline group"
+          >
+            <span className="font-primary text-sm sm:text-[15px] font-black text-[#ff6b00] tracking-[0.22em] uppercase transition-transform duration-150 group-hover:scale-105">
+              TRION
+            </span>
+          </Link>
+
+          {/* Desktop Capsule Navigation */}
+          <div className="hidden lg:flex items-center gap-0.5 p-0.5 bg-[#070d1e]/80 backdrop-blur-sm border border-white/10 rounded-full">
+            <Link
+              to="/"
+              className={`inline-flex items-center justify-center px-3 py-1 font-primary text-[10.5px] font-bold tracking-[0.08em] uppercase rounded-full whitespace-nowrap transition-all duration-150 no-underline select-none ${
+                currentPath === "/"
+                  ? "bg-[#ff6b00] text-white shadow-sm shadow-orange-500/40 font-extrabold"
+                  : "text-slate-300 hover:text-white hover:bg-white/10"
+              }`}
+              onClick={() => setActiveMenu(null)}
             >
               HOME
-            </a>
+            </Link>
 
-            {/* 2. ABOUT (Dropdown) */}
             <CapsuleDropdown
               label="ABOUT"
+              to="/about"
               isOpen={activeMenu === "about"}
-              isActive={activeItem === "ABOUT"}
-              onToggle={() => {
-                setActiveItem("ABOUT");
-                handleToggle("about");
-              }}
+              isActive={currentPath.startsWith("/about")}
+              onClick={() => setActiveMenu(null)}
               onOpen={() => handleOpen("about")}
               onClose={handleClose}
             >
-              <div className="company-panel">
-                <div className="company-panel__left">
-                  <span className="panel-section-title">Overview</span>
-                  <div className="company-panel__top-grid">
+              <div className="flex gap-7 min-w-[720px] max-w-[760px] bg-[#070d1e]">
+                <div className="flex-[1.3]">
+                  <span className="block text-[10px] font-mono font-bold tracking-[0.18em] uppercase text-[#ff6b00] mb-2.5">
+                    OVERVIEW
+                  </span>
+                  <div className="grid grid-cols-2 gap-3 mb-4">
                     {companyLinks.slice(0, 2).map((link) => (
                       <GridCard
                         key={link.title}
@@ -360,8 +398,10 @@ export default function Navbar() {
                       />
                     ))}
                   </div>
-                  <span className="panel-section-title">Legal & Security</span>
-                  <div className="company-panel__mid-grid">
+                  <span className="block text-[10px] font-mono font-bold tracking-[0.18em] uppercase text-[#ff6b00] mb-2">
+                    GOVERNANCE & SAFETY
+                  </span>
+                  <div className="grid grid-cols-2 gap-2">
                     {companyLinks.slice(2, 5).map((link) => (
                       <LargeItem
                         key={link.title}
@@ -371,9 +411,11 @@ export default function Navbar() {
                     ))}
                   </div>
                 </div>
-                <div className="company-panel__right">
-                  <span className="panel-section-title">Resources</span>
-                  <ul className="company-panel__list">
+                <div className="flex-[0.85] border-l border-slate-800 pl-6">
+                  <span className="block text-[10px] font-mono font-bold tracking-[0.18em] uppercase text-[#ff6b00] mb-2.5">
+                    ALLIANCES & INSIGHTS
+                  </span>
+                  <ul className="flex flex-col gap-1.5 p-0 m-0 list-none">
                     {companyLinks.slice(5).map((link) => (
                       <li key={link.title}>
                         <LargeItem
@@ -387,22 +429,21 @@ export default function Navbar() {
               </div>
             </CapsuleDropdown>
 
-            {/* 3. SERVICES (Dropdown) */}
             <CapsuleDropdown
               label="SERVICES"
+              to="/services"
               isOpen={activeMenu === "services"}
-              isActive={activeItem === "SERVICES"}
-              onToggle={() => {
-                setActiveItem("SERVICES");
-                handleToggle("services");
-              }}
+              isActive={currentPath.startsWith("/services")}
+              onClick={() => setActiveMenu(null)}
               onOpen={() => handleOpen("services")}
               onClose={handleClose}
             >
-              <div className="product-panel">
-                <div className="product-panel__main">
-                  <span className="panel-section-title">Core Services</span>
-                  <ul className="product-panel__grid">
+              <div className="flex gap-7 min-w-[720px] max-w-[760px] bg-[#070d1e]">
+                <div className="flex-[1.25]">
+                  <span className="block text-[10px] font-mono font-bold tracking-[0.18em] uppercase text-[#ff6b00] mb-2.5">
+                    CORE DISCIPLINES
+                  </span>
+                  <ul className="flex flex-col gap-2.5 p-0 m-0 list-none">
                     {productLinks.slice(0, 3).map((link) => (
                       <li key={link.title}>
                         <GridCard
@@ -413,9 +454,11 @@ export default function Navbar() {
                     ))}
                   </ul>
                 </div>
-                <div className="product-panel__sidebar">
-                  <span className="panel-section-title">Features & Tools</span>
-                  <ul className="product-panel__list">
+                <div className="flex-[0.9] border-l border-slate-800 pl-6">
+                  <span className="block text-[10px] font-mono font-bold tracking-[0.18em] uppercase text-[#ff6b00] mb-2.5">
+                    SPECIALIZED CAPABILITIES
+                  </span>
+                  <ul className="grid grid-cols-1 gap-1.5 p-0 m-0 list-none">
                     {productLinks.slice(3).map((link) => (
                       <li key={link.title}>
                         <SmallItem
@@ -429,84 +472,92 @@ export default function Navbar() {
               </div>
             </CapsuleDropdown>
 
-            {/* 4. PROJECTS */}
-            <a
-              href="#projects"
-              className={`nav-capsule-item ${activeItem === "PROJECTS" ? "active" : ""}`}
-              onClick={() => {
-                setActiveItem("PROJECTS");
-                setActiveMenu(null);
-              }}
+            <Link
+              to="/projects"
+              className={`inline-flex items-center justify-center px-3 py-1 font-primary text-[10.5px] font-bold tracking-[0.08em] uppercase rounded-full whitespace-nowrap transition-all duration-150 no-underline select-none ${
+                currentPath.startsWith("/projects")
+                  ? "bg-[#ff6b00] text-white shadow-sm shadow-orange-500/40 font-extrabold"
+                  : "text-slate-300 hover:text-white hover:bg-white/10"
+              }`}
+              onClick={() => setActiveMenu(null)}
             >
               PROJECTS
-            </a>
+            </Link>
 
-            {/* 5. CAPABILITIES */}
-            <a
-              href="#capabilities"
-              className={`nav-capsule-item ${activeItem === "CAPABILITIES" ? "active" : ""}`}
-              onClick={() => {
-                setActiveItem("CAPABILITIES");
-                setActiveMenu(null);
-              }}
+            <Link
+              to="/strategicAlliances"
+              className={`inline-flex items-center justify-center px-3 py-1 font-primary text-[10.5px] font-bold tracking-[0.08em] uppercase rounded-full whitespace-nowrap transition-all duration-150 no-underline select-none ${
+                currentPath.startsWith("/strategicAlliances")
+                  ? "bg-[#ff6b00] text-white shadow-sm shadow-orange-500/40 font-extrabold"
+                  : "text-slate-300 hover:text-white hover:bg-white/10"
+              }`}
+              onClick={() => setActiveMenu(null)}
             >
-              CAPABILITIES
-            </a>
+              STRATEGIC ALLIANCES
+            </Link>
 
-            {/* 6. CONTACT */}
-            <a
-              href="#contact"
-              className={`nav-capsule-item ${activeItem === "CONTACT" ? "active" : ""}`}
-              onClick={() => {
-                setActiveItem("CONTACT");
-                setActiveMenu(null);
-              }}
+            <Link
+              to="/contact"
+              className={`inline-flex items-center justify-center px-3 py-1 font-primary text-[10.5px] font-bold tracking-[0.08em] uppercase rounded-full whitespace-nowrap transition-all duration-150 no-underline select-none ${
+                currentPath.startsWith("/contact")
+                  ? "bg-[#ff6b00] text-white shadow-sm shadow-orange-500/40 font-extrabold"
+                  : "text-slate-300 hover:text-white hover:bg-white/10"
+              }`}
+              onClick={() => setActiveMenu(null)}
             >
               CONTACT
-            </a>
+            </Link>
           </div>
 
-          {/* Right Section: CTA & Mobile Toggle */}
-          <div className="navbar-actions">
-            <a href="#contact" className="navbar-cta-btn">
+          {/* Right Action CTA & Mobile Toggle — proportional, compact width with right margin */}
+          <div className="flex items-center gap-2 pr-1 sm:pr-2">
+            <Link
+              to="/contact"
+              className="hidden sm:inline-flex items-center justify-center px-4 py-1.5 bg-[#ff6b00] hover:bg-[#ff8533] text-white font-primary text-[10.5px] font-extrabold tracking-[0.06em] uppercase rounded-full whitespace-nowrap shadow-sm shadow-orange-500/40 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-150 no-underline select-none"
+            >
               GET IN TOUCH
-            </a>
+            </Link>
 
-            {/* Mobile Hamburger */}
             <button
               type="button"
-              className="navbar-mobile-toggle"
+              className="lg:hidden flex items-center justify-center w-8 h-8 rounded-full bg-white/10 border border-slate-700 text-white hover:bg-[#ff6b00]/20 hover:border-[#ff6b00] transition-colors"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle navigation menu"
               aria-expanded={mobileMenuOpen}
             >
-              {mobileMenuOpen ? <FiX size={20} /> : <FiMenu size={20} />}
+              {mobileMenuOpen ? <FiX size={16} /> : <FiMenu size={16} />}
             </button>
           </div>
         </nav>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Menu Drawer */}
       <div
-        className={`mobile-menu-drawer ${mobileMenuOpen ? "open" : ""}`}
+        className={`lg:hidden fixed top-[68px] left-3 right-3 max-h-[calc(100vh-84px)] overflow-y-auto bg-[#070d1e] border border-slate-700/90 rounded-2xl shadow-[0_24px_50px_rgba(0,0,0,0.85)] p-4 transition-all duration-200 ${
+          mobileMenuOpen
+            ? "opacity-100 pointer-events-auto translate-y-0 scale-100"
+            : "opacity-0 pointer-events-none -translate-y-2 scale-95"
+        }`}
         aria-hidden={!mobileMenuOpen}
       >
-        <div className="mobile-menu-links">
-          <a
-            href="#home"
-            className={`mobile-nav-link ${activeItem === "HOME" ? "active" : ""}`}
-            onClick={() => {
-              setActiveItem("HOME");
-              setMobileMenuOpen(false);
-            }}
+        <div className="flex flex-col gap-1">
+          <Link
+            to="/"
+            className={`flex items-center px-4 py-2.5 font-primary text-xs font-bold tracking-wider uppercase rounded-xl transition-colors no-underline ${
+              currentPath === "/"
+                ? "bg-[#ff6b00] text-white"
+                : "text-slate-200 hover:text-white hover:bg-white/10"
+            }`}
+            onClick={() => setMobileMenuOpen(false)}
           >
             HOME
-          </a>
+          </Link>
 
           {mobileSections.map((section) => (
             <MobileAccordionItem
               key={section.id}
               label={section.name}
+              to={section.to}
               links={section.list}
               isOpen={openMobileSection === section.id}
               onToggle={() =>
@@ -518,46 +569,49 @@ export default function Navbar() {
             />
           ))}
 
-          <a
-            href="#projects"
-            className={`mobile-nav-link ${activeItem === "PROJECTS" ? "active" : ""}`}
-            onClick={() => {
-              setActiveItem("PROJECTS");
-              setMobileMenuOpen(false);
-            }}
+          <Link
+            to="/projects"
+            className={`flex items-center px-4 py-2.5 font-primary text-xs font-bold tracking-wider uppercase rounded-xl transition-colors no-underline ${
+              currentPath.startsWith("/projects")
+                ? "bg-[#ff6b00] text-white"
+                : "text-slate-200 hover:text-white hover:bg-white/10"
+            }`}
+            onClick={() => setMobileMenuOpen(false)}
           >
             PROJECTS
-          </a>
+          </Link>
 
-          <a
-            href="#capabilities"
-            className={`mobile-nav-link ${activeItem === "CAPABILITIES" ? "active" : ""}`}
-            onClick={() => {
-              setActiveItem("CAPABILITIES");
-              setMobileMenuOpen(false);
-            }}
+          <Link
+            to="/strategicAlliances"
+            className={`flex items-center px-4 py-2.5 font-primary text-xs font-bold tracking-wider uppercase rounded-xl transition-colors no-underline ${
+              currentPath.startsWith("/strategicAlliances")
+                ? "bg-[#ff6b00] text-white"
+                : "text-slate-200 hover:text-white hover:bg-white/10"
+            }`}
+            onClick={() => setMobileMenuOpen(false)}
           >
-            CAPABILITIES
-          </a>
+            STRATEGIC ALLIANCES
+          </Link>
 
-          <a
-            href="#contact"
-            className={`mobile-nav-link ${activeItem === "CONTACT" ? "active" : ""}`}
-            onClick={() => {
-              setActiveItem("CONTACT");
-              setMobileMenuOpen(false);
-            }}
+          <Link
+            to="/contact"
+            className={`flex items-center px-4 py-2.5 font-primary text-xs font-bold tracking-wider uppercase rounded-xl transition-colors no-underline ${
+              currentPath.startsWith("/contact")
+                ? "bg-[#ff6b00] text-white"
+                : "text-slate-200 hover:text-white hover:bg-white/10"
+            }`}
+            onClick={() => setMobileMenuOpen(false)}
           >
             CONTACT
-          </a>
+          </Link>
 
-          <a
-            href="#contact"
-            className="mobile-cta-btn"
+          <Link
+            to="/contact"
+            className="mt-2 flex items-center justify-center p-3 bg-[#ff6b00] text-white font-primary text-xs font-extrabold tracking-wider uppercase rounded-xl shadow-md shadow-orange-500/40 no-underline"
             onClick={() => setMobileMenuOpen(false)}
           >
             GET IN TOUCH
-          </a>
+          </Link>
         </div>
       </div>
     </header>

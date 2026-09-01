@@ -1,4 +1,6 @@
-@import 'bootstrap/dist/css/bootstrap.min.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* ── Primary Font: Plus Jakarta Sans ── */
 @font-face {
@@ -82,13 +84,73 @@
   font-display: swap;
 }
 
-/* ── Global Reset ── */
+/* ── Global Reset & Hidden Scrollbar ── */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  background-color: #fff;
+html, body {
+  background-color: #0a1128;
+  color: #ffffff;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
+
+/* ── Hide scrollbar for Chrome, Safari, Opera, Edge, Firefox ── */
+.no-scrollbar::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  display: none !important;
+  width: 0px !important;
+  height: 0px !important;
+  background: transparent !important;
+}
+
+.no-scrollbar,
+* {
+  -ms-overflow-style: none !important; /* IE and Edge */
+  scrollbar-width: none !important; /* Firefox */
+}
+
+/* ── Infinite Micro-Animations for Icons ── */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulseSubtle {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+.animate-float {
+  animation: floatSlow 3s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spinSlow 9s linear infinite;
+}
+
+.animate-pulse-subtle {
+  animation: pulseSubtle 2.5s ease-in-out infinite;
+}
+
+

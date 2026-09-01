@@ -14,22 +14,19 @@ const svgNS = "http://www.w3.org/2000/svg";
 
 const SLIDES = [
   {
-    video: "./assets/videos/vid-1.mp4",
+    video: "/assets/videos/vid-1.mp4",
     h2: "Building What Moves the Future",
     h3: "From construction and infrastructure to mining and excavation, TRION delivers reliable civil engineering solutions built for performance, precision, and lasting impact.",
-    
   },
   {
-    video: "./assets/videos/vid-2.mp4",
+    video: "/assets/videos/vid-2.mp4",
     h2: "Strength. Precision. Execution.",
     h3: "With expertise across building works, infrastructure development, mining, crushing, and excavation, we turn complex projects into efficient, well-executed outcomes.",
-    
   },
   {
-    video: "./assets/videos/vid-3.mp4",
+    video: "/assets/videos/vid-3.mp4",
     h2: "Built on Expertise. Driven by Results.",
     h3: "TRION combines skilled teams, robust execution, and a commitment to quality to deliver projects safely, efficiently, and to the highest standards.",
-    
   },
 ];
 

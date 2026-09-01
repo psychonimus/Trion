@@ -1,16 +1,17 @@
-﻿/* ============================================================
-   3 CIRCLES LUXURY PILL NAVBAR & RICH DROPDOWN MEGA-MENUS
+/* ============================================================
+   TRION LUXURY PILL NAVBAR — DARK BLUE, ORANGE & WHITE THEME
    ============================================================ */
 
-/* ── 1. Tokens ── */
+/* ── 1. Theme Tokens ── */
 :root {
-  --nav-font: 'Inter', system-ui, -apple-system, sans-serif;
-  --nav-brand-gold: #cca038;
-  --nav-text-dark: #111111;
-  --nav-text-muted: #484c54;
-  --nav-item-active-bg: #ffffff;
-  --nav-capsule-bg: rgba(234, 237, 242, 0.65);
-  --nav-flyout-bg: rgba(255, 255, 255, 0.95);
+  --nav-font: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
+  --nav-brand-orange: #ff6b00;
+  --nav-brand-orange-hover: #ff8533;
+  --nav-bg-dark-blue: rgba(10, 17, 40, 0.9);
+  --nav-bg-card-blue: rgba(14, 27, 56, 0.98);
+  --nav-text-white: #ffffff;
+  --nav-text-muted: rgba(255, 255, 255, 0.85);
+  --nav-border-glow: rgba(255, 255, 255, 0.16);
 }
 
 /* ── 2. Global Resets inside Navbar ── */
@@ -26,7 +27,7 @@
 }
 
 .navbar-wrapper a {
-  text-decoration: none;
+  text-decoration: none !important;
   color: inherit;
 }
 
@@ -69,65 +70,68 @@
   justify-content: space-between;
   height: 66px;
   padding: 6px 8px 6px 32px;
-  background: rgba(255, 255, 255, 0.82);
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(9px);
-  border: 0.5px solid rgba(255, 255, 255, 0.127);
+  background: var(--nav-bg-dark-blue);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--nav-border-glow);
   border-radius: 9999px;
   box-shadow: 
-    0 12px 36px -4px rgba(0, 0, 0, 0.12),
-    0 4px 12px -2px rgba(0, 0, 0, 0.04),
-    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    0 16px 40px -4px rgba(0, 0, 0, 0.45),
+    0 4px 12px -2px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
   transition: all 0.3s ease;
 }
 
-/* ── 5. Brand Logo (3 CIRCLES) ── */
+/* ── 5. Brand Logo (TRION) ── */
 .navbar-brand {
   display: flex;
   align-items: center;
   user-select: none;
   cursor: pointer;
   padding-right: 12px;
+  text-decoration: none !important;
 }
 
 .navbar-brand-text {
   font-family: var(--nav-font);
-  font-size: 0.96rem;
-  font-weight: 800;
-  color: var(--nav-brand-gold);
-  letter-spacing: 0.16em;
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: var(--nav-brand-orange) !important;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 .navbar-brand:hover .navbar-brand-text {
-  opacity: 0.85;
+  opacity: 0.9;
+  transform: scale(1.02);
 }
 
 /* ── 6. Center Navigation Capsule ── */
 .navbar-nav-capsule {
   display: flex;
   align-items: center;
-  gap: 20px;
-  padding: 4px;
-  background: rgb(255 255 255 / 31%);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  gap: 8px;
+  padding: 4px 6px;
+  background: rgba(14, 27, 56, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 9999px;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.04);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .nav-capsule-item {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 4px;
+  gap: 6px;
   padding: 8px 18px;
   font-family: var(--nav-font);
-  font-size: 0.74rem;
+  font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--nav-text-muted);
+  color: rgba(255, 255, 255, 0.88) !important;
+  text-decoration: none !important;
   border-radius: 9999px;
   white-space: nowrap;
   transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
@@ -135,19 +139,18 @@
 }
 
 .nav-capsule-item:hover {
-  color: var(--nav-text-dark);
-  /* background: rgba(255, 255, 255, 0.45); */
-  
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.12);
 }
 
 /* Active Pill Badge */
 .nav-capsule-item.active {
-  background: var(--nav-item-active-bg);
-  color: #0e1013;
+  background: var(--nav-brand-orange) !important;
+  color: #ffffff !important;
   font-weight: 800;
   box-shadow: 
-    0 2px 8px rgba(0, 0, 0, 0.08),
-    0 1px 2px rgba(0, 0, 0, 0.04);
+    0 4px 14px rgba(255, 107, 0, 0.4),
+    0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 /* ── 7. Capsule Dropdown Trigger & Chevron ── */
@@ -163,31 +166,37 @@
 
 .nav-capsule-chevron {
   font-size: 0.75rem;
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  color: rgba(255, 255, 255, 0.85) !important;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s ease;
+}
+
+.nav-capsule-item.active .nav-capsule-chevron {
+  color: #ffffff !important;
 }
 
 .nav-capsule-chevron.rotated {
   transform: rotate(180deg);
+  color: var(--nav-brand-orange) !important;
 }
 
 /* ── 8. Flyout Dropdown Menu (Mega Panels) ── */
 .nav-flyout {
   position: absolute;
-  top: calc(100% + 25px);
+  top: calc(100% + 22px);
   left: 50%;
   transform: translateX(-50%) translateY(8px) scale(0.98);
   opacity: 0;
   pointer-events: none;
   z-index: 1100;
-  background: var(--nav-flyout-bg);
-  backdrop-filter: blur(28px) saturate(180%);
-  -webkit-backdrop-filter: blur(28px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.9);
-  border-radius: 20px;
+  background: var(--nav-bg-card-blue);
+  backdrop-filter: blur(32px) saturate(190%);
+  -webkit-backdrop-filter: blur(32px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 24px;
   box-shadow: 
-    0 24px 48px -8px rgba(0, 0, 0, 0.16),
-    0 8px 16px -4px rgba(0, 0, 0, 0.06),
-    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+    0 28px 64px -8px rgba(0, 0, 0, 0.65),
+    0 12px 24px -4px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
   transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1),
               transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -199,17 +208,17 @@
 }
 
 .nav-flyout__inner {
-  padding: 24px;
+  padding: 24px 28px;
   font-family: var(--nav-font);
 }
 
 .panel-section-title {
   display: block;
-  font-size: 0.68rem;
+  font-size: 0.7rem;
   font-weight: 800;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #8c93a0;
+  color: var(--nav-brand-orange) !important;
   margin-bottom: 12px;
 }
 
@@ -217,7 +226,7 @@
 .product-panel {
   display: flex;
   gap: 28px;
-  min-width: 660px;
+  min-width: 680px;
 }
 
 .product-panel__main {
@@ -232,7 +241,7 @@
 
 .product-panel__sidebar {
   flex: 0.9;
-  border-left: 1px solid rgba(15, 23, 42, 0.08);
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
   padding-left: 24px;
 }
 
@@ -246,7 +255,7 @@
 .company-panel {
   display: flex;
   gap: 28px;
-  min-width: 680px;
+  min-width: 700px;
 }
 
 .company-panel__left {
@@ -268,7 +277,7 @@
 
 .company-panel__right {
   flex: 0.8;
-  border-left: 1px solid rgba(15, 23, 42, 0.08);
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
   padding-left: 24px;
 }
 
@@ -282,18 +291,19 @@
 .nav-grid-card {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
-  padding: 12px 14px;
-  background: rgba(246, 248, 251, 0.7);
-  border: 1px solid rgba(0, 0, 0, 0.04);
+  gap: 14px;
+  padding: 12px 16px;
+  background: rgba(10, 17, 40, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 14px;
-  transition: all 0.2s ease;
+  transition: all 0.22s ease;
+  text-decoration: none !important;
 }
 
 .nav-grid-card:hover {
-  background: #ffffff;
-  border-color: rgba(204, 160, 56, 0.3);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  background: rgba(255, 107, 0, 0.15);
+  border-color: rgba(255, 107, 0, 0.5);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
   transform: translateY(-1px);
 }
 
@@ -301,13 +311,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
-  background: rgba(204, 160, 56, 0.12);
-  color: #b58927;
-  border-radius: 9px;
+  width: 34px;
+  height: 34px;
+  background: rgba(255, 107, 0, 0.15);
+  color: var(--nav-brand-orange) !important;
+  border: 1px solid rgba(255, 107, 0, 0.35);
+  border-radius: 10px;
   flex-shrink: 0;
-  font-size: 1rem;
+  font-size: 1.05rem;
 }
 
 .nav-grid-card__body {
@@ -316,15 +327,16 @@
 }
 
 .nav-grid-card__title {
-  font-size: 0.82rem;
+  font-size: 0.84rem;
   font-weight: 700;
-  color: #111827;
+  color: #ffffff !important;
   margin-bottom: 2px;
+  letter-spacing: -0.01em;
 }
 
 .nav-grid-card__desc {
   font-size: 0.72rem;
-  color: #6b7280;
+  color: rgba(255, 255, 255, 0.7) !important;
   line-height: 1.35;
   margin: 0;
 }
@@ -333,13 +345,14 @@
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  padding: 8px 10px;
+  padding: 8px 12px;
   border-radius: 10px;
   transition: all 0.18s ease;
+  text-decoration: none !important;
 }
 
 .nav-large-item:hover {
-  background: rgba(245, 247, 250, 0.9);
+  background: rgba(255, 107, 0, 0.12);
 }
 
 .nav-large-item__icon-wrap {
@@ -348,7 +361,7 @@
   justify-content: center;
   width: 26px;
   height: 26px;
-  color: #b58927;
+  color: var(--nav-brand-orange) !important;
   flex-shrink: 0;
 }
 
@@ -358,14 +371,14 @@
 }
 
 .nav-large-item__title {
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   font-weight: 600;
-  color: #1f2937;
+  color: #ffffff !important;
 }
 
 .nav-large-item__desc {
   font-size: 0.68rem;
-  color: #6b7280;
+  color: rgba(255, 255, 255, 0.65) !important;
   line-height: 1.3;
   margin: 0;
 }
@@ -376,27 +389,28 @@
   gap: 10px;
   padding: 8px 12px;
   border-radius: 8px;
-  color: #374151;
+  color: rgba(255, 255, 255, 0.85) !important;
   transition: all 0.18s ease;
+  text-decoration: none !important;
 }
 
 .nav-small-item:hover {
-  background: rgba(245, 247, 250, 0.95);
-  color: #111827;
+  background: rgba(255, 107, 0, 0.14);
+  color: #ffffff !important;
 }
 
 .nav-small-item__icon {
-  color: #b58927;
-  font-size: 0.9rem;
+  color: var(--nav-brand-orange) !important;
+  font-size: 0.95rem;
   flex-shrink: 0;
 }
 
 .nav-small-item__title {
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   font-weight: 600;
 }
 
-/* ── 12. Right CTA Button ── */
+/* ── 12. Right CTA Button (GET IN TOUCH) ── */
 .navbar-actions {
   display: flex;
   align-items: center;
@@ -408,24 +422,25 @@
   align-items: center;
   justify-content: center;
   padding: 11px 24px;
-  background: #0f1115;
+  background: var(--nav-brand-orange) !important;
   color: #ffffff !important;
   font-family: var(--nav-font);
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
+  text-decoration: none !important;
   border-radius: 9999px;
   white-space: nowrap;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 4px 16px rgba(255, 107, 0, 0.4);
   transition: all 0.22s ease;
   user-select: none;
 }
 
 .navbar-cta-btn:hover {
-  background: #252830;
+  background: var(--nav-brand-orange-hover) !important;
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 6px 22px rgba(255, 107, 0, 0.55);
 }
 
 .navbar-cta-btn:active {
@@ -439,16 +454,17 @@
   justify-content: center;
   width: 40px;
   height: 40px;
-  background: transparent;
-  border: none;
-  color: #111111;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff !important;
   cursor: pointer;
   border-radius: 50%;
-  transition: background 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .navbar-mobile-toggle:hover {
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(255, 107, 0, 0.2);
+  border-color: var(--nav-brand-orange);
 }
 
 .mobile-menu-drawer {
@@ -458,22 +474,22 @@
 /* ── 14. Responsive Breakpoints ── */
 @media (max-width: 1080px) {
   .navbar-nav-capsule {
-    gap: 0;
+    gap: 4px;
   }
   
   .nav-capsule-item {
     padding: 7px 14px;
-    font-size: 0.7rem;
+    font-size: 0.72rem;
   }
   
   .navbar-cta-btn {
     padding: 10px 18px;
-    font-size: 0.7rem;
+    font-size: 0.72rem;
   }
 
   .product-panel,
   .company-panel {
-    min-width: 560px;
+    min-width: 580px;
   }
 }
 
@@ -485,7 +501,7 @@
 
   .navbar-pill {
     padding: 6px 10px 6px 20px;
-    height: 52px;
+    height: 54px;
   }
 
   .navbar-nav-capsule {
@@ -504,17 +520,17 @@
   .mobile-menu-drawer {
     display: block;
     position: fixed;
-    top: 72px;
+    top: 74px;
     left: 14px;
     right: 14px;
     max-height: calc(100vh - 90px);
     overflow-y: auto;
-    background: rgba(255, 255, 255, 0.96);
-    backdrop-filter: blur(28px);
-    -webkit-backdrop-filter: blur(28px);
-    border: 1px solid rgba(255, 255, 255, 0.85);
+    background: rgba(14, 27, 56, 0.98);
+    backdrop-filter: blur(32px);
+    -webkit-backdrop-filter: blur(32px);
+    border: 1px solid rgba(255, 255, 255, 0.16);
     border-radius: 24px;
-    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7);
     padding: 20px;
     pointer-events: none;
     opacity: 0;
@@ -543,15 +559,16 @@
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: #42464d;
+    color: rgba(255, 255, 255, 0.85) !important;
+    text-decoration: none !important;
     border-radius: 12px;
     transition: all 0.2s ease;
   }
 
   .mobile-nav-link:hover,
   .mobile-nav-link.active {
-    background: #0f1115;
-    color: #ffffff;
+    background: var(--nav-brand-orange) !important;
+    color: #ffffff !important;
   }
 
   /* Mobile Accordion */
@@ -571,17 +588,19 @@
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: #42464d;
+    color: rgba(255, 255, 255, 0.85) !important;
     border-radius: 12px;
     transition: background 0.2s ease;
   }
 
   .mobile-accordion-trigger:hover {
-    background: rgba(0, 0, 0, 0.04);
+    background: rgba(255, 255, 255, 0.06);
+    color: #ffffff !important;
   }
 
   .mobile-accordion-icon {
     font-size: 1.1rem;
+    color: var(--nav-brand-orange) !important;
     transition: transform 0.2s ease;
   }
 
@@ -605,35 +624,44 @@
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 8px 12px;
+    padding: 10px 14px;
     border-radius: 10px;
-    background: rgba(246, 248, 251, 0.7);
+    background: rgba(10, 17, 40, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    text-decoration: none !important;
+  }
+
+  .mobile-sublink:hover {
+    background: rgba(255, 107, 0, 0.15);
+    border-color: rgba(255, 107, 0, 0.3);
   }
 
   .mobile-sublink__icon {
-    color: #cca038;
+    color: var(--nav-brand-orange) !important;
     font-size: 1rem;
   }
 
   .mobile-sublink__title {
-    font-size: 0.8rem;
+    font-size: 0.82rem;
     font-weight: 600;
-    color: #111827;
+    color: #ffffff !important;
   }
 
   .mobile-cta-btn {
-    margin-top: 12px;
+    margin-top: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 14px 20px;
-    background: #0f1115;
-    color: #ffffff;
+    background: var(--nav-brand-orange) !important;
+    color: #ffffff !important;
     font-family: var(--nav-font);
-    font-size: 0.82rem;
+    font-size: 0.84rem;
     font-weight: 800;
     letter-spacing: 0.08em;
     text-transform: uppercase;
+    text-decoration: none !important;
     border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(255, 107, 0, 0.4);
   }
 }
