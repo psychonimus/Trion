@@ -120,7 +120,6 @@ export default function Footer() {
               ))}
             </div>
           </div>
-
           <div className="lg:col-span-3">
             <h4 className="text-white text-base font-bold mb-4 font-primary flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-[#ff6b00]" />
@@ -142,7 +141,6 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-
           <div className="lg:col-span-2">
             <h4 className="text-white text-base font-bold mb-4 font-primary flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-[#ff6b00]" />
@@ -164,8 +162,6 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-
-          {/* Contact Col */}
           <div className="lg:col-span-3">
             <h4 className="text-white text-base font-bold mb-4 font-primary flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-[#ff6b00]" />
@@ -198,7 +194,6 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-
             <div className="mt-4 pt-4 border-t border-white/10">
               <Link
                 to="/contact"
@@ -210,21 +205,17 @@ export default function Footer() {
             </div>
           </div>
         </div>
-
         <hr className="border-t border-slate-700/60 my-6" />
       </div>
-
-      <div className="lg:flex hidden h-[30rem] -mt-52 -mb-28 relative z-30 select-none">
-        <TextHoverEffect text="Trion" className="z-50" />
+      <div className="lg:flex hidden h-[30rem] -mt-52 -mb-28 relative z-50 select-none">
+        <TextHoverEffect text="Trion" className="w-full h-full" />
       </div>
-
       <div className="flex flex-col md:flex-row justify-center items-center text-xs text-slate-400 py-6 border-t border-white/5 font-sans relative z-10">
         <p className="text-center m-0">
           &copy; {new Date().getFullYear()} Trion Infrastructure Projects. All
           rights reserved.
         </p>
       </div>
-
       <FooterBackgroundGradient />
     </footer>
   );
