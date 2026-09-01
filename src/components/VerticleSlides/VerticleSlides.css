@@ -5,23 +5,14 @@
 }
 
 .vb-stage {
-  height: 70svh;
-  height: 70vh;
-  min-height: 460px;
-  max-height: 580px;
+  height: 100vh;
+  height: 100dvh;
+  min-height: 100vh;
+  min-height: 100dvh;
   position: relative;
   width: 100%;
   overflow: hidden;
   background-color: #000435;
-}
-
-@media (min-width: 768px) {
-  .vb-stage {
-    height: 100vh;
-    height: 100dvh;
-    min-height: 580px;
-    max-height: none;
-  }
 }
 
 .vb-layers {
