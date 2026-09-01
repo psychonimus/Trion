@@ -1,15 +1,19 @@
 import React, { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { HiArrowRight } from "react-icons/hi2";
 import { IoPlay, IoClose } from "react-icons/io5";
-import agencyImg from "/assets/images/about-img.png";
+import agencyImg from "/assets/images/about-img.webp";
 
-// ── Rolling Digit Subcomponent for smooth vertical number reels ──
 function RollingDigit({ digit, delay = 0, isTriggered }) {
   const digitNum = parseInt(digit, 10);
   const isNumber = !isNaN(digitNum);
 
   if (!isNumber) {
-    return <span className="text-3xl sm:text-4xl font-extrabold text-[#ff6b00]">{digit}</span>;
+    return (
+      <span className="text-3xl sm:text-4xl font-extrabold text-[#ff6b00]">
+        {digit}
+      </span>
+    );
   }
 
   const repeatCount = 2;
@@ -50,8 +54,13 @@ function RollingDigit({ digit, delay = 0, isTriggered }) {
   );
 }
 
-// ── Rolling Stat Counter ──
-function RollingStatItem({ value, label, suffix = "", isTriggered, itemDelay = 0 }) {
+function RollingStatItem({
+  value,
+  label,
+  suffix = "",
+  isTriggered,
+  itemDelay = 0,
+}) {
   const digits = String(value).split("");
 
   return (
@@ -95,7 +104,7 @@ export default function OurAgency() {
       {
         threshold: 0.2,
         rootMargin: "0px 0px -50px 0px",
-      }
+      },
     );
 
     if (sectionRef.current) {
@@ -141,15 +150,14 @@ export default function OurAgency() {
       id="agency"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        {/* Main 2-Column Content Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          {/* Left Column — Text Info */}
           <div
             className={`lg:col-span-6 flex flex-col justify-center transition-all duration-700 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-8"
             }`}
           >
-            {/* Tag / Eyebrow */}
             <div className="flex items-center gap-2 mb-3">
               <span className="w-5 h-[2px] bg-[#ff6b00]" />
               <span className="font-mono text-xs text-[#ff6b00] tracking-[0.2em] uppercase font-bold">
@@ -157,36 +165,35 @@ export default function OurAgency() {
               </span>
             </div>
 
-            {/* Main Heading */}
             <h2 className="font-primary font-black text-3xl sm:text-4xl lg:text-5xl text-slate-900 tracking-tight leading-[1.08] mb-6">
               About Us
             </h2>
 
-            {/* Description */}
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal max-w-xl mb-8">
               With 25 years of experience in the field, our team is dedicated to
-              designing sustainable and innovative spaces. We combine functionality
-              with engineering precision to create structures that enrich lives and endure for generations.
+              designing sustainable and innovative spaces. We combine
+              functionality with engineering precision to create structures that
+              enrich lives and endure for generations.
             </p>
 
-            {/* CTA Button */}
             <div>
-              <a
-                href="#about"
+              <Link
+                to="/about"
                 className="inline-flex items-center gap-4 pl-6 pr-2 py-2 bg-[#ff6b00] hover:bg-[#ff8533] text-white rounded-full font-primary text-sm font-bold tracking-wider uppercase shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50 hover:-translate-y-0.5 transition-all no-underline w-fit group"
               >
                 <span>Explore more about us</span>
                 <span className="w-9 h-9 rounded-full bg-white text-[#ff6b00] flex items-center justify-center group-hover:translate-x-1 transition-transform">
                   <HiArrowRight className="text-lg" />
                 </span>
-              </a>
+              </Link>
             </div>
           </div>
 
-          {/* Right Column — Architecture Showcase with Circular Play Badge */}
           <div
             className={`lg:col-span-6 relative transition-all duration-700 delay-150 ${
-              isVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-8 scale-95"
+              isVisible
+                ? "opacity-100 translate-y-0 scale-100"
+                : "opacity-0 translate-y-8 scale-95"
             }`}
           >
             <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-slate-100 aspect-[4/3.2] group">
@@ -197,17 +204,13 @@ export default function OurAgency() {
                 loading="lazy"
               />
 
-              {/* Subtle gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
-
-              {/* Interactive Circular Play Badge */}
               <button
                 type="button"
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 sm:w-32 sm:h-32 rounded-full bg-[#0a1128]/70 backdrop-blur-md border border-white/25 flex items-center justify-center cursor-pointer shadow-2xl hover:scale-110 transition-transform p-0"
                 onClick={() => setIsVideoModalOpen(true)}
                 aria-label="Play presentation video"
               >
-                {/* Rotating Text SVG */}
                 <svg
                   className="absolute inset-0 w-full h-full animate-[spin_16s_linear_infinite] hover:animate-[spin_8s_linear_infinite]"
                   viewBox="0 0 160 160"
@@ -231,7 +234,6 @@ export default function OurAgency() {
                   </text>
                 </svg>
 
-                {/* Center Play Button Circle */}
                 <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white text-[#ff6b00] flex items-center justify-center shadow-lg relative z-10 transition-transform hover:scale-105">
                   <IoPlay className="text-xl ml-1 text-[#ff6b00]" />
                 </div>
@@ -240,13 +242,17 @@ export default function OurAgency() {
           </div>
         </div>
 
-        {/* Floating Glassmorphic Stats Banner */}
         <div
           className={`relative z-10 w-full max-w-4xl mx-auto mt-10 lg:-mt-14 transition-all duration-700 delay-300 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <div className="bg-[#0a1128]/95 backdrop-blur-2xl border border-white/15 rounded-3xl p-6 sm:p-8 shadow-[0_24px_60px_rgba(10,17,40,0.4)]">
+          <div
+            className="   bg-[#0a1128]/30
+  backdrop-blur-2xl
+  border border-white/10
+  shadow-2xl  rounded-3xl p-6 sm:p-8 "
+          >
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 items-start">
               {stats.map((stat, idx) => (
                 <RollingStatItem
@@ -263,7 +269,6 @@ export default function OurAgency() {
         </div>
       </div>
 
-      {/* Video Modal Popup */}
       {isVideoModalOpen && (
         <div
           className="fixed inset-0 bg-[#0a1128]/90 backdrop-blur-xl z-[99999] flex items-center justify-center p-4 sm:p-6 animate-fadeIn"

@@ -1,12 +1,7 @@
-import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import {
-  HiArrowRight,
-  HiPhone,
-  HiEnvelope,
-  HiOutlineSparkles,
-} from "react-icons/hi2";
-import ctaBg from "../../assets/cta-bg.jpg";
+import { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
+import { HiArrowRight } from "react-icons/hi2";
 import "./CtaSection.css";
 
 export default function CtaSection() {
@@ -22,14 +17,11 @@ export default function CtaSection() {
           hasAnimatedIn.current = true;
 
           const ctx = gsap.context(() => {
-            // Background reveal with subtle zoom ease
             gsap.fromTo(
               bgRef.current,
               { scale: 1.1, opacity: 0 },
               { scale: 1, opacity: 1, duration: 1.4, ease: "power2.out" },
             );
-
-            // Staggered entrance of text elements, buttons & badges
             const animElements =
               contentRef.current.querySelectorAll(".cta-anim-target");
             gsap.fromTo(
@@ -66,7 +58,6 @@ export default function CtaSection() {
   return (
     <section className="cta-wrapper" ref={sectionRef} id="cta">
       <div className="cta-card">
-        {/* Background Image & Ambient Lighting */}
         <div
           className="cta-bg-layer"
           ref={bgRef}
@@ -75,38 +66,30 @@ export default function CtaSection() {
         <div className="cta-overlay" />
         <div className="cta-glow-spot" />
 
-        {/* Content Container */}
         <div className="cta-content" ref={contentRef}>
-          {/* Eyebrow Pill */}
-
-          {/* Main Monumental Headline */}
           <h2 className="cta-headline cta-anim-target">
             Ready to Shape Your Next Architectural Landmark? <br />
           </h2>
 
-          {/* Supporting Description */}
           <p className="cta-description cta-anim-target">
             From monumental infrastructure and precision engineering to
             sustainable luxury developments, our master builders bring your
             grandest visions to life.
           </p>
 
-          {/* Interactive Action Buttons */}
           <div className="cta-actions cta-anim-target">
-            <a href="#contact" className="cta-btn-primary">
+            <Link to="/contact" className="cta-btn-primary no-underline">
               <span>Start Your Project</span>
               <div className="cta-btn-icon-box">
                 <HiArrowRight className="cta-arrow-icon" />
               </div>
-            </a>
+            </Link>
           </div>
-
-          {/* Quick Contact & Trust Stats */}
         </div>
       </div>
 
       <div className="cta-img">
-        <img src="/assets/images/cta.png" style={{ width: "100%" }} alt="" />
+        <img src="/assets/images/cta.webp" style={{ width: "100%" }} alt="" />
       </div>
     </section>
   );

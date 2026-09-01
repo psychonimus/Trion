@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useLocation, useSearchParams } from "react-router-dom";
 import * as THREE from "three";
 import KineticGrid from "@/components/ui/kinetic-grid";
 
@@ -261,7 +262,7 @@ const SERVICES_DATA = [
     title:
       "1. Integrated EPC & PMC (Engineering, Procurement, and Construction Management)",
     IconComponent: SvgIconEPC,
-    image: "/assets/images/infra.png",
+    image: "/assets/images/infra.webp",
     caption: "Highways, Bridges, Flyovers & Turnkey Industrial Facilities",
     align: "left",
     content:
@@ -273,7 +274,7 @@ const SERVICES_DATA = [
     shortTitle: "Power Systems",
     title: "2. Power Generation, Transmission & Distribution",
     IconComponent: SvgIconPower,
-    image: "/assets/images/img-2.png",
+    image: "/assets/images/img-2.webp",
     caption: "Substations, High-Voltage Evacuation & Hybrid Renewable Plants",
     align: "right",
     content:
@@ -285,7 +286,7 @@ const SERVICES_DATA = [
     shortTitle: "Mining & Materials",
     title: "3. Mining, Minerals & Construction Materials Supply",
     IconComponent: SvgIconMining,
-    image: "/assets/images/mining.png",
+    image: "/assets/images/mining.webp",
     caption: "Mineral Concessions, Quarrying & Pan-India Bulk Materials Supply",
     align: "left",
     content:
@@ -297,7 +298,7 @@ const SERVICES_DATA = [
     shortTitle: "Heavy Machinery",
     title: "4. Heavy Equipment, Machinery & Tools Trading",
     IconComponent: SvgIconMachinery,
-    image: "/assets/images/img-1.png",
+    image: "/assets/images/img-1.webp",
     caption: "Global OEM Import, Earthmovers, Cranes & 24/7 Plant Support",
     align: "right",
     content:
@@ -309,7 +310,7 @@ const SERVICES_DATA = [
     shortTitle: "Financing & Assets",
     title: "5. Infrastructure Financing, Investment & Asset Management",
     IconComponent: SvgIconFinance,
-    image: "/assets/images/img-3.png",
+    image: "/assets/images/img-3.webp",
     caption:
       "Project Syndication, Debt-Equity Structuring & Asset Monetization",
     align: "left",
@@ -322,7 +323,7 @@ const SERVICES_DATA = [
     shortTitle: "Technical R&D",
     title: "6. Technical R&D, Collaborations & Skill Development",
     IconComponent: SvgIconRD,
-    image: "/assets/images/about-img.png",
+    image: "/assets/images/about-img.webp",
     caption: "Advanced Materials Testing, Process Automation & Skill Centers",
     align: "right",
     content:
@@ -334,7 +335,7 @@ const SERVICES_DATA = [
     shortTitle: "Urban Development",
     title: "7. Rural-Urban Development & Social Infrastructure",
     IconComponent: SvgIconUrban,
-    image: "/assets/images/building.png",
+    image: "/assets/images/building.webp",
     caption: "Townships, Affordable Housing, Water Utilities & Green Building",
     align: "left",
     content:
@@ -346,7 +347,7 @@ const SERVICES_DATA = [
     shortTitle: "Mining & Crushing",
     title: "8. Mining and Crushing Services",
     IconComponent: SvgIconCrushing,
-    image: "/assets/images/project-1.jpg",
+    image: "/assets/images/project-1.webp",
     caption: "Controlled Drilling, Blasting & Precision Aggregate Production",
     align: "right",
     content:
@@ -358,7 +359,7 @@ const SERVICES_DATA = [
     shortTitle: "Earthworks",
     title: "9. Excavation and Earthworks Services",
     IconComponent: SvgIconExcavation,
-    image: "/assets/images/excavation.png",
+    image: "/assets/images/excavation.webp",
     caption: "Bulk Earthmoving, Site Clearing, Grading & Sub-Grade Finishing",
     align: "left",
     content:
@@ -1020,7 +1021,7 @@ function MultiBuildingBlueprintCanvas({ onPhaseUpdate }) {
   );
 }
 
-function ServiceCard({ service, index }) {
+function ServiceCard({ service, index, isHighlighted }) {
   const [ref, visible] = useReveal();
   const Icon = service.IconComponent;
   const isImageLeft = service.align === "left";
@@ -1034,12 +1035,20 @@ function ServiceCard({ service, index }) {
         opacity: visible ? 1 : 0,
         transform: visible ? "translateY(0)" : "translateY(28px)",
         transition:
-          "opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1)",
+          "opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s ease, border-color 0.6s ease",
       }}
       className={`relative py-16 lg:py-24 border-b transition-colors duration-300 ${
+        isHighlighted
+          ? "ring-2 ring-[#ff6b00] shadow-[0_0_50px_rgba(255,107,0,0.35)] relative z-20"
+          : ""
+      } ${
         isLight
-          ? "bg-white text-slate-900 border-slate-200/80"
-          : "bg-[#0a1128] text-white border-white/[0.08]"
+          ? isHighlighted
+            ? "bg-orange-50/20 text-slate-900 border-[#ff6b00]"
+            : "bg-white text-slate-900 border-slate-200/80"
+          : isHighlighted
+            ? "bg-[#0f1d3d] text-white border-[#ff6b00]"
+            : "bg-[#0a1128] text-white border-white/[0.08]"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
@@ -1165,12 +1174,59 @@ function ServiceCard({ service, index }) {
 }
 
 export default function ServicesPage() {
+  const location = useLocation();
+  const [searchParams] = useSearchParams();
   const [heroRef, heroVis] = useReveal();
   const [introRef, introVis] = useReveal();
   const [activeIdx, setActiveIdx] = useState(0);
+  const [highlightedId, setHighlightedId] = useState(null);
   const [constructionPhase, setConstructionPhase] = useState(
     "PHASE 01: MASTERPLAN BLUEPRINT SETUP",
   );
+
+  useEffect(() => {
+    const rawTarget =
+      location.hash?.replace("#", "") ||
+      searchParams.get("id") ||
+      searchParams.get("service");
+
+    if (rawTarget) {
+      const foundIdx = SERVICES_DATA.findIndex(
+        (s) =>
+          s.id === rawTarget ||
+          s.id === `service-${rawTarget}` ||
+          s.num === rawTarget ||
+          s.num === rawTarget.padStart(2, "0"),
+      );
+
+      if (foundIdx !== -1) {
+        const targetId = SERVICES_DATA[foundIdx].id;
+        setActiveIdx(foundIdx);
+        setHighlightedId(targetId);
+
+        const timer = setTimeout(() => {
+          const el = document.getElementById(targetId);
+          if (el) {
+            if (window.__lenis) {
+              window.__lenis.scrollTo(el, { offset: -90, duration: 1.2 });
+            } else {
+              const y = el.getBoundingClientRect().top + window.scrollY - 90;
+              window.scrollTo({ top: y, behavior: "smooth" });
+            }
+          }
+        }, 150);
+
+        const clearHighlightTimer = setTimeout(() => {
+          setHighlightedId(null);
+        }, 3500);
+
+        return () => {
+          clearTimeout(timer);
+          clearTimeout(clearHighlightTimer);
+        };
+      }
+    }
+  }, [location.hash, searchParams]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -1390,7 +1446,12 @@ export default function ServicesPage() {
 
       <div className="relative">
         {SERVICES_DATA.map((service, index) => (
-          <ServiceCard key={service.id} service={service} index={index} />
+          <ServiceCard
+            key={service.id}
+            service={service}
+            index={index}
+            isHighlighted={highlightedId === service.id}
+          />
         ))}
       </div>
     </main>

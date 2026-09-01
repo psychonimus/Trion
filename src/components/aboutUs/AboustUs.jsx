@@ -577,19 +577,19 @@ export default function AboustUs() {
       name: "Siddharth",
       title: "Founder & Managing Director",
       bio: "A visionary leader with deep expertise in large-scale infrastructure development. Siddharth drives the group's direction and oversees its global operations.",
-      img: "/assets/images/leader_siddharth.jpg",
+      img: "/assets/images/leader_siddharth.webp",
     },
     {
       name: "Shantanu",
       title: "Associate Partner",
       bio: "A seasoned business leader with 15+ years of experience in the capital equipment and infrastructure sector, with expertise in sales, business development, equipment financing, customer relationship management and market development. He brings strong commercial acumen and a deep understanding of construction and crushing equipment, supported by extensive industry experience and client relationships. His experience spans business strategy, client acquisition, channel development and after-sales engagement, with a strong focus on building long-term customer relationships. He combines industry knowledge with a commercially driven approach to identifying opportunities and driving sustainable business growth.",
-      img: "/assets/images/leader_shantanu.jpg",
+      img: "/assets/images/leader_shantanu.webp",
     },
     {
       name: "Deepak Dhar",
       title: "Associate Partner",
       bio: "A tunnelling and project management professional with 25+ years of experience across Metro, Railway and Hydropower projects. Expertise spans NATM and TBM tunnelling, underground construction, cross passages, shaft excavation, tunnel rectification and complex ground conditions, supported by strong capabilities in project execution, planning, safety, stakeholder management and team leadership.",
-      img: "/assets/images/leader_deepak.jpg",
+      img: "/assets/images/leader_deepak.webp",
     },
   ];
 
@@ -625,11 +625,11 @@ export default function AboustUs() {
         }
       `}</style>
 
-      <section className="relative min-h-screen flex items-end overflow-hidden pt-28">
+      <section id="company-profile" className="relative min-h-screen flex items-end overflow-hidden pt-28">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/assets/images/about-hero.jpg')",
+            backgroundImage: "url('/assets/images/about-hero.webp')",
             backgroundPosition: "center 40%",
           }}
         />
@@ -751,7 +751,7 @@ export default function AboustUs() {
         </div>
       </section>
 
-      <section className="py-20 lg:py-28 bg-[#f9f7f4]">
+      <section id="core-capabilities" className="py-20 lg:py-28 bg-[#f9f7f4]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div ref={capH} style={anim(capHv, 0)} className="mb-4">
             <SectionLabel>Our Core Capabilities</SectionLabel>
@@ -775,6 +775,7 @@ export default function AboustUs() {
       </section>
 
       <section
+        id="mission-vision"
         ref={vmvRef}
         className="py-20 lg:py-16 bg-[#0e0b08] relative overflow-hidden"
       >
@@ -858,7 +859,7 @@ export default function AboustUs() {
         </div>
       </section>
 
-      <section className="py-20 lg:py-28 bg-white">
+      <section id="leadership" className="py-20 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div ref={ldH} style={anim(ldHv, 0)} className="mb-12">
             <SectionLabel>Our Leadership</SectionLabel>
@@ -881,7 +882,7 @@ export default function AboustUs() {
         </div>
       </section>
 
-      <section className="py-20 lg:py-28 bg-[#0e0b08] relative overflow-hidden">
+      <section id="hse" className="py-20 lg:py-28 bg-[#0e0b08] relative overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full pointer-events-none bg-[radial-gradient(ellipse,rgba(176,125,58,0.07)_0%,transparent_65%)]" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useSearchParams, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
 const PROJECTS = [
@@ -13,10 +14,10 @@ const PROJECTS = [
       "A complete redevelopment solution, built for functionality, safety, and lasting value.",
     ],
     images: [
-      "/assets/images/projects/school_complete_1788182433826.jpg",
-      "/assets/images/projects/school_before_1788182414514.jpg",
-      "/assets/images/img-1.jpg",
-      "/assets/images/building.png",
+      "/assets/images/projects/school_complete_1788182433826.webp",
+      "/assets/images/projects/school_before_1788182414514.webp",
+      "/assets/images/img-1.webp",
+      "/assets/images/building.webp",
     ],
   },
   {
@@ -29,10 +30,10 @@ const PROJECTS = [
       "With a focus on quality, precision, safety, and timely execution, Trion contributed the development of a future-ready educational facility.",
     ],
     images: [
-      "/assets/images/projects/anant_complete_1788182468391.jpg",
-      "/assets/images/projects/anant_structure_1788182450935.jpg",
-      "/assets/images/project-2.jpg",
-      "/assets/images/about-img.png",
+      "/assets/images/projects/anant_complete_1788182468391.webp",
+      "/assets/images/projects/anant_structure_1788182450935.webp",
+      "/assets/images/project-2.webp",
+      "/assets/images/about-img.webp",
     ],
   },
   {
@@ -46,10 +47,10 @@ const PROJECTS = [
       "The project reflects Trion’s expertise in crushing plant solutions, material processing, and infrastructure support services.",
     ],
     images: [
-      "/assets/images/projects/dfcc_crusher_1788182483833.jpg",
-      "/assets/images/projects/dfcc_track_1788182500820.jpg",
-      "/assets/images/mining.png",
-      "/assets/images/infra.png",
+      "/assets/images/projects/dfcc_crusher_1788182483833.webp",
+      "/assets/images/projects/dfcc_track_1788182500820.webp",
+      "/assets/images/mining.webp",
+      "/assets/images/infra.webp",
     ],
   },
   {
@@ -62,10 +63,10 @@ const PROJECTS = [
       "The project demonstrates Trion’s capability in aggregate supply, material management, and infrastructure project support.",
     ],
     images: [
-      "/assets/images/projects/cprr_aggregate_1788182517899.jpg",
-      "/assets/images/excavation.png",
-      "/assets/images/img-3.jpg",
-      "/assets/images/img-2.png",
+      "/assets/images/projects/cprr_aggregate_1788182517899.webp",
+      "/assets/images/excavation.webp",
+      "/assets/images/img-3.webp",
+      "/assets/images/img-2.webp",
     ],
   },
   {
@@ -78,10 +79,10 @@ const PROJECTS = [
       "The project highlights Trion’s expertise in industrial construction, civil works, and interior development, delivered with a focus on quality, safety, and timely execution.",
     ],
     images: [
-      "/assets/images/projects/malt_factory_civil_1788182535414.jpg",
-      "/assets/images/img-2.jpg",
-      "/assets/images/img-1.png",
-      "/assets/images/about-hero.jpg",
+      "/assets/images/projects/malt_factory_civil_1788182535414.webp",
+      "/assets/images/img-2.webp",
+      "/assets/images/img-1.webp",
+      "/assets/images/about-hero.webp",
     ],
   },
   {
@@ -94,47 +95,47 @@ const PROJECTS = [
       "It reflects our expertise in end-to-end civil construction and shell & core execution, with a focus on quality, structural integrity, safety, and efficient project delivery.",
     ],
     images: [
-      "/assets/images/project-3.jpg",
-      "/assets/images/project-1.jpg",
-      "/assets/images/img-3.png",
-      "/assets/images/cta.png",
+      "/assets/images/project-3.webp",
+      "/assets/images/project-1.webp",
+      "/assets/images/img-3.webp",
+      "/assets/images/cta.webp",
     ],
   },
 ];
 
 const ARCHIVE_PHOTOS = [
   {
-    src: "/assets/images/projects/school_complete_1788182433826.jpg",
+    src: "/assets/images/projects/school_complete_1788182433826.webp",
     width: "w-[300px] sm:w-[380px] lg:w-[440px]",
     ratio: "aspect-[16/10]",
   },
   {
-    src: "/assets/images/projects/dfcc_crusher_1788182483833.jpg",
+    src: "/assets/images/projects/dfcc_crusher_1788182483833.webp",
     width: "w-[320px] sm:w-[400px] lg:w-[460px]",
     ratio: "aspect-[16/10]",
   },
   {
-    src: "/assets/images/projects/dfcc_track_1788182500820.jpg",
+    src: "/assets/images/projects/dfcc_track_1788182500820.webp",
     width: "w-[340px] sm:w-[420px] lg:w-[480px]",
     ratio: "aspect-[16/10]",
   },
   {
-    src: "/assets/images/projects/cprr_aggregate_1788182517899.jpg",
+    src: "/assets/images/projects/cprr_aggregate_1788182517899.webp",
     width: "w-[320px] sm:w-[400px] lg:w-[460px]",
     ratio: "aspect-[16/10]",
   },
   {
-    src: "/assets/images/projects/malt_factory_civil_1788182535414.jpg",
+    src: "/assets/images/projects/malt_factory_civil_1788182535414.webp",
     width: "w-[320px] sm:w-[400px] lg:w-[460px]",
     ratio: "aspect-[16/10]",
   },
   {
-    src: "/assets/images/project-3.jpg",
+    src: "/assets/images/project-3.webp",
     width: "w-[320px] sm:w-[400px] lg:w-[460px]",
     ratio: "aspect-[16/10]",
   },
   {
-    src: "/assets/images/projects/anant_complete_1788182468391.jpg",
+    src: "/assets/images/projects/anant_complete_1788182468391.webp",
     width: "w-[300px] sm:w-[380px] lg:w-[440px]",
     ratio: "aspect-[16/10]",
   },
@@ -222,6 +223,8 @@ function ArrowNext() {
 }
 
 export default function ProjectsPage() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const location = useLocation();
   const [activeProjectIdx, setActiveProjectIdx] = useState(0);
   const [imageIndices, setImageIndices] = useState({
     0: 0,
@@ -231,11 +234,47 @@ export default function ProjectsPage() {
     4: 0,
     5: 0,
   });
-  const currentProject = PROJECTS[activeProjectIdx];
+
+  useEffect(() => {
+    const idParam = searchParams.get("id") || searchParams.get("project");
+    let targetIdx = -1;
+
+    if (idParam) {
+      targetIdx = PROJECTS.findIndex(
+        (p) =>
+          p.number === idParam ||
+          p.number === idParam.padStart(2, "0") ||
+          parseInt(p.number, 10) === parseInt(idParam, 10),
+      );
+    } else if (location.hash) {
+      const cleanHash = location.hash.replace("#", "").replace("project-", "");
+      targetIdx = PROJECTS.findIndex(
+        (p) =>
+          p.number === cleanHash ||
+          p.number === cleanHash.padStart(2, "0") ||
+          parseInt(p.number, 10) === parseInt(cleanHash, 10),
+      );
+    } else if (location.state && location.state.projectIndex !== undefined) {
+      targetIdx = location.state.projectIndex;
+    }
+
+    if (targetIdx >= 0 && targetIdx < PROJECTS.length) {
+      setActiveProjectIdx(targetIdx);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      if (window.__lenis) {
+        window.__lenis.scrollTo(0, { immediate: false, duration: 0.8 });
+      }
+    }
+  }, [searchParams, location.hash, location.state]);
+
+  const currentProject = PROJECTS[activeProjectIdx] || PROJECTS[0];
   const activeImageIdx = imageIndices[activeProjectIdx] || 0;
 
   const selectProject = (index) => {
     setActiveProjectIdx(index);
+    if (PROJECTS[index]) {
+      setSearchParams({ id: PROJECTS[index].number });
+    }
   };
 
   const selectImage = (imgIdx) => {
@@ -295,7 +334,7 @@ export default function ProjectsPage() {
         <div className="max-w-[1536px]  mx-auto w-full h-full relative px-6 sm:px-10 lg:px-0">
           <div className="absolute right-0 top-0 bottom-0 w-[280px] md:w-[380px] lg:w-[380px] xl:w-[360px] pointer-events-none select-none overflow-hidden flex items-center justify-end z-0">
             <img
-              src="/assets/images/building-wireframe.png"
+              src="/assets/images/building-wireframe.webp"
               alt=""
               className="w-full h-auto object-contain opacity-40 mix-blend-lighten"
               draggable="false"

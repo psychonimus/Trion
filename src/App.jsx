@@ -17,16 +17,30 @@ import CorporatePage from "./components/CorporatePage/CorporatePage";
 import ContactPage from "./components/ContactPage/ContactPage";
 import "./App.css";
 import StrategicAlliances from "./components/strategicAlliances/StrategicAlliances";
+import BlogsPage from "./components/blogs/BlogsPage";
 
 function ScrollToTop({ lenisRef }) {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-    if (lenisRef?.current) {
-      lenisRef.current.scrollTo(0, { immediate: true });
+    if (hash) {
+      // Wait for the new page to render, then scroll to the hashed section
+      const timer = setTimeout(() => {
+        const el = document.querySelector(hash);
+        if (el && lenisRef?.current) {
+          lenisRef.current.scrollTo(el, { offset: -80, duration: 1.2 });
+        } else if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 120);
+      return () => clearTimeout(timer);
+    } else {
+      window.scrollTo(0, 0);
+      if (lenisRef?.current) {
+        lenisRef.current.scrollTo(0, { immediate: true });
+      }
     }
-  }, [pathname, lenisRef]);
+  }, [pathname, hash, lenisRef]);
 
   return null;
 }
@@ -55,6 +69,7 @@ export default function App() {
       touchMultiplier: 2,
     });
     lenisRef.current = lenis;
+    window.__lenis = lenis;
 
     const updateLenis = (time) => {
       lenis.raf(time * 1000);
@@ -82,6 +97,7 @@ export default function App() {
         <Route path="/corporate" element={<CorporatePage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/strategicAlliances" element={<StrategicAlliances />} />
+        <Route path="/blogs" element={<BlogsPage />} />
       </Routes>
 
       <Footer />

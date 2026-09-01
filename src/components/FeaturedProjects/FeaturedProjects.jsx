@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import './FeaturedProjects.css';
 
@@ -96,7 +97,7 @@ const PROJECTS = [
     title: 'Redevelopment of Maneckji Cooper School',
     location: 'Juhu, Mumbai',
     scope: 'All civil, Interiors, MEP and Façade Works',
-    image: '/assets/images/building.png',
+    image: '/assets/images/building.webp',
     link: '#project-1',
     Icon: SvgIconSchool,
     tag: 'INSTITUTIONAL',
@@ -107,7 +108,7 @@ const PROJECTS = [
     title: 'Anant National University Academic Block 2',
     location: 'Bopal, Ahmedabad',
     scope: 'All civil, architectural and MEP work',
-    image: '/assets/images/project-2.jpg',
+    image: '/assets/images/project-2.webp',
     link: '#project-2',
     Icon: SvgIconCampus,
     tag: 'EDUCATION CAMPUS',
@@ -118,7 +119,7 @@ const PROJECTS = [
     title: 'DFCC Corridor CTP-11',
     location: 'Virar, Mumbai',
     scope: 'Supply/Installation crusher plant to supply ballast and blanket from boulders',
-    image: '/assets/images/infra.png',
+    image: '/assets/images/infra.webp',
     link: '#project-3',
     Icon: SvgIconFreightCorridor,
     tag: 'RAILWAY CORRIDOR',
@@ -129,7 +130,7 @@ const PROJECTS = [
     title: 'Supply of Aggregate for CPRR',
     location: 'Tiruvallur, Tamil Nadu',
     scope: 'Supply of aggregate for CPRR - Chennai',
-    image: '/assets/images/excavation.png',
+    image: '/assets/images/excavation.webp',
     link: '#project-4',
     Icon: SvgIconAggregate,
     tag: 'EXPRESSWAY AGGREGATE',
@@ -140,7 +141,7 @@ const PROJECTS = [
     title: 'Malt-Factory Project',
     location: 'Dahanu, Maharashtra',
     scope: 'All civil and Interiors Works',
-    image: '/assets/images/img-2.jpg',
+    image: '/assets/images/img-2.webp',
     link: '#project-5',
     Icon: SvgIconIndustrial,
     tag: 'INDUSTRIAL FACILITY',
@@ -151,7 +152,7 @@ const PROJECTS = [
     title: 'Beach House Project',
     location: 'Alibaug, Maharashtra',
     scope: 'Shell and core order for all civil works.',
-    image: '/assets/images/project-3.jpg',
+    image: '/assets/images/project-3.webp',
     link: '#project-6',
     Icon: SvgIconVilla,
     tag: 'LUXURY RESIDENCE',
@@ -238,11 +239,12 @@ export default function FeaturedProjects() {
           {PROJECTS.map((project, index) => {
             const ProjectIcon = project.Icon;
             return (
-              <a
+              <Link
                 key={project.id}
-                href={project.link}
+                to={`/projects?id=${project.id}`}
+                state={{ projectIndex: index }}
                 ref={(el) => (rowsRef.current[index] = el)}
-                className="project-row group"
+                className="project-row group no-underline"
               >
                 {/* Left Column: Number Index & Custom Creative Icon */}
                 <div className="project-col-num flex items-center gap-3">
@@ -299,7 +301,7 @@ export default function FeaturedProjects() {
                     <SvgActionArrow />
                   </span>
                 </div>
-              </a>
+              </Link>
             );
           })}
         </div>

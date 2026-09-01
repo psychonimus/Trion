@@ -1,98 +1,142 @@
-import React, { useState, useRef, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import React, { useState, useRef, useEffect, useCallback } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
-  FiCode,
-  FiGlobe,
-  FiLayers,
-  FiUserPlus,
-  FiBarChart2,
-  FiShield,
-  FiDollarSign,
   FiMenu,
   FiX,
   FiChevronDown,
   FiUsers,
   FiStar,
   FiFileText,
-  FiRefreshCcw,
+  FiShield,
   FiHelpCircle,
+  FiZap,
+  FiTruck,
+  FiTrendingUp,
+  FiCpu,
+  FiHome,
+  FiTarget,
+  FiBook,
 } from "react-icons/fi";
-import { LuPlug, LuHandshake, LuLeaf } from "react-icons/lu";
+import {
+  LuHardHat,
+  LuHandshake,
+  LuMountain,
+  LuDrill,
+  LuShovel,
+  LuBuilding2,
+  LuFlag,
+} from "react-icons/lu";
 
+// Services menu — mirrors the 9 services in ServicesPage.jsx
 const productLinks = [
   {
-    title: "Civil & Infrastructure",
+    title: "Integrated EPC & PMC",
     href: "/services",
-    description: "Bridges, highways, transit corridors, and site development",
-    icon: FiGlobe,
+    hash: "#service-01",
+    description: "Highways, bridges, flyovers & turnkey industrial facilities",
+    icon: LuHardHat,
   },
   {
-    title: "Structural & High-Rise",
+    title: "Power Generation & Distribution",
     href: "/services",
-    description: "Advanced multi-story engineering and architectural framing",
-    icon: FiLayers,
+    hash: "#service-02",
+    description: "Substations, high-voltage evacuation & hybrid renewable plants",
+    icon: FiZap,
   },
   {
-    title: "Mining & Crushing",
+    title: "Mining, Minerals & Materials Supply",
     href: "/services",
-    description: "High-yield extraction, blasting, and aggregate production",
-    icon: FiUserPlus,
+    hash: "#service-03",
+    description: "Mineral concessions, quarrying & pan-India bulk supply",
+    icon: LuMountain,
   },
-  { title: "Excavation & Earthwork", href: "/services", icon: FiBarChart2 },
-  { title: "EPC & PMC Management", href: "/services", icon: LuPlug },
-  { title: "Equipment & Material Logistics", href: "/services", icon: FiDollarSign },
-  { title: "Quality & Safety Systems", href: "/services", icon: FiShield },
-  { title: "Technical Consultation", href: "/services", icon: FiCode },
+  {
+    title: "Heavy Equipment & Machinery Trading",
+    href: "/services",
+    hash: "#service-04",
+    description: "Global OEM import, earthmovers, cranes & 24/7 plant support",
+    icon: FiTruck,
+  },
+  {
+    title: "Infrastructure Financing & Assets",
+    href: "/services",
+    hash: "#service-05",
+    description: "Project syndication, debt-equity structuring & asset monetization",
+    icon: FiTrendingUp,
+  },
+  {
+    title: "Technical R&D & Skill Development",
+    href: "/services",
+    hash: "#service-06",
+    description: "Advanced materials testing, process automation & skill centres",
+    icon: FiCpu,
+  },
+  {
+    title: "Rural-Urban Development",
+    href: "/services",
+    hash: "#service-07",
+    description: "Townships, affordable housing, water utilities & green building",
+    icon: LuBuilding2,
+  },
+  {
+    title: "Mining & Crushing Services",
+    href: "/services",
+    hash: "#service-08",
+    description: "Controlled drilling, blasting & precision aggregate production",
+    icon: LuDrill,
+  },
+  {
+    title: "Excavation & Earthworks",
+    href: "/services",
+    hash: "#service-09",
+    description: "Bulk earthmoving, site clearing, grading & sub-grade finishing",
+    icon: LuShovel,
+  },
 ];
 
+// About menu — mirrors the actual sections in AboutUs.jsx
 const companyLinks = [
   {
     title: "Company Profile",
     href: "/about",
-    description: "Our history, executive leadership, and core values",
+    hash: "#company-profile",
+    description: "Our story, identity, and 25+ years of infrastructure delivery",
     icon: FiUsers,
   },
   {
-    title: "Featured Milestones",
+    title: "Executive Leadership",
     href: "/about",
-    description: "A track record of engineering landmarks delivered safely",
-    icon: FiStar,
+    hash: "#leadership",
+    description: "Directors and senior leadership driving Trion's global operations",
+    icon: LuFlag,
   },
   {
-    title: "Quality Certifications",
+    title: "Vision & Mission",
     href: "/about",
-    description: "ISO standards, environmental compliance, and safety codes",
-    icon: FiFileText,
+    hash: "#mission-vision",
+    description: "Engineering excellence, enduring value, and sustainable progress",
+    icon: FiTarget,
   },
   {
-    title: "Sustainability & ESG",
+    title: "Core Values & Culture",
     href: "/about",
-    description: "Green engineering and carbon-neutral building techniques",
+    hash: "#mission-vision",
+    description: "Integrity, safety, accountability, excellence, and innovation",
     icon: FiShield,
   },
   {
-    title: "Health & Safety Policy",
+    title: "Core Capabilities Portfolio",
     href: "/about",
-    description: "Zero-harm safety culture on active industrial sites",
-    icon: FiRefreshCcw,
+    hash: "#core-capabilities",
+    description: "EPC, power, mining, machinery, financing, and urban development",
+    icon: FiStar,
   },
   {
-    title: "Strategic Alliances",
-    href: "/strategicAlliances",
-    description: "Joint ventures, equipment supply, and public partnerships",
-    icon: LuHandshake,
-  },
-  {
-    title: "Industry Insights",
+    title: "Health, Safety & Environment (HSE)",
     href: "/about",
-    description: "Civil engineering breakthroughs and market analysis",
-    icon: LuLeaf,
-  },
-  {
-    title: "Contact & Inquiries",
-    href: "/contact",
-    description: "Direct project consultation and tender inquiries",
-    icon: FiHelpCircle,
+    hash: "#hse",
+    description: "Zero-harm workplace, environmental stewardship, and compliance",
+    icon: FiFileText,
   },
 ];
 
@@ -100,7 +144,7 @@ function GridCard({ link, onClick }) {
   const Icon = link.icon;
   return (
     <Link
-      to={link.href}
+      to={link.href + (link.hash || "")}
       className="flex items-start gap-3 p-3.5 bg-[#070d1e] border border-white/10 hover:border-[#ff6b00]/60 rounded-xl transition-all duration-150 hover:bg-[#ff6b00]/10 no-underline group"
       onClick={onClick}
     >
@@ -125,7 +169,7 @@ function LargeItem({ link, onClick }) {
   const Icon = link.icon;
   return (
     <Link
-      to={link.href}
+      to={link.href + (link.hash || "")}
       className="flex items-start gap-2.5 p-2 rounded-lg transition-all duration-150 hover:bg-[#ff6b00]/10 no-underline group"
       onClick={onClick}
     >
@@ -150,7 +194,7 @@ function SmallItem({ item, onClick }) {
   const Icon = item.icon;
   return (
     <Link
-      to={item.href}
+      to={item.href + (item.hash || "")}
       className="flex items-center gap-2.5 p-2 rounded-lg text-slate-200 hover:text-white hover:bg-[#ff6b00]/15 transition-all duration-150 no-underline group"
       onClick={onClick}
     >
@@ -252,7 +296,7 @@ function MobileAccordionItem({ label, to, links, isOpen, onToggle, onCloseMenu }
             return (
               <Link
                 key={link.title}
-                to={link.href}
+                to={link.href + (link.hash || "")}
                 className="flex items-center gap-2.5 p-2 rounded-lg bg-[#0a1128] border border-slate-800 hover:bg-[#ff6b00]/15 hover:border-[#ff6b00]/30 transition-all no-underline text-white"
                 onClick={onCloseMenu}
               >
@@ -345,13 +389,13 @@ export default function Navbar() {
     { id: "services", name: "SERVICES", to: "/services", list: productLinks },
   ];
 
+
   const currentPath = location.pathname;
 
   return (
     <header className="fixed top-3 sm:top-4 left-0 right-0 z-[1000] w-full px-4 sm:px-8 pointer-events-none flex justify-center font-primary">
-      <div className="w-full max-w-[1100px] mx-auto pointer-events-auto relative" ref={navRef}>
+      <div className="w-full max-w-[1160px] mx-auto pointer-events-auto relative" ref={navRef}>
         <nav className="relative flex items-center justify-between h-[48px] sm:h-[50px] px-2.5 sm:px-3 bg-[#0a1128]/85 backdrop-blur-md backdrop-saturate-150 border border-white/15 rounded-full shadow-[0_8px_32px_0_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.12)] transition-all duration-200">
-          {/* Brand Logo with generous left & right breathing room */}
           <Link
             to="/"
             className="flex items-center select-none cursor-pointer pl-4 sm:pl-5 pr-5 sm:pr-6 py-1 no-underline group"
@@ -361,7 +405,6 @@ export default function Navbar() {
             </span>
           </Link>
 
-          {/* Desktop Capsule Navigation */}
           <div className="hidden lg:flex items-center gap-0.5 p-0.5 bg-[#070d1e]/80 backdrop-blur-sm border border-white/10 rounded-full">
             <Link
               to="/"
@@ -385,11 +428,11 @@ export default function Navbar() {
               onClose={handleClose}
             >
               <div className="flex gap-7 min-w-[720px] max-w-[760px] bg-[#070d1e]">
-                <div className="flex-[1.3]">
+                <div className="flex-1">
                   <span className="block text-[10px] font-mono font-bold tracking-[0.18em] uppercase text-[#ff6b00] mb-2.5">
-                    OVERVIEW
+                    ORGANIZATION & LEADERSHIP
                   </span>
-                  <div className="grid grid-cols-2 gap-3 mb-4">
+                  <div className="flex flex-col gap-2.5">
                     {companyLinks.slice(0, 2).map((link) => (
                       <GridCard
                         key={link.title}
@@ -398,11 +441,13 @@ export default function Navbar() {
                       />
                     ))}
                   </div>
-                  <span className="block text-[10px] font-mono font-bold tracking-[0.18em] uppercase text-[#ff6b00] mb-2">
-                    GOVERNANCE & SAFETY
+                </div>
+                <div className="flex-1 border-l border-slate-800 pl-6">
+                  <span className="block text-[10px] font-mono font-bold tracking-[0.18em] uppercase text-[#ff6b00] mb-2.5">
+                    VALUES, CAPABILITIES & SAFETY
                   </span>
-                  <div className="grid grid-cols-2 gap-2">
-                    {companyLinks.slice(2, 5).map((link) => (
+                  <div className="flex flex-col gap-1.5">
+                    {companyLinks.slice(2).map((link) => (
                       <LargeItem
                         key={link.title}
                         link={link}
@@ -410,21 +455,6 @@ export default function Navbar() {
                       />
                     ))}
                   </div>
-                </div>
-                <div className="flex-[0.85] border-l border-slate-800 pl-6">
-                  <span className="block text-[10px] font-mono font-bold tracking-[0.18em] uppercase text-[#ff6b00] mb-2.5">
-                    ALLIANCES & INSIGHTS
-                  </span>
-                  <ul className="flex flex-col gap-1.5 p-0 m-0 list-none">
-                    {companyLinks.slice(5).map((link) => (
-                      <li key={link.title}>
-                        <LargeItem
-                          link={link}
-                          onClick={() => setActiveMenu(null)}
-                        />
-                      </li>
-                    ))}
-                  </ul>
                 </div>
               </div>
             </CapsuleDropdown>
@@ -438,8 +468,8 @@ export default function Navbar() {
               onOpen={() => handleOpen("services")}
               onClose={handleClose}
             >
-              <div className="flex gap-7 min-w-[720px] max-w-[760px] bg-[#070d1e]">
-                <div className="flex-[1.25]">
+              <div className="flex gap-7 min-w-[780px] max-w-[820px] bg-[#070d1e]">
+                <div className="flex-[1.2]">
                   <span className="block text-[10px] font-mono font-bold tracking-[0.18em] uppercase text-[#ff6b00] mb-2.5">
                     CORE DISCIPLINES
                   </span>
@@ -454,7 +484,7 @@ export default function Navbar() {
                     ))}
                   </ul>
                 </div>
-                <div className="flex-[0.9] border-l border-slate-800 pl-6">
+                <div className="flex-[1] border-l border-slate-800 pl-6">
                   <span className="block text-[10px] font-mono font-bold tracking-[0.18em] uppercase text-[#ff6b00] mb-2.5">
                     SPECIALIZED CAPABILITIES
                   </span>
@@ -497,6 +527,18 @@ export default function Navbar() {
             </Link>
 
             <Link
+              to="/blogs"
+              className={`inline-flex items-center justify-center px-3 py-1 font-primary text-[10.5px] font-bold tracking-[0.08em] uppercase rounded-full whitespace-nowrap transition-all duration-150 no-underline select-none ${
+                currentPath.startsWith("/blogs")
+                  ? "bg-[#ff6b00] text-white shadow-sm shadow-orange-500/40 font-extrabold"
+                  : "text-slate-300 hover:text-white hover:bg-white/10"
+              }`}
+              onClick={() => setActiveMenu(null)}
+            >
+              BLOGS
+            </Link>
+
+            <Link
               to="/contact"
               className={`inline-flex items-center justify-center px-3 py-1 font-primary text-[10.5px] font-bold tracking-[0.08em] uppercase rounded-full whitespace-nowrap transition-all duration-150 no-underline select-none ${
                 currentPath.startsWith("/contact")
@@ -509,7 +551,6 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Right Action CTA & Mobile Toggle — proportional, compact width with right margin */}
           <div className="flex items-center gap-2 pr-1 sm:pr-2">
             <Link
               to="/contact"
@@ -591,6 +632,18 @@ export default function Navbar() {
             onClick={() => setMobileMenuOpen(false)}
           >
             STRATEGIC ALLIANCES
+          </Link>
+
+          <Link
+            to="/blogs"
+            className={`flex items-center px-4 py-2.5 font-primary text-xs font-bold tracking-wider uppercase rounded-xl transition-colors no-underline ${
+              currentPath.startsWith("/blogs")
+                ? "bg-[#ff6b00] text-white"
+                : "text-slate-200 hover:text-white hover:bg-white/10"
+            }`}
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            BLOGS
           </Link>
 
           <Link

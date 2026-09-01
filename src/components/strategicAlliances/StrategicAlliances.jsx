@@ -160,7 +160,7 @@ export default function StrategicAlliances() {
             <div className="md:col-span-7 flex justify-center items-center">
               <div className="relative w-full max-w-[760px]">
                 <img
-                  src="/assets/images/StrategicAlliances/hero-infrastructure.png"
+                  src="/assets/images/StrategicAlliances/hero-infrastructure.webp"
                   alt="Infrastructure Engineering Network"
                   className="w-full h-auto object-contain max-h-[440px]"
                 />
@@ -271,7 +271,7 @@ export default function StrategicAlliances() {
             <div className="md:col-span-7 flex justify-center items-center">
               <div className="relative w-full max-w-[720px]">
                 <img
-                  src="/assets/images/StrategicAlliances/ketan-highway-bridge.png"
+                  src="/assets/images/StrategicAlliances/ketan-highway-bridge.webp"
                   alt="Ketan Constructions Highway and Power Network"
                   className="w-full h-auto object-contain max-h-[420px]"
                 />
@@ -290,7 +290,7 @@ export default function StrategicAlliances() {
             <div className="md:col-span-7 flex justify-center items-center">
               <div className="relative w-full max-w-[700px]">
                 <img
-                  src="/assets/images/StrategicAlliances/sf-marina-dock.png"
+                  src="/assets/images/StrategicAlliances/sf-marina-dock.webp"
                   alt="SF Marina Floating Concrete Structures"
                   className="w-full h-auto object-contain max-h-[380px]"
                 />
@@ -436,7 +436,7 @@ export default function StrategicAlliances() {
             <div className="md:col-span-7 flex justify-center items-center">
               <div className="relative w-full max-w-[720px]">
                 <img
-                  src="/assets/images/StrategicAlliances/tridel-marine.png"
+                  src="/assets/images/StrategicAlliances/tridel-marine.webp"
                   alt="Tridel Technologies Marine Infrastructure"
                   className="w-full h-auto object-contain max-h-[400px]"
                 />
@@ -583,7 +583,7 @@ export default function StrategicAlliances() {
             <div className="md:col-span-7 flex justify-center items-center">
               <div className="relative w-full max-w-[700px]">
                 <img
-                  src="/assets/images/StrategicAlliances/lombardi-structural.png"
+                  src="/assets/images/StrategicAlliances/lombardi-structural.webp"
                   alt="Lombardi Structural Engineering Blueprint"
                   className="w-full h-auto object-contain max-h-[380px]"
                 />
@@ -738,7 +738,7 @@ export default function StrategicAlliances() {
             <div className="md:col-span-7 flex justify-center items-center">
               <div className="relative w-full max-w-[720px]">
                 <img
-                  src="/assets/images/StrategicAlliances/radius-crushing.png"
+                  src="/assets/images/StrategicAlliances/radius-crushing.webp"
                   alt="Radius Equipments Aggregate Crushing Plant"
                   className="w-full h-auto object-contain max-h-[380px]"
                 />

@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { gsap } from "gsap";
 import { HiArrowRight, HiChevronLeft, HiChevronRight } from "react-icons/hi2";
 
-import architectureImg from "/assets/images/building.png";
-import interiorImg from "/assets/images/mining.png";
-import engineerImg from "/assets/images/infra.png";
-import planningImg from "/assets/images/excavation.png";
+import architectureImg from "/assets/images/building.webp";
+import interiorImg from "/assets/images/mining.webp";
+import engineerImg from "/assets/images/infra.webp";
+import planningImg from "/assets/images/excavation.webp";
 
 const SvgCorner = () => (
   <svg
@@ -243,7 +244,7 @@ const SERVICES_DATA = [
     title:
       "1. Integrated EPC & PMC (Engineering, Procurement, and Construction Management)",
     IconComponent: SvgIconEPC,
-    image: "/assets/images/infra.png",
+    image: "/assets/images/infra.webp",
     caption: "Highways, Bridges, Flyovers & Turnkey Industrial Facilities",
     align: "left",
     content:
@@ -255,7 +256,7 @@ const SERVICES_DATA = [
     shortTitle: "Power Systems",
     title: "2. Power Generation, Transmission & Distribution",
     IconComponent: SvgIconPower,
-    image: "/assets/images/img-2.png",
+    image: "/assets/images/img-2.webp",
     caption: "Substations, High-Voltage Evacuation & Hybrid Renewable Plants",
     align: "right",
     content:
@@ -267,7 +268,7 @@ const SERVICES_DATA = [
     shortTitle: "Mining & Materials",
     title: "3. Mining, Minerals & Construction Materials Supply",
     IconComponent: SvgIconMining,
-    image: "/assets/images/mining.png",
+    image: "/assets/images/mining.webp",
     caption: "Mineral Concessions, Quarrying & Pan-India Bulk Materials Supply",
     align: "left",
     content:
@@ -279,7 +280,7 @@ const SERVICES_DATA = [
     shortTitle: "Heavy Machinery",
     title: "4. Heavy Equipment, Machinery & Tools Trading",
     IconComponent: SvgIconMachinery,
-    image: "/assets/images/img-1.png",
+    image: "/assets/images/img-1.webp",
     caption: "Global OEM Import, Earthmovers, Cranes & 24/7 Plant Support",
     align: "right",
     content:
@@ -291,7 +292,7 @@ const SERVICES_DATA = [
     shortTitle: "Financing & Assets",
     title: "5. Infrastructure Financing, Investment & Asset Management",
     IconComponent: SvgIconFinance,
-    image: "/assets/images/img-3.png",
+    image: "/assets/images/img-3.webp",
     caption:
       "Project Syndication, Debt-Equity Structuring & Asset Monetization",
     align: "left",
@@ -304,7 +305,7 @@ const SERVICES_DATA = [
     shortTitle: "Technical R&D",
     title: "6. Technical R&D, Collaborations & Skill Development",
     IconComponent: SvgIconRD,
-    image: "/assets/images/about-img.png",
+    image: "/assets/images/about-img.webp",
     caption: "Advanced Materials Testing, Process Automation & Skill Centers",
     align: "right",
     content:
@@ -316,7 +317,7 @@ const SERVICES_DATA = [
     shortTitle: "Urban Development",
     title: "7. Rural-Urban Development & Social Infrastructure",
     IconComponent: SvgIconUrban,
-    image: "/assets/images/building.png",
+    image: "/assets/images/building.webp",
     caption: "Townships, Affordable Housing, Water Utilities & Green Building",
     align: "left",
     content:
@@ -328,7 +329,7 @@ const SERVICES_DATA = [
     shortTitle: "Mining & Crushing",
     title: "8. Mining and Crushing Services",
     IconComponent: SvgIconCrushing,
-    image: "/assets/images/project-1.jpg",
+    image: "/assets/images/project-1.webp",
     caption: "Controlled Drilling, Blasting & Precision Aggregate Production",
     align: "right",
     content:
@@ -340,7 +341,7 @@ const SERVICES_DATA = [
     shortTitle: "Earthworks",
     title: "9. Excavation and Earthworks Services",
     IconComponent: SvgIconExcavation,
-    image: "/assets/images/excavation.png",
+    image: "/assets/images/excavation.webp",
     caption: "Bulk Earthmoving, Site Clearing, Grading & Sub-Grade Finishing",
     align: "left",
     content:
@@ -564,7 +565,7 @@ export default function OurServices() {
                       isActive ? "text-[#ff6b00]" : "text-white/50"
                     }`}
                   >
-                    {service.tag}
+                    {service.shortTitle || `SERVICE // ${service.num}`}
                   </span>
 
                   <h3
@@ -585,20 +586,20 @@ export default function OurServices() {
                     }`}
                   >
                     <div className="overflow-hidden min-h-0">
-                      {service.subtitle && (
+                      {service.caption && (
                         <p className="m-0 mb-4 font-secondary text-sm sm:text-base lg:text-[0.92rem] font-normal leading-[1.5] text-slate-200">
-                          {service.subtitle}
+                          {service.caption}
                         </p>
                       )}
 
-                      <a
-                        href={service.link}
+                      <Link
+                        to={`/services#${service.id}`}
                         className="group/btn relative inline-flex items-center gap-2 hover:gap-3 no-underline font-primary text-xs sm:text-sm font-semibold text-[#ff6b00] hover:text-white py-1 transition-[gap,color] duration-300 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 hover:after:w-full after:h-[1px] after:bg-[#ff6b00] after:transition-[width] after:duration-350"
                         onClick={(e) => e.stopPropagation()}
                       >
                         <span>Discover More</span>
                         <HiArrowRight className="text-base sm:text-lg transition-transform duration-300 group-hover/btn:translate-x-1" />
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
