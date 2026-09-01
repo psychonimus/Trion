@@ -349,9 +349,16 @@ const SERVICES_DATA = [
   },
 ];
 
-const ITEMS_PER_PAGE = 5;
-
 export default function OurServices() {
+  const [itemsPerPage, setItemsPerPage] = useState(() => {
+    if (typeof window === "undefined") return 5;
+    const w = window.innerWidth;
+    if (w < 768) return 3;
+    if (w < 1024) return 4;
+    if (w < 1536) return 5;
+    return 6;
+  });
+
   const [currentPage, setCurrentPage] = useState(0);
   const [activeSlot, setActiveSlot] = useState(0);
 
@@ -360,24 +367,36 @@ export default function OurServices() {
   const contentWrapperRef = useRef(null);
   const hasAnimatedIn = useRef(false);
 
-  const totalPages = Math.ceil(SERVICES_DATA.length / ITEMS_PER_PAGE);
+  useEffect(() => {
+    const handleResize = () => {
+      const w = window.innerWidth;
+      let count = 5;
+      if (w < 768) count = 3;
+      else if (w < 1024) count = 4;
+      else if (w < 1536) count = 5;
+      else count = 6;
+
+      setItemsPerPage((prev) => {
+        if (prev !== count) {
+          setCurrentPage(0);
+          setActiveSlot(0);
+          return count;
+        }
+        return prev;
+      });
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const totalPages = Math.ceil(SERVICES_DATA.length / itemsPerPage);
   const currentServices = SERVICES_DATA.slice(
-    currentPage * ITEMS_PER_PAGE,
-    (currentPage + 1) * ITEMS_PER_PAGE,
+    currentPage * itemsPerPage,
+    (currentPage + 1) * itemsPerPage,
   );
 
-  const activeGlobalIndex = currentPage * ITEMS_PER_PAGE + activeSlot;
-
-  useEffect(() => {
-    if (totalPages <= 1) return;
-
-    const timer = setInterval(() => {
-      setCurrentPage((prev) => (prev + 1 >= totalPages ? 0 : prev + 1));
-      setActiveSlot(0);
-    }, 4000);
-
-    return () => clearInterval(timer);
-  }, [totalPages]);
+  const activeGlobalIndex = currentPage * itemsPerPage + activeSlot;
 
   useEffect(() => {
     bgImagesRef.current.forEach((imgEl, index) => {
@@ -506,7 +525,7 @@ export default function OurServices() {
       <section
         ref={sectionRef}
         id="services"
-        className="relative w-full h-[80vh] min-h-[340px] max-h-[380px] 2xl:max-h-[460px] overflow-hidden flex flex-col justify-end bg-[#000435] font-primary select-none"
+        className="relative w-full h-auto lg:h-[380px] 2xl:h-[460px] overflow-hidden flex flex-col justify-start lg:justify-end bg-[#000435] font-primary select-none"
       >
         <div className="absolute inset-0 w-full h-full overflow-hidden z-[1] pointer-events-none">
           {SERVICES_DATA.map((service, index) => (
@@ -520,12 +539,12 @@ export default function OurServices() {
               }}
             />
           ))}
-          <div className="absolute inset-0 w-full h-full bg-[linear-gradient(to_top,rgba(10,17,40,0.96)_0%,rgba(10,17,40,0.65)_35%,rgba(10,17,40,0.25)_65%,rgba(10,17,40,0.45)_100%)] z-[2]" />
+          <div className="absolute inset-0 w-full h-full bg-[linear-gradient(to_top,rgba(0,4,53,0.96)_0%,rgba(0,4,53,0.72)_35%,rgba(0,4,53,0.4)_65%,rgba(0,4,53,0.55)_100%)] z-[2]" />
         </div>
 
         <div
           ref={contentWrapperRef}
-          className="relative z-[3] w-full h-full flex flex-col lg:flex-row"
+          className="relative z-[3] w-full flex flex-col lg:flex-row h-auto lg:h-full justify-start lg:justify-end"
         >
           {currentServices.map((service, slotIdx) => {
             const isActive = slotIdx === activeSlot;
@@ -533,10 +552,10 @@ export default function OurServices() {
             return (
               <div
                 key={service.id}
-                className={`group relative w-full lg:w-1/5 lg:flex-1 h-auto lg:h-full flex flex-col justify-end p-5 sm:p-6 lg:px-4 lg:py-6 xl:px-6 xl:py-8 border-b border-white/10 lg:border-b-0 cursor-pointer outline-none transition-[flex,background-color] duration-500 [transition-timing-function:cubic-bezier(0.25,1,0.5,1)] ${
+                className={`group relative w-full lg:flex-1 h-auto lg:h-full flex flex-col justify-start lg:justify-end p-4 sm:p-5 lg:px-4 lg:py-6 xl:px-6 xl:py-8 border-b border-white/10 lg:border-b-0 cursor-pointer outline-none transition-all duration-300 ${
                   isActive
-                    ? "min-h-[220px] bg-[#000435]/70 lg:bg-[#000435]/40 backdrop-blur-sm"
-                    : "min-h-[140px] sm:min-h-[160px] bg-transparent hover:bg-white/[0.04]"
+                    ? "bg-[#000435]/90 lg:bg-[#000435]/40 backdrop-blur-sm"
+                    : "bg-transparent hover:bg-white/[0.04]"
                 }`}
                 onMouseEnter={() => setActiveSlot(slotIdx)}
                 onClick={() => setActiveSlot(slotIdx)}
@@ -553,15 +572,15 @@ export default function OurServices() {
                   <div
                     className={`absolute top-0 right-0 w-[1px] h-full transition-[background] duration-400 hidden lg:block ${
                       isActive
-                        ? "bg-[linear-gradient(to_bottom,rgba(255,255,255,0.05)_0%,rgba(245, 93, 27,0.5)_50%,rgba(255,255,255,0.4)_85%,rgba(255,255,255,0.08)_100%)]"
+                        ? "bg-[linear-gradient(to_bottom,rgba(255,255,255,0.05)_0%,rgba(245,93,27,0.5)_50%,rgba(255,255,255,0.4)_85%,rgba(255,255,255,0.08)_100%)]"
                         : "bg-[linear-gradient(to_bottom,rgba(255,255,255,0.03)_0%,rgba(255,255,255,0.18)_40%,rgba(255,255,255,0.25)_80%,rgba(255,255,255,0.08)_100%)]"
                     }`}
                   />
                 )}
 
-                <div className="relative flex flex-col items-start gap-2.5 w-full origin-bottom-left z-[4]">
+                <div className="relative flex flex-col items-start gap-2 w-full origin-bottom-left z-[4]">
                   <span
-                    className={`font-mono text-[10px] tracking-widest uppercase font-bold transition-colors ${
+                    className={`font-mono text-[9.5px] sm:text-[10px] tracking-widest uppercase font-bold transition-colors ${
                       isActive ? "text-[#f55d1b]" : "text-white/50"
                     }`}
                   >
@@ -569,7 +588,7 @@ export default function OurServices() {
                   </span>
 
                   <h3
-                    className={`m-0 font-primary text-lg sm:text-xl lg:text-[1.08rem] xl:text-[1.18rem] 2xl:text-[1.28rem] font-bold leading-[1.22] tracking-tight transition-[color,transform] duration-350 line-clamp-2 ${
+                    className={`m-0 font-primary text-base sm:text-lg lg:text-[1.08rem] xl:text-[1.18rem] 2xl:text-[1.28rem] font-bold leading-[1.22] tracking-tight transition-[color,transform] duration-350 line-clamp-2 ${
                       isActive
                         ? "text-white"
                         : "text-white/80 group-hover:text-white"
@@ -587,7 +606,7 @@ export default function OurServices() {
                   >
                     <div className="overflow-hidden min-h-0">
                       {service.caption && (
-                        <p className="m-0 mb-4 font-secondary text-sm sm:text-base lg:text-[0.92rem] font-normal leading-[1.5] text-slate-200">
+                        <p className="m-0 mb-3 font-secondary text-xs sm:text-sm lg:text-[0.92rem] font-normal leading-[1.5] text-slate-200">
                           {service.caption}
                         </p>
                       )}

@@ -9,14 +9,19 @@
   overflow: hidden;
 }
 
-/* ── Container ── */
 .projects-container {
   width: 100%;
-  /* max-width: 1360px; */
+  max-width: 1580px;
   margin: 0 auto;
-  padding: 0 2.5rem;
+  padding: 0 1.25rem;
   position: relative;
   z-index: 2;
+}
+
+@media (min-width: 768px) {
+  .projects-container {
+    padding: 0 2.5rem;
+  }
 }
 
 /* ── Decorative Circle ── */

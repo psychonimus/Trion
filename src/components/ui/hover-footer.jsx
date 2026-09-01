@@ -38,6 +38,17 @@ export const TextHoverEffect = ({ text = "TRION", className }) => {
     setHovered(true);
   };
 
+  const handleTouchMove = (e) => {
+    if (!svgRef.current || !e.touches || !e.touches[0]) return;
+    const rect = svgRef.current.getBoundingClientRect();
+    const touch = e.touches[0];
+    const x = ((touch.clientX - rect.left) / rect.width) * 300;
+    const y = ((touch.clientY - rect.top) / rect.height) * 100;
+    mouseX.set(x);
+    mouseY.set(y);
+    setHovered(true);
+  };
+
   const isTrion = text.toUpperCase() === "TRION";
 
   return (
@@ -50,6 +61,9 @@ export const TextHoverEffect = ({ text = "TRION", className }) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={() => setHovered(false)}
       onMouseMove={handleMouseMove}
+      onTouchStart={handleTouchMove}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={() => setHovered(false)}
       className={cn("select-none uppercase cursor-pointer", className)}
     >
       <defs>

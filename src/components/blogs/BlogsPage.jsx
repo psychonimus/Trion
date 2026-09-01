@@ -35,10 +35,9 @@ function RevealLine({ children, delay = 0, className = "" }) {
   );
 }
 
-
 function Tag({ children }) {
   return (
-    <span className="inline-block px-3 py-1 rounded-full font-mono text-[10px] font-black tracking-[0.2em] uppercase text-[#f55d1b] border border-[#f55d1b]/30 bg-[#f55d1b]/10">
+    <span className="inline-block px-2.5 sm:px-3 py-1 rounded-full font-mono text-[9px] sm:text-[10px] font-black tracking-[0.18em] sm:tracking-[0.2em] uppercase text-[#f55d1b] border border-[#f55d1b]/30 bg-[#f55d1b]/10">
       {children}
     </span>
   );
@@ -46,9 +45,9 @@ function Tag({ children }) {
 
 function SectionLabel({ children }) {
   return (
-    <div className="flex items-center gap-3 mb-3">
-      <span className="w-6 h-px bg-[#f55d1b]" />
-      <span className="font-mono text-[11px] font-bold tracking-[0.28em] uppercase text-[#f55d1b]">
+    <div className="flex items-center gap-2.5 sm:gap-3 mb-3">
+      <span className="w-5 sm:w-6 h-px bg-[#f55d1b]" />
+      <span className="font-mono text-[10px] sm:text-[11px] font-bold tracking-[0.22em] sm:tracking-[0.28em] uppercase text-[#f55d1b]">
         {children}
       </span>
     </div>
@@ -58,7 +57,7 @@ function SectionLabel({ children }) {
 function Card({ children, className = "" }) {
   return (
     <div
-      className={`rounded-2xl border border-white/[0.08] bg-white/[0.03] p-6 ${className}`}
+      className={`rounded-xl sm:rounded-2xl border border-white/[0.08] bg-white/[0.03] p-4 sm:p-6 ${className}`}
     >
       {children}
     </div>
@@ -67,11 +66,11 @@ function Card({ children, className = "" }) {
 
 function GridCard({ title, body }) {
   return (
-    <div className="p-4 rounded-xl border border-white/[0.07] bg-[#000435] hover:border-[#f55d1b]/40 transition-colors duration-300 group">
-      <h5 className="font-primary font-black text-sm uppercase text-[#f55d1b] mb-2 group-hover:text-[#f55d1b] transition-colors">
+    <div className="p-3.5 sm:p-4 rounded-xl border border-white/[0.07] bg-[#000435] hover:border-[#f55d1b]/40 transition-colors duration-300 group">
+      <h5 className="font-primary font-black text-xs sm:text-sm uppercase text-[#f55d1b] mb-1.5 group-hover:text-[#f55d1b] transition-colors">
         {title}
       </h5>
-      <p className="font-sans text-[13px] text-neutral-400 leading-relaxed">
+      <p className="font-sans text-xs sm:text-[13px] text-neutral-400 leading-relaxed">
         {body}
       </p>
     </div>
@@ -80,11 +79,11 @@ function GridCard({ title, body }) {
 
 function PillList({ items }) {
   return (
-    <div className="flex flex-wrap gap-2 mt-3">
+    <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-3">
       {items.map((item, i) => (
         <span
           key={i}
-          className="px-3 py-1.5 rounded-lg border border-white/[0.07] bg-white/[0.025] font-sans text-xs text-neutral-300"
+          className="px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg border border-white/[0.07] bg-white/[0.025] font-sans text-[11px] sm:text-xs text-neutral-300"
         >
           {item}
         </span>
@@ -96,20 +95,20 @@ function PillList({ items }) {
 function Callout({ headline, paras = [], quote = null }) {
   return (
     <div
-      className="mt-8 rounded-2xl p-6 border border-[#f55d1b]/30 relative overflow-hidden"
+      className="mt-6 sm:mt-8 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-[#f55d1b]/30 relative overflow-hidden"
       style={{ background: "linear-gradient(135deg,#f55d1b14 0%,transparent 65%)" }}
     >
-      <h3 className="font-primary font-black text-lg text-white uppercase mb-3">
+      <h3 className="font-primary font-black text-base sm:text-lg text-white uppercase mb-2.5 sm:mb-3">
         {headline}
       </h3>
       {paras.map((p, i) => (
-        <p key={i} className="font-sans text-[14.5px] text-neutral-300 leading-relaxed mb-3 last:mb-0">
+        <p key={i} className="font-sans text-[13.5px] sm:text-[14.5px] text-neutral-300 leading-relaxed mb-3 last:mb-0">
           {p}
         </p>
       ))}
       {quote && (
         <p
-          className="mt-4 pt-4 font-serif italic text-base font-bold border-t border-[#f55d1b]/25"
+          className="mt-3 sm:mt-4 pt-3 sm:pt-4 font-serif italic text-sm sm:text-base font-bold border-t border-[#f55d1b]/25"
           style={{ color: "#f55d1b" }}
         >
           {quote}
@@ -121,15 +120,15 @@ function Callout({ headline, paras = [], quote = null }) {
 
 function BlogHeroImg({ src, alt, caption }) {
   return (
-    <div className="relative w-full rounded-2xl overflow-hidden border border-white/[0.07] shadow-2xl group mb-6">
+    <div className="relative w-full rounded-xl sm:rounded-2xl overflow-hidden border border-white/[0.07] shadow-xl sm:shadow-2xl group mb-4 sm:mb-6">
       <img
         src={src}
         alt={alt}
-        className="w-full aspect-video object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+        className="w-full aspect-[16/10] sm:aspect-video object-cover transition-transform duration-700 group-hover:scale-[1.04]"
         loading="lazy"
       />
-      <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex items-end justify-between">
-        <span className="font-mono text-[10px] font-bold text-[#f55d1b] tracking-widest uppercase">
+      <div className="absolute bottom-0 left-0 right-0 p-2.5 sm:p-3 bg-gradient-to-t from-black/85 via-black/50 to-transparent flex items-end justify-between">
+        <span className="font-mono text-[9px] sm:text-[10px] font-bold text-[#f55d1b] tracking-widest uppercase truncate pr-2">
           {caption}
         </span>
       </div>
@@ -141,10 +140,10 @@ const timelineData = [
   {
     title: "01",
     content: (
-      <div className="space-y-5">
+      <div className="space-y-4 sm:space-y-5">
         <FadeUp>
           <Tag>INFRASTRUCTURE 2026 · 6 MIN</Tag>
-          <h2 className="mt-3 font-primary font-black text-2xl md:text-4xl text-white uppercase leading-[1.08] tracking-tight">
+          <h2 className="mt-2.5 sm:mt-3 font-primary font-black text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white uppercase leading-snug sm:leading-tight tracking-tight">
             Blog 1: The Future of Infrastructure Construction in India: 6 Trends Shaping 2026
           </h2>
         </FadeUp>
@@ -157,18 +156,18 @@ const timelineData = [
 
         <FadeUp delay={0.05}>
           <Card>
-            <p className="font-sans text-[15px] text-neutral-200 leading-[1.85] mb-4">
+            <p className="font-sans text-sm sm:text-[15px] text-neutral-200 leading-relaxed sm:leading-[1.85] mb-3 sm:mb-4">
               India's infrastructure landscape is undergoing a significant transformation. With continued development across highways, railways, urban infrastructure, industrial facilities and large-scale construction projects, the focus is shifting from simply building faster to building smarter, safer and more sustainably.
             </p>
-            <p className="font-sans text-[15px] text-neutral-200 leading-[1.85]">
-              Technology, digitalisation, sustainability and improved project execution are increasingly influencing how infrastructure projects are planned and delivered. Recent industry reports point to growing adoption of BIM, AI, drones, digital monitoring and data-driven project management across major infrastructure projects
+            <p className="font-sans text-sm sm:text-[15px] text-neutral-200 leading-relaxed sm:leading-[1.85]">
+              Technology, digitalisation, sustainability and improved project execution are increasingly influencing how infrastructure projects are planned and delivered. Recent industry reports point to growing adoption of BIM, AI, drones, digital monitoring and data-driven project management across major infrastructure projects.
             </p>
           </Card>
         </FadeUp>
 
         <FadeUp delay={0.08}>
           <SectionLabel>6 Key Trends</SectionLabel>
-          <div className="space-y-4">
+          <div className="space-y-3.5 sm:space-y-4">
             {[
               {
                 n: "01", t: "Digitalisation of Construction",
@@ -197,14 +196,14 @@ const timelineData = [
                 b: "Modern infrastructure projects require closer coordination between civil, structural, architectural, MEP, material supply and specialist contractors. Integrated execution can help reduce coordination gaps, rework and delays.",
               },
             ].map((item) => (
-              <div key={item.n} className="flex gap-4">
-                <span className="mt-0.5 shrink-0 w-7 h-7 rounded-full flex items-center justify-center font-mono text-[10px] font-black text-[#f55d1b] border border-[#f55d1b]/40 bg-[#f55d1b]/10">
+              <div key={item.n} className="flex gap-3 sm:gap-4">
+                <span className="mt-0.5 shrink-0 w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center font-mono text-[9px] sm:text-[10px] font-black text-[#f55d1b] border border-[#f55d1b]/40 bg-[#f55d1b]/10">
                   {item.n}
                 </span>
                 <div>
-                  <h4 className="font-primary font-black text-sm text-white uppercase mb-1">{item.t}</h4>
-                  <p className="font-sans text-[13.5px] text-neutral-400 leading-relaxed">{item.b}</p>
-                  {item.b2 && <p className="font-sans text-[13.5px] text-neutral-400 leading-relaxed mt-1.5">{item.b2}</p>}
+                  <h4 className="font-primary font-black text-xs sm:text-sm text-white uppercase mb-1">{item.t}</h4>
+                  <p className="font-sans text-xs sm:text-[13.5px] text-neutral-400 leading-relaxed">{item.b}</p>
+                  {item.b2 && <p className="font-sans text-xs sm:text-[13.5px] text-neutral-400 leading-relaxed mt-1.5">{item.b2}</p>}
                 </div>
               </div>
             ))}
@@ -225,10 +224,10 @@ const timelineData = [
   {
     title: "02",
     content: (
-      <div className="space-y-5">
+      <div className="space-y-4 sm:space-y-5">
         <FadeUp>
           <Tag>AI & INTELLIGENCE · 5 MIN</Tag>
-          <h2 className="mt-3 font-primary font-black text-2xl md:text-4xl text-white uppercase leading-[1.08] tracking-tight">
+          <h2 className="mt-2.5 sm:mt-3 font-primary font-black text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white uppercase leading-snug sm:leading-tight tracking-tight">
             Blog 2: AI in Construction: How Technology Is Transforming Project Planning & Execution
           </h2>
         </FadeUp>
@@ -241,10 +240,10 @@ const timelineData = [
 
         <FadeUp delay={0.05}>
           <Card>
-            <p className="font-sans text-[15px] text-neutral-200 leading-[1.85] mb-4">
+            <p className="font-sans text-sm sm:text-[15px] text-neutral-200 leading-relaxed sm:leading-[1.85] mb-3 sm:mb-4">
               Artificial intelligence is changing the way industries plan, execute and manage complex operations, and construction is no exception.
             </p>
-            <p className="font-sans text-[15px] text-neutral-200 leading-[1.85]">
+            <p className="font-sans text-sm sm:text-[15px] text-neutral-200 leading-relaxed sm:leading-[1.85]">
               India's infrastructure sector is increasingly exploring AI across project planning, design, procurement, construction and operations. Industry analysis indicates that AI can support productivity improvements by enabling faster, data-driven decision-making.
             </p>
           </Card>
@@ -252,7 +251,7 @@ const timelineData = [
 
         <FadeUp delay={0.08}>
           <SectionLabel>Where Can AI Make a Difference?</SectionLabel>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             <GridCard title="Project Planning" body="AI can analyse historical project data, timelines and resource requirements to identify potential risks and improve planning." />
             <GridCard title="Progress Monitoring" body="AI-powered systems can analyse site images, drone footage and project data to provide better visibility into construction progress." />
             <GridCard title="Resource Optimisation" body="Equipment, labour and material utilisation can be analysed to identify inefficiencies and improve resource allocation." />
@@ -262,12 +261,12 @@ const timelineData = [
         </FadeUp>
 
         <FadeUp delay={0.1}>
-          <Card className="space-y-3">
-            <h4 className="font-primary font-black text-base text-white uppercase">AI + BIM + Real-Time Data</h4>
-            <p className="font-sans text-[14.5px] text-neutral-400 leading-relaxed">
+          <Card className="space-y-2.5 sm:space-y-3">
+            <h4 className="font-primary font-black text-sm sm:text-base text-white uppercase">AI + BIM + Real-Time Data</h4>
+            <p className="font-sans text-xs sm:text-[14.5px] text-neutral-400 leading-relaxed">
               The real opportunity lies not in using AI as a standalone technology, but in connecting it with BIM, project management platforms, IoT, drone surveys and field data.
             </p>
-            <p className="font-sans text-[14.5px] text-neutral-400 leading-relaxed">
+            <p className="font-sans text-xs sm:text-[14.5px] text-neutral-400 leading-relaxed">
               This creates a more connected project environment where information can move from the site to decision-makers faster. India's infrastructure sector is already moving towards more integrated digital workflows, although adoption remains uneven.
             </p>
           </Card>
@@ -287,10 +286,10 @@ const timelineData = [
   {
     title: "03",
     content: (
-      <div className="space-y-5">
+      <div className="space-y-4 sm:space-y-5">
         <FadeUp>
           <Tag>ESG & DURABILITY · 5 MIN</Tag>
-          <h2 className="mt-3 font-primary font-black text-2xl md:text-4xl text-white uppercase leading-[1.08] tracking-tight">
+          <h2 className="mt-2.5 sm:mt-3 font-primary font-black text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white uppercase leading-snug sm:leading-tight tracking-tight">
             Blog 3: Sustainable Infrastructure: Building for Performance, Not Just Completion
           </h2>
         </FadeUp>
@@ -303,10 +302,10 @@ const timelineData = [
 
         <FadeUp delay={0.05}>
           <Card>
-            <p className="font-sans text-[15px] text-neutral-200 leading-[1.85] mb-4">
+            <p className="font-sans text-sm sm:text-[15px] text-neutral-200 leading-relaxed sm:leading-[1.85] mb-3 sm:mb-4">
               Infrastructure has a long lifecycle. A road, building, industrial facility or railway asset may serve communities for decades. That makes the way it is designed, constructed and maintained just as important as the final structure itself.
             </p>
-            <p className="font-sans text-[15px] text-neutral-200 leading-[1.85]">
+            <p className="font-sans text-sm sm:text-[15px] text-neutral-200 leading-relaxed sm:leading-[1.85]">
               Sustainable infrastructure is therefore moving beyond environmental compliance to become a broader approach focused on resource efficiency, durability, operational performance and responsible construction.
             </p>
           </Card>
@@ -314,7 +313,7 @@ const timelineData = [
 
         <FadeUp delay={0.08}>
           <SectionLabel>What Does Sustainable Construction Mean?</SectionLabel>
-          <p className="font-sans text-[13px] text-neutral-500 mb-2">Sustainable construction can involve:</p>
+          <p className="font-sans text-xs sm:text-[13px] text-neutral-500 mb-2">Sustainable construction can involve:</p>
           <PillList items={[
             "Efficient use of construction materials",
             "Responsible management of aggregates and natural resources",
@@ -327,16 +326,16 @@ const timelineData = [
         </FadeUp>
 
         <FadeUp delay={0.1}>
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             <Card>
-              <h4 className="font-primary font-black text-sm text-[#f55d1b] uppercase mb-2">Why Material Management Matters</h4>
-              <p className="font-sans text-[14.5px] text-neutral-400 leading-relaxed">Materials form a significant part of infrastructure construction. Efficient sourcing, processing, transportation and utilisation of materials can contribute to better project efficiency while reducing unnecessary waste.</p>
-              <p className="font-sans text-[14.5px] text-neutral-400 leading-relaxed mt-2">This is particularly relevant for projects involving aggregates, crushing, earthwork and large-scale civil construction.</p>
+              <h4 className="font-primary font-black text-xs sm:text-sm text-[#f55d1b] uppercase mb-1.5 sm:mb-2">Why Material Management Matters</h4>
+              <p className="font-sans text-xs sm:text-[14.5px] text-neutral-400 leading-relaxed">Materials form a significant part of infrastructure construction. Efficient sourcing, processing, transportation and utilisation of materials can contribute to better project efficiency while reducing unnecessary waste.</p>
+              <p className="font-sans text-xs sm:text-[14.5px] text-neutral-400 leading-relaxed mt-2">This is particularly relevant for projects involving aggregates, crushing, earthwork and large-scale civil construction.</p>
             </Card>
             <Card>
-              <h4 className="font-primary font-black text-sm text-[#f55d1b] uppercase mb-2">Sustainability Meets Technology</h4>
-              <p className="font-sans text-[14.5px] text-neutral-400 leading-relaxed">Digital technologies can also support sustainable construction by improving planning and reducing inefficiencies.</p>
-              <p className="font-sans text-[14.5px] text-neutral-400 leading-relaxed mt-2">BIM, digital monitoring, drones and data analytics can improve coordination and help project teams identify issues earlier.</p>
+              <h4 className="font-primary font-black text-xs sm:text-sm text-[#f55d1b] uppercase mb-1.5 sm:mb-2">Sustainability Meets Technology</h4>
+              <p className="font-sans text-xs sm:text-[14.5px] text-neutral-400 leading-relaxed">Digital technologies can also support sustainable construction by improving planning and reducing inefficiencies.</p>
+              <p className="font-sans text-xs sm:text-[14.5px] text-neutral-400 leading-relaxed mt-2">BIM, digital monitoring, drones and data analytics can improve coordination and help project teams identify issues earlier.</p>
             </Card>
           </div>
         </FadeUp>
@@ -355,10 +354,10 @@ const timelineData = [
   {
     title: "04",
     content: (
-      <div className="space-y-5">
+      <div className="space-y-4 sm:space-y-5">
         <FadeUp>
           <Tag>5D DIGITAL TWIN · 6 MIN</Tag>
-          <h2 className="mt-3 font-primary font-black text-2xl md:text-4xl text-white uppercase leading-[1.08] tracking-tight">
+          <h2 className="mt-2.5 sm:mt-3 font-primary font-black text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white uppercase leading-snug sm:leading-tight tracking-tight">
             Blog 4: BIM in Civil Construction: From Digital Design to Better Project Execution
           </h2>
         </FadeUp>
@@ -371,13 +370,13 @@ const timelineData = [
 
         <FadeUp delay={0.05}>
           <Card>
-            <p className="font-sans text-[15px] text-neutral-200 leading-[1.85] mb-4">
+            <p className="font-sans text-sm sm:text-[15px] text-neutral-200 leading-relaxed sm:leading-[1.85] mb-3 sm:mb-4">
               Construction projects involve multiple disciplines, teams and stakeholders. When design, engineering and execution are not properly coordinated, even small discrepancies can lead to rework, delays and additional costs.
             </p>
-            <p className="font-sans text-[15px] text-neutral-200 leading-[1.85] mb-4">
+            <p className="font-sans text-sm sm:text-[15px] text-neutral-200 leading-relaxed sm:leading-[1.85] mb-3 sm:mb-4">
               This is where Building Information Modelling, or BIM, is becoming increasingly valuable.
             </p>
-            <p className="font-sans text-[15px] text-neutral-200 leading-[1.85]">
+            <p className="font-sans text-sm sm:text-[15px] text-neutral-200 leading-relaxed sm:leading-[1.85]">
               BIM creates a digital representation of a project and enables different stakeholders to collaborate around a common information environment. The technology is increasingly being used across major infrastructure projects in India.
             </p>
           </Card>
@@ -385,7 +384,7 @@ const timelineData = [
 
         <FadeUp delay={0.08}>
           <SectionLabel>How BIM Supports Construction</SectionLabel>
-          <div className="space-y-3">
+          <div className="space-y-2.5 sm:space-y-3">
             <GridCard title="Better Design Coordination" body="Civil, structural, architectural and MEP teams can coordinate their designs within a common digital environment." />
             <GridCard title="Early Clash Detection" body="Potential conflicts between systems can be identified before they reach the construction site." />
             <GridCard title="Improved Planning" body="Teams can visualise construction sequences and better understand how different activities interact." />
@@ -395,10 +394,10 @@ const timelineData = [
         </FadeUp>
 
         <FadeUp delay={0.1}>
-          <Card className="space-y-3">
-            <h4 className="font-primary font-black text-base text-white uppercase">BIM Beyond 3D</h4>
-            <p className="font-sans text-[14.5px] text-neutral-400 leading-relaxed">BIM is increasingly evolving beyond three-dimensional visualisation.</p>
-            <p className="font-sans text-[14.5px] text-neutral-400 leading-relaxed">When integrated with scheduling and cost information, it can support 4D planning and 5D cost management, creating a more comprehensive approach to project delivery.</p>
+          <Card className="space-y-2.5 sm:space-y-3">
+            <h4 className="font-primary font-black text-sm sm:text-base text-white uppercase">BIM Beyond 3D</h4>
+            <p className="font-sans text-xs sm:text-[14.5px] text-neutral-400 leading-relaxed">BIM is increasingly evolving beyond three-dimensional visualisation.</p>
+            <p className="font-sans text-xs sm:text-[14.5px] text-neutral-400 leading-relaxed">When integrated with scheduling and cost information, it can support 4D planning and 5D cost management, creating a more comprehensive approach to project delivery.</p>
           </Card>
         </FadeUp>
 
@@ -416,10 +415,10 @@ const timelineData = [
   {
     title: "05",
     content: (
-      <div className="space-y-5">
+      <div className="space-y-4 sm:space-y-5">
         <FadeUp>
           <Tag>MATERIAL SCIENCE · 5 MIN</Tag>
-          <h2 className="mt-3 font-primary font-black text-2xl md:text-4xl text-white uppercase leading-[1.08] tracking-tight">
+          <h2 className="mt-2.5 sm:mt-3 font-primary font-black text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white uppercase leading-snug sm:leading-tight tracking-tight">
             Blog 5: Why Quality Aggregates Matter in Infrastructure Construction
           </h2>
         </FadeUp>
@@ -432,26 +431,26 @@ const timelineData = [
 
         <FadeUp delay={0.05}>
           <Card>
-            <p className="font-sans text-[15px] text-neutral-200 leading-[1.85] mb-4">
+            <p className="font-sans text-sm sm:text-[15px] text-neutral-200 leading-relaxed sm:leading-[1.85] mb-3 sm:mb-4">
               Aggregates may appear to be one of the simplest components of construction, but they play a fundamental role in the strength, stability and performance of infrastructure.
             </p>
-            <p className="font-sans text-[15px] text-neutral-200 leading-[1.85]">
+            <p className="font-sans text-sm sm:text-[15px] text-neutral-200 leading-relaxed sm:leading-[1.85]">
               From roads and railway infrastructure to concrete structures, foundations and industrial projects, the quality and suitability of aggregates can directly influence construction performance.
             </p>
           </Card>
         </FadeUp>
 
         <FadeUp delay={0.08}>
-          <Card className="space-y-3">
-            <h4 className="font-primary font-black text-base text-white uppercase">What Are Construction Aggregates?</h4>
-            <p className="font-sans text-[14.5px] text-neutral-400 leading-relaxed">Construction aggregates are granular materials such as crushed stone, gravel and other processed materials used in concrete, roads, railway applications and various civil works.</p>
-            <p className="font-sans text-[14.5px] text-neutral-400 leading-relaxed">Their characteristics including size, grading, strength, durability and cleanliness, need to meet the requirements of the intended application.</p>
+          <Card className="space-y-2.5 sm:space-y-3">
+            <h4 className="font-primary font-black text-sm sm:text-base text-white uppercase">What Are Construction Aggregates?</h4>
+            <p className="font-sans text-xs sm:text-[14.5px] text-neutral-400 leading-relaxed">Construction aggregates are granular materials such as crushed stone, gravel and other processed materials used in concrete, roads, railway applications and various civil works.</p>
+            <p className="font-sans text-xs sm:text-[14.5px] text-neutral-400 leading-relaxed">Their characteristics including size, grading, strength, durability and cleanliness, need to meet the requirements of the intended application.</p>
           </Card>
         </FadeUp>
 
         <FadeUp delay={0.1}>
           <SectionLabel>Why Aggregate Quality Matters</SectionLabel>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             <GridCard title="Strength and Stability" body="Appropriate aggregates contribute to the structural performance of concrete and other construction applications." />
             <GridCard title="Consistent Grading" body="Correct particle size distribution supports efficient mixing, compaction and application." />
             <GridCard title="Durability" body="Infrastructure is exposed to traffic, weather and environmental conditions. Durable materials are therefore essential for long-term performance." />
@@ -460,11 +459,11 @@ const timelineData = [
         </FadeUp>
 
         <FadeUp delay={0.12}>
-          <Card className="space-y-3">
-            <h4 className="font-primary font-black text-base text-white uppercase">The Role of Crushing Operations</h4>
-            <p className="font-sans text-[14.5px] text-neutral-400 leading-relaxed">For large infrastructure projects, crushing plants play an important role in processing boulders and rock into required aggregate sizes.</p>
-            <p className="font-sans text-[14.5px] text-neutral-400 leading-relaxed">Efficient crushing and screening operations help produce materials suited to specific project requirements.</p>
-            <p className="font-sans text-[14.5px] text-neutral-400 leading-relaxed">This is particularly important in road, railway and major civil infrastructure projects, where material volumes and specifications can be demanding.</p>
+          <Card className="space-y-2.5 sm:space-y-3">
+            <h4 className="font-primary font-black text-sm sm:text-base text-white uppercase">The Role of Crushing Operations</h4>
+            <p className="font-sans text-xs sm:text-[14.5px] text-neutral-400 leading-relaxed">For large infrastructure projects, crushing plants play an important role in processing boulders and rock into required aggregate sizes.</p>
+            <p className="font-sans text-xs sm:text-[14.5px] text-neutral-400 leading-relaxed">Efficient crushing and screening operations help produce materials suited to specific project requirements.</p>
+            <p className="font-sans text-xs sm:text-[14.5px] text-neutral-400 leading-relaxed">This is particularly important in road, railway and major civil infrastructure projects, where material volumes and specifications can be demanding.</p>
           </Card>
         </FadeUp>
 
@@ -482,10 +481,10 @@ const timelineData = [
   {
     title: "06",
     content: (
-      <div className="space-y-5">
+      <div className="space-y-4 sm:space-y-5">
         <FadeUp>
           <Tag>EARTHWORK FLEET · 6 MIN</Tag>
-          <h2 className="mt-3 font-primary font-black text-2xl md:text-4xl text-white uppercase leading-[1.08] tracking-tight">
+          <h2 className="mt-2.5 sm:mt-3 font-primary font-black text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white uppercase leading-snug sm:leading-tight tracking-tight">
             Blog 6: From Excavation to Execution: The Critical Role of Earthwork in Infrastructure Projects
           </h2>
         </FadeUp>
@@ -498,10 +497,10 @@ const timelineData = [
 
         <FadeUp delay={0.05}>
           <Card>
-            <p className="font-sans text-[15px] text-neutral-200 leading-[1.85] mb-4">
+            <p className="font-sans text-sm sm:text-[15px] text-neutral-200 leading-relaxed sm:leading-[1.85] mb-3 sm:mb-4">
               Before a building rises, a road is constructed or an infrastructure project takes shape, there is one fundamental stage that sets the foundation for everything that follows: earthwork.
             </p>
-            <p className="font-sans text-[15px] text-neutral-200 leading-[1.85]">
+            <p className="font-sans text-sm sm:text-[15px] text-neutral-200 leading-relaxed sm:leading-[1.85]">
               Excavation, grading, site preparation and earthmoving are critical activities that establish the physical conditions required for successful construction.
             </p>
           </Card>
@@ -509,7 +508,7 @@ const timelineData = [
 
         <FadeUp delay={0.08}>
           <SectionLabel>What Does Earthwork Include?</SectionLabel>
-          <p className="font-sans text-[13px] text-neutral-500 mb-2">Depending on the project, earthwork can involve:</p>
+          <p className="font-sans text-xs sm:text-[13px] text-neutral-500 mb-2">Depending on the project, earthwork can involve:</p>
           <PillList items={[
             "Site clearing and preparation",
             "Excavation",
@@ -524,20 +523,20 @@ const timelineData = [
         </FadeUp>
 
         <FadeUp delay={0.1}>
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             <Card>
-              <h4 className="font-primary font-black text-sm text-[#f55d1b] uppercase mb-2">Why Proper Excavation Matters</h4>
-              <p className="font-sans text-[14.5px] text-neutral-400 leading-relaxed">Poorly planned excavation can create challenges throughout the project lifecycle. Effective earthwork planning considers soil conditions, excavation depths, equipment requirements, material movement, drainage and construction sequencing.</p>
+              <h4 className="font-primary font-black text-xs sm:text-sm text-[#f55d1b] uppercase mb-1.5 sm:mb-2">Why Proper Excavation Matters</h4>
+              <p className="font-sans text-xs sm:text-[14.5px] text-neutral-400 leading-relaxed">Poorly planned excavation can create challenges throughout the project lifecycle. Effective earthwork planning considers soil conditions, excavation depths, equipment requirements, material movement, drainage and construction sequencing.</p>
             </Card>
             <Card>
-              <h4 className="font-primary font-black text-sm text-[#f55d1b] uppercase mb-2">Equipment Makes a Difference</h4>
-              <p className="font-sans text-[14.5px] text-neutral-400 leading-relaxed">Large infrastructure projects require the right combination of machinery and equipment to execute earthwork efficiently.</p>
-              <p className="font-sans text-[14.5px] text-neutral-400 leading-relaxed mt-2">Excavators, loaders, dumpers, graders, compactors and other equipment must be coordinated according to the project's scale and requirements.</p>
+              <h4 className="font-primary font-black text-xs sm:text-sm text-[#f55d1b] uppercase mb-1.5 sm:mb-2">Equipment Makes a Difference</h4>
+              <p className="font-sans text-xs sm:text-[14.5px] text-neutral-400 leading-relaxed">Large infrastructure projects require the right combination of machinery and equipment to execute earthwork efficiently.</p>
+              <p className="font-sans text-xs sm:text-[14.5px] text-neutral-400 leading-relaxed mt-2">Excavators, loaders, dumpers, graders, compactors and other equipment must be coordinated according to the project's scale and requirements.</p>
             </Card>
             <Card>
-              <h4 className="font-primary font-black text-sm text-[#f55d1b] uppercase mb-2">Earthwork and Project Timelines</h4>
-              <p className="font-sans text-[14.5px] text-neutral-400 leading-relaxed">Earthwork is often one of the earliest major activities on a construction site. Delays at this stage can impact subsequent construction activities.</p>
-              <p className="font-sans text-[14.5px] text-neutral-400 leading-relaxed mt-2">Efficient planning, equipment utilisation, material movement and site coordination can therefore have a direct impact on overall project progress.</p>
+              <h4 className="font-primary font-black text-xs sm:text-sm text-[#f55d1b] uppercase mb-1.5 sm:mb-2">Earthwork and Project Timelines</h4>
+              <p className="font-sans text-xs sm:text-[14.5px] text-neutral-400 leading-relaxed">Earthwork is often one of the earliest major activities on a construction site. Delays at this stage can impact subsequent construction activities.</p>
+              <p className="font-sans text-xs sm:text-[14.5px] text-neutral-400 leading-relaxed mt-2">Efficient planning, equipment utilisation, material movement and site coordination can therefore have a direct impact on overall project progress.</p>
             </Card>
           </div>
         </FadeUp>
@@ -558,23 +557,23 @@ const timelineData = [
 export default function BlogsPage() {
   return (
     <main className="min-h-screen bg-[#000435] text-slate-100 antialiased overflow-x-hidden selection:bg-[#f55d1b] selection:text-white">
-      <section className="relative pt-24 pb-12 px-6 sm:px-10 md:px-16 max-w-7xl 2xl:max-w-[1580px] mx-auto overflow-hidden">
+      <section className="relative pt-20 sm:pt-28 md:pt-32 pb-10 sm:pb-14 px-4 sm:px-8 md:px-12 lg:px-16 max-w-7xl 2xl:max-w-[1580px] mx-auto overflow-hidden">
         <div
-          className="absolute -top-20 left-1/2 -translate-x-1/2 w-[700px] h-[400px] pointer-events-none"
+          className="absolute -top-20 left-1/2 -translate-x-1/2 w-[700px] h-[400px] pointer-events-none opacity-60 sm:opacity-100"
           style={{ background: "radial-gradient(ellipse at center,#f55d1b18 0%,transparent 70%)" }}
         />
 
         <FadeUp delay={0} className="relative z-10">
-          <div className="flex items-center gap-3 mb-5">
-            <span className="w-8 h-px bg-[#f55d1b]" />
-            <span className="font-mono text-[11px] font-bold tracking-[0.3em] uppercase text-[#f55d1b]">
+          <div className="flex items-center gap-2.5 sm:gap-3 mb-4 sm:mb-5">
+            <span className="w-6 sm:w-8 h-px bg-[#f55d1b]" />
+            <span className="font-mono text-[10px] sm:text-[11px] font-bold tracking-[0.24em] sm:tracking-[0.3em] uppercase text-[#f55d1b]">
               Editorial Research · Trion Infrastructure
             </span>
           </div>
         </FadeUp>
 
         <RevealLine delay={0.1} className="relative z-10">
-          <h1 className="font-primary font-black text-[52px] sm:text-[72px] md:text-[96px] text-white leading-[0.93] tracking-[-0.04em] uppercase">
+          <h1 className="font-primary font-black text-4xl sm:text-6xl md:text-8xl lg:text-[96px] text-white leading-[0.95] sm:leading-[0.93] tracking-[-0.03em] sm:tracking-[-0.04em] uppercase break-words">
             Engineering<br />
             <span className="text-transparent" style={{ WebkitTextStroke: "1px #f55d1b" }}>
               Intelligence
@@ -582,26 +581,26 @@ export default function BlogsPage() {
           </h1>
         </RevealLine>
 
-        <FadeUp delay={0.3} className="relative z-10 mt-8 flex flex-wrap items-center gap-8">
-          <p className="font-sans text-neutral-400 text-base max-w-md leading-relaxed">
+        <FadeUp delay={0.3} className="relative z-10 mt-6 sm:mt-8 flex flex-col sm:flex-row sm:items-center justify-between gap-6 sm:gap-8">
+          <p className="font-sans text-neutral-400 text-sm sm:text-base max-w-md leading-relaxed">
             Six in-depth chapters on India's infrastructure transformation — technology, materials, sustainability, and execution.
           </p>
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-6 sm:gap-8 pt-3 sm:pt-0 border-t sm:border-t-0 border-white/10 w-full sm:w-auto justify-between sm:justify-start">
             {[
               { v: "06", l: "Chapters" },
               { v: "32+", l: "Min Read" },
               { v: "2026", l: "Focus" },
             ].map((s) => (
               <div key={s.l} className="text-center">
-                <span className="block font-primary font-black text-2xl text-white">{s.v}</span>
-                <span className="block font-mono text-[10px] text-neutral-500 uppercase tracking-widest">{s.l}</span>
+                <span className="block font-primary font-black text-xl sm:text-2xl text-white">{s.v}</span>
+                <span className="block font-mono text-[9px] sm:text-[10px] text-neutral-500 uppercase tracking-widest">{s.l}</span>
               </div>
             ))}
           </div>
         </FadeUp>
       </section>
 
-      <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-4 md:px-8 lg:px-10">
+      <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10">
         <div
           className="w-full h-px mb-0"
           style={{ background: "linear-gradient(90deg, transparent, #f55d1b40, transparent)" }}
@@ -611,7 +610,7 @@ export default function BlogsPage() {
       <Timeline data={timelineData} />
 
       <section
-        className="relative py-28 px-6 text-center overflow-hidden"
+        className="relative py-16 sm:py-24 md:py-28 px-4 sm:px-6 text-center overflow-hidden"
         style={{ background: "linear-gradient(to top,#000,#000435)" }}
       >
         <div
@@ -620,26 +619,26 @@ export default function BlogsPage() {
         />
         <div className="relative z-10 max-w-3xl mx-auto">
           <FadeUp>
-            <span className="inline-flex items-center gap-2 mb-5 font-mono text-[11px] tracking-[0.3em] text-[#f55d1b] uppercase font-bold">
-              <span className="w-5 h-px bg-[#f55d1b]" />
+            <span className="inline-flex items-center gap-2 mb-4 sm:mb-5 font-mono text-[10px] sm:text-[11px] tracking-[0.22em] sm:tracking-[0.3em] text-[#f55d1b] uppercase font-bold">
+              <span className="w-4 sm:w-5 h-px bg-[#f55d1b]" />
               Infrastructure Partnership
-              <span className="w-5 h-px bg-[#f55d1b]" />
+              <span className="w-4 sm:w-5 h-px bg-[#f55d1b]" />
             </span>
           </FadeUp>
           <RevealLine delay={0.1}>
-            <h2 className="font-primary font-black text-4xl sm:text-6xl text-white uppercase leading-[1.0] tracking-[-0.03em]">
+            <h2 className="font-primary font-black text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-white uppercase leading-[1.05] tracking-[-0.02em] sm:tracking-[-0.03em]">
               BUILD THE FUTURE WITH US
             </h2>
           </RevealLine>
           <FadeUp delay={0.2}>
-            <p className="font-sans text-neutral-400 text-base mt-6 mb-10 leading-relaxed max-w-xl mx-auto">
+            <p className="font-sans text-neutral-400 text-sm sm:text-base mt-4 sm:mt-6 mb-8 sm:mb-10 leading-relaxed max-w-xl mx-auto px-2">
               Connect with our executive engineering specialists for technical consultation, tenders, and turnkey project development across India.
             </p>
           </FadeUp>
           <FadeUp delay={0.3}>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-3 px-10 py-4 rounded-full font-primary font-black text-sm uppercase tracking-[0.15em] text-white no-underline transition-all duration-300 hover:-translate-y-1"
+              className="inline-flex items-center gap-2.5 sm:gap-3 px-8 sm:px-10 py-3.5 sm:py-4 rounded-full font-primary font-black text-xs sm:text-sm uppercase tracking-[0.12em] sm:tracking-[0.15em] text-white no-underline transition-all duration-300 hover:-translate-y-1"
               style={{
                 background: "linear-gradient(135deg,#f55d1b,#f55d1b)",
                 boxShadow: "0 8px 32px #f55d1b55",

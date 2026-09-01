@@ -624,7 +624,10 @@ export default function AboustUs() {
         }
       `}</style>
 
-      <section id="company-profile" className="relative min-h-screen flex items-end overflow-hidden pt-28">
+      <section
+        id="company-profile"
+        className="relative min-h-screen flex items-end overflow-hidden pt-28"
+      >
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -645,7 +648,7 @@ export default function AboustUs() {
             style={heroCss(0.05)}
             className="w-10 h-[2px] bg-[#f55d1b] mb-6"
           />
-  
+
           <h1
             style={heroCss(0.3)}
             className="font-primary font-bold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight tracking-tight max-w-3xl mb-5 drop-shadow-[0_2px_12px_rgba(0,0,0,0.6)]"
@@ -745,7 +748,10 @@ export default function AboustUs() {
         </div>
       </section>
 
-      <section id="core-capabilities" className="py-20 lg:py-28 bg-[#000435]/[0.02]">
+      <section
+        id="core-capabilities"
+        className="py-20 lg:py-28 bg-[#000435]/[0.02]"
+      >
         <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-6 lg:px-8">
           <div ref={capH} style={anim(capHv, 0)} className="mb-4">
             <SectionLabel>Our Core Capabilities</SectionLabel>
@@ -876,7 +882,10 @@ export default function AboustUs() {
         </div>
       </section>
 
-      <section id="hse" className="py-20 lg:py-28 bg-[#000435] relative overflow-hidden">
+      <section
+        id="hse"
+        className="py-20 lg:py-28 bg-[#000435] relative overflow-hidden"
+      >
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full pointer-events-none bg-[radial-gradient(ellipse,rgba(245, 93, 27,0.07)_0%,transparent_65%)]" />
         <div className="relative z-10 max-w-7xl 2xl:max-w-[1580px] mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">

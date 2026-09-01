@@ -1113,7 +1113,7 @@ function ServiceCard({ service, index, isHighlighted }) {
 
             <div className="max-w-2xl mb-5">
               <p
-                className={`font-secondary text-sm 2xl:text-[15px] leading-[1.7] text-justify sm:text-left ${
+                className={`font-secondary text-sm 2xl:text-[15px] leading-[1.7] text-left ${
                   isLight ? "text-slate-600" : "text-slate-300"
                 }`}
               >
@@ -1382,7 +1382,7 @@ export default function ServicesPage() {
                     </div>
                   </div>
 
-                  <p className="font-secondary text-slate-700 text-[15px] sm:text-base leading-[1.8] text-justify sm:text-left mb-6">
+                  <p className="font-secondary text-slate-700 text-[15px] sm:text-base leading-[1.8] text-left mb-6">
                     At Trion, we provide comprehensive civil construction,
                     infrastructure, mining, excavation, crushing, and building
                     construction services for projects of diverse scales and
@@ -1417,7 +1417,7 @@ export default function ServicesPage() {
                     <SvgCross />
                   </div>
 
-                  <p className="font-secondary text-slate-200 text-[15px] sm:text-base leading-[1.8] text-justify sm:text-left mb-6">
+                  <p className="font-secondary text-slate-200 text-[15px] sm:text-base leading-[1.8] text-left mb-6">
                     From site development, earthwork and excavation to road
                     construction, mining, crushing, structural and high-rise
                     construction, we offer integrated solutions that support

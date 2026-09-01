@@ -85,15 +85,16 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-[#000435]/95 relative h-fit overflow-hidden shadow-[0_24px_50px_rgba(0,0,0,0.85)] border-t border-white/10 font-primary">
-      <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto p-6 sm:p-10 lg:p-14 z-40 relative">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 pb-12">
-          <div className="lg:col-span-4 flex flex-col space-y-4">
+    <footer className="bg-[#000435] relative h-fit overflow-hidden shadow-[0_24px_50px_rgba(0,0,0,0.85)] border-t border-white/10 font-primary">
+      <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-5 sm:px-8 lg:px-12 pt-10 sm:pt-14 pb-6 sm:pb-10 z-30 relative">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 pb-6 sm:pb-8">
+          {/* Column 1: Company Profile & Socials */}
+          <div className="sm:col-span-2 lg:col-span-4 flex flex-col space-y-4">
             <Link
               to="/"
-              className="flex items-center space-x-2 no-underline w-fit"
+              className="flex items-center space-x-2 no-underline w-fit group"
             >
-              <span className="text-[#f55d1b] text-3xl font-extrabold">
+              <span className="text-[#f55d1b] text-3xl font-extrabold transition-transform group-hover:scale-110">
                 &hearts;
               </span>
               <span className="text-white text-3xl font-bold font-primary tracking-wider uppercase">
@@ -105,7 +106,7 @@ export default function Footer() {
               mining, quarry crushing, EPC management, and structural
               engineering enterprise.
             </p>
-            <div className="flex space-x-3 text-slate-400 pt-2">
+            <div className="flex flex-wrap gap-2.5 text-slate-400 pt-1">
               {socialLinks.map(({ icon, label, href }) => (
                 <a
                   key={label}
@@ -113,15 +114,17 @@ export default function Footer() {
                   aria-label={label}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-8 h-8 rounded-lg bg-[#000435] border border-white/10 flex items-center justify-center text-slate-400 hover:text-[#f55d1b] hover:border-[#f55d1b]/40 transition-all"
+                  className="w-9 h-9 rounded-lg bg-[#000435] border border-white/15 flex items-center justify-center text-slate-300 hover:text-[#f55d1b] hover:border-[#f55d1b]/50 hover:bg-[#f55d1b]/10 transition-all"
                 >
                   {icon}
                 </a>
               ))}
             </div>
           </div>
-          <div className="lg:col-span-3">
-            <h4 className="text-white text-base font-bold mb-4 font-primary flex items-center gap-2">
+
+          {/* Column 2: Our Services */}
+          <div className="col-span-1 lg:col-span-3">
+            <h4 className="text-white text-sm sm:text-base font-bold mb-3.5 sm:mb-4 font-primary flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-[#f55d1b]" />
               Our Services
             </h4>
@@ -141,8 +144,10 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-          <div className="lg:col-span-2">
-            <h4 className="text-white text-base font-bold mb-4 font-primary flex items-center gap-2">
+
+          {/* Column 3: About Us */}
+          <div className="col-span-1 lg:col-span-2">
+            <h4 className="text-white text-sm sm:text-base font-bold mb-3.5 sm:mb-4 font-primary flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-[#f55d1b]" />
               About Us
             </h4>
@@ -162,8 +167,10 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-          <div className="lg:col-span-3">
-            <h4 className="text-white text-base font-bold mb-4 font-primary flex items-center gap-2">
+
+          {/* Column 4: Contact Us */}
+          <div className="sm:col-span-2 lg:col-span-3">
+            <h4 className="text-white text-sm sm:text-base font-bold mb-3.5 sm:mb-4 font-primary flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-[#f55d1b]" />
               Contact Us
             </h4>
@@ -171,33 +178,35 @@ export default function Footer() {
               {contactInfo.map((item, i) => (
                 <li
                   key={i}
-                  className="flex items-start space-x-2.5 text-slate-300 text-xs"
+                  className="flex items-start space-x-2.5 text-slate-300 text-xs sm:text-[13px]"
                 >
-                  <span className="mt-0.5">{item.icon}</span>
-                  {item.href.startsWith("mailto:") ||
-                  item.href.startsWith("tel:") ||
-                  item.href.startsWith("http") ? (
-                    <a
-                      href={item.href}
-                      className="hover:text-[#f55d1b] transition-colors text-slate-300 no-underline leading-tight break-words"
-                    >
-                      {item.text}
-                    </a>
-                  ) : (
-                    <Link
-                      to={item.href}
-                      className="hover:text-[#f55d1b] transition-colors text-slate-300 no-underline leading-tight"
-                    >
-                      {item.text}
-                    </Link>
-                  )}
+                  <span className="mt-0.5 shrink-0">{item.icon}</span>
+                  <div className="min-w-0 flex-1">
+                    {item.href.startsWith("mailto:") ||
+                    item.href.startsWith("tel:") ||
+                    item.href.startsWith("http") ? (
+                      <a
+                        href={item.href}
+                        className="hover:text-[#f55d1b] transition-colors text-slate-300 no-underline leading-snug break-words block"
+                      >
+                        {item.text}
+                      </a>
+                    ) : (
+                      <Link
+                        to={item.href}
+                        className="hover:text-[#f55d1b] transition-colors text-slate-300 no-underline leading-snug break-words block"
+                      >
+                        {item.text}
+                      </Link>
+                    )}
+                  </div>
                 </li>
               ))}
             </ul>
             <div className="mt-4 pt-4 border-t border-white/10">
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#f55d1b] hover:bg-[#f55d1b] text-white text-xs font-bold font-primary transition-all no-underline shadow-md shadow-orange-500/20"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f55d1b] hover:bg-[#d94e14] text-white text-xs font-bold font-primary transition-all no-underline shadow-md shadow-orange-500/20"
               >
                 <span>Get In Touch</span>
                 <ArrowUpRight size={14} />
@@ -205,16 +214,30 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <hr className="border-t border-slate-700/60 my-6" />
       </div>
-      <div className="lg:flex hidden h-[30rem] -mt-52 -mb-28 relative z-50 select-none">
-        <TextHoverEffect text="Trion" className="w-full h-full" />
+
+      {/* Responsive Interactive Brand Watermark */}
+      <div className="flex h-24 sm:h-44 md:h-64 lg:h-[24rem] -mt-6 sm:-mt-20 md:-mt-32 lg:-mt-44 -mb-4 sm:-mb-14 md:-mb-20 relative z-20 select-none overflow-hidden px-4 w-full justify-center">
+        <TextHoverEffect text="Trion" className="w-full h-full max-w-6xl" />
       </div>
-      <div className="flex flex-col md:flex-row justify-center items-center text-xs text-slate-400 py-6 border-t border-white/5 font-sans relative z-10">
-        <p className="text-center m-0">
-          &copy; {new Date().getFullYear()} Trion Infrastructure Projects. All
-          rights reserved.
-        </p>
+
+      {/* Bottom Bar */}
+      <div className="border-t border-white/10 relative z-30 bg-[#000435]/80 backdrop-blur-sm">
+        <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-5 sm:px-8 lg:px-12 py-5 sm:py-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-slate-400 font-sans">
+          <p className="text-center sm:text-left m-0">
+            &copy; {new Date().getFullYear()} Trion Infrastructure Projects. All
+            rights reserved.
+          </p>
+          <div className="flex items-center gap-4 text-slate-400 text-xs">
+            <Link to="/corporate" className="hover:text-[#f55d1b] transition-colors no-underline">
+              Governance
+            </Link>
+            <span>&bull;</span>
+            <Link to="/contact" className="hover:text-[#f55d1b] transition-colors no-underline">
+              Contact
+            </Link>
+          </div>
+        </div>
       </div>
       <FooterBackgroundGradient />
     </footer>
