@@ -70,7 +70,7 @@ function HomePage() {
       <VerticalSlides />
       <OurAgency />
       <OurServices />
-      <FeaturedProjects />
+      {/* <FeaturedProjects /> */}
       <CtaSection />
     </main>
   );

@@ -653,10 +653,10 @@ export default function AboustUs() {
             style={heroCss(0.3)}
             className="font-primary font-bold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight tracking-tight max-w-3xl mb-5 drop-shadow-[0_2px_12px_rgba(0,0,0,0.6)]"
           >
-            Building Tomorrow’s Infrastructure.{" "}
-            <span className="text-[#f55d1b]">Powering Global Progress.</span>
+            Building Infrastructure. <br />
+            <span className="text-[#f55d1b]">Powering Progress.</span>
           </h1>
-          <p
+          {/* <p
             style={heroCss(0.42)}
             className="font-secondary text-white text-sm leading-relaxed max-w-2xl mb-10 drop-shadow-[0_1px_6px_rgba(0,0,0,0.5)]"
           >
@@ -668,8 +668,8 @@ export default function AboustUs() {
             development. From the inception of an idea to the final handover, we
             combine technical expertise with strategic vision to deliver
             sustainable, world-class assets.
-          </p>
-          <div style={heroCss(0.54)} className="flex flex-wrap gap-0">
+          </p> */}
+          {/* <div style={heroCss(0.54)} className="flex flex-wrap gap-0">
             {[
               ["BOT", "Build-Operate-Transfer"],
               ["BOOT", "Build-Own-Operate-Transfer"],
@@ -687,7 +687,7 @@ export default function AboustUs() {
                 </span>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -695,8 +695,8 @@ export default function AboustUs() {
         <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div ref={whoL} style={anim(whoLv, 0)}>
-              <SectionLabel>Who We Are</SectionLabel>
-              <h2 className="font-primary font-bold text-[#000435] text-2xl sm:text-3xl lg:text-4xl leading-tight tracking-tight mb-6">
+             
+              <h2 className="font-primary font-bold text-[#f55d1b] text-2xl sm:text-3xl lg:text-4xl leading-tight tracking-tight mb-6">
                 Who We Are
               </h2>
               <div className="space-y-4 font-secondary text-[#000435]/70 text-sm leading-relaxed">
@@ -754,9 +754,9 @@ export default function AboustUs() {
       >
         <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-6 lg:px-8">
           <div ref={capH} style={anim(capHv, 0)} className="mb-4">
-            <SectionLabel>Our Core Capabilities</SectionLabel>
+         
             <div className="flex flex-col  w-full gap-3">
-              <h2 className="font-primary font-bold text-[#000435] text-2xl sm:text-3xl lg:text-4xl leading-tight tracking-tight max-w-2xl">
+              <h2 className="font-primary font-bold text-[#f55d1b] text-2xl sm:text-3xl lg:text-4xl leading-tight tracking-tight max-w-2xl">
                 Our Core Capabilities
               </h2>
               <p className="font-secondary text-[#000435]/70 text-sm leading-relaxed">
