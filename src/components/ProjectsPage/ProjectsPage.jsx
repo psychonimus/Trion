@@ -162,7 +162,7 @@ function CornerBracket({ position = "top-left" }) {
     >
       <path
         d="M1 13V1H13"
-        stroke="#FF6B00"
+        stroke="#f55d1b"
         strokeWidth="1.3"
         strokeLinecap="square"
       />
@@ -179,9 +179,9 @@ function CrosshairTarget() {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <circle cx="10" cy="10" r="5.5" stroke="#FF6B00" strokeWidth="0.9" />
-      <line x1="10" y1="0" x2="10" y2="20" stroke="#FF6B00" strokeWidth="0.9" />
-      <line x1="0" y1="10" x2="20" y2="10" stroke="#FF6B00" strokeWidth="0.9" />
+      <circle cx="10" cy="10" r="5.5" stroke="#f55d1b" strokeWidth="0.9" />
+      <line x1="10" y1="0" x2="10" y2="20" stroke="#f55d1b" strokeWidth="0.9" />
+      <line x1="0" y1="10" x2="20" y2="10" stroke="#f55d1b" strokeWidth="0.9" />
     </svg>
   );
 }
@@ -326,12 +326,12 @@ export default function ProjectsPage() {
   };
 
   return (
-    <main className="bg-[#060b17] text-[#FFFFFF] min-h-screen selection:bg-[#FF6B00]/30 selection:text-white font-sans antialiased overflow-x-hidden pt-12 sm:pt-16">
-      <section className="relative w-full bg-[#060b17] border-b border-[#14233c] overflow-hidden lg:h-[224px] pt-24 pb-8 lg:pt-0 lg:pb-0">
+    <main className="bg-[#000435] text-[#FFFFFF] min-h-screen selection:bg-[#f55d1b]/30 selection:text-white font-sans antialiased overflow-x-hidden pt-12 sm:pt-16">
+      <section className="relative w-full bg-[#000435] border-b border-[#000435] overflow-hidden lg:h-[224px] pt-24 pb-8 lg:pt-0 lg:pb-0">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_75%_90%_at_75%_10%,rgba(18,44,82,0.35),transparent_70%)] pointer-events-none" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] pointer-events-none" />
 
-        <div className="max-w-[1536px]  mx-auto w-full h-full relative px-6 sm:px-10 lg:px-0">
+        <div className="max-w-7xl 2xl:max-w-[1580px]  mx-auto w-full h-full relative px-6 sm:px-10 lg:px-0">
           <div className="absolute right-0 top-0 bottom-0 w-[280px] md:w-[380px] lg:w-[380px] xl:w-[360px] pointer-events-none select-none overflow-hidden flex items-center justify-end z-0">
             <img
               src="/assets/images/building-wireframe.webp"
@@ -342,8 +342,8 @@ export default function ProjectsPage() {
           </div>
 
           <div className="lg:absolute lg:left-[64px] lg:top-[34px] flex items-center gap-2.5 mb-3 lg:mb-0 relative z-10">
-            <span className="w-6 h-[1.5px] bg-[#FF6B00]" />
-            <span className="font-mono text-[10.5px] tracking-[0.26em] text-[#FF6B00] uppercase font-semibold">
+            <span className="w-6 h-[1.5px] bg-[#f55d1b]" />
+            <span className="font-mono text-[10.5px] tracking-[0.26em] text-[#f55d1b] uppercase font-semibold">
               OUR UNIQUE PROJECTS
             </span>
           </div>
@@ -351,18 +351,18 @@ export default function ProjectsPage() {
           <div className="lg:absolute lg:left-[64px] lg:top-[58px] relative z-10">
             <h1 className="font-primary font-bold text-4xl sm:text-5xl lg:text-[58px] tracking-tight leading-[0.92] uppercase">
               <span className="text-white block">PROJECTS</span>
-              <span className="text-[#FF6B00] block mt-1">BUILT TO LAST.</span>
+              <span className="text-[#f55d1b] block mt-1">BUILT TO LAST.</span>
             </h1>
           </div>
 
           <div className="lg:absolute lg:right-[380px] lg:top-[72px] flex items-end gap-6 mt-6 lg:mt-0 relative z-10">
-            <span className="hidden lg:block w-px h-14 bg-[#14233c] self-stretch" />
+            <span className="hidden lg:block w-px h-14 bg-[#000435] self-stretch" />
           </div>
         </div>
       </section>
 
-      <nav className="sticky top-0 z-40 bg-[#060b17]/95 backdrop-blur-md border-b border-[#14233c]">
-        <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 flex items-center justify-between">
+      <nav className="sticky top-0 z-40 bg-[#000435]/95 backdrop-blur-md border-b border-[#000435]">
+        <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-6 sm:px-10 lg:px-16 flex items-center justify-between">
           <div
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
             className="flex items-center gap-6 sm:gap-8 lg:gap-10 overflow-x-auto no-scrollbar py-3.5 -mb-[1px] [&::-webkit-scrollbar]:hidden"
@@ -378,8 +378,8 @@ export default function ProjectsPage() {
                   <span
                     className={`font-mono text-[11px] sm:text-xs font-semibold transition-colors ${
                       isActive
-                        ? "text-[#FF6B00]"
-                        : "text-[#4B5D73] group-hover:text-[#8E9CAE]"
+                        ? "text-[#f55d1b]"
+                        : "text-[#ffffff] group-hover:text-[#ffffff]"
                     }`}
                   >
                     {item.number}
@@ -388,7 +388,7 @@ export default function ProjectsPage() {
                     className={`font-mono text-[10px] sm:text-[11px] tracking-[0.16em] uppercase font-medium transition-colors ${
                       isActive
                         ? "text-white"
-                        : "text-[#62758E] group-hover:text-[#A3B8D4]"
+                        : "text-[#ffffff] group-hover:text-[#ffffff]"
                     }`}
                   >
                     {item.navLabel}
@@ -397,7 +397,7 @@ export default function ProjectsPage() {
                   {isActive && (
                     <motion.div
                       layoutId="activeNavTab"
-                      className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#FF6B00]"
+                      className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#f55d1b]"
                       transition={{
                         type: "spring",
                         stiffness: 450,
@@ -410,8 +410,8 @@ export default function ProjectsPage() {
             })}
           </div>
 
-          <div className="hidden md:flex items-center gap-1.5 font-mono text-[11px] tracking-widest pl-6 shrink-0 text-[#506680] border-l border-[#14233c] py-3.5">
-            <span className="text-[#FF6B00] font-bold">
+          <div className="hidden md:flex items-center gap-1.5 font-mono text-[11px] tracking-widest pl-6 shrink-0 text-[#ffffff] border-l border-[#000435] py-3.5">
+            <span className="text-[#f55d1b] font-bold">
               {currentProject.number}
             </span>
             <span>/</span>
@@ -420,10 +420,10 @@ export default function ProjectsPage() {
         </div>
       </nav>
 
-      <section className="py-10 sm:py-12 lg:py-14 border-b border-[#14233c] bg-[#070d19] relative">
+      <section className="py-10 sm:py-12 lg:py-14 border-b border-[#000435] bg-[#000435] relative">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] pointer-events-none" />
 
-        <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
+        <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentProject.number}
@@ -436,30 +436,30 @@ export default function ProjectsPage() {
               <div className="lg:col-span-5 flex flex-col justify-between">
                 <div>
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="font-mono text-5xl sm:text-6xl font-extrabold text-[#FF6B00] tracking-tight leading-none">
+                    <span className="font-mono text-5xl sm:text-6xl font-extrabold text-[#f55d1b] tracking-tight leading-none">
                       {currentProject.number}
                     </span>
-                    <span className="w-12 h-[1.5px] bg-[#FF6B00]" />
+                    <span className="w-12 h-[1.5px] bg-[#f55d1b]" />
                   </div>
 
                   <h2 className="font-primary font-bold text-2xl sm:text-[28px] lg:text-[32px] text-white tracking-tight leading-[1.12] mb-6">
                     {currentProject.title}
                   </h2>
 
-                  <div className="border-t border-b border-[#14233c] py-4 mb-6">
-                    <span className="block font-mono text-[10px] tracking-[0.22em] text-[#FF6B00] uppercase font-semibold mb-1.5">
+                  <div className="border-t border-b border-[#000435] py-4 mb-6">
+                    <span className="block font-mono text-[10px] tracking-[0.22em] text-[#f55d1b] uppercase font-semibold mb-1.5">
                       SCOPE OF WORK
                     </span>
-                    <p className="font-primary text-[14px] sm:text-[15px] text-[#E2E8F0] font-medium leading-snug">
+                    <p className="font-primary text-[14px] sm:text-[15px] text-[#ffffff] font-medium leading-snug">
                       {currentProject.scope}
                     </p>
                   </div>
 
                   <div>
-                    <span className="block font-mono text-[10px] tracking-[0.22em] text-[#FF6B00] uppercase font-semibold mb-2.5">
+                    <span className="block font-mono text-[10px] tracking-[0.22em] text-[#f55d1b] uppercase font-semibold mb-2.5">
                       PROJECT DESCRIPTION
                     </span>
-                    <div className="space-y-3 font-sans text-[#8E9CAE] text-[13px] sm:text-[14px] leading-[1.7]">
+                    <div className="space-y-3 font-sans text-white/70 text-[13px] sm:text-[14px] leading-[1.7]">
                       {currentProject.description.map((paragraph, pIdx) => (
                         <p key={pIdx}>{paragraph}</p>
                       ))}
@@ -469,7 +469,7 @@ export default function ProjectsPage() {
               </div>
 
               <div className="lg:col-span-7">
-                <div className="relative bg-[#091122] border border-[#14233c] overflow-hidden">
+                <div className="relative bg-[#000435] border border-[#000435] overflow-hidden">
                   <div className="absolute top-2.5 left-2.5 z-20 pointer-events-none">
                     <CornerBracket position="top-left" />
                   </div>
@@ -487,7 +487,7 @@ export default function ProjectsPage() {
                     <CrosshairTarget />
                   </div>
 
-                  <div className="relative w-full aspect-[16/10] overflow-hidden bg-[#091122]">
+                  <div className="relative w-full aspect-[16/10] overflow-hidden bg-[#000435]">
                     <AnimatePresence mode="wait">
                       <motion.img
                         key={`${currentProject.number}-${activeImageIdx}`}
@@ -503,14 +503,14 @@ export default function ProjectsPage() {
                     </AnimatePresence>
                   </div>
 
-                  <div className="px-4 py-2.5 bg-[#060c18] border-t border-[#14233c] flex items-center justify-between gap-4">
+                  <div className="px-4 py-2.5 bg-[#000435] border-t border-[#000435] flex items-center justify-between gap-4">
                     <div className="flex items-center gap-3">
                       <div className="font-mono text-[11px] tracking-wider flex items-center gap-1">
-                        <span className="font-bold text-[#FF6B00]">
+                        <span className="font-bold text-[#f55d1b]">
                           {String(activeImageIdx + 1).padStart(2, "0")}
                         </span>
-                        <span className="text-[#506680]">/</span>
-                        <span className="text-[#506680]">
+                        <span className="text-[#ffffff]">/</span>
+                        <span className="text-[#ffffff]">
                           {String(currentProject.images.length).padStart(
                             2,
                             "0",
@@ -528,8 +528,8 @@ export default function ProjectsPage() {
                               aria-label={`View image ${barIdx + 1}`}
                               className={`h-[2px] transition-all duration-300 cursor-pointer ${
                                 isBarActive
-                                  ? "w-6 bg-[#FF6B00]"
-                                  : "w-3 bg-[#1A2C48] hover:bg-[#2E4A74]"
+                                  ? "w-6 bg-[#f55d1b]"
+                                  : "w-3 bg-[#000435] hover:bg-[#000435]"
                               }`}
                             />
                           );
@@ -541,18 +541,18 @@ export default function ProjectsPage() {
                       <button
                         onClick={prevImage}
                         aria-label="Previous photograph"
-                        className="group flex items-center gap-1.5 font-mono text-[10px] sm:text-[11px] tracking-wider text-[#8E9CAE] hover:text-[#FF6B00] transition-colors cursor-pointer"
+                        className="group flex items-center gap-1.5 font-mono text-[10px] sm:text-[11px] tracking-wider text-white/60 hover:text-[#f55d1b] transition-colors cursor-pointer"
                       >
                         <ArrowPrev />
                         <span>PREV</span>
                       </button>
 
-                      <span className="h-2.5 w-px bg-[#14233c]" />
+                      <span className="h-2.5 w-px bg-[#000435]" />
 
                       <button
                         onClick={nextImage}
                         aria-label="Next photograph"
-                        className="group flex items-center gap-1.5 font-mono text-[10px] sm:text-[11px] tracking-wider text-[#8E9CAE] hover:text-[#FF6B00] transition-colors cursor-pointer"
+                        className="group flex items-center gap-1.5 font-mono text-[10px] sm:text-[11px] tracking-wider text-white/60 hover:text-[#f55d1b] transition-colors cursor-pointer"
                       >
                         <span>NEXT</span>
                         <ArrowNext />
@@ -568,10 +568,10 @@ export default function ProjectsPage() {
                       <button
                         key={tIdx}
                         onClick={() => selectImage(tIdx)}
-                        className={`relative aspect-[16/10] overflow-hidden bg-[#091122] transition-all duration-300 cursor-pointer ${
+                        className={`relative aspect-[16/10] overflow-hidden bg-[#000435] transition-all duration-300 cursor-pointer ${
                           isThumbActive
-                            ? "border border-[#FF6B00] ring-1 ring-[#FF6B00] opacity-100"
-                            : "border border-[#14233c] hover:border-[#2C4872] opacity-60 hover:opacity-100"
+                            ? "border border-[#f55d1b] ring-1 ring-[#f55d1b] opacity-100"
+                            : "border border-[#000435] hover:border-[#000435] opacity-60 hover:opacity-100"
                         }`}
                       >
                         <img
@@ -580,7 +580,7 @@ export default function ProjectsPage() {
                           className="w-full h-full object-cover"
                           loading="lazy"
                         />
-                        <div className="absolute bottom-1 right-1.5 pointer-events-none bg-[#060D19]/80 border border-[#14233c] px-1 py-0.5 rounded-none">
+                        <div className="absolute bottom-1 right-1.5 pointer-events-none bg-[#000435]/80 border border-[#000435] px-1 py-0.5 rounded-none">
                           <span className="font-mono text-[9px] text-white/90 font-medium tracking-wider">
                             0{tIdx + 1}
                           </span>
@@ -595,13 +595,13 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      <section className="py-12 lg:py-16 bg-[#050912] border-b border-[#14233c] overflow-hidden">
-        <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 mb-6 sm:mb-8">
+      <section className="py-12 lg:py-16 bg-[#000435] border-b border-[#000435] overflow-hidden">
+        <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-6 sm:px-10 lg:px-16 mb-6 sm:mb-8">
           <div className="flex items-end justify-between gap-6">
             <div>
               <div className="flex items-center gap-2.5 mb-2">
-                <span className="w-5 h-[1.5px] bg-[#FF6B00]" />
-                <span className="font-mono text-[10px] sm:text-[11px] tracking-[0.22em] text-[#FF6B00] uppercase font-semibold">
+                <span className="w-5 h-[1.5px] bg-[#f55d1b]" />
+                <span className="font-mono text-[10px] sm:text-[11px] tracking-[0.22em] text-[#f55d1b] uppercase font-semibold">
                   ARCHIVAL GALLERY
                 </span>
               </div>
@@ -614,14 +614,14 @@ export default function ProjectsPage() {
               <button
                 onClick={() => scrollGallery("left")}
                 aria-label="Scroll left"
-                className="w-10 h-10 sm:w-11 sm:h-11 border border-[#14233c] text-[#8E9CAE] flex items-center justify-center hover:border-[#FF6B00] hover:text-[#FF6B00] transition-colors active:scale-95 bg-[#070D1A] cursor-pointer"
+                className="w-10 h-10 sm:w-11 sm:h-11 border border-[#000435] text-[#ffffff] flex items-center justify-center hover:border-[#f55d1b] hover:text-[#f55d1b] transition-colors active:scale-95 bg-[#000435] cursor-pointer"
               >
                 <ArrowPrev />
               </button>
               <button
                 onClick={() => scrollGallery("right")}
                 aria-label="Scroll right"
-                className="w-10 h-10 sm:w-11 sm:h-11 border border-[#14233c] text-[#8E9CAE] flex items-center justify-center hover:border-[#FF6B00] hover:text-[#FF6B00] transition-colors active:scale-95 bg-[#070D1A] cursor-pointer"
+                className="w-10 h-10 sm:w-11 sm:h-11 border border-[#000435] text-[#ffffff] flex items-center justify-center hover:border-[#f55d1b] hover:text-[#f55d1b] transition-colors active:scale-95 bg-[#000435] cursor-pointer"
               >
                 <ArrowNext />
               </button>
@@ -641,7 +641,7 @@ export default function ProjectsPage() {
           {ARCHIVE_PHOTOS.map((item, idx) => (
             <div
               key={idx}
-              className={`shrink-0 ${item.width} ${item.ratio} border border-[#14233c] relative group overflow-hidden bg-[#091122]`}
+              className={`shrink-0 ${item.width} ${item.ratio} border border-[#000435] relative group overflow-hidden bg-[#000435]`}
             >
               <img
                 src={item.src}

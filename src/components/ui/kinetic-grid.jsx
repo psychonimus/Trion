@@ -81,7 +81,7 @@ export default function KineticGrid({
       const ripples = ripplesRef.current;
 
       ctx.clearRect(0, 0, W, H);
-      ctx.fillStyle = "#0a1128";
+      ctx.fillStyle = "#000435";
       ctx.fillRect(0, 0, W, H);
 
       for (let i = ripples.length - 1; i >= 0; i--) {

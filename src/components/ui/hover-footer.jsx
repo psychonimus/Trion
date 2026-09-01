@@ -70,11 +70,11 @@ export const TextHoverEffect = ({ text = "TRION", className }) => {
           x2="100%"
           y2="0%"
         >
-          <stop offset="0%" stopColor="#ff4500" />
-          <stop offset="25%" stopColor="#ff7a00" />
-          <stop offset="50%" stopColor="#ffa533" />
+          <stop offset="0%" stopColor="#f55d1b" />
+          <stop offset="25%" stopColor="#f55d1b" />
+          <stop offset="50%" stopColor="#f55d1b" />
           <stop offset="75%" stopColor="#ffffff" />
-          <stop offset="100%" stopColor="#ff6b00" />
+          <stop offset="100%" stopColor="#f55d1b" />
         </linearGradient>
 
         {/* Buttery Smooth Spring-Interpolated Radial Mask */}
@@ -87,7 +87,7 @@ export const TextHoverEffect = ({ text = "TRION", className }) => {
         >
           <stop offset="0%" stopColor="#ffffff" stopOpacity="1" />
           <stop offset="50%" stopColor="#ffffff" stopOpacity="0.85" />
-          <stop offset="100%" stopColor="#000000" stopOpacity="0" />
+          <stop offset="100%" stopColor="#000435" stopOpacity="0" />
         </motion.radialGradient>
 
       <mask id="textMask">
@@ -128,7 +128,7 @@ export const TextHoverEffect = ({ text = "TRION", className }) => {
           d={TRION_PATH}
           fillRule="evenodd"
           strokeWidth="0.8"
-          className="fill-transparent stroke-[#ff6b00] pointer-events-none"
+          className="fill-transparent stroke-[#f55d1b] pointer-events-none"
           initial={{ strokeDashoffset: 1400, strokeDasharray: 1400 }}
           animate={{
             strokeDashoffset: 0,
@@ -187,7 +187,7 @@ export const TextHoverEffect = ({ text = "TRION", className }) => {
           textAnchor="middle"
           dominantBaseline="middle"
           strokeWidth="0.35"
-          className="fill-transparent stroke-[#ff6b00] font-sans text-7xl font-black tracking-widest pointer-events-none"
+          className="fill-transparent stroke-[#f55d1b] font-sans text-7xl font-black tracking-widest pointer-events-none"
           initial={{ strokeDashoffset: 1000, strokeDasharray: 1000 }}
           animate={{
             strokeDashoffset: 0,
@@ -224,7 +224,7 @@ export const FooterBackgroundGradient = () => {
       className="absolute inset-0 z-0 pointer-events-none"
       style={{
         background:
-          "radial-gradient(125% 125% at 50% 10%, rgba(6, 11, 23, 0.95) 50%, rgba(255, 107, 0, 0.15) 100%)",
+          "radial-gradient(125% 125% at 50% 10%, rgba(0, 4, 53, 0.95) 50%, rgba(245, 93, 27, 0.15) 100%)",
       }}
     />
   );

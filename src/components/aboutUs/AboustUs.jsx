@@ -38,7 +38,7 @@ const SvgBlueprint = () => (
   <svg
     viewBox="0 0 32 32"
     fill="none"
-    stroke="#b07d3a"
+    stroke="#f55d1b"
     strokeWidth="1.5"
     strokeLinecap="round"
     strokeLinejoin="round"
@@ -49,7 +49,7 @@ const SvgBlueprint = () => (
     <line x1="3" y1="11" x2="29" y2="11" />
     <line x1="11" y1="3" x2="11" y2="29" />
     <path d="M16 16h10M16 20h7M16 24h9" />
-    <circle cx="7" cy="7" r="1.5" fill="#b07d3a" stroke="none" />
+    <circle cx="7" cy="7" r="1.5" fill="#f55d1b" stroke="none" />
   </svg>
 );
 
@@ -57,7 +57,7 @@ const SvgPowerTower = () => (
   <svg
     viewBox="0 0 32 32"
     fill="none"
-    stroke="#b07d3a"
+    stroke="#f55d1b"
     strokeWidth="1.5"
     strokeLinecap="round"
     strokeLinejoin="round"
@@ -78,7 +78,7 @@ const SvgOreCart = () => (
   <svg
     viewBox="0 0 32 32"
     fill="none"
-    stroke="#b07d3a"
+    stroke="#f55d1b"
     strokeWidth="1.5"
     strokeLinecap="round"
     strokeLinejoin="round"
@@ -98,7 +98,7 @@ const SvgWarehouse = () => (
   <svg
     viewBox="0 0 32 32"
     fill="none"
-    stroke="#b07d3a"
+    stroke="#f55d1b"
     strokeWidth="1.5"
     strokeLinecap="round"
     strokeLinejoin="round"
@@ -117,7 +117,7 @@ const SvgGrowthChart = () => (
   <svg
     viewBox="0 0 32 32"
     fill="none"
-    stroke="#b07d3a"
+    stroke="#f55d1b"
     strokeWidth="1.5"
     strokeLinecap="round"
     strokeLinejoin="round"
@@ -128,8 +128,8 @@ const SvgGrowthChart = () => (
     <polyline points="26,7 29,7 29,10" />
     <line x1="3" y1="4" x2="3" y2="28" />
     <line x1="3" y1="28" x2="30" y2="28" />
-    <circle cx="24" cy="16" r="2" fill="#b07d3a" stroke="none" />
-    <circle cx="19" cy="13" r="2" fill="#b07d3a" stroke="none" />
+    <circle cx="24" cy="16" r="2" fill="#f55d1b" stroke="none" />
+    <circle cx="19" cy="13" r="2" fill="#f55d1b" stroke="none" />
   </svg>
 );
 
@@ -137,7 +137,7 @@ const SvgKeyHouse = () => (
   <svg
     viewBox="0 0 32 32"
     fill="none"
-    stroke="#b07d3a"
+    stroke="#f55d1b"
     strokeWidth="1.5"
     strokeLinecap="round"
     strokeLinejoin="round"
@@ -155,14 +155,14 @@ const SvgAtom = () => (
   <svg
     viewBox="0 0 32 32"
     fill="none"
-    stroke="#b07d3a"
+    stroke="#f55d1b"
     strokeWidth="1.5"
     strokeLinecap="round"
     strokeLinejoin="round"
     width="22"
     height="22"
   >
-    <circle cx="16" cy="16" r="3" fill="#b07d3a" stroke="none" />
+    <circle cx="16" cy="16" r="3" fill="#f55d1b" stroke="none" />
     <ellipse cx="16" cy="16" rx="12" ry="5" />
     <ellipse cx="16" cy="16" rx="12" ry="5" transform="rotate(60 16 16)" />
     <ellipse cx="16" cy="16" rx="12" ry="5" transform="rotate(120 16 16)" />
@@ -173,7 +173,7 @@ const SvgNetwork = () => (
   <svg
     viewBox="0 0 32 32"
     fill="none"
-    stroke="#b07d3a"
+    stroke="#f55d1b"
     strokeWidth="1.5"
     strokeLinecap="round"
     strokeLinejoin="round"
@@ -183,7 +183,7 @@ const SvgNetwork = () => (
     <circle cx="16" cy="6" r="3" />
     <circle cx="5" cy="24" r="3" />
     <circle cx="27" cy="24" r="3" />
-    <circle cx="16" cy="18" r="2.5" fill="#b07d3a" stroke="none" />
+    <circle cx="16" cy="18" r="2.5" fill="#f55d1b" stroke="none" />
     <line x1="16" y1="9" x2="16" y2="15.5" />
     <line x1="8" y1="22.5" x2="13.5" y2="19.5" />
     <line x1="24" y1="22.5" x2="18.5" y2="19.5" />
@@ -196,7 +196,7 @@ const SvgGears = () => (
   <svg
     viewBox="0 0 32 32"
     fill="none"
-    stroke="#b07d3a"
+    stroke="#f55d1b"
     strokeWidth="1.5"
     strokeLinecap="round"
     strokeLinejoin="round"
@@ -216,7 +216,7 @@ const SvgTelescope = () => (
   <svg
     viewBox="0 0 32 32"
     fill="none"
-    stroke="#b07d3a"
+    stroke="#f55d1b"
     strokeWidth="1.5"
     strokeLinecap="round"
     strokeLinejoin="round"
@@ -229,7 +229,7 @@ const SvgTelescope = () => (
     <line x1="13" y1="17" x2="16" y2="29" />
     <line x1="20" y1="17" x2="16" y2="29" />
     <line x1="11" y1="29" x2="21" y2="29" />
-    <circle cx="27" cy="7" r="1.2" fill="#b07d3a" stroke="none" />
+    <circle cx="27" cy="7" r="1.2" fill="#f55d1b" stroke="none" />
   </svg>
 );
 
@@ -237,7 +237,7 @@ const SvgMountainFlag = () => (
   <svg
     viewBox="0 0 32 32"
     fill="none"
-    stroke="#b07d3a"
+    stroke="#f55d1b"
     strokeWidth="1.5"
     strokeLinecap="round"
     strokeLinejoin="round"
@@ -247,7 +247,7 @@ const SvgMountainFlag = () => (
     <path d="M2 28L12 12l6 7 6-10 6 19Z" />
     <line x1="24" y1="9" x2="24" y2="3" />
     <path d="M24 3l7 3-7 3" />
-    <circle cx="24" cy="9" r="1.2" fill="#b07d3a" stroke="none" />
+    <circle cx="24" cy="9" r="1.2" fill="#f55d1b" stroke="none" />
   </svg>
 );
 
@@ -255,7 +255,7 @@ const SvgDiamond = () => (
   <svg
     viewBox="0 0 32 32"
     fill="none"
-    stroke="#b07d3a"
+    stroke="#f55d1b"
     strokeWidth="1.5"
     strokeLinecap="round"
     strokeLinejoin="round"
@@ -274,7 +274,7 @@ const SvgHardHat = () => (
   <svg
     viewBox="0 0 32 32"
     fill="none"
-    stroke="#b07d3a"
+    stroke="#f55d1b"
     strokeWidth="1.5"
     strokeLinecap="round"
     strokeLinejoin="round"
@@ -294,7 +294,7 @@ const SvgPulse = () => (
   <svg
     viewBox="0 0 32 32"
     fill="none"
-    stroke="#b07d3a"
+    stroke="#f55d1b"
     strokeWidth="1.5"
     strokeLinecap="round"
     strokeLinejoin="round"
@@ -302,8 +302,8 @@ const SvgPulse = () => (
     height="22"
   >
     <polyline points="2,16 7,16 10,6 13,26 16,12 19,20 22,16 30,16" />
-    <circle cx="10" cy="6" r="1.5" fill="#b07d3a" stroke="none" />
-    <circle cx="16" cy="12" r="1.5" fill="#b07d3a" stroke="none" />
+    <circle cx="10" cy="6" r="1.5" fill="#f55d1b" stroke="none" />
+    <circle cx="16" cy="12" r="1.5" fill="#f55d1b" stroke="none" />
   </svg>
 );
 
@@ -311,7 +311,7 @@ const SvgWaterDrop = () => (
   <svg
     viewBox="0 0 32 32"
     fill="none"
-    stroke="#b07d3a"
+    stroke="#f55d1b"
     strokeWidth="1.5"
     strokeLinecap="round"
     strokeLinejoin="round"
@@ -328,7 +328,7 @@ const SvgStaircase = () => (
   <svg
     viewBox="0 0 32 32"
     fill="none"
-    stroke="#b07d3a"
+    stroke="#f55d1b"
     strokeWidth="1.5"
     strokeLinecap="round"
     strokeLinejoin="round"
@@ -336,7 +336,7 @@ const SvgStaircase = () => (
     height="22"
   >
     <path d="M3 29V23h8v-6h8v-6h8v-6l5-1" />
-    <circle cx="27" cy="10" r="2.5" fill="#b07d3a" stroke="none" />
+    <circle cx="27" cy="10" r="2.5" fill="#f55d1b" stroke="none" />
     <line x1="3" y1="29" x2="29" y2="29" strokeOpacity="0.3" />
   </svg>
 );
@@ -347,7 +347,7 @@ const SvgCheckMark = () => (
     width="13"
     height="13"
     fill="none"
-    stroke="#b07d3a"
+    stroke="#f55d1b"
     strokeWidth="2"
     strokeLinecap="round"
     strokeLinejoin="round"
@@ -359,8 +359,8 @@ const SvgCheckMark = () => (
 function SectionLabel({ children }) {
   return (
     <div className="flex items-center gap-3 mb-4">
-      <span className="w-6 h-px bg-[#b07d3a] shrink-0" />
-      <span className="text-[10px] font-primary font-semibold tracking-[0.22em] uppercase text-[#b07d3a]">
+      <span className="w-6 h-px bg-[#f55d1b] shrink-0" />
+      <span className="text-[10px] font-primary font-semibold tracking-[0.22em] uppercase text-[#f55d1b]">
         {children}
       </span>
     </div>
@@ -373,18 +373,18 @@ function CapCard({ Icon, title, desc, delay }) {
     <div
       ref={ref}
       style={anim(vis, delay)}
-      className="group relative bg-white border border-black/[0.06] rounded-2xl p-6 overflow-hidden cursor-default hover:border-[#b07d3a]/20 transition-colors duration-300"
+      className="group relative bg-white border border-[#000435]/10 rounded-2xl p-6 overflow-hidden cursor-default hover:border-[#f55d1b]/20 transition-colors duration-300"
     >
-      <div className="absolute inset-0 rounded-2xl bg-[radial-gradient(ellipse_at_0%_0%,rgba(176,125,58,0.08)_0%,transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      <div className="absolute bottom-0 left-0 w-0 h-[2px] bg-[#b07d3a] group-hover:w-full transition-all duration-500 ease-out" />
+      <div className="absolute inset-0 rounded-2xl bg-[radial-gradient(ellipse_at_0%_0%,rgba(245, 93, 27,0.08)_0%,transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="absolute bottom-0 left-0 w-0 h-[2px] bg-[#f55d1b] group-hover:w-full transition-all duration-500 ease-out" />
       <div className="relative z-10">
-        <div className="w-11 h-11 rounded-xl bg-[#b07d3a]/10 flex items-center justify-center mb-4 group-hover:bg-[#b07d3a]/18 transition-colors duration-300">
+        <div className="w-11 h-11 rounded-xl bg-[#f55d1b]/10 flex items-center justify-center mb-4 group-hover:bg-[#f55d1b]/18 transition-colors duration-300">
           <Icon />
         </div>
-        <h3 className="font-primary font-semibold text-[#0e0b08] text-sm leading-snug mb-2">
+        <h3 className="font-primary font-semibold text-[#000435] text-sm leading-snug mb-2">
           {title}
         </h3>
-        <p className="font-secondary text-neutral-500 text-xs leading-relaxed">
+        <p className="font-secondary text-[#000435]/70 text-xs leading-relaxed">
           {desc}
         </p>
       </div>
@@ -398,15 +398,15 @@ function VmvCard({ Icon, label, heading, delay, children }) {
     <div
       ref={ref}
       style={anim(vis, delay)}
-      className="group relative bg-white/[0.04] border border-white/10 rounded-2xl p-7 overflow-hidden cursor-default hover:border-[#b07d3a]/30 transition-colors duration-500"
+      className="group relative bg-white/[0.04] border border-white/10 rounded-2xl p-7 overflow-hidden cursor-default hover:border-[#f55d1b]/30 transition-colors duration-500"
     >
-      <div className="absolute inset-0 rounded-2xl bg-[radial-gradient(ellipse_at_0%_100%,rgba(176,125,58,0.07)_0%,transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      <div className="absolute bottom-0 left-4 right-4 h-px bg-gradient-to-r from-transparent via-[#b07d3a] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="absolute inset-0 rounded-2xl bg-[radial-gradient(ellipse_at_0%_100%,rgba(245, 93, 27,0.07)_0%,transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="absolute bottom-0 left-4 right-4 h-px bg-gradient-to-r from-transparent via-[#f55d1b] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       <div className="relative z-10">
-        <div className="w-11 h-11 rounded-xl bg-[#b07d3a]/12 flex items-center justify-center mb-4">
+        <div className="w-11 h-11 rounded-xl bg-[#f55d1b]/12 flex items-center justify-center mb-4">
           <Icon />
         </div>
-        <p className="text-[9.5px] tracking-[0.2em] text-[#b07d3a] font-primary font-semibold uppercase mb-2">
+        <p className="text-[9.5px] tracking-[0.2em] text-[#f55d1b] font-primary font-semibold uppercase mb-2">
           {label}
         </p>
         <h3 className="font-primary font-bold text-white text-base leading-snug mb-4">
@@ -424,9 +424,9 @@ function HseRow({ Icon, title, desc, delay }) {
     <div
       ref={ref}
       style={anim(vis, delay, "right")}
-      className="group flex items-start gap-4 p-5 rounded-xl bg-white/[0.04] border border-white/10 hover:border-[#b07d3a]/30 transition-colors duration-300 cursor-default"
+      className="group flex items-start gap-4 p-5 rounded-xl bg-white/[0.04] border border-white/10 hover:border-[#f55d1b]/30 transition-colors duration-300 cursor-default"
     >
-      <div className="shrink-0 w-10 h-10 rounded-lg bg-[#b07d3a]/12 flex items-center justify-center group-hover:bg-[#b07d3a]/22 transition-colors duration-300">
+      <div className="shrink-0 w-10 h-10 rounded-lg bg-[#f55d1b]/12 flex items-center justify-center group-hover:bg-[#f55d1b]/22 transition-colors duration-300">
         <Icon />
       </div>
       <div>
@@ -447,29 +447,28 @@ function LeaderCard({ name, title, bio, img, delay }) {
     <div
       ref={ref}
       style={anim(vis, delay)}
-      className="group relative bg-[#0e0b08] rounded-2xl overflow-hidden cursor-default"
+      className="group relative flex flex-col bg-[#000435] border border-white/10 rounded-2xl overflow-hidden cursor-default transition-all duration-300 hover:-translate-y-1.5 hover:border-[#f55d1b]/40 hover:shadow-xl hover:shadow-[#000435]/40"
     >
-      <div className="relative overflow-hidden h-72">
+      <div className="relative w-full h-80 sm:h-84 2xl:h-96 overflow-hidden bg-[#000435]">
         <img
           src={img}
           alt={name}
-          className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
+          className="w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.03]"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0e0b08] via-[#0e0b08]/20 to-transparent" />
       </div>
-      <div className="p-6">
-        <p className="text-[9.5px] tracking-[0.2em] text-[#b07d3a] font-primary font-semibold uppercase mb-1.5">
+      <div className="p-6 sm:p-7 flex-1 flex flex-col justify-start border-t border-white/10">
+        <span className="inline-block text-[10px] sm:text-[10.5px] tracking-[0.2em] text-[#f55d1b] font-primary font-bold uppercase mb-1.5">
           {title}
-        </p>
-        <h3 className="font-primary font-bold text-white text-lg leading-tight mb-3">
+        </span>
+        <h3 className="font-primary font-bold text-white text-lg sm:text-xl leading-snug mb-3 group-hover:text-[#f55d1b] transition-colors duration-300">
           {name}
         </h3>
-        <p className="font-secondary text-white/45 text-xs leading-relaxed">
+        <p className="font-secondary text-white/70 text-xs sm:text-[13px] leading-relaxed m-0">
           {bio}
         </p>
       </div>
-      <div className="absolute bottom-0 left-0 w-0 h-[2px] bg-[#b07d3a] group-hover:w-full transition-all duration-500 ease-out" />
+      <div className="absolute bottom-0 left-0 w-0 h-[2px] bg-[#f55d1b] group-hover:w-full transition-all duration-500 ease-out" />
     </div>
   );
 }
@@ -574,22 +573,22 @@ export default function AboustUs() {
 
   const leaders = [
     {
-      name: "Siddharth",
+      name: "Siddharth Jaiswal",
       title: "Founder & Managing Director",
-      bio: "A visionary leader with deep expertise in large-scale infrastructure development. Siddharth drives the group's direction and oversees its global operations.",
-      img: "/assets/images/leader_siddharth.webp",
+      bio: "A visionary business leader with extensive experience in infrastructure development, Siddharth drives the group’s strategic direction, business growth and global operations, with a strong focus on long-term value creation.",
+      img: "/assets/images/MR. SIDDHARTH JAISWAL.png",
     },
     {
-      name: "Shantanu",
+      name: "Shantanu Das",
       title: "Associate Partner",
-      bio: "A seasoned business leader with 15+ years of experience in the capital equipment and infrastructure sector, with expertise in sales, business development, equipment financing, customer relationship management and market development. He brings strong commercial acumen and a deep understanding of construction and crushing equipment, supported by extensive industry experience and client relationships. His experience spans business strategy, client acquisition, channel development and after-sales engagement, with a strong focus on building long-term customer relationships. He combines industry knowledge with a commercially driven approach to identifying opportunities and driving sustainable business growth.",
-      img: "/assets/images/leader_shantanu.webp",
+      bio: "A seasoned business leader with 15+ years of experience across capital equipment and infrastructure, Shantanu brings strong expertise in sales, business development, market expansion and strategic customer relationships.",
+      img: "/assets/images/Shantanu Das.png",
     },
     {
       name: "Deepak Dhar",
       title: "Associate Partner",
-      bio: "A tunnelling and project management professional with 25+ years of experience across Metro, Railway and Hydropower projects. Expertise spans NATM and TBM tunnelling, underground construction, cross passages, shaft excavation, tunnel rectification and complex ground conditions, supported by strong capabilities in project execution, planning, safety, stakeholder management and team leadership.",
-      img: "/assets/images/leader_deepak.webp",
+      bio: "A tunnelling and project management professional with 25+ years of experience across Metro, Railway and Hydropower projects, Deepak brings expertise in project execution, planning, safety, stakeholder management and team leadership.",
+      img: "/assets/images/Deepak Dhar.png",
     },
   ];
 
@@ -637,27 +636,22 @@ export default function AboustUs() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(to bottom, rgba(14,11,8,0.35) 0%, rgba(14,11,8,0.55) 35%, rgba(14,11,8,0.88) 70%, rgba(14,11,8,1) 100%)",
+              "linear-gradient(to bottom, rgba(0, 4, 53,0.35) 0%, rgba(0, 4, 53,0.55) 35%, rgba(0, 4, 53,0.88) 70%, rgba(0, 4, 53,1) 100%)",
           }}
         />
 
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8 pb-20 lg:pb-28">
+        <div className="relative z-10 w-full max-w-7xl 2xl:max-w-[1580px] mx-auto px-6 lg:px-8 pb-20 lg:pb-28">
           <div
             style={heroCss(0.05)}
-            className="w-10 h-[2px] bg-[#b07d3a] mb-6"
+            className="w-10 h-[2px] bg-[#f55d1b] mb-6"
           />
-          <p
-            style={heroCss(0.18)}
-            className="text-[10px] tracking-[0.24em] text-[#b07d3a] font-semibold uppercase mb-4"
-          >
-            About Us
-          </p>
+  
           <h1
             style={heroCss(0.3)}
             className="font-primary font-bold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight tracking-tight max-w-3xl mb-5 drop-shadow-[0_2px_12px_rgba(0,0,0,0.6)]"
           >
             Building Tomorrow’s Infrastructure.{" "}
-            <span className="text-[#b07d3a]">Powering Global Progress.</span>
+            <span className="text-[#f55d1b]">Powering Global Progress.</span>
           </h1>
           <p
             style={heroCss(0.42)}
@@ -682,7 +676,7 @@ export default function AboustUs() {
                 key={i}
                 className={`flex items-center gap-3 ${i < 2 ? "pr-6 mr-6 border-r border-white/10" : ""}`}
               >
-                <span className="font-primary font-bold text-[#b07d3a] text-sm">
+                <span className="font-primary font-bold text-[#f55d1b] text-sm">
                   {s}
                 </span>
                 <span className="font-secondary text-white/40 text-[11px] tracking-wide">
@@ -695,14 +689,14 @@ export default function AboustUs() {
       </section>
 
       <section className="py-20 lg:py-28 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div ref={whoL} style={anim(whoLv, 0)}>
               <SectionLabel>Who We Are</SectionLabel>
-              <h2 className="font-primary font-bold text-[#0e0b08] text-2xl sm:text-3xl lg:text-4xl leading-tight tracking-tight mb-6">
+              <h2 className="font-primary font-bold text-[#000435] text-2xl sm:text-3xl lg:text-4xl leading-tight tracking-tight mb-6">
                 Who We Are
               </h2>
-              <div className="space-y-4 font-secondary text-neutral-500 text-sm leading-relaxed">
+              <div className="space-y-4 font-secondary text-[#000435]/70 text-sm leading-relaxed">
                 <p>
                   We are more than just a construction company; we are
                   integrated developers, EPC contractors, project managers, and
@@ -735,9 +729,9 @@ export default function AboustUs() {
                 ].map(([k, v], i) => (
                   <div
                     key={i}
-                    className="bg-[#0e0b08] rounded-2xl p-6 flex flex-col gap-2 cursor-default hover:-translate-y-1 transition-transform duration-300"
+                    className="bg-[#000435] rounded-2xl p-6 flex flex-col gap-2 cursor-default hover:-translate-y-1 transition-transform duration-300"
                   >
-                    <span className="font-primary font-bold text-[#b07d3a] text-xl">
+                    <span className="font-primary font-bold text-[#f55d1b] text-xl">
                       {k}
                     </span>
                     <span className="font-secondary text-white/45 text-xs leading-snug">
@@ -751,22 +745,22 @@ export default function AboustUs() {
         </div>
       </section>
 
-      <section id="core-capabilities" className="py-20 lg:py-28 bg-[#f9f7f4]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <section id="core-capabilities" className="py-20 lg:py-28 bg-[#000435]/[0.02]">
+        <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-6 lg:px-8">
           <div ref={capH} style={anim(capHv, 0)} className="mb-4">
             <SectionLabel>Our Core Capabilities</SectionLabel>
-            <div className="flex flex-wrap items-end justify-between w-full gap-3">
-              <h2 className="font-primary font-bold text-[#0e0b08] text-2xl sm:text-3xl lg:text-4xl leading-tight tracking-tight max-w-2xl">
+            <div className="flex flex-col  w-full gap-3">
+              <h2 className="font-primary font-bold text-[#000435] text-2xl sm:text-3xl lg:text-4xl leading-tight tracking-tight max-w-2xl">
                 Our Core Capabilities
               </h2>
-              <p className="font-secondary text-neutral-500 text-sm leading-relaxed">
+              <p className="font-secondary text-[#000435]/70 text-sm leading-relaxed">
                 Our comprehensive service portfolio is designed to meet the
                 diverse needs of public and private sector clients across India
                 and international markets:
               </p>
             </div>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4">
             {caps.map((c, i) => (
               <CapCard key={i} {...c} delay={i * 0.05} />
             ))}
@@ -777,19 +771,19 @@ export default function AboustUs() {
       <section
         id="mission-vision"
         ref={vmvRef}
-        className="py-20 lg:py-16 bg-[#0e0b08] relative overflow-hidden"
+        className="py-20 lg:py-16 bg-[#000435] relative overflow-hidden"
       >
         <div
           ref={vmvBgRef}
           className="absolute inset-[-50px_0] pointer-events-none will-change-transform"
         >
-          <div className="absolute -top-1/4 -right-1/4 w-[480px] h-[480px] rounded-full bg-[radial-gradient(circle,rgba(176,125,58,0.09)_0%,transparent_65%)]" />
-          <div className="absolute -bottom-1/4 -left-1/4 w-[380px] h-[380px] rounded-full bg-[radial-gradient(circle,rgba(176,125,58,0.06)_0%,transparent_65%)]" />
+          <div className="absolute -top-1/4 -right-1/4 w-[480px] h-[480px] rounded-full bg-[radial-gradient(circle,rgba(245, 93, 27,0.09)_0%,transparent_65%)]" />
+          <div className="absolute -bottom-1/4 -left-1/4 w-[380px] h-[380px] rounded-full bg-[radial-gradient(circle,rgba(245, 93, 27,0.06)_0%,transparent_65%)]" />
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="relative z-10 max-w-7xl 2xl:max-w-[1580px] mx-auto px-6 lg:px-8">
           <div className="text-center mb-12">
             <SectionLabel>
-              <h2 className="font-primary font-bold text-[#b07d3a] text-2xl sm:text-3xl lg:text-4xl leading-tight tracking-tight">
+              <h2 className="font-primary font-bold text-[#f55d1b] text-2xl sm:text-3xl lg:text-4xl leading-tight tracking-tight">
                 Vision · Mission · Values
               </h2>
             </SectionLabel>
@@ -814,7 +808,7 @@ export default function AboustUs() {
               heading="To deliver infrastructure with precision, integrity and purpose."
               delay={0.1}
             >
-              <p className="font-secondary text-[#b07d3a] text-xs font-semibold mb-2">
+              <p className="font-secondary text-[#f55d1b] text-xs font-semibold mb-2">
                 We are committed to:
               </p>
               <ul className="space-y-2">
@@ -844,10 +838,10 @@ export default function AboustUs() {
                 {vals.map((v, i) => (
                   <span
                     key={i}
-                    className="px-3 py-1 rounded-full text-[#b07d3a] font-primary font-semibold text-[11px] cursor-default transition-all duration-300 hover:bg-[#b07d3a] hover:text-white"
+                    className="px-3 py-1 rounded-full text-[#f55d1b] font-primary font-semibold text-[11px] cursor-default transition-all duration-300 hover:bg-[#f55d1b] hover:text-white"
                     style={{
-                      background: "rgba(176,125,58,0.12)",
-                      border: "1px solid rgba(176,125,58,0.22)",
+                      background: "rgba(245, 93, 27,0.12)",
+                      border: "1px solid rgba(245, 93, 27,0.22)",
                     }}
                   >
                     {v}
@@ -860,14 +854,14 @@ export default function AboustUs() {
       </section>
 
       <section id="leadership" className="py-20 lg:py-28 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-6 lg:px-8">
           <div ref={ldH} style={anim(ldHv, 0)} className="mb-12">
             <SectionLabel>Our Leadership</SectionLabel>
-            <div className="flex flex-wrap items-end justify-between gap-5">
-              <h2 className="font-primary font-bold text-[#0e0b08] text-2xl sm:text-3xl lg:text-4xl leading-tight tracking-tight max-w-xs">
+            <div className="flex flex-col  gap-3">
+              <h2 className="font-primary font-bold text-[#000435] text-2xl sm:text-3xl lg:text-4xl leading-tight tracking-tight max-w-2xl">
                 Our Leadership
               </h2>
-              <p className="font-secondary text-neutral-500 text-sm leading-relaxed max-w-sm">
+              <p className="font-secondary text-[#000435]/70 text-sm leading-relaxed max-w-2xl">
                 Our leadership team brings together decades of expertise in
                 engineering, finance, and operations to deliver world-class
                 infrastructure projects.
@@ -882,9 +876,9 @@ export default function AboustUs() {
         </div>
       </section>
 
-      <section id="hse" className="py-20 lg:py-28 bg-[#0e0b08] relative overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full pointer-events-none bg-[radial-gradient(ellipse,rgba(176,125,58,0.07)_0%,transparent_65%)]" />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+      <section id="hse" className="py-20 lg:py-28 bg-[#000435] relative overflow-hidden">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full pointer-events-none bg-[radial-gradient(ellipse,rgba(245, 93, 27,0.07)_0%,transparent_65%)]" />
+        <div className="relative z-10 max-w-7xl 2xl:max-w-[1580px] mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             <div ref={hseL} style={anim(hseLv, 0)}>
               <SectionLabel>
@@ -898,10 +892,10 @@ export default function AboustUs() {
                 way we build. We are committed to maintaining a safe, healthy
                 and environmentally responsible workplace across every project.
               </p>
-              <p className="font-secondary text-[#b07d3a] text-sm font-semibold mb-8">
+              <p className="font-secondary text-[#f55d1b] text-sm font-semibold mb-8">
                 Our HSE approach focuses on:
               </p>
-              <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-[#b07d3a] text-white font-primary font-semibold text-sm cursor-default shadow-[0_8px_28px_rgba(176,125,58,0.28)]">
+              <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-[#f55d1b] text-white font-primary font-semibold text-sm cursor-default shadow-[0_8px_28px_rgba(245, 93, 27,0.28)]">
                 <SvgHardHat />
                 <span>
                   We don’t just build infrastructure. We build it responsibly.

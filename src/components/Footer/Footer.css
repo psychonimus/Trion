@@ -1,8 +1,8 @@
 /* ── Footer Main Container ── */
 .frame-footer {
   position: relative;
-  background-color: #0f1115;
-  color: #e5ece2;
+  background-color: #000435;
+  color: #ffffff;
   font-family: 'Plus Jakarta Sans', sans-serif;
   overflow: hidden;
   padding: 5.5rem 0 2.5rem 0;
@@ -48,7 +48,7 @@
   font-family: 'DM Sans', sans-serif;
   font-size: 0.95rem;
   line-height: 1.6;
-  color: #ffffffb8;
+  color: #ffffff;
   /* max-width: 320px; */
   margin: 0;
 }
@@ -58,7 +58,7 @@
   font-family: 'DM Sans', sans-serif;
   font-size: 0.88rem;
   font-weight: 500;
-  color: #e5ece2;
+  color: #ffffff;
   margin: 0 0 1.25rem 0;
   letter-spacing: 0.02em;
 }
@@ -70,7 +70,7 @@
   display: flex;
   align-items: center;
   position: relative;
-  background-color: #0f1115a8;
+  background-color: #000435;
   border-radius: 12px;
   padding: 0.35rem 0.4rem 0.35rem 1.2rem;
   max-width: 340px;
@@ -95,7 +95,7 @@
 }
 
 .footer-newsletter-input::placeholder {
-  color: #ffffffb8;;
+  color: #ffffff;;
 }
 
 .footer-newsletter-btn {
@@ -104,7 +104,7 @@
   justify-content: center;
   width: 42px;
   height: 40px;
-  background-color: #0f1115d5;
+  background-color: #000435;
   border: none;
   border-radius: 8px;
   color: #ffffff;
@@ -115,7 +115,7 @@
 .footer-newsletter-btn:hover {
   background-color: #ffffff;
   transform: scale(1.04);
-  color: #000;
+  color: #000435;
 }
 
 .footer-plane-icon {
@@ -133,12 +133,12 @@
   font-family: 'DM Sans', sans-serif;
   font-size: 0.88rem;
   line-height: 1.6;
-  color: #ffffffb8;
+  color: #ffffff;
   margin: 0;
 }
 
 .footer-highlight-card {
-  background-color: #1B1D21;
+  background-color: #000435;
   border-radius: 12px;
   padding: 1.4rem 1.6rem;
   display: flex;
@@ -158,7 +158,7 @@
 }
 
 .footer-contact-link:hover {
-  color: #cde0c5;
+  color: #ffffff;
 }
 
 /* ── Navigation Links Row ── */
@@ -181,7 +181,7 @@
 .footer-nav-list a {
   font-family: 'DM Sans', sans-serif;
   font-size: 0.92rem;
-  color: #ffffffb8;
+  color: #ffffff;
   text-decoration: none;
   transition: color 0.25s ease;
 }
@@ -222,7 +222,7 @@
 .footer-copyright {
   font-family: 'DM Sans', sans-serif;
   font-size: 0.85rem;
-  color: #ffffffb8;
+  color: #ffffff;
   margin: 0;
 }
 
@@ -245,8 +245,8 @@
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  background-color: #fff;
-  color: #000000;
+  background-color: #ffffff;
+  color: #000435;
   font-size: 0.95rem;
   text-decoration: none;
   transition: all 0.25s ease;
@@ -254,7 +254,7 @@
 
 .footer-social-icon:hover {
   background-color: #ffffff;
-  color: #000000;
+  color: #000435;
   transform: translateY(-2px);
 }
 
@@ -267,7 +267,7 @@
   height: 44px;
   border-radius: 50%;
   background-color: #ffffff;
-  color: #000000;
+  color: #000435;
   border: none;
   font-size: 1.15rem;
   cursor: pointer;

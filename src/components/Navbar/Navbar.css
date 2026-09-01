@@ -5,8 +5,8 @@
 /* ── 1. Theme Tokens ── */
 :root {
   --nav-font: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
-  --nav-brand-orange: #ff6b00;
-  --nav-brand-orange-hover: #ff8533;
+  --nav-brand-orange: #f55d1b;
+  --nav-brand-orange-hover: #f55d1b;
   --nav-bg-dark-blue: rgba(10, 17, 40, 0.9);
   --nav-bg-card-blue: rgba(14, 27, 56, 0.98);
   --nav-text-white: #ffffff;
@@ -149,7 +149,7 @@
   color: #ffffff !important;
   font-weight: 800;
   box-shadow: 
-    0 4px 14px rgba(255, 107, 0, 0.4),
+    0 4px 14px rgba(245, 93, 27, 0.4),
     0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
@@ -301,8 +301,8 @@
 }
 
 .nav-grid-card:hover {
-  background: rgba(255, 107, 0, 0.15);
-  border-color: rgba(255, 107, 0, 0.5);
+  background: rgba(245, 93, 27, 0.15);
+  border-color: rgba(245, 93, 27, 0.5);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
   transform: translateY(-1px);
 }
@@ -313,9 +313,9 @@
   justify-content: center;
   width: 34px;
   height: 34px;
-  background: rgba(255, 107, 0, 0.15);
+  background: rgba(245, 93, 27, 0.15);
   color: var(--nav-brand-orange) !important;
-  border: 1px solid rgba(255, 107, 0, 0.35);
+  border: 1px solid rgba(245, 93, 27, 0.35);
   border-radius: 10px;
   flex-shrink: 0;
   font-size: 1.05rem;
@@ -352,7 +352,7 @@
 }
 
 .nav-large-item:hover {
-  background: rgba(255, 107, 0, 0.12);
+  background: rgba(245, 93, 27, 0.12);
 }
 
 .nav-large-item__icon-wrap {
@@ -395,7 +395,7 @@
 }
 
 .nav-small-item:hover {
-  background: rgba(255, 107, 0, 0.14);
+  background: rgba(245, 93, 27, 0.14);
   color: #ffffff !important;
 }
 
@@ -432,7 +432,7 @@
   text-decoration: none !important;
   border-radius: 9999px;
   white-space: nowrap;
-  box-shadow: 0 4px 16px rgba(255, 107, 0, 0.4);
+  box-shadow: 0 4px 16px rgba(245, 93, 27, 0.4);
   transition: all 0.22s ease;
   user-select: none;
 }
@@ -440,7 +440,7 @@
 .navbar-cta-btn:hover {
   background: var(--nav-brand-orange-hover) !important;
   transform: translateY(-1px);
-  box-shadow: 0 6px 22px rgba(255, 107, 0, 0.55);
+  box-shadow: 0 6px 22px rgba(245, 93, 27, 0.55);
 }
 
 .navbar-cta-btn:active {
@@ -463,7 +463,7 @@
 }
 
 .navbar-mobile-toggle:hover {
-  background: rgba(255, 107, 0, 0.2);
+  background: rgba(245, 93, 27, 0.2);
   border-color: var(--nav-brand-orange);
 }
 
@@ -632,8 +632,8 @@
   }
 
   .mobile-sublink:hover {
-    background: rgba(255, 107, 0, 0.15);
-    border-color: rgba(255, 107, 0, 0.3);
+    background: rgba(245, 93, 27, 0.15);
+    border-color: rgba(245, 93, 27, 0.3);
   }
 
   .mobile-sublink__icon {
@@ -662,6 +662,6 @@
     text-transform: uppercase;
     text-decoration: none !important;
     border-radius: 14px;
-    box-shadow: 0 4px 18px rgba(255, 107, 0, 0.4);
+    box-shadow: 0 4px 18px rgba(245, 93, 27, 0.4);
   }
 }

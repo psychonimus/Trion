@@ -7,16 +7,33 @@ export default {
   theme: {
     extend: {
       colors: {
+        brand: {
+          blue: '#000435',
+          orange: '#f55d1b',
+          white: '#ffffff',
+        },
+        primary: {
+          DEFAULT: '#000435',
+          dark: '#000435',
+          light: '#000435',
+        },
+        secondary: {
+          DEFAULT: '#f55d1b',
+        },
+        accent: {
+          DEFAULT: '#f55d1b',
+        },
         navy: {
-          950: '#060c1a',
-          900: '#040813',
-          850: '#080f20',
-          800: '#0a1226',
+          DEFAULT: '#000435',
+          950: '#000435',
+          900: '#000435',
+          850: '#000435',
+          800: '#000435',
         },
         copper: {
-          DEFAULT: '#b07d3a',
-          light: '#c89552',
-          dark: '#92642a',
+          DEFAULT: '#f55d1b',
+          light: '#f55d1b',
+          dark: '#f55d1b',
         },
       },
       fontFamily: {

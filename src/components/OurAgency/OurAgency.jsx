@@ -10,7 +10,7 @@ function RollingDigit({ digit, delay = 0, isTriggered }) {
 
   if (!isNumber) {
     return (
-      <span className="text-3xl sm:text-4xl font-extrabold text-[#ff6b00]">
+      <span className="text-3xl sm:text-4xl font-extrabold text-[#f55d1b]">
         {digit}
       </span>
     );
@@ -44,7 +44,7 @@ function RollingDigit({ digit, delay = 0, isTriggered }) {
         {numbersList.map((num, idx) => (
           <div
             key={idx}
-            className="h-12 sm:h-14 flex items-center justify-center text-3xl sm:text-4xl font-primary font-extrabold text-[#ff6b00] tracking-tight select-none"
+            className="h-12 sm:h-14 flex items-center justify-center text-3xl sm:text-4xl font-primary font-extrabold text-[#f55d1b] tracking-tight select-none"
           >
             {num}
           </div>
@@ -76,7 +76,7 @@ function RollingStatItem({
             />
           ))}
           {suffix && (
-            <span className="text-2xl sm:text-3xl font-extrabold text-[#ff6b00] ml-0.5 self-center font-primary">
+            <span className="text-2xl sm:text-3xl font-extrabold text-[#f55d1b] ml-0.5 self-center font-primary">
               {suffix}
             </span>
           )}
@@ -149,7 +149,7 @@ export default function OurAgency() {
       ref={sectionRef}
       id="agency"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           <div
             className={`lg:col-span-6 flex flex-col justify-center transition-all duration-700 ${
@@ -159,8 +159,8 @@ export default function OurAgency() {
             }`}
           >
             <div className="flex items-center gap-2 mb-3">
-              <span className="w-5 h-[2px] bg-[#ff6b00]" />
-              <span className="font-mono text-xs text-[#ff6b00] tracking-[0.2em] uppercase font-bold">
+              <span className="w-5 h-[2px] bg-[#f55d1b]" />
+              <span className="font-mono text-xs text-[#f55d1b] tracking-[0.2em] uppercase font-bold">
                 WHO WE ARE
               </span>
             </div>
@@ -179,10 +179,10 @@ export default function OurAgency() {
             <div>
               <Link
                 to="/about"
-                className="inline-flex items-center gap-4 pl-6 pr-2 py-2 bg-[#ff6b00] hover:bg-[#ff8533] text-white rounded-full font-primary text-sm font-bold tracking-wider uppercase shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50 hover:-translate-y-0.5 transition-all no-underline w-fit group"
+                className="inline-flex items-center gap-4 pl-6 pr-2 py-2 bg-[#f55d1b] hover:bg-[#f55d1b] text-white rounded-full font-primary text-sm font-bold tracking-wider uppercase shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50 hover:-translate-y-0.5 transition-all no-underline w-fit group"
               >
                 <span>Explore more about us</span>
-                <span className="w-9 h-9 rounded-full bg-white text-[#ff6b00] flex items-center justify-center group-hover:translate-x-1 transition-transform">
+                <span className="w-9 h-9 rounded-full bg-white text-[#f55d1b] flex items-center justify-center group-hover:translate-x-1 transition-transform">
                   <HiArrowRight className="text-lg" />
                 </span>
               </Link>
@@ -207,7 +207,7 @@ export default function OurAgency() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
               <button
                 type="button"
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 sm:w-32 sm:h-32 rounded-full bg-[#0a1128]/70 backdrop-blur-md border border-white/25 flex items-center justify-center cursor-pointer shadow-2xl hover:scale-110 transition-transform p-0"
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 sm:w-32 sm:h-32 rounded-full bg-[#000435]/70 backdrop-blur-md border border-white/25 flex items-center justify-center cursor-pointer shadow-2xl hover:scale-110 transition-transform p-0"
                 onClick={() => setIsVideoModalOpen(true)}
                 aria-label="Play presentation video"
               >
@@ -234,8 +234,8 @@ export default function OurAgency() {
                   </text>
                 </svg>
 
-                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white text-[#ff6b00] flex items-center justify-center shadow-lg relative z-10 transition-transform hover:scale-105">
-                  <IoPlay className="text-xl ml-1 text-[#ff6b00]" />
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white text-[#f55d1b] flex items-center justify-center shadow-lg relative z-10 transition-transform hover:scale-105">
+                  <IoPlay className="text-xl ml-1 text-[#f55d1b]" />
                 </div>
               </button>
             </div>
@@ -248,7 +248,7 @@ export default function OurAgency() {
           }`}
         >
           <div
-            className="   bg-[#0a1128]/30
+            className="   bg-[#000435]/30
   backdrop-blur-2xl
   border border-white/10
   shadow-2xl  rounded-3xl p-6 sm:p-8 "
@@ -271,7 +271,7 @@ export default function OurAgency() {
 
       {isVideoModalOpen && (
         <div
-          className="fixed inset-0 bg-[#0a1128]/90 backdrop-blur-xl z-[99999] flex items-center justify-center p-4 sm:p-6 animate-fadeIn"
+          className="fixed inset-0 bg-[#000435]/90 backdrop-blur-xl z-[99999] flex items-center justify-center p-4 sm:p-6 animate-fadeIn"
           onClick={() => setIsVideoModalOpen(false)}
         >
           <div

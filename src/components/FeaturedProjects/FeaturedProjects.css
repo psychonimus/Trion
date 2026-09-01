@@ -2,7 +2,7 @@
 .featured-projects-section {
   position: relative;
   width: 100%;
-  background-color: #0b0d10;
+  background-color: #000435;
   color: #ffffff;
   font-family: 'Plus Jakarta Sans', sans-serif;
   padding: 6.5rem 0 7.5rem 0;
@@ -44,14 +44,14 @@
   font-family: 'DM Sans', sans-serif;
   font-size: 0.95rem;
   font-weight: 500;
-  color: #b4c7a8;
+  color: #ffffff;
   margin-bottom: 1.2rem;
   letter-spacing: 0.02em;
 }
 
 .projects-dot {
   font-size: 1.2rem;
-  color: #b4c7a8;
+  color: #ffffff;
   line-height: 1;
 }
 
@@ -61,7 +61,7 @@
   font-weight: 700;
   line-height: 0.98;
   letter-spacing: -0.04em;
-  color: #f1f4ee;
+  color: #ffffff;
   margin: 0;
 }
 
@@ -114,7 +114,7 @@
   aspect-ratio: 16 / 10;
   border-radius: 14px;
   overflow: hidden;
-  background-color: #171b21;
+  background-color: #000435;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -148,7 +148,7 @@
 }
 
 .project-row:hover .project-title-text {
-  color: #e5ece2;
+  color: #ffffff;
 }
 
 /* ── Column: Specs ── */
@@ -172,7 +172,7 @@
 }
 
 .project-spec-value {
-  color: #f1f4ee;
+  color: #ffffff;
   font-weight: 500;
 }
 

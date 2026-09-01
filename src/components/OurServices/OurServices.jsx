@@ -12,7 +12,7 @@ const SvgCorner = () => (
   <svg
     viewBox="0 0 16 16"
     fill="none"
-    stroke="#ff6b00"
+    stroke="#f55d1b"
     strokeWidth="1.2"
     className="w-3.5 h-3.5 opacity-80"
   >
@@ -24,7 +24,7 @@ const SvgCross = () => (
   <svg
     viewBox="0 0 16 16"
     fill="none"
-    stroke="#ff6b00"
+    stroke="#f55d1b"
     strokeWidth="1.2"
     className="w-3.5 h-3.5 opacity-70"
   >
@@ -37,7 +37,7 @@ const SvgSparkle = () => (
   <svg
     viewBox="0 0 24 24"
     fill="none"
-    stroke="#ff6b00"
+    stroke="#f55d1b"
     strokeWidth="1.8"
     className="w-4 h-4 shrink-0"
   >
@@ -49,7 +49,7 @@ const SvgIconEPC = () => (
   <svg
     viewBox="0 0 48 48"
     fill="none"
-    stroke="#ff6b00"
+    stroke="#f55d1b"
     strokeWidth="1.5"
     strokeLinecap="round"
     strokeLinejoin="round"
@@ -59,7 +59,7 @@ const SvgIconEPC = () => (
     <line x1="4" y1="16" x2="44" y2="16" />
     <line x1="16" y1="6" x2="16" y2="42" />
     <path d="M22 22h16M22 28h12M22 34h15" />
-    <circle cx="10" cy="11" r="2" fill="#ff6b00" stroke="none" />
+    <circle cx="10" cy="11" r="2" fill="#f55d1b" stroke="none" />
     <path d="M32 6v10M38 6v10" />
     <path d="M28 22l6 12M34 22l-6 12" stroke="#ffffff" strokeOpacity="0.3" />
   </svg>
@@ -69,7 +69,7 @@ const SvgIconPower = () => (
   <svg
     viewBox="0 0 48 48"
     fill="none"
-    stroke="#ff6b00"
+    stroke="#f55d1b"
     strokeWidth="1.5"
     strokeLinecap="round"
     strokeLinejoin="round"
@@ -83,7 +83,7 @@ const SvgIconPower = () => (
     <line x1="18" y1="45" x2="30" y2="45" />
     <path d="M15 36h18" />
     <path d="M12 45l5-9M36 45l-5-9" />
-    <circle cx="24" cy="21" r="2" fill="#ff6b00" stroke="none" />
+    <circle cx="24" cy="21" r="2" fill="#f55d1b" stroke="none" />
   </svg>
 );
 
@@ -91,7 +91,7 @@ const SvgIconMining = () => (
   <svg
     viewBox="0 0 48 48"
     fill="none"
-    stroke="#ff6b00"
+    stroke="#f55d1b"
     strokeWidth="1.5"
     strokeLinecap="round"
     strokeLinejoin="round"
@@ -109,7 +109,7 @@ const SvgIconMining = () => (
       strokeDasharray="2 2"
       stroke="#ffffff"
     />
-    <circle cx="24" cy="24" r="2" fill="#ff6b00" stroke="none" />
+    <circle cx="24" cy="24" r="2" fill="#f55d1b" stroke="none" />
   </svg>
 );
 
@@ -117,7 +117,7 @@ const SvgIconMachinery = () => (
   <svg
     viewBox="0 0 48 48"
     fill="none"
-    stroke="#ff6b00"
+    stroke="#f55d1b"
     strokeWidth="1.5"
     strokeLinecap="round"
     strokeLinejoin="round"
@@ -129,7 +129,7 @@ const SvgIconMachinery = () => (
     <path d="M9 32V20h14l6 12" />
     <path d="M28 20l9-9h7v6l-5 5" />
     <line x1="17" y1="20" x2="17" y2="28" />
-    <circle cx="37" cy="11" r="1.5" fill="#ff6b00" stroke="none" />
+    <circle cx="37" cy="11" r="1.5" fill="#f55d1b" stroke="none" />
   </svg>
 );
 
@@ -137,7 +137,7 @@ const SvgIconFinance = () => (
   <svg
     viewBox="0 0 48 48"
     fill="none"
-    stroke="#ff6b00"
+    stroke="#f55d1b"
     strokeWidth="1.5"
     strokeLinecap="round"
     strokeLinejoin="round"
@@ -151,7 +151,7 @@ const SvgIconFinance = () => (
     <rect x="19.5" y="31" width="4.5" height="11" />
     <rect x="28.5" y="22" width="4.5" height="20" />
     <rect x="37.5" y="14" width="4.5" height="28" />
-    <circle cx="32" cy="18" r="2" fill="#ff6b00" stroke="none" />
+    <circle cx="32" cy="18" r="2" fill="#f55d1b" stroke="none" />
   </svg>
 );
 
@@ -159,13 +159,13 @@ const SvgIconRD = () => (
   <svg
     viewBox="0 0 48 48"
     fill="none"
-    stroke="#ff6b00"
+    stroke="#f55d1b"
     strokeWidth="1.5"
     strokeLinecap="round"
     strokeLinejoin="round"
     className="w-10 h-10"
   >
-    <circle cx="24" cy="24" r="4" fill="#ff6b00" stroke="none" />
+    <circle cx="24" cy="24" r="4" fill="#f55d1b" stroke="none" />
     <ellipse cx="24" cy="24" rx="20" ry="8" />
     <ellipse cx="24" cy="24" rx="20" ry="8" transform="rotate(60 24 24)" />
     <ellipse cx="24" cy="24" rx="20" ry="8" transform="rotate(120 24 24)" />
@@ -176,7 +176,7 @@ const SvgIconUrban = () => (
   <svg
     viewBox="0 0 48 48"
     fill="none"
-    stroke="#ff6b00"
+    stroke="#f55d1b"
     strokeWidth="1.5"
     strokeLinecap="round"
     strokeLinejoin="round"
@@ -200,7 +200,7 @@ const SvgIconCrushing = () => (
   <svg
     viewBox="0 0 48 48"
     fill="none"
-    stroke="#ff6b00"
+    stroke="#f55d1b"
     strokeWidth="1.5"
     strokeLinecap="round"
     strokeLinejoin="round"
@@ -210,9 +210,9 @@ const SvgIconCrushing = () => (
     <path d="M6 12v9l12 6 12-6V12" />
     <polygon points="30,21 42,27 30,33 18,27" />
     <path d="M30 30v9l12-6v-9" />
-    <circle cx="12" cy="40" r="2" fill="#ff6b00" stroke="none" />
-    <circle cx="21" cy="42" r="1.5" fill="#ff6b00" stroke="none" />
-    <circle cx="27" cy="39" r="2" fill="#ff6b00" stroke="none" />
+    <circle cx="12" cy="40" r="2" fill="#f55d1b" stroke="none" />
+    <circle cx="21" cy="42" r="1.5" fill="#f55d1b" stroke="none" />
+    <circle cx="27" cy="39" r="2" fill="#f55d1b" stroke="none" />
   </svg>
 );
 
@@ -220,7 +220,7 @@ const SvgIconExcavation = () => (
   <svg
     viewBox="0 0 48 48"
     fill="none"
-    stroke="#ff6b00"
+    stroke="#f55d1b"
     strokeWidth="1.5"
     strokeLinecap="round"
     strokeLinejoin="round"
@@ -232,7 +232,7 @@ const SvgIconExcavation = () => (
     <path d="M20 15l7.5 7.5" />
     <path d="M27 9l9 9" />
     <path d="M12 12l24 24" strokeDasharray="3 3" stroke="#ffffff" />
-    <circle cx="9" cy="21" r="3" fill="#ff6b00" stroke="none" />
+    <circle cx="9" cy="21" r="3" fill="#f55d1b" stroke="none" />
   </svg>
 );
 
@@ -461,12 +461,12 @@ export default function OurServices() {
   };
 
   return (
-    <div className="bg-[#0a1128] py-12 border-t border-b border-white/10">
-      <section className="px-6 sm:px-8 lg:px-12 flex items-center justify-between max-w-7xl mx-auto mb-6">
+    <div className="bg-[#000435] py-12 border-t border-b border-white/10">
+      <section className="px-6 sm:px-8 lg:px-12 flex items-center justify-between max-w-7xl 2xl:max-w-[1580px] mx-auto mb-6">
         <div>
           <div className="flex items-center gap-2 mb-2">
-            <span className="w-5 h-[2px] bg-[#ff6b00]" />
-            <span className="font-mono text-xs text-[#ff6b00] tracking-[0.2em] uppercase font-bold">
+            <span className="w-5 h-[2px] bg-[#f55d1b]" />
+            <span className="font-mono text-xs text-[#f55d1b] tracking-[0.2em] uppercase font-bold">
               CAPABILITIES
             </span>
           </div>
@@ -483,7 +483,7 @@ export default function OurServices() {
             <button
               type="button"
               onClick={handlePrev}
-              className="w-10 h-10 rounded-full border border-white/20 bg-[#0e1b38] flex items-center justify-center text-white hover:bg-[#ff6b00] hover:border-[#ff6b00] hover:text-white transition-all shadow-md"
+              className="w-10 h-10 rounded-full border border-white/20 bg-[#000435] flex items-center justify-center text-white hover:bg-[#f55d1b] hover:border-[#f55d1b] hover:text-white transition-all shadow-md"
               aria-label="Previous page"
             >
               <HiChevronLeft className="text-lg" />
@@ -494,7 +494,7 @@ export default function OurServices() {
             <button
               type="button"
               onClick={handleNext}
-              className="w-10 h-10 rounded-full border border-white/20 bg-[#0e1b38] flex items-center justify-center text-white hover:bg-[#ff6b00] hover:border-[#ff6b00] hover:text-white transition-all shadow-md"
+              className="w-10 h-10 rounded-full border border-white/20 bg-[#000435] flex items-center justify-center text-white hover:bg-[#f55d1b] hover:border-[#f55d1b] hover:text-white transition-all shadow-md"
               aria-label="Next page"
             >
               <HiChevronRight className="text-lg" />
@@ -506,7 +506,7 @@ export default function OurServices() {
       <section
         ref={sectionRef}
         id="services"
-        className="relative w-full h-[80vh] min-h-[340px] max-h-[380px] 2xl:max-h-[460px] overflow-hidden flex flex-col justify-end bg-[#0a1128] font-primary select-none"
+        className="relative w-full h-[80vh] min-h-[340px] max-h-[380px] 2xl:max-h-[460px] overflow-hidden flex flex-col justify-end bg-[#000435] font-primary select-none"
       >
         <div className="absolute inset-0 w-full h-full overflow-hidden z-[1] pointer-events-none">
           {SERVICES_DATA.map((service, index) => (
@@ -535,7 +535,7 @@ export default function OurServices() {
                 key={service.id}
                 className={`group relative w-full lg:w-1/5 lg:flex-1 h-auto lg:h-full flex flex-col justify-end p-5 sm:p-6 lg:px-4 lg:py-6 xl:px-6 xl:py-8 border-b border-white/10 lg:border-b-0 cursor-pointer outline-none transition-[flex,background-color] duration-500 [transition-timing-function:cubic-bezier(0.25,1,0.5,1)] ${
                   isActive
-                    ? "min-h-[220px] bg-[#0e1b38]/70 lg:bg-[#0e1b38]/40 backdrop-blur-sm"
+                    ? "min-h-[220px] bg-[#000435]/70 lg:bg-[#000435]/40 backdrop-blur-sm"
                     : "min-h-[140px] sm:min-h-[160px] bg-transparent hover:bg-white/[0.04]"
                 }`}
                 onMouseEnter={() => setActiveSlot(slotIdx)}
@@ -553,7 +553,7 @@ export default function OurServices() {
                   <div
                     className={`absolute top-0 right-0 w-[1px] h-full transition-[background] duration-400 hidden lg:block ${
                       isActive
-                        ? "bg-[linear-gradient(to_bottom,rgba(255,255,255,0.05)_0%,rgba(255,107,0,0.5)_50%,rgba(255,255,255,0.4)_85%,rgba(255,255,255,0.08)_100%)]"
+                        ? "bg-[linear-gradient(to_bottom,rgba(255,255,255,0.05)_0%,rgba(245, 93, 27,0.5)_50%,rgba(255,255,255,0.4)_85%,rgba(255,255,255,0.08)_100%)]"
                         : "bg-[linear-gradient(to_bottom,rgba(255,255,255,0.03)_0%,rgba(255,255,255,0.18)_40%,rgba(255,255,255,0.25)_80%,rgba(255,255,255,0.08)_100%)]"
                     }`}
                   />
@@ -562,7 +562,7 @@ export default function OurServices() {
                 <div className="relative flex flex-col items-start gap-2.5 w-full origin-bottom-left z-[4]">
                   <span
                     className={`font-mono text-[10px] tracking-widest uppercase font-bold transition-colors ${
-                      isActive ? "text-[#ff6b00]" : "text-white/50"
+                      isActive ? "text-[#f55d1b]" : "text-white/50"
                     }`}
                   >
                     {service.shortTitle || `SERVICE // ${service.num}`}
@@ -594,7 +594,7 @@ export default function OurServices() {
 
                       <Link
                         to={`/services#${service.id}`}
-                        className="group/btn relative inline-flex items-center gap-2 hover:gap-3 no-underline font-primary text-xs sm:text-sm font-semibold text-[#ff6b00] hover:text-white py-1 transition-[gap,color] duration-300 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 hover:after:w-full after:h-[1px] after:bg-[#ff6b00] after:transition-[width] after:duration-350"
+                        className="group/btn relative inline-flex items-center gap-2 hover:gap-3 no-underline font-primary text-xs sm:text-sm font-semibold text-[#f55d1b] hover:text-white py-1 transition-[gap,color] duration-300 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 hover:after:w-full after:h-[1px] after:bg-[#f55d1b] after:transition-[width] after:duration-350"
                         onClick={(e) => e.stopPropagation()}
                       >
                         <span>Discover More</span>
@@ -620,7 +620,7 @@ export default function OurServices() {
                 }}
                 className={`transition-all duration-300 rounded-full ${
                   currentPage === pageIdx
-                    ? "w-8 h-2 bg-[#ff6b00] shadow-md shadow-orange-500/40"
+                    ? "w-8 h-2 bg-[#f55d1b] shadow-md shadow-orange-500/40"
                     : "w-2 h-2 bg-white/35 hover:bg-white/70"
                 }`}
                 aria-label={`Go to page ${pageIdx + 1}`}

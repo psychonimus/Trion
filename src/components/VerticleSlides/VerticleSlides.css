@@ -4,7 +4,7 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  background-color: #0a1128;
+  background-color: #000435;
 }
 
 .vb-layers {
@@ -45,7 +45,7 @@
   justify-content: flex-end;
   position: relative;
   z-index: 10;
-  max-width: 1320px;
+  max-width: 1580px;
   margin: 0 auto;
 }
 
@@ -88,7 +88,7 @@
   display: flex;
   gap: 1rem;
   z-index: 20;
-  max-width: 1320px;
+  max-width: 1580px;
   margin: 0 auto;
 }
 
@@ -107,7 +107,7 @@
   left: 0;
   width: 0%;
   height: 100%;
-  background: #ff6b00;
-  box-shadow: 0 0 10px rgba(255, 107, 0, 0.8);
+  background: #f55d1b;
+  box-shadow: 0 0 10px rgba(245, 93, 27, 0.8);
   border-radius: 9999px;
 }

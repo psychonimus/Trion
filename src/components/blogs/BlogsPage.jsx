@@ -38,7 +38,7 @@ function RevealLine({ children, delay = 0, className = "" }) {
 
 function Tag({ children }) {
   return (
-    <span className="inline-block px-3 py-1 rounded-full font-mono text-[10px] font-black tracking-[0.2em] uppercase text-[#E8590C] border border-[#E8590C]/30 bg-[#E8590C]/10">
+    <span className="inline-block px-3 py-1 rounded-full font-mono text-[10px] font-black tracking-[0.2em] uppercase text-[#f55d1b] border border-[#f55d1b]/30 bg-[#f55d1b]/10">
       {children}
     </span>
   );
@@ -47,8 +47,8 @@ function Tag({ children }) {
 function SectionLabel({ children }) {
   return (
     <div className="flex items-center gap-3 mb-3">
-      <span className="w-6 h-px bg-[#E8590C]" />
-      <span className="font-mono text-[11px] font-bold tracking-[0.28em] uppercase text-[#E8590C]">
+      <span className="w-6 h-px bg-[#f55d1b]" />
+      <span className="font-mono text-[11px] font-bold tracking-[0.28em] uppercase text-[#f55d1b]">
         {children}
       </span>
     </div>
@@ -67,8 +67,8 @@ function Card({ children, className = "" }) {
 
 function GridCard({ title, body }) {
   return (
-    <div className="p-4 rounded-xl border border-white/[0.07] bg-[#040610] hover:border-[#E8590C]/40 transition-colors duration-300 group">
-      <h5 className="font-primary font-black text-sm uppercase text-[#F5A623] mb-2 group-hover:text-[#E8590C] transition-colors">
+    <div className="p-4 rounded-xl border border-white/[0.07] bg-[#000435] hover:border-[#f55d1b]/40 transition-colors duration-300 group">
+      <h5 className="font-primary font-black text-sm uppercase text-[#f55d1b] mb-2 group-hover:text-[#f55d1b] transition-colors">
         {title}
       </h5>
       <p className="font-sans text-[13px] text-neutral-400 leading-relaxed">
@@ -96,8 +96,8 @@ function PillList({ items }) {
 function Callout({ headline, paras = [], quote = null }) {
   return (
     <div
-      className="mt-8 rounded-2xl p-6 border border-[#E8590C]/30 relative overflow-hidden"
-      style={{ background: "linear-gradient(135deg,#E8590C14 0%,transparent 65%)" }}
+      className="mt-8 rounded-2xl p-6 border border-[#f55d1b]/30 relative overflow-hidden"
+      style={{ background: "linear-gradient(135deg,#f55d1b14 0%,transparent 65%)" }}
     >
       <h3 className="font-primary font-black text-lg text-white uppercase mb-3">
         {headline}
@@ -109,8 +109,8 @@ function Callout({ headline, paras = [], quote = null }) {
       ))}
       {quote && (
         <p
-          className="mt-4 pt-4 font-serif italic text-base font-bold border-t border-[#E8590C]/25"
-          style={{ color: "#F5A623" }}
+          className="mt-4 pt-4 font-serif italic text-base font-bold border-t border-[#f55d1b]/25"
+          style={{ color: "#f55d1b" }}
         >
           {quote}
         </p>
@@ -129,7 +129,7 @@ function BlogHeroImg({ src, alt, caption }) {
         loading="lazy"
       />
       <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex items-end justify-between">
-        <span className="font-mono text-[10px] font-bold text-[#E8590C] tracking-widest uppercase">
+        <span className="font-mono text-[10px] font-bold text-[#f55d1b] tracking-widest uppercase">
           {caption}
         </span>
       </div>
@@ -198,7 +198,7 @@ const timelineData = [
               },
             ].map((item) => (
               <div key={item.n} className="flex gap-4">
-                <span className="mt-0.5 shrink-0 w-7 h-7 rounded-full flex items-center justify-center font-mono text-[10px] font-black text-[#E8590C] border border-[#E8590C]/40 bg-[#E8590C]/10">
+                <span className="mt-0.5 shrink-0 w-7 h-7 rounded-full flex items-center justify-center font-mono text-[10px] font-black text-[#f55d1b] border border-[#f55d1b]/40 bg-[#f55d1b]/10">
                   {item.n}
                 </span>
                 <div>
@@ -329,12 +329,12 @@ const timelineData = [
         <FadeUp delay={0.1}>
           <div className="space-y-4">
             <Card>
-              <h4 className="font-primary font-black text-sm text-[#F5A623] uppercase mb-2">Why Material Management Matters</h4>
+              <h4 className="font-primary font-black text-sm text-[#f55d1b] uppercase mb-2">Why Material Management Matters</h4>
               <p className="font-sans text-[14.5px] text-neutral-400 leading-relaxed">Materials form a significant part of infrastructure construction. Efficient sourcing, processing, transportation and utilisation of materials can contribute to better project efficiency while reducing unnecessary waste.</p>
               <p className="font-sans text-[14.5px] text-neutral-400 leading-relaxed mt-2">This is particularly relevant for projects involving aggregates, crushing, earthwork and large-scale civil construction.</p>
             </Card>
             <Card>
-              <h4 className="font-primary font-black text-sm text-[#F5A623] uppercase mb-2">Sustainability Meets Technology</h4>
+              <h4 className="font-primary font-black text-sm text-[#f55d1b] uppercase mb-2">Sustainability Meets Technology</h4>
               <p className="font-sans text-[14.5px] text-neutral-400 leading-relaxed">Digital technologies can also support sustainable construction by improving planning and reducing inefficiencies.</p>
               <p className="font-sans text-[14.5px] text-neutral-400 leading-relaxed mt-2">BIM, digital monitoring, drones and data analytics can improve coordination and help project teams identify issues earlier.</p>
             </Card>
@@ -526,16 +526,16 @@ const timelineData = [
         <FadeUp delay={0.1}>
           <div className="space-y-4">
             <Card>
-              <h4 className="font-primary font-black text-sm text-[#F5A623] uppercase mb-2">Why Proper Excavation Matters</h4>
+              <h4 className="font-primary font-black text-sm text-[#f55d1b] uppercase mb-2">Why Proper Excavation Matters</h4>
               <p className="font-sans text-[14.5px] text-neutral-400 leading-relaxed">Poorly planned excavation can create challenges throughout the project lifecycle. Effective earthwork planning considers soil conditions, excavation depths, equipment requirements, material movement, drainage and construction sequencing.</p>
             </Card>
             <Card>
-              <h4 className="font-primary font-black text-sm text-[#F5A623] uppercase mb-2">Equipment Makes a Difference</h4>
+              <h4 className="font-primary font-black text-sm text-[#f55d1b] uppercase mb-2">Equipment Makes a Difference</h4>
               <p className="font-sans text-[14.5px] text-neutral-400 leading-relaxed">Large infrastructure projects require the right combination of machinery and equipment to execute earthwork efficiently.</p>
               <p className="font-sans text-[14.5px] text-neutral-400 leading-relaxed mt-2">Excavators, loaders, dumpers, graders, compactors and other equipment must be coordinated according to the project's scale and requirements.</p>
             </Card>
             <Card>
-              <h4 className="font-primary font-black text-sm text-[#F5A623] uppercase mb-2">Earthwork and Project Timelines</h4>
+              <h4 className="font-primary font-black text-sm text-[#f55d1b] uppercase mb-2">Earthwork and Project Timelines</h4>
               <p className="font-sans text-[14.5px] text-neutral-400 leading-relaxed">Earthwork is often one of the earliest major activities on a construction site. Delays at this stage can impact subsequent construction activities.</p>
               <p className="font-sans text-[14.5px] text-neutral-400 leading-relaxed mt-2">Efficient planning, equipment utilisation, material movement and site coordination can therefore have a direct impact on overall project progress.</p>
             </Card>
@@ -557,17 +557,17 @@ const timelineData = [
 
 export default function BlogsPage() {
   return (
-    <main className="min-h-screen bg-[#040610] text-slate-100 antialiased overflow-x-hidden selection:bg-[#E8590C] selection:text-white">
-      <section className="relative pt-24 pb-12 px-6 sm:px-10 md:px-16 max-w-7xl mx-auto overflow-hidden">
+    <main className="min-h-screen bg-[#000435] text-slate-100 antialiased overflow-x-hidden selection:bg-[#f55d1b] selection:text-white">
+      <section className="relative pt-24 pb-12 px-6 sm:px-10 md:px-16 max-w-7xl 2xl:max-w-[1580px] mx-auto overflow-hidden">
         <div
           className="absolute -top-20 left-1/2 -translate-x-1/2 w-[700px] h-[400px] pointer-events-none"
-          style={{ background: "radial-gradient(ellipse at center,#E8590C18 0%,transparent 70%)" }}
+          style={{ background: "radial-gradient(ellipse at center,#f55d1b18 0%,transparent 70%)" }}
         />
 
         <FadeUp delay={0} className="relative z-10">
           <div className="flex items-center gap-3 mb-5">
-            <span className="w-8 h-px bg-[#E8590C]" />
-            <span className="font-mono text-[11px] font-bold tracking-[0.3em] uppercase text-[#E8590C]">
+            <span className="w-8 h-px bg-[#f55d1b]" />
+            <span className="font-mono text-[11px] font-bold tracking-[0.3em] uppercase text-[#f55d1b]">
               Editorial Research · Trion Infrastructure
             </span>
           </div>
@@ -576,7 +576,7 @@ export default function BlogsPage() {
         <RevealLine delay={0.1} className="relative z-10">
           <h1 className="font-primary font-black text-[52px] sm:text-[72px] md:text-[96px] text-white leading-[0.93] tracking-[-0.04em] uppercase">
             Engineering<br />
-            <span className="text-transparent" style={{ WebkitTextStroke: "1px #E8590C" }}>
+            <span className="text-transparent" style={{ WebkitTextStroke: "1px #f55d1b" }}>
               Intelligence
             </span>
           </h1>
@@ -601,10 +601,10 @@ export default function BlogsPage() {
         </FadeUp>
       </section>
 
-      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-10">
+      <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-4 md:px-8 lg:px-10">
         <div
           className="w-full h-px mb-0"
-          style={{ background: "linear-gradient(90deg, transparent, #E8590C40, transparent)" }}
+          style={{ background: "linear-gradient(90deg, transparent, #f55d1b40, transparent)" }}
         />
       </div>
 
@@ -612,18 +612,18 @@ export default function BlogsPage() {
 
       <section
         className="relative py-28 px-6 text-center overflow-hidden"
-        style={{ background: "linear-gradient(to top,#000,#040610)" }}
+        style={{ background: "linear-gradient(to top,#000,#000435)" }}
       >
         <div
           className="absolute inset-0 pointer-events-none"
-          style={{ background: "radial-gradient(ellipse 60% 60% at 50% 50%,#E8590C14 0%,transparent 70%)" }}
+          style={{ background: "radial-gradient(ellipse 60% 60% at 50% 50%,#f55d1b14 0%,transparent 70%)" }}
         />
         <div className="relative z-10 max-w-3xl mx-auto">
           <FadeUp>
-            <span className="inline-flex items-center gap-2 mb-5 font-mono text-[11px] tracking-[0.3em] text-[#E8590C] uppercase font-bold">
-              <span className="w-5 h-px bg-[#E8590C]" />
+            <span className="inline-flex items-center gap-2 mb-5 font-mono text-[11px] tracking-[0.3em] text-[#f55d1b] uppercase font-bold">
+              <span className="w-5 h-px bg-[#f55d1b]" />
               Infrastructure Partnership
-              <span className="w-5 h-px bg-[#E8590C]" />
+              <span className="w-5 h-px bg-[#f55d1b]" />
             </span>
           </FadeUp>
           <RevealLine delay={0.1}>
@@ -641,8 +641,8 @@ export default function BlogsPage() {
               to="/contact"
               className="inline-flex items-center gap-3 px-10 py-4 rounded-full font-primary font-black text-sm uppercase tracking-[0.15em] text-white no-underline transition-all duration-300 hover:-translate-y-1"
               style={{
-                background: "linear-gradient(135deg,#E8590C,#F5A623)",
-                boxShadow: "0 8px 32px #E8590C55",
+                background: "linear-gradient(135deg,#f55d1b,#f55d1b)",
+                boxShadow: "0 8px 32px #f55d1b55",
               }}
             >
               Get in Touch

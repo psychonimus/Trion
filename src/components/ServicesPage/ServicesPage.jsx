@@ -30,7 +30,7 @@ const SvgCorner = () => (
   <svg
     viewBox="0 0 16 16"
     fill="none"
-    stroke="#ff6b00"
+    stroke="#f55d1b"
     strokeWidth="1.2"
     className="w-3.5 h-3.5 opacity-80"
   >
@@ -42,7 +42,7 @@ const SvgCross = () => (
   <svg
     viewBox="0 0 16 16"
     fill="none"
-    stroke="#ff6b00"
+    stroke="#f55d1b"
     strokeWidth="1.2"
     className="w-3.5 h-3.5 opacity-70"
   >
@@ -55,7 +55,7 @@ const SvgSparkle = () => (
   <svg
     viewBox="0 0 24 24"
     fill="none"
-    stroke="#ff6b00"
+    stroke="#f55d1b"
     strokeWidth="1.8"
     className="w-4 h-4 shrink-0"
   >
@@ -67,7 +67,7 @@ const SvgIconEPC = () => (
   <svg
     viewBox="0 0 48 48"
     fill="none"
-    stroke="#ff6b00"
+    stroke="#f55d1b"
     strokeWidth="1.5"
     strokeLinecap="round"
     strokeLinejoin="round"
@@ -77,7 +77,7 @@ const SvgIconEPC = () => (
     <line x1="4" y1="16" x2="44" y2="16" />
     <line x1="16" y1="6" x2="16" y2="42" />
     <path d="M22 22h16M22 28h12M22 34h15" />
-    <circle cx="10" cy="11" r="2" fill="#ff6b00" stroke="none" />
+    <circle cx="10" cy="11" r="2" fill="#f55d1b" stroke="none" />
     <path d="M32 6v10M38 6v10" />
     <path d="M28 22l6 12M34 22l-6 12" stroke="#ffffff" strokeOpacity="0.3" />
   </svg>
@@ -87,7 +87,7 @@ const SvgIconPower = () => (
   <svg
     viewBox="0 0 48 48"
     fill="none"
-    stroke="#ff6b00"
+    stroke="#f55d1b"
     strokeWidth="1.5"
     strokeLinecap="round"
     strokeLinejoin="round"
@@ -101,7 +101,7 @@ const SvgIconPower = () => (
     <line x1="18" y1="45" x2="30" y2="45" />
     <path d="M15 36h18" />
     <path d="M12 45l5-9M36 45l-5-9" />
-    <circle cx="24" cy="21" r="2" fill="#ff6b00" stroke="none" />
+    <circle cx="24" cy="21" r="2" fill="#f55d1b" stroke="none" />
   </svg>
 );
 
@@ -109,7 +109,7 @@ const SvgIconMining = () => (
   <svg
     viewBox="0 0 48 48"
     fill="none"
-    stroke="#ff6b00"
+    stroke="#f55d1b"
     strokeWidth="1.5"
     strokeLinecap="round"
     strokeLinejoin="round"
@@ -127,7 +127,7 @@ const SvgIconMining = () => (
       strokeDasharray="2 2"
       stroke="#ffffff"
     />
-    <circle cx="24" cy="24" r="2" fill="#ff6b00" stroke="none" />
+    <circle cx="24" cy="24" r="2" fill="#f55d1b" stroke="none" />
   </svg>
 );
 
@@ -135,7 +135,7 @@ const SvgIconMachinery = () => (
   <svg
     viewBox="0 0 48 48"
     fill="none"
-    stroke="#ff6b00"
+    stroke="#f55d1b"
     strokeWidth="1.5"
     strokeLinecap="round"
     strokeLinejoin="round"
@@ -147,7 +147,7 @@ const SvgIconMachinery = () => (
     <path d="M9 32V20h14l6 12" />
     <path d="M28 20l9-9h7v6l-5 5" />
     <line x1="17" y1="20" x2="17" y2="28" />
-    <circle cx="37" cy="11" r="1.5" fill="#ff6b00" stroke="none" />
+    <circle cx="37" cy="11" r="1.5" fill="#f55d1b" stroke="none" />
   </svg>
 );
 
@@ -155,7 +155,7 @@ const SvgIconFinance = () => (
   <svg
     viewBox="0 0 48 48"
     fill="none"
-    stroke="#ff6b00"
+    stroke="#f55d1b"
     strokeWidth="1.5"
     strokeLinecap="round"
     strokeLinejoin="round"
@@ -169,7 +169,7 @@ const SvgIconFinance = () => (
     <rect x="19.5" y="31" width="4.5" height="11" />
     <rect x="28.5" y="22" width="4.5" height="20" />
     <rect x="37.5" y="14" width="4.5" height="28" />
-    <circle cx="32" cy="18" r="2" fill="#ff6b00" stroke="none" />
+    <circle cx="32" cy="18" r="2" fill="#f55d1b" stroke="none" />
   </svg>
 );
 
@@ -177,13 +177,13 @@ const SvgIconRD = () => (
   <svg
     viewBox="0 0 48 48"
     fill="none"
-    stroke="#ff6b00"
+    stroke="#f55d1b"
     strokeWidth="1.5"
     strokeLinecap="round"
     strokeLinejoin="round"
     className="w-10 h-10"
   >
-    <circle cx="24" cy="24" r="4" fill="#ff6b00" stroke="none" />
+    <circle cx="24" cy="24" r="4" fill="#f55d1b" stroke="none" />
     <ellipse cx="24" cy="24" rx="20" ry="8" />
     <ellipse cx="24" cy="24" rx="20" ry="8" transform="rotate(60 24 24)" />
     <ellipse cx="24" cy="24" rx="20" ry="8" transform="rotate(120 24 24)" />
@@ -194,7 +194,7 @@ const SvgIconUrban = () => (
   <svg
     viewBox="0 0 48 48"
     fill="none"
-    stroke="#ff6b00"
+    stroke="#f55d1b"
     strokeWidth="1.5"
     strokeLinecap="round"
     strokeLinejoin="round"
@@ -218,7 +218,7 @@ const SvgIconCrushing = () => (
   <svg
     viewBox="0 0 48 48"
     fill="none"
-    stroke="#ff6b00"
+    stroke="#f55d1b"
     strokeWidth="1.5"
     strokeLinecap="round"
     strokeLinejoin="round"
@@ -228,9 +228,9 @@ const SvgIconCrushing = () => (
     <path d="M6 12v9l12 6 12-6V12" />
     <polygon points="30,21 42,27 30,33 18,27" />
     <path d="M30 30v9l12-6v-9" />
-    <circle cx="12" cy="40" r="2" fill="#ff6b00" stroke="none" />
-    <circle cx="21" cy="42" r="1.5" fill="#ff6b00" stroke="none" />
-    <circle cx="27" cy="39" r="2" fill="#ff6b00" stroke="none" />
+    <circle cx="12" cy="40" r="2" fill="#f55d1b" stroke="none" />
+    <circle cx="21" cy="42" r="1.5" fill="#f55d1b" stroke="none" />
+    <circle cx="27" cy="39" r="2" fill="#f55d1b" stroke="none" />
   </svg>
 );
 
@@ -238,7 +238,7 @@ const SvgIconExcavation = () => (
   <svg
     viewBox="0 0 48 48"
     fill="none"
-    stroke="#ff6b00"
+    stroke="#f55d1b"
     strokeWidth="1.5"
     strokeLinecap="round"
     strokeLinejoin="round"
@@ -250,7 +250,7 @@ const SvgIconExcavation = () => (
     <path d="M20 15l7.5 7.5" />
     <path d="M27 9l9 9" />
     <path d="M12 12l24 24" strokeDasharray="3 3" stroke="#ffffff" />
-    <circle cx="9" cy="21" r="3" fill="#ff6b00" stroke="none" />
+    <circle cx="9" cy="21" r="3" fill="#f55d1b" stroke="none" />
   </svg>
 );
 
@@ -1039,27 +1039,27 @@ function ServiceCard({ service, index, isHighlighted }) {
       }}
       className={`relative py-16 lg:py-24 border-b transition-colors duration-300 ${
         isHighlighted
-          ? "ring-2 ring-[#ff6b00] shadow-[0_0_50px_rgba(255,107,0,0.35)] relative z-20"
+          ? "ring-2 ring-[#f55d1b] shadow-[0_0_50px_rgba(245, 93, 27,0.35)] relative z-20"
           : ""
       } ${
         isLight
           ? isHighlighted
-            ? "bg-orange-50/20 text-slate-900 border-[#ff6b00]"
+            ? "bg-orange-50/20 text-slate-900 border-[#f55d1b]"
             : "bg-white text-slate-900 border-slate-200/80"
           : isHighlighted
-            ? "bg-[#0f1d3d] text-white border-[#ff6b00]"
-            : "bg-[#0a1128] text-white border-white/[0.08]"
+            ? "bg-[#000435] text-white border-[#f55d1b]"
+            : "bg-[#000435] text-white border-white/[0.08]"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+      <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-6 sm:px-8 lg:px-12">
         <div
           className={`flex items-center justify-between border-b pb-3 mb-8 ${
             isLight ? "border-slate-200" : "border-white/10"
           }`}
         >
           <div className="flex items-center gap-2.5">
-            <span className="w-6 h-[1.5px] bg-[#ff6b00]" />
-            <span className="font-mono text-[11px] text-[#ff6b00] tracking-[0.2em] uppercase font-bold">
+            <span className="w-6 h-[1.5px] bg-[#f55d1b]" />
+            <span className="font-mono text-[11px] text-[#f55d1b] tracking-[0.2em] uppercase font-bold">
               SECTION // {service.num}
             </span>
           </div>
@@ -1083,14 +1083,14 @@ function ServiceCard({ service, index, isHighlighted }) {
           >
             <div className="flex items-center gap-3.5 mb-5">
               <div
-                className={`w-14 h-14 rounded-xl border border-[#ff6b00]/35 flex items-center justify-center shadow-lg backdrop-blur-md ${
-                  isLight ? "bg-slate-50" : "bg-[#0e1b38]"
+                className={`w-14 h-14 rounded-xl border border-[#f55d1b]/35 flex items-center justify-center shadow-lg backdrop-blur-md ${
+                  isLight ? "bg-slate-50" : "bg-[#000435]"
                 }`}
               >
                 <Icon />
               </div>
               <div>
-                <span className="font-mono text-[10px] text-[#ff6b00] font-bold block uppercase tracking-wider">
+                <span className="font-mono text-[10px] text-[#f55d1b] font-bold block uppercase tracking-wider">
                   CAPABILITY VERTICAL
                 </span>
                 <span
@@ -1125,10 +1125,10 @@ function ServiceCard({ service, index, isHighlighted }) {
               className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border text-xs font-mono ${
                 isLight
                   ? "bg-slate-100 border-slate-200 text-slate-700"
-                  : "bg-[#0e1b38] border-white/10 text-slate-300"
+                  : "bg-[#000435] border-white/10 text-slate-300"
               }`}
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-[#ff6b00]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#f55d1b]" />
               <span>{service.caption}</span>
             </div>
           </div>
@@ -1142,7 +1142,7 @@ function ServiceCard({ service, index, isHighlighted }) {
               className={`relative group overflow-hidden rounded-2xl border shadow-2xl h-[300px] sm:h-[380px] lg:h-[420px] ${
                 isLight
                   ? "border-slate-200 bg-slate-100"
-                  : "border-white/15 bg-[#0e1b38]"
+                  : "border-white/15 bg-[#000435]"
               }`}
             >
               <img
@@ -1153,7 +1153,7 @@ function ServiceCard({ service, index, isHighlighted }) {
               />
               <div
                 className={`absolute inset-0 bg-gradient-to-t via-transparent to-transparent opacity-75 ${
-                  isLight ? "from-white/60" : "from-[#0a1128]"
+                  isLight ? "from-white/60" : "from-[#000435]"
                 }`}
               />
               <div
@@ -1249,8 +1249,8 @@ export default function ServicesPage() {
   }, []);
 
   return (
-    <main className="bg-[#0a1128] font-primary min-h-screen overflow-x-hidden selection:bg-[#ff6b00] selection:text-white">
-      <aside className="fixed right-6 top-1/2 -translate-y-1/2 hidden xl:flex flex-col gap-2 z-40 bg-[#0a1128]/85 backdrop-blur-md p-2 rounded-2xl border border-white/10 shadow-2xl">
+    <main className="bg-[#000435] font-primary min-h-screen overflow-x-hidden selection:bg-[#f55d1b] selection:text-white">
+      <aside className="fixed right-6 top-1/2 -translate-y-1/2 hidden xl:flex flex-col gap-2 z-40 bg-[#000435]/85 backdrop-blur-md p-2 rounded-2xl border border-white/10 shadow-2xl">
         {SERVICES_DATA.map((s, idx) => {
           const isCurrent = activeIdx === idx;
           return (
@@ -1259,7 +1259,7 @@ export default function ServicesPage() {
               href={`#${s.id}`}
               className={`font-mono text-[11px] px-2 py-0.5 transition-all duration-300 ${
                 isCurrent
-                  ? "text-[#ff6b00] font-bold border-l-2 border-[#ff6b00] pl-2"
+                  ? "text-[#f55d1b] font-bold border-l-2 border-[#f55d1b] pl-2"
                   : "text-slate-400 hover:text-white"
               }`}
             >
@@ -1269,9 +1269,9 @@ export default function ServicesPage() {
         })}
       </aside>
 
-      <section className="relative min-h-[88vh] lg:min-h-[92vh] flex flex-col justify-center overflow-hidden border-b border-white/10 bg-[#0a1128]">
+      <section className="relative min-h-[88vh] lg:min-h-[92vh] flex flex-col justify-center overflow-hidden border-b border-white/10 bg-[#000435]">
         <KineticGrid className="w-full h-full pt-24 pb-16 sm:pt-28 sm:pb-20 lg:pt-14 lg:pb-16 flex flex-col justify-center">
-          <div className="relative z-20 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex-1 flex flex-col justify-center my-auto">
+          <div className="relative z-20 w-full max-w-7xl 2xl:max-w-[1580px] mx-auto px-6 sm:px-8 lg:px-12 flex-1 flex flex-col justify-center my-auto">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               <div
                 ref={heroRef}
@@ -1284,8 +1284,8 @@ export default function ServicesPage() {
                 }}
               >
                 <div className="flex items-center gap-2.5 mb-4">
-                  <span className="w-6 h-[1.5px] bg-[#ff6b00]" />
-                  <span className="font-mono text-[11px] text-[#ff6b00] tracking-[0.25em] uppercase font-bold">
+                  <span className="w-6 h-[1.5px] bg-[#f55d1b]" />
+                  <span className="font-mono text-[11px] text-[#f55d1b] tracking-[0.25em] uppercase font-bold">
                     SERVICES
                   </span>
                 </div>
@@ -1293,10 +1293,10 @@ export default function ServicesPage() {
                 <h1 className="font-primary font-black text-2xl sm:text-3xl lg:text-4xl text-white tracking-tight leading-[1.1] mb-6">
                   ENGINEERED
                   <br />
-                  FOR <span className="text-[#ff6b00]">SCALE.</span>
+                  FOR <span className="text-[#f55d1b]">SCALE.</span>
                 </h1>
 
-                <div className="border-l-2 border-[#ff6b00]/40 pl-4 mb-6">
+                <div className="border-l-2 border-[#f55d1b]/40 pl-4 mb-6">
                   <p className="font-secondary text-slate-200 text-sm sm:text-base leading-relaxed max-w-lg">
                     At Trion, we provide comprehensive civil construction,
                     infrastructure, mining, excavation, crushing, and building
@@ -1305,13 +1305,13 @@ export default function ServicesPage() {
                   </p>
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-[#0e1b38]/80 border border-white/10 max-w-lg shadow-lg font-mono text-xs backdrop-blur-md">
+                <div className="p-3.5 rounded-xl bg-[#000435]/80 border border-white/10 max-w-lg shadow-lg font-mono text-xs backdrop-blur-md">
                   <div className="text-[10px] text-slate-400 tracking-widest uppercase mb-1.5 flex items-center gap-2">
                     <SvgCross />
                     <span>MASTERPLAN BLUEPRINT SEQUENCING:</span>
                   </div>
-                  <div className="text-[#ff6b00] font-bold text-xs sm:text-[13px] flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-[#ff6b00] animate-pulse" />
+                  <div className="text-[#f55d1b] font-bold text-xs sm:text-[13px] flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-[#f55d1b] animate-pulse" />
                     <span>{constructionPhase}</span>
                   </div>
                 </div>
@@ -1330,9 +1330,9 @@ export default function ServicesPage() {
 
       <section className="py-20 lg:py-28 border-b border-slate-200 bg-gradient-to-b from-white via-slate-50 to-white text-slate-900 relative overflow-hidden">
         {/* Subtle Architectural Dot Grid Background */}
-        <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:24px_24px] opacity-60 pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px] opacity-60 pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+        <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
           <div
             ref={introRef}
             style={{
@@ -1346,8 +1346,8 @@ export default function ServicesPage() {
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200 pb-6 mb-12">
               <div>
                 <div className="flex items-center gap-2.5 mb-2.5">
-                  <span className="w-6 h-[2px] bg-[#ff6b00]" />
-                  <span className="font-mono text-[11px] text-[#ff6b00] tracking-[0.25em] uppercase font-bold">
+                  <span className="w-6 h-[2px] bg-[#f55d1b]" />
+                  <span className="font-mono text-[11px] text-[#f55d1b] tracking-[0.25em] uppercase font-bold">
                     CAPABILITIES OVERVIEW
                   </span>
                 </div>
@@ -1367,18 +1367,18 @@ export default function ServicesPage() {
             {/* Creative Bento Grid Cards */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch mb-10">
               {/* Card 1: Multi-Sector Mastery */}
-              <div className="lg:col-span-6 bg-white rounded-3xl border border-slate-200/90 p-8 sm:p-10 shadow-xl shadow-slate-200/50 flex flex-col justify-between relative overflow-hidden group hover:border-[#ff6b00]/40 transition-all duration-300">
+              <div className="lg:col-span-6 bg-white rounded-3xl border border-slate-200/90 p-8 sm:p-10 shadow-xl shadow-slate-200/50 flex flex-col justify-between relative overflow-hidden group hover:border-[#f55d1b]/40 transition-all duration-300">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-orange-500/5 to-transparent rounded-bl-full pointer-events-none" />
 
                 <div>
                   <div className="flex items-center justify-between gap-3 mb-6">
-                    <span className="font-mono text-[11px] text-[#ff6b00] tracking-widest uppercase font-bold px-3 py-1 bg-orange-50 border border-orange-200/60 rounded-full">
+                    <span className="font-mono text-[11px] text-[#f55d1b] tracking-widest uppercase font-bold px-3 py-1 bg-orange-50 border border-orange-200/60 rounded-full">
                       VERTICALS & STANDARDS
                     </span>
                     <div className="flex gap-1.5">
                       <span className="w-2 h-2 rounded-full bg-slate-300" />
                       <span className="w-2 h-2 rounded-full bg-slate-300" />
-                      <span className="w-2 h-2 rounded-full bg-[#ff6b00]" />
+                      <span className="w-2 h-2 rounded-full bg-[#f55d1b]" />
                     </div>
                   </div>
 
@@ -1406,12 +1406,12 @@ export default function ServicesPage() {
               </div>
 
               {/* Card 2: Lifecycle Execution & Certification */}
-              <div className="lg:col-span-6 bg-gradient-to-br from-[#0e1b38] to-[#0a1128] text-white rounded-3xl border border-white/10 p-8 sm:p-10 shadow-2xl flex flex-col justify-between relative overflow-hidden group hover:border-[#ff6b00]/50 transition-all duration-300">
-                <div className="absolute top-0 right-0 w-40 h-40 bg-[radial-gradient(ellipse_at_top_right,rgba(255,107,0,0.15)_0%,transparent_70%)] pointer-events-none" />
+              <div className="lg:col-span-6 bg-gradient-to-br from-[#000435] to-[#000435] text-white rounded-3xl border border-white/10 p-8 sm:p-10 shadow-2xl flex flex-col justify-between relative overflow-hidden group hover:border-[#f55d1b]/50 transition-all duration-300">
+                <div className="absolute top-0 right-0 w-40 h-40 bg-[radial-gradient(ellipse_at_top_right,rgba(245, 93, 27,0.15)_0%,transparent_70%)] pointer-events-none" />
 
                 <div>
                   <div className="flex items-center justify-between gap-3 mb-6">
-                    <span className="font-mono text-[11px] text-[#ff6b00] tracking-widest uppercase font-bold px-3 py-1 bg-[#ff6b00]/15 border border-[#ff6b00]/30 rounded-full">
+                    <span className="font-mono text-[11px] text-[#f55d1b] tracking-widest uppercase font-bold px-3 py-1 bg-[#f55d1b]/15 border border-[#f55d1b]/30 rounded-full">
                       FULL LIFECYCLE SCOPE
                     </span>
                     <SvgCross />
@@ -1427,7 +1427,7 @@ export default function ServicesPage() {
 
                 {/* Slogan Banner */}
                 <div className="pt-6 border-t border-white/10 flex items-center justify-between flex-wrap gap-4">
-                  <div className="inline-flex items-center gap-3 px-4 py-2.5 border border-[#ff6b00]/40 bg-[#ff6b00]/15 rounded-xl shadow-lg backdrop-blur-md">
+                  <div className="inline-flex items-center gap-3 px-4 py-2.5 border border-[#f55d1b]/40 bg-[#f55d1b]/15 rounded-xl shadow-lg backdrop-blur-md">
                     <SvgSparkle />
                     <span className="font-primary font-bold text-white text-xs sm:text-sm tracking-wide">
                       Built on expertise. Delivered with precision.

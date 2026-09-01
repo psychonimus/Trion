@@ -145,14 +145,14 @@ function GridCard({ link, onClick }) {
   return (
     <Link
       to={link.href + (link.hash || "")}
-      className="flex items-start gap-3 p-3.5 bg-[#070d1e] border border-white/10 hover:border-[#ff6b00]/60 rounded-xl transition-all duration-150 hover:bg-[#ff6b00]/10 no-underline group"
+      className="flex items-start gap-3 p-3.5 bg-[#000435] border border-white/10 hover:border-[#f55d1b]/60 rounded-xl transition-all duration-150 hover:bg-[#f55d1b]/10 no-underline group"
       onClick={onClick}
     >
-      <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-[#ff6b00]/15 text-[#ff6b00] border border-[#ff6b00]/30 shrink-0 text-sm group-hover:scale-105 transition-transform mt-0.5">
+      <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-[#f55d1b]/15 text-[#f55d1b] border border-[#f55d1b]/30 shrink-0 text-sm group-hover:scale-105 transition-transform mt-0.5">
         <Icon />
       </div>
       <div className="flex flex-col">
-        <span className="text-[12.5px] font-bold text-white group-hover:text-[#ff6b00] transition-colors leading-tight mb-1 whitespace-normal">
+        <span className="text-[12.5px] font-bold text-white group-hover:text-[#f55d1b] transition-colors leading-tight mb-1 whitespace-normal">
           {link.title}
         </span>
         {link.description && (
@@ -170,14 +170,14 @@ function LargeItem({ link, onClick }) {
   return (
     <Link
       to={link.href + (link.hash || "")}
-      className="flex items-start gap-2.5 p-2 rounded-lg transition-all duration-150 hover:bg-[#ff6b00]/10 no-underline group"
+      className="flex items-start gap-2.5 p-2 rounded-lg transition-all duration-150 hover:bg-[#f55d1b]/10 no-underline group"
       onClick={onClick}
     >
-      <div className="flex items-center justify-center w-5 h-5 text-[#ff6b00] shrink-0 text-xs mt-0.5">
+      <div className="flex items-center justify-center w-5 h-5 text-[#f55d1b] shrink-0 text-xs mt-0.5">
         <Icon />
       </div>
       <div className="flex flex-col">
-        <span className="text-[11.5px] font-semibold text-white group-hover:text-[#ff6b00] transition-colors leading-tight whitespace-normal">
+        <span className="text-[11.5px] font-semibold text-white group-hover:text-[#f55d1b] transition-colors leading-tight whitespace-normal">
           {link.title}
         </span>
         {link.description && (
@@ -195,10 +195,10 @@ function SmallItem({ item, onClick }) {
   return (
     <Link
       to={item.href + (item.hash || "")}
-      className="flex items-center gap-2.5 p-2 rounded-lg text-slate-200 hover:text-white hover:bg-[#ff6b00]/15 transition-all duration-150 no-underline group"
+      className="flex items-center gap-2.5 p-2 rounded-lg text-slate-200 hover:text-white hover:bg-[#f55d1b]/15 transition-all duration-150 no-underline group"
       onClick={onClick}
     >
-      <Icon className="text-[#ff6b00] text-xs shrink-0" />
+      <Icon className="text-[#f55d1b] text-xs shrink-0" />
       <span className="text-[11.5px] font-semibold tracking-wide group-hover:text-white whitespace-normal">
         {item.title}
       </span>
@@ -226,7 +226,7 @@ function CapsuleDropdown({
         to={to}
         className={`inline-flex items-center justify-center gap-1 px-3.5 py-1.5 font-primary text-[11px] font-bold tracking-[0.1em] uppercase rounded-full whitespace-nowrap transition-all duration-150 no-underline select-none ${
           isActive
-            ? "bg-[#ff6b00] text-white shadow-md shadow-orange-500/40 font-extrabold"
+            ? "bg-[#f55d1b] text-white shadow-md shadow-orange-500/40 font-extrabold"
             : "text-slate-200 hover:text-white hover:bg-white/10"
         }`}
         onClick={onClick}
@@ -234,14 +234,14 @@ function CapsuleDropdown({
         <span>{label}</span>
         <FiChevronDown
           className={`text-[10px] transition-transform duration-200 ${
-            isOpen ? "rotate-180 text-[#ff6b00]" : "text-slate-300"
+            isOpen ? "rotate-180 text-[#f55d1b]" : "text-slate-300"
           }`}
         />
       </Link>
 
       {/* Solid Opaque Dropdown Flyout Panel */}
       <div
-        className={`absolute top-[calc(100%+12px)] left-1/2 z-[1200] bg-[#070d1e] border border-slate-700/80 rounded-2xl shadow-[0_24px_50px_rgba(0,0,0,0.85)] transition-all duration-150 ${
+        className={`absolute top-[calc(100%+12px)] left-1/2 z-[1200] bg-[#000435] border border-slate-700/80 rounded-2xl shadow-[0_24px_50px_rgba(0,0,0,0.85)] transition-all duration-150 ${
           isOpen
             ? "opacity-100 pointer-events-auto -translate-x-1/3 translate-y-0 scale-100"
             : "opacity-0 pointer-events-none -translate-x-1/2 translate-y-2 scale-95"
@@ -249,7 +249,7 @@ function CapsuleDropdown({
         role="region"
         aria-label={`${label} submenu`}
       >
-        <div className="p-5 font-primary bg-[#070d1e] rounded-2xl">{children}</div>
+        <div className="p-5 font-primary bg-[#000435] rounded-2xl">{children}</div>
       </div>
     </div>
   );
@@ -259,18 +259,18 @@ function MobileAccordionItem({ label, to, links, isOpen, onToggle, onCloseMenu }
   const contentRef = useRef(null);
 
   return (
-    <div className="rounded-xl overflow-hidden mb-1 bg-[#070d1e]/80 border border-slate-800">
+    <div className="rounded-xl overflow-hidden mb-1 bg-[#000435]/80 border border-slate-800">
       <div className="flex items-center justify-between w-full">
         <Link
           to={to}
-          className="flex-1 px-4 py-2.5 font-primary text-xs font-bold tracking-wider uppercase text-white hover:text-[#ff6b00] no-underline"
+          className="flex-1 px-4 py-2.5 font-primary text-xs font-bold tracking-wider uppercase text-white hover:text-[#f55d1b] no-underline"
           onClick={onCloseMenu}
         >
           {label}
         </Link>
         <button
           type="button"
-          className="p-2.5 text-[#ff6b00] hover:text-white"
+          className="p-2.5 text-[#f55d1b] hover:text-white"
           onClick={onToggle}
           aria-expanded={isOpen}
         >
@@ -297,10 +297,10 @@ function MobileAccordionItem({ label, to, links, isOpen, onToggle, onCloseMenu }
               <Link
                 key={link.title}
                 to={link.href + (link.hash || "")}
-                className="flex items-center gap-2.5 p-2 rounded-lg bg-[#0a1128] border border-slate-800 hover:bg-[#ff6b00]/15 hover:border-[#ff6b00]/30 transition-all no-underline text-white"
+                className="flex items-center gap-2.5 p-2 rounded-lg bg-[#000435] border border-slate-800 hover:bg-[#f55d1b]/15 hover:border-[#f55d1b]/30 transition-all no-underline text-white"
                 onClick={onCloseMenu}
               >
-                <Icon className="text-[#ff6b00] text-sm shrink-0" />
+                <Icon className="text-[#f55d1b] text-sm shrink-0" />
                 <div className="flex flex-col min-w-0">
                   <span className="text-[11.5px] font-bold text-white leading-tight truncate">
                     {link.title}
@@ -393,24 +393,24 @@ export default function Navbar() {
   const currentPath = location.pathname;
 
   return (
-    <header className="fixed top-3 sm:top-4 left-0 right-0 z-[1000] w-full px-4 sm:px-8 pointer-events-none flex justify-center font-primary">
-      <div className="w-full max-w-[1160px] mx-auto pointer-events-auto relative" ref={navRef}>
-        <nav className="relative flex items-center justify-between h-[48px] sm:h-[50px] px-2.5 sm:px-3 bg-[#0a1128]/85 backdrop-blur-md backdrop-saturate-150 border border-white/15 rounded-full shadow-[0_8px_32px_0_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.12)] transition-all duration-200">
+    <header className="fixed top-3 sm:top-4 left-0 right-0 z-[1000] w-full px-4 sm:px-6 lg:px-8 pointer-events-none flex justify-center font-primary">
+      <div className="w-full max-w-7xl 2xl:max-w-[1580px] mx-auto pointer-events-auto relative" ref={navRef}>
+        <nav className="relative flex items-center justify-between h-[52px] sm:h-[56px] px-3 sm:px-5 bg-[#000435]/85 backdrop-blur-md backdrop-saturate-150 border border-white/15 rounded-full shadow-[0_8px_32px_0_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.12)] transition-all duration-200">
           <Link
             to="/"
             className="flex items-center select-none cursor-pointer pl-4 sm:pl-5 pr-5 sm:pr-6 py-1 no-underline group"
           >
-            <span className="font-primary text-sm sm:text-[15px] font-black text-[#ff6b00] tracking-[0.22em] uppercase transition-transform duration-150 group-hover:scale-105">
+            <span className="font-primary text-sm sm:text-[15px] font-black text-[#f55d1b] tracking-[0.22em] uppercase transition-transform duration-150 group-hover:scale-105">
               TRION
             </span>
           </Link>
 
-          <div className="hidden lg:flex items-center gap-0.5 p-0.5 bg-[#070d1e]/80 backdrop-blur-sm border border-white/10 rounded-full">
+          <div className="hidden lg:flex items-center gap-0.5 p-0.5 bg-[#000435]/80 backdrop-blur-sm border border-white/10 rounded-full">
             <Link
               to="/"
               className={`inline-flex items-center justify-center px-3 py-1 font-primary text-[10.5px] font-bold tracking-[0.08em] uppercase rounded-full whitespace-nowrap transition-all duration-150 no-underline select-none ${
                 currentPath === "/"
-                  ? "bg-[#ff6b00] text-white shadow-sm shadow-orange-500/40 font-extrabold"
+                  ? "bg-[#f55d1b] text-white shadow-sm shadow-orange-500/40 font-extrabold"
                   : "text-slate-300 hover:text-white hover:bg-white/10"
               }`}
               onClick={() => setActiveMenu(null)}
@@ -427,9 +427,9 @@ export default function Navbar() {
               onOpen={() => handleOpen("about")}
               onClose={handleClose}
             >
-              <div className="flex gap-7 min-w-[720px] max-w-[760px] bg-[#070d1e]">
+              <div className="flex gap-7 min-w-[720px] max-w-[760px] bg-[#000435]">
                 <div className="flex-1">
-                  <span className="block text-[10px] font-mono font-bold tracking-[0.18em] uppercase text-[#ff6b00] mb-2.5">
+                  <span className="block text-[10px] font-mono font-bold tracking-[0.18em] uppercase text-[#f55d1b] mb-2.5">
                     ORGANIZATION & LEADERSHIP
                   </span>
                   <div className="flex flex-col gap-2.5">
@@ -443,7 +443,7 @@ export default function Navbar() {
                   </div>
                 </div>
                 <div className="flex-1 border-l border-slate-800 pl-6">
-                  <span className="block text-[10px] font-mono font-bold tracking-[0.18em] uppercase text-[#ff6b00] mb-2.5">
+                  <span className="block text-[10px] font-mono font-bold tracking-[0.18em] uppercase text-[#f55d1b] mb-2.5">
                     VALUES, CAPABILITIES & SAFETY
                   </span>
                   <div className="flex flex-col gap-1.5">
@@ -468,9 +468,9 @@ export default function Navbar() {
               onOpen={() => handleOpen("services")}
               onClose={handleClose}
             >
-              <div className="flex gap-7 min-w-[780px] max-w-[820px] bg-[#070d1e]">
+              <div className="flex gap-7 min-w-[780px] max-w-[820px] bg-[#000435]">
                 <div className="flex-[1.2]">
-                  <span className="block text-[10px] font-mono font-bold tracking-[0.18em] uppercase text-[#ff6b00] mb-2.5">
+                  <span className="block text-[10px] font-mono font-bold tracking-[0.18em] uppercase text-[#f55d1b] mb-2.5">
                     CORE DISCIPLINES
                   </span>
                   <ul className="flex flex-col gap-2.5 p-0 m-0 list-none">
@@ -485,7 +485,7 @@ export default function Navbar() {
                   </ul>
                 </div>
                 <div className="flex-[1] border-l border-slate-800 pl-6">
-                  <span className="block text-[10px] font-mono font-bold tracking-[0.18em] uppercase text-[#ff6b00] mb-2.5">
+                  <span className="block text-[10px] font-mono font-bold tracking-[0.18em] uppercase text-[#f55d1b] mb-2.5">
                     SPECIALIZED CAPABILITIES
                   </span>
                   <ul className="grid grid-cols-1 gap-1.5 p-0 m-0 list-none">
@@ -506,7 +506,7 @@ export default function Navbar() {
               to="/projects"
               className={`inline-flex items-center justify-center px-3 py-1 font-primary text-[10.5px] font-bold tracking-[0.08em] uppercase rounded-full whitespace-nowrap transition-all duration-150 no-underline select-none ${
                 currentPath.startsWith("/projects")
-                  ? "bg-[#ff6b00] text-white shadow-sm shadow-orange-500/40 font-extrabold"
+                  ? "bg-[#f55d1b] text-white shadow-sm shadow-orange-500/40 font-extrabold"
                   : "text-slate-300 hover:text-white hover:bg-white/10"
               }`}
               onClick={() => setActiveMenu(null)}
@@ -518,7 +518,7 @@ export default function Navbar() {
               to="/strategicAlliances"
               className={`inline-flex items-center justify-center px-3 py-1 font-primary text-[10.5px] font-bold tracking-[0.08em] uppercase rounded-full whitespace-nowrap transition-all duration-150 no-underline select-none ${
                 currentPath.startsWith("/strategicAlliances")
-                  ? "bg-[#ff6b00] text-white shadow-sm shadow-orange-500/40 font-extrabold"
+                  ? "bg-[#f55d1b] text-white shadow-sm shadow-orange-500/40 font-extrabold"
                   : "text-slate-300 hover:text-white hover:bg-white/10"
               }`}
               onClick={() => setActiveMenu(null)}
@@ -530,7 +530,7 @@ export default function Navbar() {
               to="/blogs"
               className={`inline-flex items-center justify-center px-3 py-1 font-primary text-[10.5px] font-bold tracking-[0.08em] uppercase rounded-full whitespace-nowrap transition-all duration-150 no-underline select-none ${
                 currentPath.startsWith("/blogs")
-                  ? "bg-[#ff6b00] text-white shadow-sm shadow-orange-500/40 font-extrabold"
+                  ? "bg-[#f55d1b] text-white shadow-sm shadow-orange-500/40 font-extrabold"
                   : "text-slate-300 hover:text-white hover:bg-white/10"
               }`}
               onClick={() => setActiveMenu(null)}
@@ -542,7 +542,7 @@ export default function Navbar() {
               to="/contact"
               className={`inline-flex items-center justify-center px-3 py-1 font-primary text-[10.5px] font-bold tracking-[0.08em] uppercase rounded-full whitespace-nowrap transition-all duration-150 no-underline select-none ${
                 currentPath.startsWith("/contact")
-                  ? "bg-[#ff6b00] text-white shadow-sm shadow-orange-500/40 font-extrabold"
+                  ? "bg-[#f55d1b] text-white shadow-sm shadow-orange-500/40 font-extrabold"
                   : "text-slate-300 hover:text-white hover:bg-white/10"
               }`}
               onClick={() => setActiveMenu(null)}
@@ -554,14 +554,14 @@ export default function Navbar() {
           <div className="flex items-center gap-2 pr-1 sm:pr-2">
             <Link
               to="/contact"
-              className="hidden sm:inline-flex items-center justify-center px-4 py-1.5 bg-[#ff6b00] hover:bg-[#ff8533] text-white font-primary text-[10.5px] font-extrabold tracking-[0.06em] uppercase rounded-full whitespace-nowrap shadow-sm shadow-orange-500/40 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-150 no-underline select-none"
+              className="hidden sm:inline-flex items-center justify-center px-4 py-1.5 bg-[#f55d1b] hover:bg-[#f55d1b] text-white font-primary text-[10.5px] font-extrabold tracking-[0.06em] uppercase rounded-full whitespace-nowrap shadow-sm shadow-orange-500/40 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-150 no-underline select-none"
             >
               GET IN TOUCH
             </Link>
 
             <button
               type="button"
-              className="lg:hidden flex items-center justify-center w-8 h-8 rounded-full bg-white/10 border border-slate-700 text-white hover:bg-[#ff6b00]/20 hover:border-[#ff6b00] transition-colors"
+              className="lg:hidden flex items-center justify-center w-8 h-8 rounded-full bg-white/10 border border-slate-700 text-white hover:bg-[#f55d1b]/20 hover:border-[#f55d1b] transition-colors"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle navigation menu"
               aria-expanded={mobileMenuOpen}
@@ -574,7 +574,7 @@ export default function Navbar() {
 
       {/* Mobile Menu Drawer */}
       <div
-        className={`lg:hidden fixed top-[68px] left-3 right-3 max-h-[calc(100vh-84px)] overflow-y-auto bg-[#070d1e] border border-slate-700/90 rounded-2xl shadow-[0_24px_50px_rgba(0,0,0,0.85)] p-4 transition-all duration-200 ${
+        className={`lg:hidden fixed top-[68px] left-3 right-3 max-h-[calc(100vh-84px)] overflow-y-auto bg-[#000435] border border-slate-700/90 rounded-2xl shadow-[0_24px_50px_rgba(0,0,0,0.85)] p-4 transition-all duration-200 ${
           mobileMenuOpen
             ? "opacity-100 pointer-events-auto translate-y-0 scale-100"
             : "opacity-0 pointer-events-none -translate-y-2 scale-95"
@@ -586,7 +586,7 @@ export default function Navbar() {
             to="/"
             className={`flex items-center px-4 py-2.5 font-primary text-xs font-bold tracking-wider uppercase rounded-xl transition-colors no-underline ${
               currentPath === "/"
-                ? "bg-[#ff6b00] text-white"
+                ? "bg-[#f55d1b] text-white"
                 : "text-slate-200 hover:text-white hover:bg-white/10"
             }`}
             onClick={() => setMobileMenuOpen(false)}
@@ -614,7 +614,7 @@ export default function Navbar() {
             to="/projects"
             className={`flex items-center px-4 py-2.5 font-primary text-xs font-bold tracking-wider uppercase rounded-xl transition-colors no-underline ${
               currentPath.startsWith("/projects")
-                ? "bg-[#ff6b00] text-white"
+                ? "bg-[#f55d1b] text-white"
                 : "text-slate-200 hover:text-white hover:bg-white/10"
             }`}
             onClick={() => setMobileMenuOpen(false)}
@@ -626,7 +626,7 @@ export default function Navbar() {
             to="/strategicAlliances"
             className={`flex items-center px-4 py-2.5 font-primary text-xs font-bold tracking-wider uppercase rounded-xl transition-colors no-underline ${
               currentPath.startsWith("/strategicAlliances")
-                ? "bg-[#ff6b00] text-white"
+                ? "bg-[#f55d1b] text-white"
                 : "text-slate-200 hover:text-white hover:bg-white/10"
             }`}
             onClick={() => setMobileMenuOpen(false)}
@@ -638,7 +638,7 @@ export default function Navbar() {
             to="/blogs"
             className={`flex items-center px-4 py-2.5 font-primary text-xs font-bold tracking-wider uppercase rounded-xl transition-colors no-underline ${
               currentPath.startsWith("/blogs")
-                ? "bg-[#ff6b00] text-white"
+                ? "bg-[#f55d1b] text-white"
                 : "text-slate-200 hover:text-white hover:bg-white/10"
             }`}
             onClick={() => setMobileMenuOpen(false)}
@@ -650,7 +650,7 @@ export default function Navbar() {
             to="/contact"
             className={`flex items-center px-4 py-2.5 font-primary text-xs font-bold tracking-wider uppercase rounded-xl transition-colors no-underline ${
               currentPath.startsWith("/contact")
-                ? "bg-[#ff6b00] text-white"
+                ? "bg-[#f55d1b] text-white"
                 : "text-slate-200 hover:text-white hover:bg-white/10"
             }`}
             onClick={() => setMobileMenuOpen(false)}
@@ -660,7 +660,7 @@ export default function Navbar() {
 
           <Link
             to="/contact"
-            className="mt-2 flex items-center justify-center p-3 bg-[#ff6b00] text-white font-primary text-xs font-extrabold tracking-wider uppercase rounded-xl shadow-md shadow-orange-500/40 no-underline"
+            className="mt-2 flex items-center justify-center p-3 bg-[#f55d1b] text-white font-primary text-xs font-extrabold tracking-wider uppercase rounded-xl shadow-md shadow-orange-500/40 no-underline"
             onClick={() => setMobileMenuOpen(false)}
           >
             GET IN TOUCH
