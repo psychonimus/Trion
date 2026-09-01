@@ -5,10 +5,10 @@
 }
 
 .vb-stage {
-  height: 68svh;
-  height: 68vh;
-  min-height: 400px;
-  max-height: 540px;
+  height: 70svh;
+  height: 70vh;
+  min-height: 460px;
+  max-height: 580px;
   position: relative;
   width: 100%;
   overflow: hidden;
