@@ -10,7 +10,7 @@ function RollingDigit({ digit, delay = 0, isTriggered }) {
 
   if (!isNumber) {
     return (
-      <span className="text-3xl sm:text-4xl font-extrabold text-[#f55d1b]">
+      <span className="text-2xl xs:text-3xl sm:text-4xl font-extrabold text-[#f55d1b]">
         {digit}
       </span>
     );
@@ -33,7 +33,7 @@ function RollingDigit({ digit, delay = 0, isTriggered }) {
     : "translateY(0%)";
 
   return (
-    <div className="inline-block h-12 sm:h-14 overflow-hidden leading-none">
+    <div className="inline-block h-10 xs:h-12 sm:h-14 overflow-hidden leading-none">
       <div
         className="flex flex-col transition-transform duration-[2200ms] ease-[cubic-bezier(0.12,0.98,0.24,1)] will-change-transform"
         style={{
@@ -44,7 +44,7 @@ function RollingDigit({ digit, delay = 0, isTriggered }) {
         {numbersList.map((num, idx) => (
           <div
             key={idx}
-            className="h-12 sm:h-14 flex items-center justify-center text-3xl sm:text-4xl font-primary font-extrabold text-[#f55d1b] tracking-tight select-none"
+            className="h-10 xs:h-12 sm:h-14 flex items-center justify-center text-2xl xs:text-3xl sm:text-4xl font-primary font-extrabold text-[#f55d1b] tracking-tight select-none"
           >
             {num}
           </div>
@@ -145,12 +145,12 @@ export default function OurAgency() {
 
   return (
     <section
-      className="relative bg-white text-slate-900 font-primary py-20 lg:py-28 overflow-hidden"
+      className="relative bg-white text-slate-900 font-primary py-14 xs:py-16 sm:py-20 lg:py-28 overflow-hidden"
       ref={sectionRef}
       id="agency"
     >
-      <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-4 xs:px-6 sm:px-8 lg:px-12 relative">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 xs:gap-10 sm:gap-12 lg:gap-16 items-center">
           <div
             className={`lg:col-span-6 flex flex-col justify-center transition-all duration-700 ${
               isVisible
@@ -165,11 +165,11 @@ export default function OurAgency() {
               </span>
             </div>
 
-            <h2 className="font-primary font-black text-3xl sm:text-4xl lg:text-5xl text-slate-900 tracking-tight leading-[1.08] mb-6">
+            <h2 className="font-primary font-black text-2xl xs:text-3xl sm:text-4xl lg:text-5xl text-slate-900 tracking-tight leading-[1.08] mb-4 sm:mb-6">
               About Us
             </h2>
 
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal max-w-xl mb-8">
+            <p className="text-sm xs:text-base sm:text-lg text-slate-600 leading-relaxed font-normal max-w-xl mb-6 sm:mb-8">
               With 25 years of experience in the field, our team is dedicated to
               designing sustainable and innovative spaces. We combine
               functionality with engineering precision to create structures that
@@ -179,11 +179,11 @@ export default function OurAgency() {
             <div>
               <Link
                 to="/about"
-                className="inline-flex items-center gap-4 pl-6 pr-2 py-2 bg-[#f55d1b] hover:bg-[#f55d1b] text-white rounded-full font-primary text-sm font-bold tracking-wider uppercase shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50 hover:-translate-y-0.5 transition-all no-underline w-fit group"
+                className="inline-flex items-center gap-3 sm:gap-4 pl-5 sm:pl-6 pr-2 py-2 bg-[#f55d1b] hover:bg-[#f55d1b] text-white rounded-full font-primary text-xs sm:text-sm font-bold tracking-wider uppercase shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50 hover:-translate-y-0.5 transition-all no-underline w-fit group"
               >
                 <span>Explore more about us</span>
-                <span className="w-9 h-9 rounded-full bg-white text-[#f55d1b] flex items-center justify-center group-hover:translate-x-1 transition-transform">
-                  <HiArrowRight className="text-lg" />
+                <span className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white text-[#f55d1b] flex items-center justify-center group-hover:translate-x-1 transition-transform">
+                  <HiArrowRight className="text-base sm:text-lg" />
                 </span>
               </Link>
             </div>
@@ -196,7 +196,7 @@ export default function OurAgency() {
                 : "opacity-0 translate-y-8 scale-95"
             }`}
           >
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-slate-100 aspect-[4/3.2] group">
+            <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl bg-slate-100 aspect-[4/3.2] group">
               <img
                 src={agencyImg}
                 alt="Modern luxury architectural project"
@@ -205,55 +205,22 @@ export default function OurAgency() {
               />
 
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
-              <button
-                type="button"
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 sm:w-32 sm:h-32 rounded-full bg-[#000435]/70 backdrop-blur-md border border-white/25 flex items-center justify-center cursor-pointer shadow-2xl hover:scale-110 transition-transform p-0"
-                onClick={() => setIsVideoModalOpen(true)}
-                aria-label="Play presentation video"
-              >
-                <svg
-                  className="absolute inset-0 w-full h-full animate-[spin_16s_linear_infinite] hover:animate-[spin_8s_linear_infinite]"
-                  viewBox="0 0 160 160"
-                  width="160"
-                  height="160"
-                >
-                  <defs>
-                    <path
-                      id="playCirclePath"
-                      d="M 80, 80 m -56, 0 a 56,56 0 1,1 112,0 a 56,56 0 1,1 -112,0"
-                    />
-                  </defs>
-                  <text className="fill-white font-primary text-[11px] font-bold tracking-[0.24em] uppercase">
-                    <textPath
-                      href="#playCirclePath"
-                      startOffset="50%"
-                      textAnchor="middle"
-                    >
-                      CLICK TO PLAY • CLICK TO PLAY •
-                    </textPath>
-                  </text>
-                </svg>
-
-                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white text-[#f55d1b] flex items-center justify-center shadow-lg relative z-10 transition-transform hover:scale-105">
-                  <IoPlay className="text-xl ml-1 text-[#f55d1b]" />
-                </div>
-              </button>
             </div>
           </div>
         </div>
 
         <div
-          className={`relative z-10 w-full max-w-4xl mx-auto mt-10 lg:-mt-14 transition-all duration-700 delay-300 ${
+          className={`relative z-10 w-full max-w-4xl mx-auto mt-8 sm:mt-10 lg:-mt-14 transition-all duration-700 delay-300 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
           <div
-            className="   bg-[#000435]/30
+            className="bg-[#000435]/70
   backdrop-blur-2xl
   border border-white/10
-  shadow-2xl  rounded-3xl p-6 sm:p-8 "
+  shadow-2xl rounded-2xl sm:rounded-3xl p-5 sm:p-8"
           >
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 items-start">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 items-start">
               {stats.map((stat, idx) => (
                 <RollingStatItem
                   key={idx}

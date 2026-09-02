@@ -119,17 +119,17 @@ export default function ContactPage() {
       {/* Decorative Dark Blue Gradient Aura */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[340px] bg-gradient-to-b from-[#000435]/10 via-[#000435]/5 to-transparent blur-[120px] pointer-events-none" />
 
-      <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-36 pb-20 relative z-10">
+      <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-4 xs:px-6 sm:px-8 lg:px-12">
         {/* Header Section with Minimal Typography */}
-        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
+        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
           <motion.div
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-gradient-to-r from-[#000435] to-[#000435] text-white shadow-sm mb-4"
+            transition={{ duration: 0.35 }}
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#000435] text-white text-xs mb-3 shadow-sm"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-[#f55d1b] animate-pulse" />
-            <span className="font-mono text-[11px] uppercase tracking-widest text-slate-200">
+            <span className="font-mono text-[10px] xs:text-[11px] uppercase tracking-widest text-slate-200">
               Pan-India Operations & Tender Desk
             </span>
           </motion.div>
@@ -138,7 +138,7 @@ export default function ContactPage() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.1 }}
-            className="text-2xl sm:text-4xl font-bold tracking-tight text-[#000435] leading-tight"
+            className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#000435] leading-tight"
           >
             Connect with Our Engineering Desk
           </motion.h1>
@@ -147,7 +147,7 @@ export default function ContactPage() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.15 }}
-            className="mt-3 text-xs sm:text-sm text-slate-600 font-sans leading-relaxed"
+            className="mt-2.5 sm:mt-3 text-xs sm:text-sm text-slate-600 font-sans leading-relaxed"
           >
             Direct communication channel for EPC partnerships, heavy crushing
             supply, road construction tenders, and civil infrastructure
@@ -157,7 +157,7 @@ export default function ContactPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
           <div className="lg:col-span-7 flex flex-col">
-            <div className="bg-white border border-slate-200/80 rounded p-6 sm:p-8 shadow-xl shadow-slate-200/40 h-full flex flex-col justify-between">
+            <div className="bg-white border border-slate-200/80 rounded-2xl p-4 xs:p-6 sm:p-8 shadow-xl shadow-slate-200/40 h-full flex flex-col justify-between">
               <div className="flex items-center justify-between pb-4 mb-6 border-b border-slate-100">
                 <div className="flex items-center gap-2">
                   <div className="w-7 h-7 rounded-lg bg-[#000435] flex items-center justify-center text-[#f55d1b]">

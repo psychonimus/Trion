@@ -1,32 +1,28 @@
-import React, { useState, useRef, useEffect, useCallback } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
 import {
-  FiMenu,
-  FiX,
   FiChevronDown,
-  FiUsers,
-  FiStar,
-  FiFileText,
-  FiShield,
-  FiHelpCircle,
-  FiZap,
-  FiTruck,
-  FiTrendingUp,
   FiCpu,
-  FiHome,
+  FiFileText,
+  FiMenu,
+  FiShield,
+  FiStar,
   FiTarget,
-  FiBook,
+  FiTrendingUp,
+  FiTruck,
+  FiUsers,
+  FiX,
+  FiZap
 } from "react-icons/fi";
 import {
-  LuHardHat,
-  LuHandshake,
-  LuMountain,
-  LuDrill,
-  LuShovel,
   LuBuilding2,
+  LuDrill,
   LuFlag,
+  LuHardHat,
+  LuMountain,
+  LuShovel
 } from "react-icons/lu";
-
+import { Link, useLocation } from "react-router-dom";
+import TrionHorizontalLogo from "../../assets/logo/trion-horizontal.png"
 // Services menu — mirrors the 9 services in ServicesPage.jsx
 const productLinks = [
   {
@@ -393,16 +389,14 @@ export default function Navbar() {
   const currentPath = location.pathname;
 
   return (
-    <header className="fixed top-3 sm:top-4 left-0 right-0 z-[1000] w-full px-4 sm:px-6 lg:px-8 pointer-events-none flex justify-center font-primary">
+    <header className="fixed top-2.5 sm:top-4 left-0 right-0 z-[1000] w-full px-2.5 xs:px-4 sm:px-6 lg:px-8 pointer-events-none flex justify-center font-primary">
       <div className="w-full max-w-7xl 2xl:max-w-[1580px] mx-auto pointer-events-auto relative" ref={navRef}>
-        <nav className="relative flex items-center justify-between h-[52px] sm:h-[56px] px-3 sm:px-5 bg-[#000435]/85 backdrop-blur-md backdrop-saturate-150 border border-white/15 rounded-full shadow-[0_8px_32px_0_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.12)] transition-all duration-200">
+        <nav className="relative flex items-center justify-between h-[48px] xs:h-[52px] sm:h-[56px] px-2.5 xs:px-3 sm:px-5 bg-[#000435]/70 backdrop-blur-md backdrop-saturate-150 border border-white/15 rounded-full shadow-[0_8px_32px_0_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.12)] transition-all duration-200">
           <Link
             to="/"
-            className="flex items-center select-none cursor-pointer pl-4 sm:pl-5 pr-5 sm:pr-6 py-1 no-underline group"
+            className="flex items-center select-none cursor-pointer pl-2 xs:pl-3 sm:pl-5 pr-3 xs:pr-4 sm:pr-6 py-1 no-underline group"
           >
-            <span className="font-primary text-sm sm:text-[15px] font-black text-[#f55d1b] tracking-[0.22em] uppercase transition-transform duration-150 group-hover:scale-105">
-              TRION
-            </span>
+           <img src={TrionHorizontalLogo} alt="trion logo" className="object-contain w-32 xs:w-36 sm:w-44 h-auto max-h-8 sm:max-h-10 outline-none" />
           </Link>
 
           <div className="hidden lg:flex items-center gap-0.5 p-0.5 bg-[#000435]/80 backdrop-blur-sm border border-white/10 rounded-full">
@@ -502,7 +496,7 @@ export default function Navbar() {
               </div>
             </CapsuleDropdown>
 
-            <Link
+            {/* <Link
               to="/projects"
               className={`inline-flex items-center justify-center px-3 py-1 font-primary text-[10.5px] font-bold tracking-[0.08em] uppercase rounded-full whitespace-nowrap transition-all duration-150 no-underline select-none ${
                 currentPath.startsWith("/projects")
@@ -512,7 +506,7 @@ export default function Navbar() {
               onClick={() => setActiveMenu(null)}
             >
               PROJECTS
-            </Link>
+            </Link> */}
 
             <Link
               to="/strategicAlliances"
@@ -574,7 +568,7 @@ export default function Navbar() {
 
       {/* Mobile Menu Drawer */}
       <div
-        className={`lg:hidden fixed top-[68px] left-3 right-3 max-h-[calc(100vh-84px)] overflow-y-auto bg-[#000435] border border-slate-700/90 rounded-2xl shadow-[0_24px_50px_rgba(0,0,0,0.85)] p-4 transition-all duration-200 ${
+        className={`lg:hidden fixed top-[58px] xs:top-[64px] sm:top-[68px] left-2 right-2 xs:left-3 xs:right-3 sm:left-4 sm:right-4 max-h-[calc(100vh-76px)] sm:max-h-[calc(100vh-84px)] overflow-y-auto bg-[#000435] border border-slate-700/90 rounded-2xl shadow-[0_24px_50px_rgba(0,0,0,0.85)] p-3 sm:p-4 transition-all duration-200 ${
           mobileMenuOpen
             ? "opacity-100 pointer-events-auto translate-y-0 scale-100"
             : "opacity-0 pointer-events-none -translate-y-2 scale-95"
@@ -610,7 +604,7 @@ export default function Navbar() {
             />
           ))}
 
-          <Link
+          {/* <Link
             to="/projects"
             className={`flex items-center px-4 py-2.5 font-primary text-xs font-bold tracking-wider uppercase rounded-xl transition-colors no-underline ${
               currentPath.startsWith("/projects")
@@ -620,7 +614,7 @@ export default function Navbar() {
             onClick={() => setMobileMenuOpen(false)}
           >
             PROJECTS
-          </Link>
+          </Link> */}
 
           <Link
             to="/strategicAlliances"

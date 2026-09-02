@@ -327,12 +327,12 @@ export default function ProjectsPage() {
 
   return (
     <main className="bg-[#000435] text-[#FFFFFF] min-h-screen selection:bg-[#f55d1b]/30 selection:text-white font-sans antialiased overflow-x-hidden pt-12 sm:pt-16">
-      <section className="relative w-full bg-[#000435] border-b border-[#000435] overflow-hidden lg:h-[224px] pt-24 pb-8 lg:pt-0 lg:pb-0">
+      <section className="relative w-full bg-[#000435] border-b border-[#000435] overflow-hidden lg:h-[224px] pt-20 xs:pt-24 pb-8 lg:pt-0 lg:pb-0">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_75%_90%_at_75%_10%,rgba(18,44,82,0.35),transparent_70%)] pointer-events-none" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] pointer-events-none" />
 
-        <div className="max-w-7xl 2xl:max-w-[1580px]  mx-auto w-full h-full relative px-6 sm:px-10 lg:px-0">
-          <div className="absolute right-0 top-0 bottom-0 w-[280px] md:w-[380px] lg:w-[380px] xl:w-[360px] pointer-events-none select-none overflow-hidden flex items-center justify-end z-0">
+        <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto w-full h-full relative px-4 xs:px-6 sm:px-10 lg:px-0">
+          <div className="absolute right-0 top-0 bottom-0 w-[240px] xs:w-[280px] md:w-[380px] lg:w-[380px] xl:w-[360px] pointer-events-none select-none overflow-hidden flex items-center justify-end z-0">
             <img
               src="/assets/images/building-wireframe.webp"
               alt=""
@@ -341,7 +341,7 @@ export default function ProjectsPage() {
             />
           </div>
 
-          <div className="lg:absolute lg:left-[64px] lg:top-[34px] flex items-center gap-2.5 mb-3 lg:mb-0 relative z-10">
+          <div className="lg:absolute lg:left-[64px] lg:top-[34px] flex items-center gap-2.5 mb-2.5 lg:mb-0 relative z-10">
             <span className="w-6 h-[1.5px] bg-[#f55d1b]" />
             <span className="font-mono text-[10.5px] tracking-[0.26em] text-[#f55d1b] uppercase font-semibold">
               OUR UNIQUE PROJECTS
@@ -349,7 +349,7 @@ export default function ProjectsPage() {
           </div>
 
           <div className="lg:absolute lg:left-[64px] lg:top-[58px] relative z-10">
-            <h1 className="font-primary font-bold text-4xl sm:text-5xl lg:text-[58px] tracking-tight leading-[0.92] uppercase">
+            <h1 className="font-primary font-bold text-3xl xs:text-4xl sm:text-5xl lg:text-[58px] tracking-tight leading-[0.92] uppercase">
               <span className="text-white block">PROJECTS</span>
               <span className="text-[#f55d1b] block mt-1">BUILT TO LAST.</span>
             </h1>
@@ -362,10 +362,10 @@ export default function ProjectsPage() {
       </section>
 
       <nav className="sticky top-0 z-40 bg-[#000435]/95 backdrop-blur-md border-b border-[#000435]">
-        <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-6 sm:px-10 lg:px-16 flex items-center justify-between">
+        <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-4 xs:px-6 sm:px-10 lg:px-16 flex items-center justify-between">
           <div
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-            className="flex items-center gap-6 sm:gap-8 lg:gap-10 overflow-x-auto no-scrollbar py-3.5 -mb-[1px] [&::-webkit-scrollbar]:hidden"
+            className="flex items-center gap-4 xs:gap-6 sm:gap-8 lg:gap-10 overflow-x-auto no-scrollbar py-3 sm:py-3.5 -mb-[1px] [&::-webkit-scrollbar]:hidden"
           >
             {PROJECTS.map((item, index) => {
               const isActive = index === activeProjectIdx;
@@ -420,10 +420,10 @@ export default function ProjectsPage() {
         </div>
       </nav>
 
-      <section className="py-10 sm:py-12 lg:py-14 border-b border-[#000435] bg-[#000435] relative">
+      <section className="py-8 xs:py-10 sm:py-12 lg:py-14 border-b border-[#000435] bg-[#000435] relative">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] pointer-events-none" />
 
-        <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
+        <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-4 xs:px-6 sm:px-10 lg:px-16 relative z-10">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentProject.number}
@@ -436,21 +436,21 @@ export default function ProjectsPage() {
               <div className="lg:col-span-5 flex flex-col justify-between">
                 <div>
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="font-mono text-5xl sm:text-6xl font-extrabold text-[#f55d1b] tracking-tight leading-none">
+                    <span className="font-mono text-4xl xs:text-5xl sm:text-6xl font-extrabold text-[#f55d1b] tracking-tight leading-none">
                       {currentProject.number}
                     </span>
                     <span className="w-12 h-[1.5px] bg-[#f55d1b]" />
                   </div>
 
-                  <h2 className="font-primary font-bold text-2xl sm:text-[28px] lg:text-[32px] text-white tracking-tight leading-[1.12] mb-6">
+                  <h2 className="font-primary font-bold text-xl xs:text-2xl sm:text-[28px] lg:text-[32px] text-white tracking-tight leading-[1.12] mb-4 sm:mb-6">
                     {currentProject.title}
                   </h2>
 
-                  <div className="border-t border-b border-[#000435] py-4 mb-6">
+                  <div className="border-t border-b border-[#000435] py-3.5 sm:py-4 mb-4 sm:mb-6">
                     <span className="block font-mono text-[10px] tracking-[0.22em] text-[#f55d1b] uppercase font-semibold mb-1.5">
                       SCOPE OF WORK
                     </span>
-                    <p className="font-primary text-[14px] sm:text-[15px] text-[#ffffff] font-medium leading-snug">
+                    <p className="font-primary text-[13.5px] sm:text-[15px] text-[#ffffff] font-medium leading-snug">
                       {currentProject.scope}
                     </p>
                   </div>
@@ -459,7 +459,7 @@ export default function ProjectsPage() {
                     <span className="block font-mono text-[10px] tracking-[0.22em] text-[#f55d1b] uppercase font-semibold mb-2.5">
                       PROJECT DESCRIPTION
                     </span>
-                    <div className="space-y-3 font-sans text-white/70 text-[13px] sm:text-[14px] leading-[1.7]">
+                    <div className="space-y-3 font-sans text-white/70 text-xs xs:text-[13px] sm:text-[14px] leading-[1.7]">
                       {currentProject.description.map((paragraph, pIdx) => (
                         <p key={pIdx}>{paragraph}</p>
                       ))}
@@ -503,9 +503,9 @@ export default function ProjectsPage() {
                     </AnimatePresence>
                   </div>
 
-                  <div className="px-4 py-2.5 bg-[#000435] border-t border-[#000435] flex items-center justify-between gap-4">
-                    <div className="flex items-center gap-3">
-                      <div className="font-mono text-[11px] tracking-wider flex items-center gap-1">
+                  <div className="px-3 xs:px-4 py-2.5 bg-[#000435] border-t border-[#000435] flex items-center justify-between gap-2 xs:gap-4">
+                    <div className="flex items-center gap-2 xs:gap-3">
+                      <div className="font-mono text-[10px] xs:text-[11px] tracking-wider flex items-center gap-1">
                         <span className="font-bold text-[#f55d1b]">
                           {String(activeImageIdx + 1).padStart(2, "0")}
                         </span>
@@ -518,7 +518,7 @@ export default function ProjectsPage() {
                         </span>
                       </div>
 
-                      <div className="flex items-center gap-1.5 ml-2">
+                      <div className="flex items-center gap-1 xs:gap-1.5 ml-1 xs:ml-2">
                         {currentProject.images.map((_, barIdx) => {
                           const isBarActive = barIdx === activeImageIdx;
                           return (
@@ -528,8 +528,8 @@ export default function ProjectsPage() {
                               aria-label={`View image ${barIdx + 1}`}
                               className={`h-[2px] transition-all duration-300 cursor-pointer ${
                                 isBarActive
-                                  ? "w-6 bg-[#f55d1b]"
-                                  : "w-3 bg-[#000435] hover:bg-[#000435]"
+                                  ? "w-4 xs:w-6 bg-[#f55d1b]"
+                                  : "w-2 xs:w-3 bg-[#000435] hover:bg-[#000435]"
                               }`}
                             />
                           );
@@ -537,7 +537,7 @@ export default function ProjectsPage() {
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-2.5 xs:gap-4">
                       <button
                         onClick={prevImage}
                         aria-label="Previous photograph"
@@ -561,7 +561,7 @@ export default function ProjectsPage() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-4 gap-2.5 sm:gap-3 mt-3">
+                <div className="grid grid-cols-4 gap-2 xs:gap-2.5 sm:gap-3 mt-3">
                   {currentProject.images.map((imgSrc, tIdx) => {
                     const isThumbActive = tIdx === activeImageIdx;
                     return (
@@ -595,33 +595,33 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      <section className="py-12 lg:py-16 bg-[#000435] border-b border-[#000435] overflow-hidden">
-        <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-6 sm:px-10 lg:px-16 mb-6 sm:mb-8">
-          <div className="flex items-end justify-between gap-6">
+      <section className="py-10 xs:py-12 lg:py-16 bg-[#000435] border-b border-[#000435] overflow-hidden">
+        <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-4 xs:px-6 sm:px-10 lg:px-16 mb-4 sm:mb-8">
+          <div className="flex items-end justify-between gap-4 sm:gap-6">
             <div>
-              <div className="flex items-center gap-2.5 mb-2">
+              <div className="flex items-center gap-2 mb-1.5 sm:mb-2">
                 <span className="w-5 h-[1.5px] bg-[#f55d1b]" />
                 <span className="font-mono text-[10px] sm:text-[11px] tracking-[0.22em] text-[#f55d1b] uppercase font-semibold">
                   ARCHIVAL GALLERY
                 </span>
               </div>
-              <h2 className="font-primary font-bold text-2xl sm:text-3xl lg:text-4xl text-white tracking-tight uppercase">
+              <h2 className="font-primary font-bold text-xl xs:text-2xl sm:text-3xl lg:text-4xl text-white tracking-tight uppercase">
                 MORE PROJECTS
               </h2>
             </div>
 
-            <div className="flex items-center gap-2.5">
+            <div className="flex items-center gap-2 sm:gap-2.5">
               <button
                 onClick={() => scrollGallery("left")}
                 aria-label="Scroll left"
-                className="w-10 h-10 sm:w-11 sm:h-11 border border-[#000435] text-[#ffffff] flex items-center justify-center hover:border-[#f55d1b] hover:text-[#f55d1b] transition-colors active:scale-95 bg-[#000435] cursor-pointer"
+                className="w-9 h-9 sm:w-11 sm:h-11 border border-[#000435] text-[#ffffff] flex items-center justify-center hover:border-[#f55d1b] hover:text-[#f55d1b] transition-colors active:scale-95 bg-[#000435] cursor-pointer"
               >
                 <ArrowPrev />
               </button>
               <button
                 onClick={() => scrollGallery("right")}
                 aria-label="Scroll right"
-                className="w-10 h-10 sm:w-11 sm:h-11 border border-[#000435] text-[#ffffff] flex items-center justify-center hover:border-[#f55d1b] hover:text-[#f55d1b] transition-colors active:scale-95 bg-[#000435] cursor-pointer"
+                className="w-9 h-9 sm:w-11 sm:h-11 border border-[#000435] text-[#ffffff] flex items-center justify-center hover:border-[#f55d1b] hover:text-[#f55d1b] transition-colors active:scale-95 bg-[#000435] cursor-pointer"
               >
                 <ArrowNext />
               </button>
@@ -636,7 +636,7 @@ export default function ProjectsPage() {
           onMouseUp={handleGalleryMouseUp}
           onMouseLeave={handleGalleryMouseUp}
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-          className="flex items-center gap-4 sm:gap-5 px-6 sm:px-10 lg:px-16 overflow-x-auto no-scrollbar cursor-grab active:cursor-grabbing select-none py-1 [&::-webkit-scrollbar]:hidden"
+          className="flex items-center gap-3.5 xs:gap-4 sm:gap-5 px-4 xs:px-6 sm:px-10 lg:px-16 overflow-x-auto no-scrollbar cursor-grab active:cursor-grabbing select-none py-1 [&::-webkit-scrollbar]:hidden"
         >
           {ARCHIVE_PHOTOS.map((item, idx) => (
             <div

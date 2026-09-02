@@ -403,13 +403,13 @@ function VmvCard({ Icon, label, heading, delay, children }) {
       <div className="absolute inset-0 rounded-2xl bg-[radial-gradient(ellipse_at_0%_100%,rgba(245, 93, 27,0.07)_0%,transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       <div className="absolute bottom-0 left-4 right-4 h-px bg-gradient-to-r from-transparent via-[#f55d1b] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       <div className="relative z-10">
-        <div className="w-11 h-11 rounded-xl bg-[#f55d1b]/12 flex items-center justify-center mb-4">
+        <div className="w-11 h-11 rounded-xl bg-[#f55d1b]/12 flex items-center justify-center">
           <Icon />
         </div>
-        <p className="text-[9.5px] tracking-[0.2em] text-[#f55d1b] font-primary font-semibold uppercase mb-2">
+        <p className="text-[9.5px] tracking-[0.2em] text-[#f55d1b] font-primary font-semibold uppercase mb-1">
           {label}
         </p>
-        <h3 className="font-primary font-bold text-white text-base leading-snug mb-4">
+        <h3 className="font-primary font-bold text-white text-base leading-snug mb-2">
           {heading}
         </h3>
         {children}
@@ -553,12 +553,7 @@ export default function AboustUs() {
   ];
 
   const mission = [
-    "Delivering quality infrastructure that meets the highest standards of engineering and execution.",
-    "Executing every project with safety, precision and accountability, from planning to completion.",
-    "Leveraging experience, technology and innovation to create smarter and more efficient project outcomes.",
-    "Building lasting partnerships with clients, consultants, suppliers and stakeholders through transparency and trust.",
-    "Developing our people and capabilities to continuously raise the benchmark in infrastructure delivery.",
-    "Creating enduring value for our clients, communities and the nation.",
+    "We are committed to delivering quality infrastructure through safe, accountable and efficient execution, backed by experience, technology and innovation. We build lasting partnerships through trust and transparency, continuously strengthen our capabilities, and create enduring value for our clients, communities and the nation.",
   ];
 
   const vals = [
@@ -626,7 +621,7 @@ export default function AboustUs() {
 
       <section
         id="company-profile"
-        className="relative min-h-screen flex items-end overflow-hidden pt-28"
+        className="relative min-h-[85vh] sm:min-h-screen flex items-end overflow-hidden pt-24 sm:pt-28"
       >
         <div
           className="absolute inset-0 bg-cover bg-center"
@@ -643,63 +638,30 @@ export default function AboustUs() {
           }}
         />
 
-        <div className="relative z-10 w-full max-w-7xl 2xl:max-w-[1580px] mx-auto px-6 lg:px-8 pb-20 lg:pb-28">
+        <div className="relative z-10 w-full max-w-7xl 2xl:max-w-[1580px] mx-auto px-4 xs:px-6 sm:px-8 lg:px-12 pb-14 sm:pb-20 lg:pb-28">
           <div
             style={heroCss(0.05)}
-            className="w-10 h-[2px] bg-[#f55d1b] mb-6"
+            className="w-8 sm:w-10 h-[2px] bg-[#f55d1b] mb-4 sm:mb-6"
           />
 
           <h1
             style={heroCss(0.3)}
-            className="font-primary font-bold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight tracking-tight max-w-3xl mb-5 drop-shadow-[0_2px_12px_rgba(0,0,0,0.6)]"
+            className="font-primary font-bold text-white text-2xl xs:text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl leading-tight tracking-tight max-w-3xl mb-4 sm:mb-5 drop-shadow-[0_2px_12px_rgba(0,0,0,0.6)]"
           >
             Building Infrastructure. <br />
             <span className="text-[#f55d1b]">Powering Progress.</span>
           </h1>
-          {/* <p
-            style={heroCss(0.42)}
-            className="font-secondary text-white text-sm leading-relaxed max-w-2xl mb-10 drop-shadow-[0_1px_6px_rgba(0,0,0,0.5)]"
-          >
-            We are a diversified infrastructure and energy conglomerate
-            dedicated to executing large-scale, high-impact projects across the
-            globe. With a foundation built on engineering excellence and
-            financial acumen, we serve as a single-window solution for the most
-            complex challenges in construction, power generation, and urban
-            development. From the inception of an idea to the final handover, we
-            combine technical expertise with strategic vision to deliver
-            sustainable, world-class assets.
-          </p> */}
-          {/* <div style={heroCss(0.54)} className="flex flex-wrap gap-0">
-            {[
-              ["BOT", "Build-Operate-Transfer"],
-              ["BOOT", "Build-Own-Operate-Transfer"],
-              ["EPC", "Turnkey Contracting"],
-            ].map(([s, l], i) => (
-              <div
-                key={i}
-                className={`flex items-center gap-3 ${i < 2 ? "pr-6 mr-6 border-r border-white/10" : ""}`}
-              >
-                <span className="font-primary font-bold text-[#f55d1b] text-sm">
-                  {s}
-                </span>
-                <span className="font-secondary text-white/40 text-[11px] tracking-wide">
-                  {l}
-                </span>
-              </div>
-            ))}
-          </div> */}
         </div>
       </section>
 
-      <section className="py-20 lg:py-28 bg-white">
-        <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <section className="py-14 xs:py-16 sm:py-20 lg:py-28 bg-white">
+        <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-4 xs:px-6 sm:px-8 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 xs:gap-10 sm:gap-12 lg:gap-20 items-center">
             <div ref={whoL} style={anim(whoLv, 0)}>
-             
-              <h2 className="font-primary font-bold text-[#f55d1b] text-2xl sm:text-3xl lg:text-4xl leading-tight tracking-tight mb-6">
+              <h2 className="font-primary font-bold text-[#f55d1b] text-2xl sm:text-3xl lg:text-4xl leading-tight tracking-tight mb-4 sm:mb-6">
                 Who We Are
               </h2>
-              <div className="space-y-4 font-secondary text-[#000435]/70 text-sm leading-relaxed">
+              <div className="space-y-4 font-secondary text-[#000435]/70 text-xs sm:text-sm leading-relaxed">
                 <p>
                   We are more than just a construction company; we are
                   integrated developers, EPC contractors, project managers, and
@@ -723,7 +685,7 @@ export default function AboustUs() {
               </div>
             </div>
             <div ref={whoR} style={anim(whoRv, 0.12)}>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 xs:grid-cols-2 gap-3 sm:gap-4">
                 {[
                   ["BOT", "Build-Operate-Transfer Model"],
                   ["BOOT", "Build-Own-Operate-Transfer Model"],
@@ -732,9 +694,9 @@ export default function AboustUs() {
                 ].map(([k, v], i) => (
                   <div
                     key={i}
-                    className="bg-[#000435] rounded-2xl p-6 flex flex-col gap-2 cursor-default hover:-translate-y-1 transition-transform duration-300"
+                    className="bg-[#000435] rounded-2xl p-5 sm:p-6 flex flex-col gap-1.5 sm:gap-2 cursor-default hover:-translate-y-1 transition-transform duration-300"
                   >
-                    <span className="font-primary font-bold text-[#f55d1b] text-xl">
+                    <span className="font-primary font-bold text-[#f55d1b] text-lg sm:text-xl">
                       {k}
                     </span>
                     <span className="font-secondary text-white/45 text-xs leading-snug">
@@ -750,25 +712,24 @@ export default function AboustUs() {
 
       <section
         id="core-capabilities"
-        className="py-20 lg:py-28 bg-[#000435]/[0.02]"
+        className="py-14 xs:py-16 sm:py-20 lg:py-28 bg-[#000435]/[0.02]"
       >
-        <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-6 lg:px-8">
-          <div ref={capH} style={anim(capHv, 0)} className="mb-4">
-         
-            <div className="flex flex-col  w-full gap-3">
+        <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-4 xs:px-6 sm:px-8 lg:px-12">
+          <div ref={capH} style={anim(capHv, 0)} className="mb-6 sm:mb-8">
+            <div className="flex flex-col w-full gap-2 sm:gap-3">
               <h2 className="font-primary font-bold text-[#f55d1b] text-2xl sm:text-3xl lg:text-4xl leading-tight tracking-tight max-w-2xl">
                 Our Core Capabilities
               </h2>
-              <p className="font-secondary text-[#000435]/70 text-sm leading-relaxed">
+              <p className="font-secondary text-[#000435]/70 text-xs sm:text-sm leading-relaxed max-w-2xl">
                 Our comprehensive service portfolio is designed to meet the
                 diverse needs of public and private sector clients across India
                 and international markets:
               </p>
             </div>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-3.5 sm:gap-4">
             {caps.map((c, i) => (
-              <CapCard key={i} {...c} delay={i * 0.05} />
+              <CapCard key={i} {...c} delay={i * 0.04} />
             ))}
           </div>
         </div>
@@ -777,7 +738,7 @@ export default function AboustUs() {
       <section
         id="mission-vision"
         ref={vmvRef}
-        className="py-20 lg:py-16 bg-[#000435] relative overflow-hidden"
+        className="py-14 xs:py-16 sm:py-20 lg:py-24 bg-[#000435] relative overflow-hidden"
       >
         <div
           ref={vmvBgRef}
@@ -786,15 +747,16 @@ export default function AboustUs() {
           <div className="absolute -top-1/4 -right-1/4 w-[480px] h-[480px] rounded-full bg-[radial-gradient(circle,rgba(245, 93, 27,0.09)_0%,transparent_65%)]" />
           <div className="absolute -bottom-1/4 -left-1/4 w-[380px] h-[380px] rounded-full bg-[radial-gradient(circle,rgba(245, 93, 27,0.06)_0%,transparent_65%)]" />
         </div>
-        <div className="relative z-10 max-w-7xl 2xl:max-w-[1580px] mx-auto px-6 lg:px-8">
-          <div className="text-center mb-12">
+        <div className="relative z-10 max-w-7xl 2xl:max-w-[1580px] mx-auto px-4 xs:px-6 sm:px-8 lg:px-12">
+          <div className="text-center mb-8 sm:mb-12 flex flex-col items-center">
             <SectionLabel>
-              <h2 className="font-primary font-bold text-[#f55d1b] text-2xl sm:text-3xl lg:text-4xl leading-tight tracking-tight">
-                Vision · Mission · Values
-              </h2>
+              VALUES & GUIDELINES
             </SectionLabel>
+            <h2 className="font-primary font-bold text-[#f55d1b] text-2xl sm:text-3xl lg:text-4xl leading-tight tracking-tight">
+              Vision · Mission · Values
+            </h2>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <VmvCard
               Icon={SvgTelescope}
               label="VISION"
@@ -814,15 +776,9 @@ export default function AboustUs() {
               heading="To deliver infrastructure with precision, integrity and purpose."
               delay={0.1}
             >
-              <p className="font-secondary text-[#f55d1b] text-xs font-semibold mb-2">
-                We are committed to:
-              </p>
-              <ul className="space-y-2">
+              <ul className="space-y-2 p-0 m-0 list-none">
                 {mission.map((pt, i) => (
                   <li key={i} className="flex items-start gap-2.5">
-                    <span className="shrink-0 mt-0.5">
-                      <SvgCheckMark />
-                    </span>
                     <span className="font-secondary text-white/45 text-xs leading-relaxed">
                       {pt}
                     </span>
@@ -859,24 +815,24 @@ export default function AboustUs() {
         </div>
       </section>
 
-      <section id="leadership" className="py-20 lg:py-28 bg-white">
-        <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-6 lg:px-8">
-          <div ref={ldH} style={anim(ldHv, 0)} className="mb-12">
+      <section id="leadership" className="py-14 xs:py-16 sm:py-20 lg:py-28 bg-white">
+        <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-4 xs:px-6 sm:px-8 lg:px-12">
+          <div ref={ldH} style={anim(ldHv, 0)} className="mb-8 sm:mb-12">
             <SectionLabel>Our Leadership</SectionLabel>
-            <div className="flex flex-col  gap-3">
+            <div className="flex flex-col gap-2 sm:gap-3">
               <h2 className="font-primary font-bold text-[#000435] text-2xl sm:text-3xl lg:text-4xl leading-tight tracking-tight max-w-2xl">
                 Our Leadership
               </h2>
-              <p className="font-secondary text-[#000435]/70 text-sm leading-relaxed max-w-2xl">
+              <p className="font-secondary text-[#000435]/70 text-xs sm:text-sm leading-relaxed max-w-2xl">
                 Our leadership team brings together decades of expertise in
                 engineering, finance, and operations to deliver world-class
                 infrastructure projects.
               </p>
             </div>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
             {leaders.map((l, i) => (
-              <LeaderCard key={i} {...l} delay={i * 0.12} />
+              <LeaderCard key={i} {...l} delay={i * 0.1} />
             ))}
           </div>
         </div>
@@ -884,27 +840,27 @@ export default function AboustUs() {
 
       <section
         id="hse"
-        className="py-20 lg:py-28 bg-[#000435] relative overflow-hidden"
+        className="py-14 xs:py-16 sm:py-20 lg:py-28 bg-[#000435] relative overflow-hidden"
       >
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full pointer-events-none bg-[radial-gradient(ellipse,rgba(245, 93, 27,0.07)_0%,transparent_65%)]" />
-        <div className="relative z-10 max-w-7xl 2xl:max-w-[1580px] mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+        <div className="relative z-10 max-w-7xl 2xl:max-w-[1580px] mx-auto px-4 xs:px-6 sm:px-8 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 xs:gap-10 sm:gap-12 lg:gap-20 items-start">
             <div ref={hseL} style={anim(hseLv, 0)}>
               <SectionLabel>
                 Health, Safety &amp; Environment (HSE)
               </SectionLabel>
-              <h2 className="font-primary font-bold text-white text-2xl sm:text-3xl lg:text-4xl leading-tight tracking-tight mb-5">
+              <h2 className="font-primary font-bold text-white text-2xl sm:text-3xl lg:text-4xl leading-tight tracking-tight mb-4 sm:mb-5">
                 Health, Safety &amp; Environment (HSE)
               </h2>
-              <p className="font-secondary text-white/60 text-sm leading-relaxed mb-3">
+              <p className="font-secondary text-white/60 text-xs sm:text-sm leading-relaxed mb-3">
                 At Trion Infra, safety and sustainability are integral to the
                 way we build. We are committed to maintaining a safe, healthy
                 and environmentally responsible workplace across every project.
               </p>
-              <p className="font-secondary text-[#f55d1b] text-sm font-semibold mb-8">
+              <p className="font-secondary text-[#f55d1b] text-xs sm:text-sm font-semibold mb-6 sm:mb-8">
                 Our HSE approach focuses on:
               </p>
-              <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-[#f55d1b] text-white font-primary font-semibold text-sm cursor-default shadow-[0_8px_28px_rgba(245, 93, 27,0.28)]">
+              <div className="inline-flex items-center gap-3 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full bg-[#f55d1b] text-white font-primary font-semibold text-xs sm:text-sm cursor-default shadow-[0_8px_28px_rgba(245, 93, 27,0.28)]">
                 <SvgHardHat />
                 <span>
                   We don’t just build infrastructure. We build it responsibly.
@@ -913,7 +869,7 @@ export default function AboustUs() {
             </div>
             <div className="space-y-3">
               {hse.map((h, i) => (
-                <HseRow key={i} {...h} delay={i * 0.09} />
+                <HseRow key={i} {...h} delay={i * 0.08} />
               ))}
             </div>
           </div>

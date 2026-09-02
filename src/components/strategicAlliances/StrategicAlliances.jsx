@@ -93,7 +93,7 @@ export default function StrategicAlliances() {
 
   return (
     <main className="min-h-screen bg-white text-[#000435] font-sans antialiased overflow-x-hidden pt-12 sm:pt-14 selection:bg-[#f55d1b] selection:text-white">
-      <div className="fixed left-3 sm:left-4 top-1/2 -translate-y-1/2 z-30 hidden xl:flex flex-col items-center gap-4 py-3 px-1.5">
+      {/* <div className="fixed left-3 sm:left-4 top-1/2 -translate-y-1/2 z-30 hidden xl:flex flex-col items-center gap-4 py-3 px-1.5">
         {ALLIANCES_LIST.map((item) => {
           const isActive = activeSection === item.id;
           return (
@@ -122,33 +122,27 @@ export default function StrategicAlliances() {
             </button>
           );
         })}
-      </div>
+      </div> */}
 
-      <section className="relative w-full bg-white border-b border-[#000435]/10 pt-16 sm:pt-20 pb-12 md:pt-24 md:pb-16 overflow-hidden">
-        <div className="absolute top-8 right-8 pointer-events-none hidden sm:block">
-          <CrosshairIcon className="w-10 h-10 text-[#f55d1b]/60" />
-        </div>
-
-        <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-6 sm:px-10 md:px-14 relative z-10">
+      <section className="relative pt-24 xs:pt-28 pb-12 sm:pb-16 bg-white border-b border-[#000435]/10 overflow-hidden">
+        <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-4 xs:px-6 sm:px-10 md:px-14">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
-            <div className="md:col-span-5 flex flex-col justify-between">
-              <div>
-                <div className="flex items-center gap-2 mb-4">
-                  <span className="text-[#f55d1b] font-bold text-xs">+</span>
-                  <span className="font-mono text-[11px] tracking-[0.24em] text-[#f55d1b] uppercase font-bold">
-                    STRATEGIC ALLIANCES —
+            <div className="md:col-span-5">
+              <div className="max-w-xl">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="w-5 h-[1.5px] bg-[#f55d1b]" />
+                  <span className="font-mono text-[10.5px] tracking-[0.25em] text-[#f55d1b] uppercase font-bold">
+                    GLOBAL COLLABORATIONS
                   </span>
                 </div>
 
-                <h1 className="font-primary font-bold text-4xl sm:text-5xl md:text-[56px] text-[#000435] leading-[1.04] tracking-tight uppercase mb-6">
-                  SPECIALISTS.
+                <h1 className="font-primary font-bold text-3xl xs:text-4xl sm:text-5xl text-[#000435] tracking-tight uppercase leading-[0.96] mb-4">
+                  STRATEGIC
                   <br />
-                  CONNECTED BY
-                  <br />
-                  <span className="text-[#f55d1b]">EXECUTION.</span>
+                  <span className="text-[#f55d1b]">ALLIANCES.</span>
                 </h1>
 
-                <p className="font-sans text-[13.5px] sm:text-[14.5px] text-[#4A5568] max-w-md leading-relaxed mb-8">
+                <p className="font-sans text-xs xs:text-[13.5px] sm:text-[14.5px] text-[#4A5568] max-w-md leading-relaxed mb-6 sm:mb-8">
                   Our strategic alliances bring together domain leaders and
                   technical experts, enabling Trion Infrastructure to deliver
                   complex, large-scale projects with precision, speed and
@@ -168,14 +162,14 @@ export default function StrategicAlliances() {
             </div>
           </div>
 
-          <div className="mt-12 pt-8 border-t border-[#000435]/10 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 items-center">
-            <div className="flex items-center gap-3.5 md:pr-6 md:border-r md:border-[#000435]/15 group cursor-default">
-              <div className="w-12 h-12 rounded-full aspect-square flex items-center justify-center bg-[#f55d1b]/10 shrink-0">
+          <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-[#000435]/10 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-0 items-center">
+            <div className="flex items-center gap-3 xs:gap-3.5 md:pr-6 md:border-r md:border-[#000435]/15 group cursor-default">
+              <div className="w-10 h-10 xs:w-12 xs:h-12 rounded-full aspect-square flex items-center justify-center bg-[#f55d1b]/10 shrink-0">
                 <LordIcon
                   src="https://cdn.lordicon.com/uqpazftn.json"
                   trigger="loop"
                   colors="primary:#000435,secondary:#f55d1b"
-                  size={30}
+                  size={26}
                 />
               </div>
               <span className="font-primary font-bold text-xs sm:text-[13px] text-[#000435] uppercase tracking-wider leading-tight">
@@ -184,13 +178,13 @@ export default function StrategicAlliances() {
                 PARTNERS
               </span>
             </div>
-            <div className="flex items-center gap-3.5 md:px-6 md:border-r md:border-[#000435]/15 group cursor-default">
-              <div className="w-12 h-12 rounded-full aspect-square flex items-center justify-center bg-[#f55d1b]/10 shrink-0">
+            <div className="flex items-center gap-3 xs:gap-3.5 md:px-6 md:border-r md:border-[#000435]/15 group cursor-default">
+              <div className="w-10 h-10 xs:w-12 xs:h-12 rounded-full aspect-square flex items-center justify-center bg-[#f55d1b]/10 shrink-0">
                 <LordIcon
                   src="https://cdn.lordicon.com/vlycxjwx.json"
                   trigger="loop"
                   colors="primary:#000435,secondary:#f55d1b"
-                  size={30}
+                  size={26}
                 />
               </div>
               <span className="font-primary font-bold text-xs sm:text-[13px] text-[#000435] uppercase tracking-wider leading-tight">
@@ -199,13 +193,13 @@ export default function StrategicAlliances() {
                 EXCELLENCE
               </span>
             </div>
-            <div className="flex items-center gap-3.5 md:px-6 md:border-r md:border-[#000435]/15 group cursor-default">
-              <div className="w-12 h-12 rounded-full aspect-square flex items-center justify-center bg-[#f55d1b]/10 shrink-0">
+            <div className="flex items-center gap-3 xs:gap-3.5 md:px-6 md:border-r md:border-[#000435]/15 group cursor-default">
+              <div className="w-10 h-10 xs:w-12 xs:h-12 rounded-full aspect-square flex items-center justify-center bg-[#f55d1b]/10 shrink-0">
                 <LordIcon
                   src="https://cdn.lordicon.com/cjieiyzp.json"
                   trigger="loop"
                   colors="primary:#000435,secondary:#f55d1b"
-                  size={30}
+                  size={26}
                 />
               </div>
               <span className="font-primary font-bold text-xs sm:text-[13px] text-[#000435] uppercase tracking-wider leading-tight">
@@ -214,13 +208,13 @@ export default function StrategicAlliances() {
                 PRESENCE
               </span>
             </div>
-            <div className="flex items-center gap-3.5 md:pl-6 group cursor-default">
-              <div className="w-12 h-12 rounded-full aspect-square flex items-center justify-center bg-[#f55d1b]/10 shrink-0">
+            <div className="flex items-center gap-3 xs:gap-3.5 md:pl-6 group cursor-default">
+              <div className="w-10 h-10 xs:w-12 xs:h-12 rounded-full aspect-square flex items-center justify-center bg-[#f55d1b]/10 shrink-0">
                 <LordIcon
                   src="https://cdn.lordicon.com/gqdnbnwt.json"
                   trigger="loop"
                   colors="primary:#000435,secondary:#f55d1b"
-                  size={30}
+                  size={26}
                 />
               </div>
               <span className="font-primary font-bold text-xs sm:text-[13px] text-[#000435] uppercase tracking-wider leading-tight">
@@ -235,25 +229,18 @@ export default function StrategicAlliances() {
 
       <section
         id="ketan"
-        className="py-16 sm:py-20 md:py-24 bg-white border-b border-[#000435]/10 scroll-mt-14"
+        className="py-10 md:py-14 bg-white border-b border-[#000435]/10 scroll-mt-14"
       >
         <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-6 sm:px-10 md:px-14">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
             <div className="md:col-span-5">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="font-mono text-sm font-bold text-[#f55d1b]">
-                  01
-                </span>
-                <span className="w-8 h-px bg-[#f55d1b]" />
-              </div>
-
               <h2 className="font-primary font-bold text-3xl sm:text-4xl text-[#000435] tracking-tight uppercase leading-[1.08] mb-2">
                 KETAN
                 <br />
                 CONSTRUCTIONS LIMITED
               </h2>
 
-              <p className="font-serif italic font-semibold text-[13px] sm:text-[14px] text-[#f55d1b] mb-5">
+              <p className="font-serif italic font-semibold text-[13px] sm:text-[14px] text-[#f55d1b] mb-4">
                 Partner for Turnkey Infrastructure & Civil Engineering
               </p>
 
@@ -283,7 +270,7 @@ export default function StrategicAlliances() {
 
       <section
         id="sf-marina"
-        className="py-16 sm:py-20 md:py-24 bg-[#000435] text-white border-b border-[#000435] scroll-mt-14"
+        className="py-10 md:py-14 bg-[#000435] text-white border-b border-[#000435] scroll-mt-14"
       >
         <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-6 sm:px-10 md:px-14">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center mb-12">
@@ -297,18 +284,11 @@ export default function StrategicAlliances() {
               </div>
             </div>
             <div className="md:col-span-5">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="font-mono text-sm font-bold text-[#f55d1b]">
-                  02
-                </span>
-                <span className="w-8 h-px bg-[#f55d1b]" />
-              </div>
-
               <h2 className="font-primary font-bold text-3xl sm:text-4xl text-white tracking-tight uppercase leading-[1.08] mb-2">
                 SF MARINA
               </h2>
 
-              <p className="font-serif italic font-semibold text-[13px] sm:text-[14px] text-[#f55d1b] mb-5">
+              <p className="font-serif italic font-semibold text-[13px] sm:text-[14px] text-[#f55d1b] mb-4">
                 Partner for Floating Concrete & Marine Structures
               </p>
 
@@ -399,25 +379,18 @@ export default function StrategicAlliances() {
 
       <section
         id="tridel"
-        className="py-16 sm:py-20 md:py-24 bg-white border-b border-[#000435]/10 scroll-mt-14"
+        className="py-10 md:py-14 bg-white border-b border-[#000435]/10 scroll-mt-14"
       >
         <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-6 sm:px-10 md:px-14">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center mb-12">
             <div className="md:col-span-5">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="font-mono text-sm font-bold text-[#f55d1b]">
-                  03
-                </span>
-                <span className="w-8 h-px bg-[#f55d1b]" />
-              </div>
-
               <h2 className="font-primary font-bold text-3xl sm:text-4xl text-[#000435] tracking-tight uppercase leading-[1.08] mb-2">
                 TRIDEL
                 <br />
                 TECHNOLOGIES
               </h2>
 
-              <p className="font-serif italic font-semibold text-[13px] sm:text-[14px] text-[#f55d1b] mb-5">
+              <p className="font-serif italic font-semibold text-[13px] sm:text-[14px] text-[#f55d1b] mb-4">
                 Partner for Marine Infrastructure & Environmental Solutions
               </p>
 
@@ -576,7 +549,7 @@ export default function StrategicAlliances() {
 
       <section
         id="lombardi"
-        className="py-16 sm:py-20 md:py-24 bg-[#000435] text-white border-b border-[#000435] scroll-mt-14"
+        className="py-10 md:py-14 bg-[#000435] text-white border-b border-[#000435] scroll-mt-14"
       >
         <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-6 sm:px-10 md:px-14">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center mb-12">
@@ -590,13 +563,7 @@ export default function StrategicAlliances() {
               </div>
             </div>
 
-            <div className="md:col-span-5">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="font-mono text-sm font-bold text-[#f55d1b]">
-                  04
-                </span>
-                <span className="w-8 h-px bg-[#f55d1b]" />
-              </div>
+            <div className="md:col-span-5">           
 
               <h2 className="font-primary font-bold text-3xl sm:text-4xl text-white tracking-tight uppercase leading-[1.08] mb-2">
                 LOMBARDI
@@ -604,7 +571,7 @@ export default function StrategicAlliances() {
                 ENGINEERING
               </h2>
 
-              <p className="font-serif italic font-semibold text-[13px] sm:text-[14px] text-[#f55d1b] mb-5">
+              <p className="font-serif italic font-semibold text-[13px] sm:text-[14px] text-[#f55d1b] mb-4">
                 Partner for Engineering Consultancy & Design Services
               </p>
 
@@ -702,17 +669,12 @@ export default function StrategicAlliances() {
 
       <section
         id="radius"
-        className="py-16 sm:py-20 md:py-24 bg-white border-b border-[#000435]/10 scroll-mt-14"
+        className="py-10 md:py-14 bg-white border-b border-[#000435]/10 scroll-mt-14"
       >
         <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-6 sm:px-10 md:px-14">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center mb-12">
             <div className="md:col-span-5">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="font-mono text-sm font-bold text-[#f55d1b]">
-                  05
-                </span>
-                <span className="w-8 h-px bg-[#f55d1b]" />
-              </div>
+             
 
               <h2 className="font-primary font-bold text-3xl sm:text-4xl text-[#000435] tracking-tight uppercase leading-[1.08] mb-2">
                 RADIUS
@@ -720,7 +682,7 @@ export default function StrategicAlliances() {
                 EQUIPMENTS
               </h2>
 
-              <p className="font-serif italic font-semibold text-[13px] sm:text-[14px] text-[#f55d1b] mb-5">
+              <p className="font-serif italic font-semibold text-[13px] sm:text-[14px] text-[#f55d1b] mb-4">
                 Partner for Construction Equipment & Crushing Solutions
               </p>
 

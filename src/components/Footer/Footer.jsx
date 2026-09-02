@@ -12,6 +12,7 @@ import {
   FooterBackgroundGradient,
   TextHoverEffect,
 } from "@/components/ui/hover-footer";
+import FooterLogo from "../../assets/logo/trion-verticle.png";
 
 export default function Footer() {
   const companyLinks = [
@@ -86,20 +87,18 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#000435] relative h-fit overflow-hidden shadow-[0_24px_50px_rgba(0,0,0,0.85)] border-t border-white/10 font-primary">
-      <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-5 sm:px-8 lg:px-12 pt-10 sm:pt-14 pb-6 sm:pb-10 z-30 relative">
+      <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-4 xs:px-6 sm:px-8 md:px-10 lg:px-12 pt-10 sm:pt-14 pb-6 sm:pb-10 z-30 relative">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 pb-6 sm:pb-8">
-          {/* Column 1: Company Profile & Socials */}
           <div className="sm:col-span-2 lg:col-span-4 flex flex-col space-y-4">
             <Link
               to="/"
               className="flex items-center space-x-2 no-underline w-fit group"
             >
-              <span className="text-[#f55d1b] text-3xl font-extrabold transition-transform group-hover:scale-110">
-                &hearts;
-              </span>
-              <span className="text-white text-3xl font-bold font-primary tracking-wider uppercase">
-                Trion
-              </span>
+              <img
+                src={FooterLogo}
+                alt="footer logo"
+                className="object-contain h-20 xs:h-24 md:h-36 lg:h-40"
+              />
             </Link>
             <p className="text-xs sm:text-sm leading-relaxed text-slate-300 font-sans max-w-sm">
               Trion is a premier Indian infrastructure, civil construction,
@@ -114,7 +113,7 @@ export default function Footer() {
                   aria-label={label}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-9 h-9 rounded-lg bg-[#000435] border border-white/15 flex items-center justify-center text-slate-300 hover:text-[#f55d1b] hover:border-[#f55d1b]/50 hover:bg-[#f55d1b]/10 transition-all"
+                  className="w-8.5 h-8.5 xs:w-9 xs:h-9 rounded-lg bg-[#000435] border border-white/15 flex items-center justify-center text-slate-300 hover:text-[#f55d1b] hover:border-[#f55d1b]/50 hover:bg-[#f55d1b]/10 transition-all"
                 >
                   {icon}
                 </a>
@@ -122,7 +121,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Column 2: Our Services */}
           <div className="col-span-1 lg:col-span-3">
             <h4 className="text-white text-sm sm:text-base font-bold mb-3.5 sm:mb-4 font-primary flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-[#f55d1b]" />
@@ -144,8 +142,6 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-
-          {/* Column 3: About Us */}
           <div className="col-span-1 lg:col-span-2">
             <h4 className="text-white text-sm sm:text-base font-bold mb-3.5 sm:mb-4 font-primary flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-[#f55d1b]" />
@@ -168,7 +164,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 4: Contact Us */}
           <div className="sm:col-span-2 lg:col-span-3">
             <h4 className="text-white text-sm sm:text-base font-bold mb-3.5 sm:mb-4 font-primary flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-[#f55d1b]" />
@@ -216,27 +211,16 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Responsive Interactive Brand Watermark */}
-      <div className="flex h-24 sm:h-44 md:h-64 lg:h-[24rem] -mt-6 sm:-mt-20 md:-mt-32 lg:-mt-44 -mb-4 sm:-mb-14 md:-mb-20 relative z-20 select-none overflow-hidden px-4 w-full justify-center">
-        <TextHoverEffect text="Trion" className="w-full h-full max-w-6xl" />
+      <div className="flex h-16 xs:h-20 sm:h-28 md:h-48 lg:h-60 my-2 sm:my-1 relative z-20 select-none overflow-hidden px-2 sm:px-4 w-full justify-center">
+        <TextHoverEffect text="Trion" className="w-full h-full max-w-7xl" />
       </div>
 
-      {/* Bottom Bar */}
       <div className="border-t border-white/10 relative z-30 bg-[#000435]/80 backdrop-blur-sm">
-        <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-5 sm:px-8 lg:px-12 py-5 sm:py-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-slate-400 font-sans">
+        <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-4 xs:px-6 sm:px-8 lg:px-12 py-3 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-slate-400 font-sans">
           <p className="text-center sm:text-left m-0">
             &copy; {new Date().getFullYear()} Trion Infrastructure Projects. All
             rights reserved.
           </p>
-          <div className="flex items-center gap-4 text-slate-400 text-xs">
-            <Link to="/corporate" className="hover:text-[#f55d1b] transition-colors no-underline">
-              Governance
-            </Link>
-            <span>&bull;</span>
-            <Link to="/contact" className="hover:text-[#f55d1b] transition-colors no-underline">
-              Contact
-            </Link>
-          </div>
         </div>
       </div>
       <FooterBackgroundGradient />

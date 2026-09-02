@@ -36,6 +36,9 @@ export default {
           dark: '#f55d1b',
         },
       },
+      screens: {
+        xs: '480px',
+      },
       fontFamily: {
         primary: ['"Manrope"', '"Plus Jakarta Sans"', 'sans-serif'],
         sans: ['"Inter"', 'sans-serif'],

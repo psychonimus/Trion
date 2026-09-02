@@ -22,7 +22,6 @@ function useReveal() {
     );
     obs.observe(el);
 
-    // Fallback: ensure content is always visible even if observer fails
     const fallback = setTimeout(() => {
       setVisible(true);
     }, 600);
@@ -270,7 +269,7 @@ const SERVICES_DATA = [
     id: "service-01",
     shortTitle: "EPC & PMC",
     title:
-      "1. Integrated EPC & PMC (Engineering, Procurement, and Construction Management)",
+      "Integrated EPC & PMC (Engineering, Procurement, and Construction Management)",
     IconComponent: SvgIconEPC,
     image: "/assets/images/infra.webp",
     caption: "Highways, Bridges, Flyovers & Turnkey Industrial Facilities",
@@ -282,7 +281,7 @@ const SERVICES_DATA = [
     num: "02",
     id: "service-02",
     shortTitle: "Power Systems",
-    title: "2. Power Generation, Transmission & Distribution",
+    title: "Power Generation, Transmission & Distribution",
     IconComponent: SvgIconPower,
     image: "/assets/images/img-2.webp",
     caption: "Substations, High-Voltage Evacuation & Hybrid Renewable Plants",
@@ -294,7 +293,7 @@ const SERVICES_DATA = [
     num: "03",
     id: "service-03",
     shortTitle: "Mining & Materials",
-    title: "3. Mining, Minerals & Construction Materials Supply",
+    title: "Mining, Minerals & Construction Materials Supply",
     IconComponent: SvgIconMining,
     image: "/assets/images/mining.webp",
     caption: "Mineral Concessions, Quarrying & Pan-India Bulk Materials Supply",
@@ -306,7 +305,7 @@ const SERVICES_DATA = [
     num: "04",
     id: "service-04",
     shortTitle: "Heavy Machinery",
-    title: "4. Heavy Equipment, Machinery & Tools Trading",
+    title: "Heavy Equipment, Machinery & Tools Trading",
     IconComponent: SvgIconMachinery,
     image: "/assets/images/img-1.webp",
     caption: "Global OEM Import, Earthmovers, Cranes & 24/7 Plant Support",
@@ -318,7 +317,7 @@ const SERVICES_DATA = [
     num: "05",
     id: "service-05",
     shortTitle: "Financing & Assets",
-    title: "5. Infrastructure Financing, Investment & Asset Management",
+    title: "Infrastructure Financing, Investment & Asset Management",
     IconComponent: SvgIconFinance,
     image: "/assets/images/img-3.webp",
     caption:
@@ -331,7 +330,7 @@ const SERVICES_DATA = [
     num: "06",
     id: "service-06",
     shortTitle: "Technical R&D",
-    title: "6. Technical R&D, Collaborations & Skill Development",
+    title: "Technical R&D, Collaborations & Skill Development",
     IconComponent: SvgIconRD,
     image: "/assets/images/about-img.webp",
     caption: "Advanced Materials Testing, Process Automation & Skill Centers",
@@ -343,7 +342,7 @@ const SERVICES_DATA = [
     num: "07",
     id: "service-07",
     shortTitle: "Urban Development",
-    title: "7. Rural-Urban Development & Social Infrastructure",
+    title: "Rural-Urban Development & Social Infrastructure",
     IconComponent: SvgIconUrban,
     image: "/assets/images/building.webp",
     caption: "Townships, Affordable Housing, Water Utilities & Green Building",
@@ -355,7 +354,7 @@ const SERVICES_DATA = [
     num: "08",
     id: "service-08",
     shortTitle: "Mining & Crushing",
-    title: "8. Mining and Crushing Services",
+    title: "Mining and Crushing Services",
     IconComponent: SvgIconCrushing,
     image: "/assets/images/project-1.webp",
     caption: "Controlled Drilling, Blasting & Precision Aggregate Production",
@@ -367,7 +366,7 @@ const SERVICES_DATA = [
     num: "09",
     id: "service-09",
     shortTitle: "Earthworks",
-    title: "9. Excavation and Earthworks Services",
+    title: "Excavation and Earthworks Services",
     IconComponent: SvgIconExcavation,
     image: "/assets/images/excavation.webp",
     caption: "Bulk Earthmoving, Site Clearing, Grading & Sub-Grade Finishing",
@@ -1049,7 +1048,7 @@ function ServiceCard({ service, index, isHighlighted }) {
         transition:
           "opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s ease, border-color 0.6s ease",
       }}
-      className={`relative py-16 lg:py-24 border-b transition-colors duration-300 ${
+      className={`relative py-12 xs:py-14 sm:py-16 lg:py-16 border-b transition-colors duration-300 ${
         isHighlighted
           ? "ring-2 ring-[#f55d1b] shadow-[0_0_50px_rgba(245, 93, 27,0.35)] relative z-20"
           : ""
@@ -1063,39 +1062,16 @@ function ServiceCard({ service, index, isHighlighted }) {
             : "bg-[#000435] text-white border-white/[0.08]"
       }`}
     >
-      <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-6 sm:px-8 lg:px-12">
-        <div
-          className={`flex items-center justify-between border-b pb-3 mb-8 ${
-            isLight ? "border-slate-200" : "border-white/10"
-          }`}
-        >
-          <div className="flex items-center gap-2.5">
-            <span className="w-6 h-[1.5px] bg-[#f55d1b]" />
-            <span className="font-mono text-[11px] text-[#f55d1b] tracking-[0.2em] uppercase font-bold">
-              SECTION // {service.num}
-            </span>
-          </div>
-          <div className="flex items-center gap-3">
-            <span
-              className={`font-mono text-[11px] hidden sm:inline ${
-                isLight ? "text-slate-400" : "text-slate-400"
-              }`}
-            >
-              TRION INFRASTRUCTURE
-            </span>
-            <SvgCorner />
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-4 xs:px-6 sm:px-8 lg:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 xs:gap-8 lg:gap-12 items-center">
           <div
             className={`lg:col-span-6 ${
               isImageLeft ? "lg:order-2" : "lg:order-1"
             }`}
           >
-            <div className="flex items-center gap-3.5 mb-5">
+            <div className="flex items-center gap-3.5 mb-4">
               <div
-                className={`w-14 h-14 rounded-xl border border-[#f55d1b]/35 flex items-center justify-center shadow-lg backdrop-blur-md ${
+                className={`w-12 h-12 xs:w-14 xs:h-14 rounded-xl border border-[#f55d1b]/35 flex items-center justify-center shadow-lg backdrop-blur-md ${
                   isLight ? "bg-slate-50" : "bg-[#000435]"
                 }`}
               >
@@ -1116,32 +1092,21 @@ function ServiceCard({ service, index, isHighlighted }) {
             </div>
 
             <h3
-              className={`font-primary font-bold text-xl sm:text-2xl lg:text-[26px] leading-snug tracking-tight mb-4 ${
+              className={`font-primary font-bold text-lg xs:text-xl sm:text-2xl lg:text-[26px] leading-snug tracking-tight mb-3.5 sm:mb-4 ${
                 isLight ? "text-slate-900" : "text-white"
               }`}
             >
               {service.title}
             </h3>
 
-            <div className="max-w-2xl mb-5">
+            <div className="max-w-2xl mb-4 sm:mb-5">
               <p
-                className={`font-secondary text-sm 2xl:text-[15px] leading-[1.7] text-left ${
+                className={`font-secondary text-xs xs:text-sm 2xl:text-[15px] leading-[1.7] text-left ${
                   isLight ? "text-slate-600" : "text-slate-300"
                 }`}
               >
                 {service.content}
               </p>
-            </div>
-
-            <div
-              className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border text-xs font-mono ${
-                isLight
-                  ? "bg-slate-100 border-slate-200 text-slate-700"
-                  : "bg-[#000435] border-white/10 text-slate-300"
-              }`}
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-[#f55d1b]" />
-              <span>{service.caption}</span>
             </div>
           </div>
 
@@ -1151,7 +1116,7 @@ function ServiceCard({ service, index, isHighlighted }) {
             }`}
           >
             <div
-              className={`relative group overflow-hidden rounded-2xl border shadow-2xl h-[300px] sm:h-[380px] lg:h-[420px] ${
+              className={`relative group overflow-hidden rounded-2xl border shadow-2xl h-[240px] xs:h-[300px] sm:h-[380px] lg:h-[480px] ${
                 isLight
                   ? "border-slate-200 bg-slate-100"
                   : "border-white/15 bg-[#000435]"
@@ -1277,7 +1242,7 @@ export default function ServicesPage() {
 
   return (
     <main className="bg-[#000435] font-primary min-h-screen overflow-x-hidden selection:bg-[#f55d1b] selection:text-white touch-pan-y">
-      <aside className="fixed right-6 top-1/2 -translate-y-1/2 hidden xl:flex flex-col gap-2 z-40 bg-[#000435]/85 backdrop-blur-md p-2 rounded-2xl border border-white/10 shadow-2xl">
+      {/* <aside className="fixed right-6 top-1/2 -translate-y-1/2 hidden xl:flex flex-col gap-2 z-40 bg-[#000435]/85 backdrop-blur-md p-2 rounded-2xl border border-white/10 shadow-2xl">
         {SERVICES_DATA.map((s, idx) => {
           const isCurrent = activeIdx === idx;
           return (
@@ -1294,11 +1259,11 @@ export default function ServicesPage() {
             </a>
           );
         })}
-      </aside>
+      </aside> */}
 
-      <section className="relative min-h-[88vh] lg:min-h-[92vh] flex flex-col justify-center overflow-hidden border-b border-white/10 bg-[#000435]">
-        <KineticGrid className="w-full h-full pt-24 pb-16 sm:pt-28 sm:pb-20 lg:pt-14 lg:pb-16 flex flex-col justify-center">
-          <div className="relative z-20 w-full max-w-7xl 2xl:max-w-[1580px] mx-auto px-6 sm:px-8 lg:px-12 flex-1 flex flex-col justify-center my-auto">
+      <section className="relative min-h-[85vh] sm:min-h-[88vh] lg:min-h-[92vh] flex flex-col justify-center overflow-hidden border-b border-white/10 bg-[#000435]">
+        <KineticGrid className="w-full h-full pt-20 pb-12 xs:pt-24 xs:pb-16 sm:pt-28 sm:pb-20 lg:pt-14 lg:pb-16 flex flex-col justify-center">
+          <div className="relative z-20 w-full max-w-7xl 2xl:max-w-[1580px] mx-auto px-4 xs:px-6 sm:px-8 lg:px-12 flex-1 flex flex-col justify-center my-auto">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               <div
                 ref={heroRef}
@@ -1310,21 +1275,21 @@ export default function ServicesPage() {
                     "opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1)",
                 }}
               >
-                <div className="flex items-center gap-2.5 mb-4">
+                <div className="flex items-center gap-2.5 mb-3 sm:mb-4">
                   <span className="w-6 h-[1.5px] bg-[#f55d1b]" />
                   <span className="font-mono text-[11px] text-[#f55d1b] tracking-[0.25em] uppercase font-bold">
                     SERVICES
                   </span>
                 </div>
 
-                <h1 className="font-primary font-black text-2xl sm:text-3xl lg:text-4xl text-white tracking-tight leading-[1.1] mb-6">
+                <h1 className="font-primary font-black text-2xl xs:text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight leading-[1.1] mb-4 sm:mb-6">
                   ENGINEERED
                   <br />
                   FOR <span className="text-[#f55d1b]">SCALE.</span>
                 </h1>
 
-                <div className="border-l-2 border-[#f55d1b]/40 pl-4 mb-6">
-                  <p className="font-secondary text-slate-200 text-sm sm:text-base leading-relaxed max-w-lg">
+                <div className="border-l-2 border-[#f55d1b]/40 pl-3.5 sm:pl-4 mb-4 sm:mb-6">
+                  <p className="font-secondary text-slate-200 text-xs xs:text-sm sm:text-base leading-relaxed max-w-lg">
                     At Trion, we provide comprehensive civil construction,
                     infrastructure, mining, excavation, crushing, and building
                     construction services for projects of diverse scales and
@@ -1332,8 +1297,8 @@ export default function ServicesPage() {
                   </p>
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-[#000435]/80 border border-white/10 max-w-lg shadow-lg font-mono text-xs backdrop-blur-md">
-                  <div className="text-[10px] text-slate-400 tracking-widest uppercase mb-1.5 flex items-center gap-2">
+                <div className="p-3 sm:p-3.5 rounded-xl bg-[#000435]/80 border border-white/10 max-w-lg shadow-lg font-mono text-xs backdrop-blur-md">
+                  <div className="text-[9.5px] sm:text-[10px] text-slate-400 tracking-widest uppercase mb-1.5 flex items-center gap-2">
                     <SvgCross />
                     <span>MASTERPLAN BLUEPRINT SEQUENCING:</span>
                   </div>
@@ -1344,7 +1309,7 @@ export default function ServicesPage() {
                 </div>
               </div>
 
-              <div className="lg:col-span-6 relative h-[320px] sm:h-[400px] lg:h-[500px] xl:h-[540px] overflow-hidden shadow-2xl pointer-events-none touch-pan-y">
+              <div className="lg:col-span-6 relative h-[260px] xs:h-[320px] sm:h-[400px] lg:h-[500px] xl:h-[540px] overflow-hidden shadow-2xl pointer-events-none touch-pan-y">
                 <div className="absolute inset-0 pointer-events-none" />
                 <MultiBuildingBlueprintCanvas
                   onPhaseUpdate={setConstructionPhase}
@@ -1355,8 +1320,7 @@ export default function ServicesPage() {
         </KineticGrid>
       </section>
 
-      <section className="py-20 lg:py-28 border-b border-slate-200 bg-gradient-to-b from-white via-slate-50 to-white text-slate-900 relative overflow-hidden">
-        {/* Subtle Architectural Dot Grid Background */}
+      <section className="py-10 lg:py-10 border-b border-slate-200 bg-gradient-to-b from-white via-slate-50 to-white text-slate-900 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px] opacity-60 pointer-events-none" />
 
         <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
@@ -1369,7 +1333,6 @@ export default function ServicesPage() {
                 "opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1)",
             }}
           >
-            {/* Header / Technical Badge */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200 pb-6 mb-12">
               <div>
                 <div className="flex items-center gap-2.5 mb-2.5">
@@ -1391,12 +1354,9 @@ export default function ServicesPage() {
               </div>
             </div>
 
-            {/* Creative Bento Grid Cards */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch mb-10">
-              {/* Card 1: Multi-Sector Mastery */}
               <div className="lg:col-span-6 bg-white rounded-3xl border border-slate-200/90 p-8 sm:p-10 shadow-xl shadow-slate-200/50 flex flex-col justify-between relative overflow-hidden group hover:border-[#f55d1b]/40 transition-all duration-300">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-orange-500/5 to-transparent rounded-bl-full pointer-events-none" />
-
                 <div>
                   <div className="flex items-center justify-between gap-3 mb-6">
                     <span className="font-mono text-[11px] text-[#f55d1b] tracking-widest uppercase font-bold px-3 py-1 bg-orange-50 border border-orange-200/60 rounded-full">

@@ -353,6 +353,7 @@ export default function OurServices() {
   const [itemsPerPage, setItemsPerPage] = useState(() => {
     if (typeof window === "undefined") return 5;
     const w = window.innerWidth;
+    if (w < 640) return 2;
     if (w < 768) return 3;
     if (w < 1024) return 4;
     if (w < 1536) return 5;
@@ -371,7 +372,8 @@ export default function OurServices() {
     const handleResize = () => {
       const w = window.innerWidth;
       let count = 5;
-      if (w < 768) count = 3;
+      if (w < 640) count = 2;
+      else if (w < 768) count = 3;
       else if (w < 1024) count = 4;
       else if (w < 1536) count = 5;
       else count = 6;
@@ -480,8 +482,8 @@ export default function OurServices() {
   };
 
   return (
-    <div className="bg-[#000435] py-12 border-t border-b border-white/10">
-      <section className="px-6 sm:px-8 lg:px-12 flex items-center justify-between max-w-7xl 2xl:max-w-[1580px] mx-auto mb-6">
+    <div className="bg-[#000435] py-8 sm:py-12 border-t border-b border-white/10">
+      <section className="px-4 xs:px-6 sm:px-8 lg:px-12 flex items-center justify-between max-w-7xl 2xl:max-w-[1580px] mx-auto mb-4 sm:mb-6">
         <div>
           <div className="flex items-center gap-2 mb-2">
             <span className="w-5 h-[2px] bg-[#f55d1b]" />
@@ -490,7 +492,7 @@ export default function OurServices() {
             </span>
           </div>
           <h2
-            className="font-primary font-black text-2xl sm:text-3xl lg:text-4xl text-white tracking-tight"
+            className="font-primary font-black text-xl xs:text-2xl sm:text-3xl lg:text-4xl text-white tracking-tight"
             style={{ color: "#ffffff" }}
           >
             Our Services
@@ -498,25 +500,25 @@ export default function OurServices() {
         </div>
 
         {totalPages > 1 && (
-          <div className="flex items-center gap-2.5">
+          <div className="flex items-center gap-2 sm:gap-2.5">
             <button
               type="button"
               onClick={handlePrev}
-              className="w-10 h-10 rounded-full border border-white/20 bg-[#000435] flex items-center justify-center text-white hover:bg-[#f55d1b] hover:border-[#f55d1b] hover:text-white transition-all shadow-md"
+              className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-white/20 bg-[#000435] flex items-center justify-center text-white hover:bg-[#f55d1b] hover:border-[#f55d1b] hover:text-white transition-all shadow-md"
               aria-label="Previous page"
             >
-              <HiChevronLeft className="text-lg" />
+              <HiChevronLeft className="text-base sm:text-lg" />
             </button>
-            <span className="text-sm font-mono font-bold text-slate-300 px-2">
+            <span className="text-xs sm:text-sm font-mono font-bold text-slate-300 px-1.5 sm:px-2">
               {currentPage + 1} / {totalPages}
             </span>
             <button
               type="button"
               onClick={handleNext}
-              className="w-10 h-10 rounded-full border border-white/20 bg-[#000435] flex items-center justify-center text-white hover:bg-[#f55d1b] hover:border-[#f55d1b] hover:text-white transition-all shadow-md"
+              className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-white/20 bg-[#000435] flex items-center justify-center text-white hover:bg-[#f55d1b] hover:border-[#f55d1b] hover:text-white transition-all shadow-md"
               aria-label="Next page"
             >
-              <HiChevronRight className="text-lg" />
+              <HiChevronRight className="text-base sm:text-lg" />
             </button>
           </div>
         )}
@@ -561,7 +563,7 @@ export default function OurServices() {
                 onClick={() => setActiveSlot(slotIdx)}
                 tabIndex={0}
                 role="button"
-                aria-label={`View ${service.tag} service details`}
+                aria-label={`View ${service.shortTitle || service.title} service details`}
                 onKeyDown={(e) => {
                   if (e.key === "Enter" || e.key === " ") {
                     setActiveSlot(slotIdx);

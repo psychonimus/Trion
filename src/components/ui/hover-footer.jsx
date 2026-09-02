@@ -13,7 +13,7 @@ const TRION_PATH = `
   M 221 20 H 232.5 L 265 67.5 V 20 H 276 V 80 H 264.5 L 232 32.5 V 80 H 221 Z
 `.trim();
 
-export const TextHoverEffect = ({ text = "TRION", className }) => {
+export const TextHoverEffect = ({ className }) => {
   const svgRef = useRef(null);
   const [hovered, setHovered] = useState(false);
 
@@ -49,8 +49,6 @@ export const TextHoverEffect = ({ text = "TRION", className }) => {
     setHovered(true);
   };
 
-  const isTrion = text.toUpperCase() === "TRION";
-
   return (
     <svg
       ref={svgRef}
@@ -69,14 +67,13 @@ export const TextHoverEffect = ({ text = "TRION", className }) => {
       <defs>
         {/* Soft Aura Glow filter */}
         <filter id="orangeGlow" x="-30%" y="-30%" width="160%" height="160%">
-          <feGaussianBlur stdDeviation="3" result="blur" />
+          <feGaussianBlur stdDeviation="3.5" result="blur" />
           <feMerge>
             <feMergeNode in="blur" />
             <feMergeNode in="SourceGraphic" />
           </feMerge>
         </filter>
 
-        {/* Dynamic Glowing Orange-Gold-White Gradient */}
         <linearGradient
           id="trionTextGradient"
           x1="0%"
@@ -95,7 +92,7 @@ export const TextHoverEffect = ({ text = "TRION", className }) => {
         <motion.radialGradient
           id="revealMask"
           gradientUnits="userSpaceOnUse"
-          r="70"
+          r="65"
           cx={smoothX}
           cy={smoothY}
         >
@@ -104,132 +101,81 @@ export const TextHoverEffect = ({ text = "TRION", className }) => {
           <stop offset="100%" stopColor="#000435" stopOpacity="0" />
         </motion.radialGradient>
 
-      <mask id="textMask">
-        <rect
-          x="0"
-          y="0"
-          width="100%"
-          height="100%"
-          fill="url(#revealMask)"
-        />
-      </mask>
-    </defs>
+        <mask id="textMask">
+          <rect
+            x="0"
+            y="0"
+            width="100%"
+            height="100%"
+            fill="url(#revealMask)"
+          />
+        </mask>
+      </defs>
 
-    {/* Full Hit-Test Surface so hover is 100% responsive everywhere in the text box */}
-    <rect
-      x="0"
-      y="0"
-      width="100%"
-      height="100%"
-      fill="transparent"
-      className="cursor-pointer"
-      style={{ pointerEvents: "all" }}
-    />
+      {/* Full Hit-Test Surface */}
+      <rect
+        x="0"
+        y="0"
+        width="100%"
+        height="100%"
+        fill="transparent"
+        className="cursor-pointer"
+        style={{ pointerEvents: "all" }}
+      />
 
-    {isTrion ? (
-      <>
-        {/* Subtle Base Dark Outline */}
+      {/* Subtle Base Dark Outline */}
+      <path
+        d={TRION_PATH}
+        fillRule="evenodd"
+        fill="transparent"
+        stroke="rgba(255, 255, 255, 0.2)"
+        strokeWidth="0.8"
+        className="pointer-events-none transition-opacity duration-300"
+        style={{ opacity: hovered ? 0.7 : 0.2 }}
+      />
+
+      {/* Animated Orange Outline */}
+      <motion.path
+        d={TRION_PATH}
+        fillRule="evenodd"
+        fill="transparent"
+        stroke="#f55d1b"
+        strokeWidth="0.85"
+        className="pointer-events-none"
+        initial={{ strokeDashoffset: 1400, strokeDasharray: 1400 }}
+        animate={{
+          strokeDashoffset: 0,
+          strokeDasharray: 1400,
+        }}
+        transition={{
+          duration: 3,
+          ease: "easeInOut",
+        }}
+      />
+
+      {/* Cursor Spotlight Glow Fill & Stroke */}
+      <g mask="url(#textMask)" className="pointer-events-none">
         <path
           d={TRION_PATH}
           fillRule="evenodd"
-          strokeWidth="0.8"
-          className="fill-transparent stroke-white/15 transition-opacity duration-300 pointer-events-none"
-          style={{ opacity: hovered ? 0.6 : 0.2 }}
+          fill="url(#trionTextGradient)"
+          fillOpacity={hovered ? 0.28 : 0}
+          stroke="url(#trionTextGradient)"
+          strokeWidth="1.2"
+          filter="url(#orangeGlow)"
+          style={{ transition: "fill-opacity 0.2s ease" }}
         />
-
-        {/* Animated Orange Outline */}
-        <motion.path
+        <path
           d={TRION_PATH}
           fillRule="evenodd"
-          strokeWidth="0.8"
-          className="fill-transparent stroke-[#f55d1b] pointer-events-none"
-          initial={{ strokeDashoffset: 1400, strokeDasharray: 1400 }}
-          animate={{
-            strokeDashoffset: 0,
-            strokeDasharray: 1400,
-          }}
-          transition={{
-            duration: 3,
-            ease: "easeInOut",
-          }}
+          fill="none"
+          stroke="#ffffff"
+          strokeWidth="0.6"
+          opacity="0.9"
         />
-
-        {/* Cursor Spotlight Glow Fill & Stroke */}
-        <motion.g
-          mask="url(#textMask)"
-          animate={{ opacity: hovered ? 1 : 0 }}
-          transition={{ duration: 0.2, ease: "easeOut" }}
-          className="pointer-events-none"
-        >
-          {/* Luminous Fill Under Cursor */}
-          <path
-            d={TRION_PATH}
-            fillRule="evenodd"
-            fill="url(#trionTextGradient)"
-            fillOpacity="0.35"
-            stroke="url(#trionTextGradient)"
-            strokeWidth="1.8"
-            filter="url(#orangeGlow)"
-          />
-          {/* Sharp Core Highlight Stroke */}
-          <path
-            d={TRION_PATH}
-            fillRule="evenodd"
-            fill="none"
-            stroke="#ffffff"
-            strokeWidth="0.8"
-            opacity="0.95"
-          />
-        </motion.g>
-      </>
-    ) : (
-      <>
-        <text
-          x="50%"
-          y="50%"
-          textAnchor="middle"
-          dominantBaseline="middle"
-          strokeWidth="0.35"
-          className="fill-transparent stroke-white/20 font-sans text-7xl font-black tracking-widest pointer-events-none"
-          style={{ opacity: hovered ? 0.8 : 0.15 }}
-        >
-          {text}
-        </text>
-        <motion.text
-          x="50%"
-          y="50%"
-          textAnchor="middle"
-          dominantBaseline="middle"
-          strokeWidth="0.35"
-          className="fill-transparent stroke-[#f55d1b] font-sans text-7xl font-black tracking-widest pointer-events-none"
-          initial={{ strokeDashoffset: 1000, strokeDasharray: 1000 }}
-          animate={{
-            strokeDashoffset: 0,
-            strokeDasharray: 1000,
-          }}
-          transition={{
-            duration: 4,
-            ease: "easeInOut",
-          }}
-        >
-          {text}
-        </motion.text>
-        <text
-          x="50%"
-          y="50%"
-          textAnchor="middle"
-          dominantBaseline="middle"
-          stroke="url(#trionTextGradient)"
-          strokeWidth="0.4"
-          mask="url(#textMask)"
-          className="fill-transparent font-sans text-7xl font-black tracking-widest pointer-events-none"
-        >
-          {text}
-        </text>
-      </>
-    )}
-  </svg>
-);
+      </g>
+    </svg>
+  );
 };
 
 export const FooterBackgroundGradient = () => {
