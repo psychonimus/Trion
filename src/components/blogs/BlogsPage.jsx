@@ -562,29 +562,29 @@ function ExactCityWireframeHero() {
       <picture className="w-full h-full block">
         <source
           media="(max-width: 640px)"
-          srcSet="/assets/images/blogs/blog-hero-city-mobile.png?v=5"
+          srcSet="/assets/images/blogs/blog-hero-city-mobile.webp?v=6"
         />
         <source
           media="(min-width: 641px)"
-          srcSet="/assets/images/blogs/blog-hero-city-4k-sharp.png?v=5"
+          srcSet="/assets/images/blogs/blog-hero-city-4k-sharp.webp?v=6"
         />
         <img
-          src="/assets/images/blogs/blog-hero-city-4k-sharp.png?v=5"
+          src="/assets/images/blogs/blog-hero-city-4k-sharp.webp?v=6"
           alt="Urban Infrastructure Wireframe Skyline"
-          className="w-full h-full object-cover object-bottom sm:object-center filter brightness-105 contrast-[1.08] select-none pointer-events-none"
+          className="w-full h-full object-cover object-center filter brightness-110 contrast-[1.08] select-none pointer-events-none"
           style={{ imageRendering: "crisp-edges" }}
           loading="eager"
         />
       </picture>
 
       {/* Desktop Left-Side Text Readability Overlay */}
-      <div className="hidden lg:block absolute inset-y-0 left-0 w-[65%] bg-gradient-to-r from-[#000435]/95 via-[#000435]/80 to-transparent pointer-events-none" />
+      <div className="hidden lg:block absolute inset-y-0 left-0 w-[65%] bg-gradient-to-r from-[#000435]/95 via-[#000435]/75 to-transparent pointer-events-none" />
 
       {/* Mobile/Tablet Bottom-to-Top Text Readability Overlay */}
-      <div className="block lg:hidden absolute inset-0 bg-gradient-to-t from-[#000435]/95 via-[#000435]/70 to-transparent pointer-events-none" />
+      <div className="block lg:hidden absolute inset-0 bg-gradient-to-t from-[#000435] via-[#000435]/45 to-[#000435]/20 pointer-events-none" />
 
       {/* Subtle bottom fade to blend smoothly into page content */}
-      <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-[#000435] to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#000435] to-transparent pointer-events-none" />
 
       {/* Sharp Technical HUD Indicators */}
       <div className="absolute top-4 sm:top-6 left-4 sm:left-8 hidden sm:flex items-center gap-2 font-mono text-[9px] sm:text-[10px] text-sky-400/90 tracking-widest uppercase">
@@ -635,7 +635,7 @@ export default function BlogsPage() {
         style={{ scaleX }}
       />
 
-      <section className="relative z-10 pt-24 sm:pt-36 lg:pt-40 pb-12 sm:pb-24 border-b border-sky-400/20 overflow-hidden min-h-[500px] lg:min-h-[580px] flex items-center">
+      <section className="relative z-10 pt-28 sm:pt-36 lg:pt-40 pb-12 sm:pb-24 border-b border-sky-400/20 overflow-hidden min-h-[520px] lg:min-h-[580px] flex items-center">
         <ExactCityWireframeHero />
 
         <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-5 sm:px-8 lg:px-12 relative z-10 w-full">
