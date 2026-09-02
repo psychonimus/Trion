@@ -624,7 +624,7 @@ export default function BlogsPage() {
         style={{ scaleX }}
       />
 
-<section className="relative z-10 pt-28 sm:pt-36 lg:pt-40 pb-8 sm:pb-24 border-b border-sky-400/20 overflow-hidden min-h-[540px] sm:min-h-[520px] lg:min-h-[580px] flex items-end sm:items-center">        <ExactCityWireframeHero />
+<section className="relative z-10 pt-28 sm:pt-36 lg:pt-40 pb-8 sm:pb-24 border-b border-sky-400/20 overflow-hidden min-h-[540px] sm:min-h-[520px] lg:min-h-[580px] 2xl:min-h-screen 2xl:h-[80dvh] flex items-end sm:items-center">        <ExactCityWireframeHero />
 
         <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-5 sm:px-8 lg:px-12 relative z-10 w-full mb-2 sm:mb-0">
           <div className="max-w-2xl lg:max-w-3xl space-y-4 sm:space-y-6">
