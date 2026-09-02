@@ -638,7 +638,7 @@ export default function BlogsPage() {
       <section className="relative z-10 xs:pt-28 sm:pt-36 lg:pt-40 xs:pb-16 sm:pb-24 border-b border-sky-400/20 overflow-hidden min-h-[520px] lg:min-h-[580px] flex items-center">
         <ExactCityWireframeHero />
 
-        <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto xs:px-2 md:px-8 lg:px-12 relative z-10 w-full">
+        <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto xs:px-4 md:px-8 lg:px-12 relative z-10 w-full">
           <div className="max-w-2xl lg:max-w-3xl space-y-5 sm:space-y-6">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
