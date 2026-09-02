@@ -396,7 +396,7 @@ export default function Navbar() {
             to="/"
             className="flex items-center select-none cursor-pointer pl-2 xs:pl-3 sm:pl-5 pr-3 xs:pr-4 sm:pr-6 py-1 no-underline group"
           >
-           <img src={TrionHorizontalLogo} alt="trion logo" className="object-contain w-32 xs:w-36 sm:w-44 h-auto max-h-8 sm:max-h-10 outline-none" />
+           <img src={TrionHorizontalLogo} alt="trion logo" className="object-contain w-32 xs:w-36 sm:w-44 h-auto max-h-8 sm:max-h-10 2xl:h-16 2xl:w-60 outline-none" />
           </Link>
 
           <div className="hidden lg:flex items-center gap-0.5 p-0.5 bg-[#000435]/80 backdrop-blur-sm border border-white/10 rounded-full">
