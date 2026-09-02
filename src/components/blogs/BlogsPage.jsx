@@ -635,7 +635,7 @@ export default function BlogsPage() {
         style={{ scaleX }}
       />
 
-      <section className="relative z-10 pt-28 sm:pt-36 lg:pt-40 pb-12 sm:pb-24 border-b border-sky-400/20 overflow-hidden min-h-[520px] lg:min-h-[580px] flex items-center">
+      <section className="relative z-10 pt-14 sm:pt-16 lg:pt-40 pb-12 sm:pb-24 border-b border-sky-400/20 overflow-hidden min-h-[520px] lg:min-h-[580px] flex items-center">
         <ExactCityWireframeHero />
 
         <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-5 sm:px-8 lg:px-12 relative z-10 w-full">
@@ -644,7 +644,7 @@ export default function BlogsPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="font-primary font-black text-2xl xs:text-3xl sm:text-5xl lg:text-6xl 2xl:text-7xl text-white leading-[1.05] tracking-tight uppercase drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]"
+              className="font-primary font-black text-3xl xs:text-3xl sm:text-5xl lg:text-6xl 2xl:text-7xl text-white leading-[1.05] tracking-tight uppercase drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]"
             >
               ENGINEERING <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f55d1b] via-[#38bdf8] to-white">
@@ -656,7 +656,7 @@ export default function BlogsPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="font-secondary text-sky-50 text-xs sm:text-base lg:text-lg leading-relaxed max-w-xl text-left drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] font-normal"
+              className="font-secondary text-sky-50 text-sm sm:text-base lg:text-lg leading-relaxed max-w-xl text-left drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] font-normal"
             >
               Authoritative architectural papers exploring modern civil
               execution in India — predictive AI, 5D BIM digital twins, circular
