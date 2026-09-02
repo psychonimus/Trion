@@ -635,11 +635,11 @@ export default function BlogsPage() {
         style={{ scaleX }}
       />
 
-      <section className="relative z-10 pt-24 xs:pt-28 sm:pt-36 lg:pt-40 pb-12 xs:pb-16 sm:pb-24 border-b border-sky-400/20 overflow-hidden min-h-[500px] xs:min-h-[520px] lg:min-h-[580px] flex items-center">
+      <section className="relative z-10 pt-24 sm:pt-36 lg:pt-40 pb-12 sm:pb-24 border-b border-sky-400/20 overflow-hidden min-h-[500px] lg:min-h-[580px] flex items-center">
         <ExactCityWireframeHero />
 
-        <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto xl:px-4 xs:px-4 md:px-8 lg:px-12 relative z-10 w-full">
-          <div className="max-w-2xl lg:max-w-3xl space-y-4 xs:space-y-5 sm:space-y-6">
+        <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-5 sm:px-8 lg:px-12 relative z-10 w-full">
+          <div className="max-w-2xl lg:max-w-3xl space-y-4 sm:space-y-6">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -656,7 +656,7 @@ export default function BlogsPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="font-secondary text-sky-50 text-xs xs:text-sm sm:text-base lg:text-lg leading-relaxed max-w-xl text-left drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] font-normal"
+              className="font-secondary text-sky-50 text-xs sm:text-base lg:text-lg leading-relaxed max-w-xl text-left drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] font-normal"
             >
               Authoritative architectural papers exploring modern civil
               execution in India — predictive AI, 5D BIM digital twins, circular
@@ -667,7 +667,7 @@ export default function BlogsPage() {
       </section>
 
       <section className="relative z-10 py-6 lg:py-8">
-        <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-2 xs:px-4 sm:px-8 lg:px-12 space-y-8 xs:space-y-10 sm:space-y-14">
+        <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-4 sm:px-8 lg:px-12 space-y-8 sm:space-y-14">
           {BLOG_POSTS.map((post, idx) => {
             const isEven = idx % 2 === 0;
 
@@ -675,7 +675,7 @@ export default function BlogsPage() {
               <article
                 key={post.id}
                 id={post.id}
-                className="scroll-mt-28 rounded-2xl p-3 xs:p-3 sm:p-8 lg:p-10 bg-gradient-to-br from-[#0a2360]/35 via-[#061845]/50 to-[#020b24]/70 backdrop-blur-2xl relative overflow-hidden transition-all duration-300 hover:border-[#f55d1b]/60"
+                className="scroll-mt-28 rounded-2xl p-4 sm:p-8 lg:p-10 bg-gradient-to-br from-[#0a2360]/35 via-[#061845]/50 to-[#020b24]/70 backdrop-blur-2xl relative overflow-hidden transition-all duration-300 hover:border-[#f55d1b]/60"
               >
                 <CornerCrosshairs />
 
@@ -993,7 +993,7 @@ export default function BlogsPage() {
       <section className="relative z-10 py-8 md:py-14 border-t border-sky-400/20 bg-gradient-to-b from-[#000435] via-[#010620] to-[#000435] text-white overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_50%,rgba(56,189,248,0.2)_0%,transparent_70%)] pointer-events-none" />
 
-        <div className="max-w-4xl mx-auto px-4 xs:px-4 text-center relative z-10">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
           <h2 className="font-primary font-black text-2xl xs:text-3xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-tight uppercase mb-4 sm:mb-6">
             ENGINEER THE FUTURE <br />
             <span className="text-[#f55d1b]">WITH TRION.</span>
