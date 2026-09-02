@@ -391,7 +391,7 @@ export default function Navbar() {
   return (
     <header className="fixed top-2.5 sm:top-4 left-0 right-0 z-[1000] w-full px-2.5 xs:px-4 sm:px-6 lg:px-8 pointer-events-none flex justify-center font-primary">
       <div className="w-full max-w-7xl 2xl:max-w-[1580px] mx-auto pointer-events-auto relative" ref={navRef}>
-        <nav className="relative flex items-center justify-between h-[48px] xs:h-[52px] sm:h-[56px] px-2.5 xs:px-3 sm:px-5 bg-[#000435]/70 backdrop-blur-md backdrop-saturate-150 border border-white/15 rounded-full shadow-[0_8px_32px_0_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.12)] transition-all duration-200">
+        <nav className="relative flex items-center justify-between h-[48px] xs:h-[52px] sm:h-[56px] 2xl:h-[80px] px-2.5 xs:px-3 sm:px-5 bg-[#000435]/70 backdrop-blur-md backdrop-saturate-150 border border-white/15 rounded-full shadow-[0_8px_32px_0_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.12)] transition-all duration-200">
           <Link
             to="/"
             className="flex items-center select-none cursor-pointer pl-2 xs:pl-3 sm:pl-5 pr-3 xs:pr-4 sm:pr-6 py-1 no-underline group"
