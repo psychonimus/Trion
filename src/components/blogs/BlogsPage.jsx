@@ -402,7 +402,6 @@ function ExactCityWireframeHero() {
     const width = container.clientWidth || window.innerWidth;
     const height = container.clientHeight || 600;
 
-    // Three.js Scene & Camera Setup
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(50, width / height, 0.1, 100);
     camera.position.set(0, 0, 20);
@@ -422,7 +421,6 @@ function ExactCityWireframeHero() {
     renderer.domElement.style.height = "100%";
     container.appendChild(renderer.domElement);
 
-    // Create Crisp Glow Dot Texture for Small Particles
     const makeParticleTexture = () => {
       const c = document.createElement("canvas");
       c.width = 32;
@@ -442,7 +440,6 @@ function ExactCityWireframeHero() {
 
     const particleTexture = makeParticleTexture();
 
-    // Small Floating Cyber Particles
     const particleCount = 120;
     const geometry = new THREE.BufferGeometry();
     const positions = new Float32Array(particleCount * 3);
@@ -481,7 +478,6 @@ function ExactCityWireframeHero() {
     const particles = new THREE.Points(geometry, material);
     scene.add(particles);
 
-    // Mouse Tracking
     let mouseX = 0;
     let mouseY = 0;
     const onMouseMove = (e) => {
@@ -498,21 +494,17 @@ function ExactCityWireframeHero() {
       animId = requestAnimationFrame(animate);
       const elapsed = clock.getElapsedTime();
 
-      // Gentle camera sway
       camera.position.x += (mouseX * 1.2 - camera.position.x) * 0.04;
       camera.position.y += (-mouseY * 0.8 - camera.position.y) * 0.04;
       camera.lookAt(0, 0, 0);
 
-      // Animate small particles: gentle floating & drift
       const pos = geometry.attributes.position.array;
       for (let i = 0; i < particleCount; i++) {
         const i3 = i * 3;
-        // Slow vertical float with upward drift
         pos[i3 + 1] =
           initialPositions[i3 + 1] +
           Math.sin(elapsed * speeds[i] + i) * amplitudes[i] +
           (((elapsed * 0.2 * speeds[i]) % 4) - 2);
-        // Subtle horizontal sway
         pos[i3] =
           initialPositions[i3] +
           Math.cos(elapsed * (speeds[i] * 0.7) + i) * (amplitudes[i] * 0.6);
@@ -558,7 +550,6 @@ function ExactCityWireframeHero() {
       ref={containerRef}
       className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none select-none"
     >
-      {/* Responsive Picture: 9:16 Mobile Portrait & 16:9 Desktop 4K */}
       <picture className="w-full h-full block">
         <source
           media="(max-width: 640px)"
@@ -577,15 +568,11 @@ function ExactCityWireframeHero() {
         />
       </picture>
 
-      {/* Desktop Left-Side Text Readability Overlay */}
       <div className="hidden lg:block absolute inset-y-0 left-0 w-[65%] bg-gradient-to-r from-[#000435]/95 via-[#000435]/75 to-transparent pointer-events-none" />
 
-      {/* Mobile/Tablet Bottom-to-Top Text Readability Overlay */}
       <div className="block lg:hidden absolute inset-0 bg-gradient-to-t from-[#000435] via-[#000435]/45 to-[#000435]/20 pointer-events-none" />
 
-      {/* Subtle bottom fade to blend smoothly into page content */}
       <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#000435] to-transparent pointer-events-none" />
-
     </div>
   );
 }
@@ -624,9 +611,10 @@ export default function BlogsPage() {
         style={{ scaleX }}
       />
 
-<section className="relative z-10 pt-28 sm:pt-36 lg:pt-40 pb-8 sm:pb-24 border-b border-sky-400/20 overflow-hidden min-h-[540px] sm:min-h-[520px] lg:min-h-[580px] 2xl:min-h-screen 2xl:h-[80dvh] flex items-end sm:items-center">        <ExactCityWireframeHero />
+      <section className="relative z-10 min-h-screen flex items-center overflow-hidden border-b border-sky-400/20">
+        <ExactCityWireframeHero />
 
-        <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-5 sm:px-8 lg:px-12 relative z-10 w-full mb-2 sm:mb-0">
+        <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-5 sm:px-8 lg:px-12 relative z-10 w-full pt-24 sm:pt-28 lg:pt-0">
           <div className="max-w-2xl lg:max-w-3xl space-y-4 sm:space-y-6">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -964,7 +952,7 @@ export default function BlogsPage() {
                   {post.quote && (
                     <div className="pt-4 border-t border-[#f55d1b]/30 flex items-start gap-3">
                       <span className="font-serif text-2xl text-[#f55d1b] leading-none">
-                        “
+                        "
                       </span>
                       <p className="font-serif italic text-xs sm:text-sm font-bold text-[#f55d1b] leading-relaxed">
                         {post.quote}
