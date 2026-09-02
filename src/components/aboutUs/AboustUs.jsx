@@ -568,7 +568,7 @@ export default function AboustUs() {
 
   const leaders = [
     {
-      name: "Siddharth Jaiswal",
+      name: "Sidharth Jaiswaal",
       title: "Founder & Managing Director",
       bio: "A visionary business leader with extensive experience in infrastructure development, Siddharth drives the group’s strategic direction, business growth and global operations, with a strong focus on long-term value creation.",
       img: "/assets/images/MR. SIDDHARTH JAISWAL.png",
