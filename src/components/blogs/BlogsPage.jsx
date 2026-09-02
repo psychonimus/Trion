@@ -586,17 +586,6 @@ function ExactCityWireframeHero() {
       {/* Subtle bottom fade to blend smoothly into page content */}
       <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#000435] to-transparent pointer-events-none" />
 
-      {/* Sharp Technical HUD Indicators */}
-      <div className="absolute top-4 sm:top-6 left-4 sm:left-8 hidden sm:flex items-center gap-2 font-mono text-[9px] sm:text-[10px] text-sky-400/90 tracking-widest uppercase">
-        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
-        <span>
-          GRID: 28°36&apos;N 77°12&apos;E · ELEV: +142M · BIM 5D ONLINE
-        </span>
-      </div>
-
-      <div className="absolute top-4 sm:top-6 right-4 sm:right-8 hidden sm:flex items-center gap-2 font-mono text-[9px] sm:text-[10px] text-sky-400/90 tracking-widest uppercase">
-        <span>RESOLUTION: 4K WIREFRAME</span>
-      </div>
     </div>
   );
 }
