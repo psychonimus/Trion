@@ -635,16 +635,16 @@ export default function BlogsPage() {
         style={{ scaleX }}
       />
 
-      <section className="relative z-10 pt-14 sm:pt-16 lg:pt-40 pb-12 sm:pb-24 border-b border-sky-400/20 overflow-hidden min-h-[520px] lg:min-h-[580px] flex items-center">
+      <section className="relative z-10 pt-28 sm:pt-36 lg:pt-40 pb-8 sm:pb-24 border-b border-sky-400/20 overflow-hidden min-h-[540px] sm:min-h-[520px] lg:min-h-[580px] flex items-end sm:items-center">
         <ExactCityWireframeHero />
 
-        <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-5 sm:px-8 lg:px-12 relative z-10 w-full">
+        <div className="max-w-7xl 2xl:max-w-[1580px] mx-auto px-5 sm:px-8 lg:px-12 relative z-10 w-full mb-2 sm:mb-0">
           <div className="max-w-2xl lg:max-w-3xl space-y-4 sm:space-y-6">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="font-primary font-black text-3xl xs:text-3xl sm:text-5xl lg:text-6xl 2xl:text-7xl text-white leading-[1.05] tracking-tight uppercase drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]"
+              className="font-primary font-black text-4xl xs:text-4xl sm:text-5xl lg:text-6xl 2xl:text-7xl text-white leading-[1.05] tracking-tight uppercase drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]"
             >
               ENGINEERING <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f55d1b] via-[#38bdf8] to-white">
