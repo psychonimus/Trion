@@ -113,7 +113,7 @@ export default function Footer() {
                   aria-label={label}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-8.5 h-8.5 xs:w-9 xs:h-9 rounded-lg bg-[#000435] border border-white/15 flex items-center justify-center text-slate-300 hover:text-[#f55d1b] hover:border-[#f55d1b]/50 hover:bg-[#f55d1b]/10 transition-all"
+                  className="w-9 h-9 rounded-lg bg-[#000435] border border-white/15 flex items-center justify-center text-slate-300 hover:text-[#f55d1b] hover:border-[#f55d1b]/50 hover:bg-[#f55d1b]/10 transition-all"
                 >
                   {icon}
                 </a>
