@@ -141,18 +141,18 @@ function GridCard({ link, onClick }) {
   return (
     <Link
       to={link.href + (link.hash || "")}
-      className="flex items-start gap-3 p-3.5 bg-[#000435] border border-white/10 hover:border-[#f55d1b]/60 rounded-xl transition-all duration-150 hover:bg-[#f55d1b]/10 no-underline group"
+      className="flex items-start gap-2.5 xl:gap-3 p-2.5 xl:p-3 2xl:p-3.5 bg-[#000435] border border-white/10 hover:border-[#f55d1b]/60 rounded-xl transition-all duration-150 hover:bg-[#f55d1b]/10 no-underline group"
       onClick={onClick}
     >
-      <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-[#f55d1b]/15 text-[#f55d1b] border border-[#f55d1b]/30 shrink-0 text-sm group-hover:scale-105 transition-transform mt-0.5">
+      <div className="flex items-center justify-center w-7 h-7 xl:w-8 xl:h-8 2xl:w-9 2xl:h-9 rounded-lg bg-[#f55d1b]/15 text-[#f55d1b] border border-[#f55d1b]/30 shrink-0 text-xs xl:text-sm group-hover:scale-105 transition-transform mt-0.5">
         <Icon />
       </div>
-      <div className="flex flex-col">
-        <span className="text-[12.5px] font-bold text-white group-hover:text-[#f55d1b] transition-colors leading-tight mb-1 whitespace-normal">
+      <div className="flex flex-col min-w-0">
+        <span className="text-[11.5px] xl:text-[12.5px] 2xl:text-[13.5px] font-bold text-white group-hover:text-[#f55d1b] transition-colors leading-tight mb-0.5 xl:mb-1 whitespace-normal">
           {link.title}
         </span>
         {link.description && (
-          <p className="text-[11px] text-slate-300 leading-snug m-0 whitespace-normal">
+          <p className="text-[10px] xl:text-[11px] 2xl:text-[12px] text-slate-300 leading-snug m-0 whitespace-normal">
             {link.description}
           </p>
         )}
@@ -166,18 +166,18 @@ function LargeItem({ link, onClick }) {
   return (
     <Link
       to={link.href + (link.hash || "")}
-      className="flex items-start gap-2.5 p-2 rounded-lg transition-all duration-150 hover:bg-[#f55d1b]/10 no-underline group"
+      className="flex items-start gap-2 xl:gap-2.5 p-1.5 xl:p-2 rounded-lg transition-all duration-150 hover:bg-[#f55d1b]/10 no-underline group"
       onClick={onClick}
     >
-      <div className="flex items-center justify-center w-5 h-5 text-[#f55d1b] shrink-0 text-xs mt-0.5">
+      <div className="flex items-center justify-center w-4 h-4 xl:w-5 xl:h-5 text-[#f55d1b] shrink-0 text-xs mt-0.5">
         <Icon />
       </div>
-      <div className="flex flex-col">
-        <span className="text-[11.5px] font-semibold text-white group-hover:text-[#f55d1b] transition-colors leading-tight whitespace-normal">
+      <div className="flex flex-col min-w-0">
+        <span className="text-[11px] xl:text-[11.5px] 2xl:text-[13px] font-semibold text-white group-hover:text-[#f55d1b] transition-colors leading-tight whitespace-normal">
           {link.title}
         </span>
         {link.description && (
-          <p className="text-[10.5px] text-slate-400 leading-snug m-0 mt-0.5 whitespace-normal">
+          <p className="text-[9.5px] xl:text-[10.5px] 2xl:text-[11.5px] text-slate-400 leading-snug m-0 mt-0.5 whitespace-normal">
             {link.description}
           </p>
         )}
@@ -191,11 +191,11 @@ function SmallItem({ item, onClick }) {
   return (
     <Link
       to={item.href + (item.hash || "")}
-      className="flex items-center gap-2.5 p-2 rounded-lg text-slate-200 hover:text-white hover:bg-[#f55d1b]/15 transition-all duration-150 no-underline group"
+      className="flex items-center gap-2 xl:gap-2.5 p-1.5 xl:p-2 rounded-lg text-slate-200 hover:text-white hover:bg-[#f55d1b]/15 transition-all duration-150 no-underline group"
       onClick={onClick}
     >
-      <Icon className="text-[#f55d1b] text-xs shrink-0" />
-      <span className="text-[11.5px] font-semibold tracking-wide group-hover:text-white whitespace-normal">
+      <Icon className="text-[#f55d1b] text-xs xl:text-sm shrink-0" />
+      <span className="text-[11px] xl:text-[11.5px] 2xl:text-[13px] font-semibold tracking-wide group-hover:text-white whitespace-normal">
         {item.title}
       </span>
     </Link>
@@ -220,7 +220,7 @@ function CapsuleDropdown({
     >
       <Link
         to={to}
-        className={`inline-flex items-center justify-center gap-1 px-3.5 py-1.5 font-primary text-[11px] font-bold tracking-[0.1em] uppercase rounded-full whitespace-nowrap transition-all duration-150 no-underline select-none ${
+        className={`inline-flex items-center justify-center gap-1 px-2.5 lg:px-2.5 xl:px-3.5 2xl:px-4 py-1 xl:py-1.5 2xl:py-2 font-primary text-[10px] lg:text-[10.5px] xl:text-[11.5px] 2xl:text-[13.5px] font-bold tracking-[0.06em] xl:tracking-[0.08em] 2xl:tracking-[0.1em] uppercase rounded-full whitespace-nowrap transition-all duration-150 no-underline select-none ${
           isActive
             ? "bg-[#f55d1b] text-white shadow-md shadow-orange-500/40 font-extrabold"
             : "text-slate-200 hover:text-white hover:bg-white/10"
@@ -229,7 +229,7 @@ function CapsuleDropdown({
       >
         <span>{label}</span>
         <FiChevronDown
-          className={`text-[10px] transition-transform duration-200 ${
+          className={`text-[9px] xl:text-[10px] 2xl:text-[12px] transition-transform duration-200 ${
             isOpen ? "rotate-180 text-[#f55d1b]" : "text-slate-300"
           }`}
         />
@@ -237,15 +237,15 @@ function CapsuleDropdown({
 
       {/* Solid Opaque Dropdown Flyout Panel */}
       <div
-        className={`absolute top-[calc(100%+12px)] left-1/2 z-[1200] bg-[#000435] border border-slate-700/80 rounded-2xl shadow-[0_24px_50px_rgba(0,0,0,0.85)] transition-all duration-150 ${
+        className={`absolute top-[calc(100%+10px)] xl:top-[calc(100%+14px)] left-1/2 z-[1200] bg-[#000435] border border-slate-700/80 rounded-2xl shadow-[0_24px_50px_rgba(0,0,0,0.85)] transition-all duration-150 ${
           isOpen
-            ? "opacity-100 pointer-events-auto -translate-x-1/3 translate-y-0 scale-100"
+            ? "opacity-100 pointer-events-auto -translate-x-1/2 translate-y-0 scale-100"
             : "opacity-0 pointer-events-none -translate-x-1/2 translate-y-2 scale-95"
         }`}
         role="region"
         aria-label={`${label} submenu`}
       >
-        <div className="p-5 font-primary bg-[#000435] rounded-2xl">{children}</div>
+        <div className="p-4 xl:p-5 2xl:p-6 font-primary bg-[#000435] rounded-2xl">{children}</div>
       </div>
     </div>
   );
@@ -255,23 +255,23 @@ function MobileAccordionItem({ label, to, links, isOpen, onToggle, onCloseMenu }
   const contentRef = useRef(null);
 
   return (
-    <div className="rounded-xl overflow-hidden mb-1 bg-[#000435]/80 border border-slate-800">
+    <div className="rounded-xl overflow-hidden mb-1 bg-[#000435]/90 border border-slate-800/80">
       <div className="flex items-center justify-between w-full">
         <Link
           to={to}
-          className="flex-1 px-4 py-2.5 font-primary text-xs font-bold tracking-wider uppercase text-white hover:text-[#f55d1b] no-underline"
+          className="flex-1 px-3.5 sm:px-4 py-2.5 sm:py-3 font-primary text-xs sm:text-sm font-bold tracking-wider uppercase text-white hover:text-[#f55d1b] no-underline"
           onClick={onCloseMenu}
         >
           {label}
         </Link>
         <button
           type="button"
-          className="p-2.5 text-[#f55d1b] hover:text-white"
+          className="p-2.5 sm:p-3 text-[#f55d1b] hover:text-white focus:outline-none"
           onClick={onToggle}
           aria-expanded={isOpen}
         >
           <FiChevronDown
-            className={`text-sm transition-transform duration-200 ${
+            className={`text-sm sm:text-base transition-transform duration-200 ${
               isOpen ? "rotate-180" : ""
             }`}
           />
@@ -286,23 +286,23 @@ function MobileAccordionItem({ label, to, links, isOpen, onToggle, onCloseMenu }
             : "0px",
         }}
       >
-        <div className="flex flex-col gap-1 px-3 pb-3" ref={contentRef}>
+        <div className="flex flex-col gap-1.5 px-3 pb-3" ref={contentRef}>
           {links.map((link) => {
             const Icon = link.icon;
             return (
               <Link
                 key={link.title}
                 to={link.href + (link.hash || "")}
-                className="flex items-center gap-2.5 p-2 rounded-lg bg-[#000435] border border-slate-800 hover:bg-[#f55d1b]/15 hover:border-[#f55d1b]/30 transition-all no-underline text-white"
+                className="flex items-center gap-2.5 p-2 sm:p-2.5 rounded-lg bg-[#000435] border border-slate-800 hover:bg-[#f55d1b]/15 hover:border-[#f55d1b]/30 transition-all no-underline text-white"
                 onClick={onCloseMenu}
               >
-                <Icon className="text-[#f55d1b] text-sm shrink-0" />
+                <Icon className="text-[#f55d1b] text-sm sm:text-base shrink-0" />
                 <div className="flex flex-col min-w-0">
-                  <span className="text-[11.5px] font-bold text-white leading-tight truncate">
+                  <span className="text-[11.5px] sm:text-xs font-bold text-white leading-tight truncate">
                     {link.title}
                   </span>
                   {link.description && (
-                    <span className="text-[10px] text-slate-400 leading-tight mt-0.5 truncate">
+                    <span className="text-[10px] sm:text-[11px] text-slate-400 leading-tight mt-0.5 truncate">
                       {link.description}
                     </span>
                   )}
@@ -356,7 +356,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth > 1024) {
+      if (window.innerWidth >= 1024) {
         setMobileMenuOpen(false);
       }
     };
@@ -385,24 +385,30 @@ export default function Navbar() {
     { id: "services", name: "SERVICES", to: "/services", list: productLinks },
   ];
 
-
   const currentPath = location.pathname;
 
   return (
-    <header className="fixed top-2.5 sm:top-4 left-0 right-0 z-[1000] w-full px-2.5 xs:px-4 sm:px-6 lg:px-8 pointer-events-none flex justify-center font-primary">
-      <div className="w-full max-w-7xl 2xl:max-w-[1580px] mx-auto pointer-events-auto relative" ref={navRef}>
-        <nav className="relative flex items-center justify-between h-[48px] xs:h-[52px] sm:h-[56px] 2xl:h-[80px] px-2.5 xs:px-3 sm:px-5 bg-[#000435]/70 backdrop-blur-md backdrop-saturate-150 border border-white/15 rounded-full shadow-[0_8px_32px_0_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.12)] transition-all duration-200">
+    <header className="fixed top-2 xs:top-2.5 sm:top-3 md:top-4 2xl:top-6 left-0 right-0 z-[1000] w-full px-2.5 xs:px-3 sm:px-6 lg:px-8 2xl:px-12 pointer-events-none flex justify-center font-primary">
+      <div className="w-full max-w-7xl 2xl:max-w-[1680px] mx-auto pointer-events-auto relative" ref={navRef}>
+        <nav className="relative flex items-center justify-between h-[48px] xs:h-[52px] sm:h-[56px] md:h-[60px] lg:h-[58px] xl:h-[64px] 2xl:h-[76px] px-2.5 xs:px-3 sm:px-4 md:px-5 lg:px-4 xl:px-6 2xl:px-8 bg-[#000435]/75 backdrop-blur-md backdrop-saturate-150 border border-white/15 rounded-full shadow-[0_8px_32px_0_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.12)] transition-all duration-200">
+          
+          {/* Logo Link */}
           <Link
             to="/"
-            className="flex items-center select-none cursor-pointer pl-2 xs:pl-3 sm:pl-5 pr-3 xs:pr-4 sm:pr-6 py-1 no-underline group"
+            className="flex items-center select-none cursor-pointer pl-1 xs:pl-1.5 sm:pl-2 md:pl-3 pr-2 xs:pr-3 sm:pr-4 py-1 no-underline group shrink-0"
           >
-           <img src={TrionHorizontalLogo} alt="trion logo" className="object-contain w-32 xs:w-36 sm:w-44 h-auto max-h-8 sm:max-h-10 2xl:h-20 2xl:w-60 outline-none" />
+            <img
+              src={TrionHorizontalLogo}
+              alt="trion logo"
+              className="object-contain w-28 xs:w-32 sm:w-36 md:w-40 lg:w-36 xl:w-44 2xl:w-56 h-auto max-h-7 xs:max-h-8 sm:max-h-9 md:max-h-10 lg:max-h-10 xl:max-h-12 2xl:max-h-16 outline-none transition-all duration-200"
+            />
           </Link>
 
-          <div className="hidden lg:flex items-center gap-0.5 p-0.5 bg-[#000435]/80 backdrop-blur-sm border border-white/10 rounded-full">
+          {/* Center Navigation Links (Lg & Above) */}
+          <div className="hidden lg:flex items-center gap-0.5 xl:gap-1 2xl:gap-1.5 p-0.5 xl:p-1 bg-[#000435]/80 backdrop-blur-sm border border-white/10 rounded-full">
             <Link
               to="/"
-              className={`inline-flex items-center justify-center px-3 py-1 font-primary text-[10.5px] font-bold tracking-[0.08em] uppercase rounded-full whitespace-nowrap transition-all duration-150 no-underline select-none ${
+              className={`inline-flex items-center justify-center px-2.5 lg:px-2.5 xl:px-3.5 2xl:px-4 py-1 xl:py-1.5 2xl:py-2 font-primary text-[10px] lg:text-[10.5px] xl:text-[11.5px] 2xl:text-[13.5px] font-bold tracking-[0.06em] xl:tracking-[0.08em] 2xl:tracking-[0.1em] uppercase rounded-full whitespace-nowrap transition-all duration-150 no-underline select-none ${
                 currentPath === "/"
                   ? "bg-[#f55d1b] text-white shadow-sm shadow-orange-500/40 font-extrabold"
                   : "text-slate-300 hover:text-white hover:bg-white/10"
@@ -421,12 +427,12 @@ export default function Navbar() {
               onOpen={() => handleOpen("about")}
               onClose={handleClose}
             >
-              <div className="flex gap-7 min-w-[720px] max-w-[760px] bg-[#000435]">
-                <div className="flex-1">
-                  <span className="block text-[10px] font-mono font-bold tracking-[0.18em] uppercase text-[#f55d1b] mb-2.5">
+              <div className="flex gap-5 xl:gap-7 w-[680px] xl:w-[740px] 2xl:w-[800px] max-w-[90vw] bg-[#000435]">
+                <div className="flex-1 min-w-0">
+                  <span className="block text-[9px] xl:text-[10px] 2xl:text-[11px] font-mono font-bold tracking-[0.18em] uppercase text-[#f55d1b] mb-2 xl:mb-2.5">
                     ORGANIZATION & LEADERSHIP
                   </span>
-                  <div className="flex flex-col gap-2.5">
+                  <div className="flex flex-col gap-2 xl:gap-2.5">
                     {companyLinks.slice(0, 2).map((link) => (
                       <GridCard
                         key={link.title}
@@ -436,11 +442,11 @@ export default function Navbar() {
                     ))}
                   </div>
                 </div>
-                <div className="flex-1 border-l border-slate-800 pl-6">
-                  <span className="block text-[10px] font-mono font-bold tracking-[0.18em] uppercase text-[#f55d1b] mb-2.5">
+                <div className="flex-1 min-w-0 border-l border-slate-800 pl-4 xl:pl-6">
+                  <span className="block text-[9px] xl:text-[10px] 2xl:text-[11px] font-mono font-bold tracking-[0.18em] uppercase text-[#f55d1b] mb-2 xl:mb-2.5">
                     VALUES, CAPABILITIES & SAFETY
                   </span>
-                  <div className="flex flex-col gap-1.5">
+                  <div className="flex flex-col gap-1 xl:gap-1.5">
                     {companyLinks.slice(2).map((link) => (
                       <LargeItem
                         key={link.title}
@@ -462,12 +468,12 @@ export default function Navbar() {
               onOpen={() => handleOpen("services")}
               onClose={handleClose}
             >
-              <div className="flex gap-7 min-w-[780px] max-w-[820px] bg-[#000435]">
-                <div className="flex-[1.2]">
-                  <span className="block text-[10px] font-mono font-bold tracking-[0.18em] uppercase text-[#f55d1b] mb-2.5">
+              <div className="flex gap-5 xl:gap-7 w-[720px] xl:w-[790px] 2xl:w-[860px] max-w-[90vw] bg-[#000435]">
+                <div className="flex-[1.2] min-w-0">
+                  <span className="block text-[9px] xl:text-[10px] 2xl:text-[11px] font-mono font-bold tracking-[0.18em] uppercase text-[#f55d1b] mb-2 xl:mb-2.5">
                     CORE DISCIPLINES
                   </span>
-                  <ul className="flex flex-col gap-2.5 p-0 m-0 list-none">
+                  <ul className="flex flex-col gap-2 xl:gap-2.5 p-0 m-0 list-none">
                     {productLinks.slice(0, 3).map((link) => (
                       <li key={link.title}>
                         <GridCard
@@ -478,11 +484,11 @@ export default function Navbar() {
                     ))}
                   </ul>
                 </div>
-                <div className="flex-[1] border-l border-slate-800 pl-6">
-                  <span className="block text-[10px] font-mono font-bold tracking-[0.18em] uppercase text-[#f55d1b] mb-2.5">
+                <div className="flex-[1] min-w-0 border-l border-slate-800 pl-4 xl:pl-6">
+                  <span className="block text-[9px] xl:text-[10px] 2xl:text-[11px] font-mono font-bold tracking-[0.18em] uppercase text-[#f55d1b] mb-2 xl:mb-2.5">
                     SPECIALIZED CAPABILITIES
                   </span>
-                  <ul className="grid grid-cols-1 gap-1.5 p-0 m-0 list-none">
+                  <ul className="grid grid-cols-1 gap-1 xl:gap-1.5 p-0 m-0 list-none">
                     {productLinks.slice(3).map((link) => (
                       <li key={link.title}>
                         <SmallItem
@@ -496,21 +502,9 @@ export default function Navbar() {
               </div>
             </CapsuleDropdown>
 
-            {/* <Link
-              to="/projects"
-              className={`inline-flex items-center justify-center px-3 py-1 font-primary text-[10.5px] font-bold tracking-[0.08em] uppercase rounded-full whitespace-nowrap transition-all duration-150 no-underline select-none ${
-                currentPath.startsWith("/projects")
-                  ? "bg-[#f55d1b] text-white shadow-sm shadow-orange-500/40 font-extrabold"
-                  : "text-slate-300 hover:text-white hover:bg-white/10"
-              }`}
-              onClick={() => setActiveMenu(null)}
-            >
-              PROJECTS
-            </Link> */}
-
             <Link
               to="/strategicAlliances"
-              className={`inline-flex items-center justify-center px-3 py-1 font-primary text-[10.5px] font-bold tracking-[0.08em] uppercase rounded-full whitespace-nowrap transition-all duration-150 no-underline select-none ${
+              className={`inline-flex items-center justify-center px-2.5 lg:px-2.5 xl:px-3.5 2xl:px-4 py-1 xl:py-1.5 2xl:py-2 font-primary text-[10px] lg:text-[10.5px] xl:text-[11.5px] 2xl:text-[13.5px] font-bold tracking-[0.06em] xl:tracking-[0.08em] 2xl:tracking-[0.1em] uppercase rounded-full whitespace-nowrap transition-all duration-150 no-underline select-none ${
                 currentPath.startsWith("/strategicAlliances")
                   ? "bg-[#f55d1b] text-white shadow-sm shadow-orange-500/40 font-extrabold"
                   : "text-slate-300 hover:text-white hover:bg-white/10"
@@ -522,7 +516,7 @@ export default function Navbar() {
 
             <Link
               to="/blogs"
-              className={`inline-flex items-center justify-center px-3 py-1 font-primary text-[10.5px] font-bold tracking-[0.08em] uppercase rounded-full whitespace-nowrap transition-all duration-150 no-underline select-none ${
+              className={`inline-flex items-center justify-center px-2.5 lg:px-2.5 xl:px-3.5 2xl:px-4 py-1 xl:py-1.5 2xl:py-2 font-primary text-[10px] lg:text-[10.5px] xl:text-[11.5px] 2xl:text-[13.5px] font-bold tracking-[0.06em] xl:tracking-[0.08em] 2xl:tracking-[0.1em] uppercase rounded-full whitespace-nowrap transition-all duration-150 no-underline select-none ${
                 currentPath.startsWith("/blogs")
                   ? "bg-[#f55d1b] text-white shadow-sm shadow-orange-500/40 font-extrabold"
                   : "text-slate-300 hover:text-white hover:bg-white/10"
@@ -534,7 +528,7 @@ export default function Navbar() {
 
             <Link
               to="/contact"
-              className={`inline-flex items-center justify-center px-3 py-1 font-primary text-[10.5px] font-bold tracking-[0.08em] uppercase rounded-full whitespace-nowrap transition-all duration-150 no-underline select-none ${
+              className={`inline-flex items-center justify-center px-2.5 lg:px-2.5 xl:px-3.5 2xl:px-4 py-1 xl:py-1.5 2xl:py-2 font-primary text-[10px] lg:text-[10.5px] xl:text-[11.5px] 2xl:text-[13.5px] font-bold tracking-[0.06em] xl:tracking-[0.08em] 2xl:tracking-[0.1em] uppercase rounded-full whitespace-nowrap transition-all duration-150 no-underline select-none ${
                 currentPath.startsWith("/contact")
                   ? "bg-[#f55d1b] text-white shadow-sm shadow-orange-500/40 font-extrabold"
                   : "text-slate-300 hover:text-white hover:bg-white/10"
@@ -545,22 +539,23 @@ export default function Navbar() {
             </Link>
           </div>
 
-          <div className="flex items-center gap-2 pr-1 sm:pr-2">
+          {/* Right Action Buttons */}
+          <div className="flex items-center gap-1.5 xs:gap-2 sm:gap-3 pr-1 sm:pr-2">
             <Link
               to="/contact"
-              className="hidden sm:inline-flex items-center justify-center px-4 py-1.5 bg-[#f55d1b] hover:bg-[#f55d1b] text-white font-primary text-[10.5px] font-extrabold tracking-[0.06em] uppercase rounded-full whitespace-nowrap shadow-sm shadow-orange-500/40 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-150 no-underline select-none"
+              className="hidden sm:inline-flex items-center justify-center px-3.5 sm:px-4 xl:px-5 2xl:px-6 py-1.5 xl:py-2 2xl:py-2.5 bg-[#f55d1b] hover:bg-[#e04f10] text-white font-primary text-[10px] xs:text-[10.5px] xl:text-[11.5px] 2xl:text-[13px] font-extrabold tracking-[0.06em] xl:tracking-[0.08em] uppercase rounded-full whitespace-nowrap shadow-sm shadow-orange-500/40 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-150 no-underline select-none"
             >
               GET IN TOUCH
             </Link>
 
             <button
               type="button"
-              className="lg:hidden flex items-center justify-center w-8 h-8 rounded-full bg-white/10 border border-slate-700 text-white hover:bg-[#f55d1b]/20 hover:border-[#f55d1b] transition-colors"
+              className="lg:hidden flex items-center justify-center w-8 h-8 xs:w-9 xs:h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 border border-slate-700 text-white hover:bg-[#f55d1b]/20 hover:border-[#f55d1b] transition-colors shrink-0"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle navigation menu"
               aria-expanded={mobileMenuOpen}
             >
-              {mobileMenuOpen ? <FiX size={16} /> : <FiMenu size={16} />}
+              {mobileMenuOpen ? <FiX className="w-4 h-4 xs:w-4.5 xs:h-4.5 sm:w-5 sm:h-5" /> : <FiMenu className="w-4 h-4 xs:w-4.5 xs:h-4.5 sm:w-5 sm:h-5" />}
             </button>
           </div>
         </nav>
@@ -568,17 +563,17 @@ export default function Navbar() {
 
       {/* Mobile Menu Drawer */}
       <div
-        className={`lg:hidden fixed top-[58px] xs:top-[64px] sm:top-[68px] left-2 right-2 xs:left-3 xs:right-3 sm:left-4 sm:right-4 max-h-[calc(100vh-76px)] sm:max-h-[calc(100vh-84px)] overflow-y-auto bg-[#000435] border border-slate-700/90 rounded-2xl shadow-[0_24px_50px_rgba(0,0,0,0.85)] p-3 sm:p-4 transition-all duration-200 ${
+        className={`lg:hidden fixed top-[54px] xs:top-[58px] sm:top-[66px] md:top-[70px] left-2 right-2 xs:left-3 xs:right-3 sm:left-4 sm:right-4 max-h-[calc(100dvh-70px)] xs:max-h-[calc(100dvh-76px)] sm:max-h-[calc(100dvh-86px)] overflow-y-auto bg-[#000435] border border-slate-700/90 rounded-2xl shadow-[0_24px_50px_rgba(0,0,0,0.85)] p-3 sm:p-4 transition-all duration-200 ${
           mobileMenuOpen
             ? "opacity-100 pointer-events-auto translate-y-0 scale-100"
             : "opacity-0 pointer-events-none -translate-y-2 scale-95"
         }`}
         aria-hidden={!mobileMenuOpen}
       >
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-1 sm:gap-1.5">
           <Link
             to="/"
-            className={`flex items-center px-4 py-2.5 font-primary text-xs font-bold tracking-wider uppercase rounded-xl transition-colors no-underline ${
+            className={`flex items-center px-3.5 sm:px-4 py-2.5 sm:py-3 font-primary text-xs sm:text-sm font-bold tracking-wider uppercase rounded-xl transition-colors no-underline ${
               currentPath === "/"
                 ? "bg-[#f55d1b] text-white"
                 : "text-slate-200 hover:text-white hover:bg-white/10"
@@ -604,21 +599,9 @@ export default function Navbar() {
             />
           ))}
 
-          {/* <Link
-            to="/projects"
-            className={`flex items-center px-4 py-2.5 font-primary text-xs font-bold tracking-wider uppercase rounded-xl transition-colors no-underline ${
-              currentPath.startsWith("/projects")
-                ? "bg-[#f55d1b] text-white"
-                : "text-slate-200 hover:text-white hover:bg-white/10"
-            }`}
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            PROJECTS
-          </Link> */}
-
           <Link
             to="/strategicAlliances"
-            className={`flex items-center px-4 py-2.5 font-primary text-xs font-bold tracking-wider uppercase rounded-xl transition-colors no-underline ${
+            className={`flex items-center px-3.5 sm:px-4 py-2.5 sm:py-3 font-primary text-xs sm:text-sm font-bold tracking-wider uppercase rounded-xl transition-colors no-underline ${
               currentPath.startsWith("/strategicAlliances")
                 ? "bg-[#f55d1b] text-white"
                 : "text-slate-200 hover:text-white hover:bg-white/10"
@@ -630,7 +613,7 @@ export default function Navbar() {
 
           <Link
             to="/blogs"
-            className={`flex items-center px-4 py-2.5 font-primary text-xs font-bold tracking-wider uppercase rounded-xl transition-colors no-underline ${
+            className={`flex items-center px-3.5 sm:px-4 py-2.5 sm:py-3 font-primary text-xs sm:text-sm font-bold tracking-wider uppercase rounded-xl transition-colors no-underline ${
               currentPath.startsWith("/blogs")
                 ? "bg-[#f55d1b] text-white"
                 : "text-slate-200 hover:text-white hover:bg-white/10"
@@ -642,7 +625,7 @@ export default function Navbar() {
 
           <Link
             to="/contact"
-            className={`flex items-center px-4 py-2.5 font-primary text-xs font-bold tracking-wider uppercase rounded-xl transition-colors no-underline ${
+            className={`flex items-center px-3.5 sm:px-4 py-2.5 sm:py-3 font-primary text-xs sm:text-sm font-bold tracking-wider uppercase rounded-xl transition-colors no-underline ${
               currentPath.startsWith("/contact")
                 ? "bg-[#f55d1b] text-white"
                 : "text-slate-200 hover:text-white hover:bg-white/10"
@@ -654,7 +637,7 @@ export default function Navbar() {
 
           <Link
             to="/contact"
-            className="mt-2 flex items-center justify-center p-3 bg-[#f55d1b] text-white font-primary text-xs font-extrabold tracking-wider uppercase rounded-xl shadow-md shadow-orange-500/40 no-underline"
+            className="mt-2 flex items-center justify-center p-3 sm:p-3.5 bg-[#f55d1b] hover:bg-[#e04f10] text-white font-primary text-xs sm:text-sm font-extrabold tracking-wider uppercase rounded-xl shadow-md shadow-orange-500/40 no-underline transition-colors"
             onClick={() => setMobileMenuOpen(false)}
           >
             GET IN TOUCH
